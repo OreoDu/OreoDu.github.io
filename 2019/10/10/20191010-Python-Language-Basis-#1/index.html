@@ -121,54 +121,33 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://c-ssl.duitang.com/uploads/item/201710/04/20171004223009_zUZRj.jpeg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Start with me</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://c-ssl.duitang.com/uploads/item/201710/04/20171004223808_4ydYk.jpeg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python-Language Basis</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="Welcome-to-my-Blog"><a href="#Welcome-to-my-Blog" class="headerlink" title="Welcome to my Blog!"></a><strong>Welcome to my Blog!</strong></h2><h3 id="Self-Introduction"><a href="#Self-Introduction" class="headerlink" title="Self Introduction"></a><strong>Self Introduction</strong></h3><p>I am a student who just graduated form Dalian Maritime University in June in China and will continue to study in Tokyo University next year in April to get my master degree. My major is Artificial Intelligence and my desired research direction is machine learning and combinatorial optimism. Because I haven’t enrolled in school yet, the specific research topic hasn’t been decided -.-.</p>
-<p>There are several reasons for starting to write this Blog that I want to share with you and this may also help you have a quick look at the main contents of this Blog.</p>
+                <h2 id="Language-Basis-1"><a href="#Language-Basis-1" class="headerlink" title="Language Basis #1"></a>Language Basis #1</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><em><em>· materials: *</em><br>*Python for Everybody (Exploring Data Using Python 3)</em>  by Charles R. Severance<br>(<a href="https://www.py4e.com/" target="_blank" rel="noopener">https://www.py4e.com/</a>)<br><em>Learn Python 3 the Hard Way</em> by Zed A. Shaw</p>
+<p><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a> by jackfrued</p>
+<h4 id="Installing-Python-3-On-Windows-10"><a href="#Installing-Python-3-On-Windows-10" class="headerlink" title="Installing Python 3 On Windows 10"></a>Installing Python 3 On Windows 10</h4><p>Download and install Python 3.x.x from <a href="https://www.python.org/download/" target="_blank" rel="noopener">here</a>. (When you’re installing Python you should make sure that you have chosen “Add Python 3.x.x  to PATH” or you can do this by yourself later.)</p>
+<p>Download and install the text editor. (I installed <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> .)</p>
+<p>There are two ways that you run your code.</p>
 <ul>
-<li><strong>·</strong>I want to keep track of my learning process and share those materials, notes and experience with you. I do believe that only when I can explain to others what I have learned, I can master the knowledge.</li>
-<li><strong>·</strong>I want to systematize my professional knowledge and organize them into a big framework so that whenever I learn something new I won’t feel confused again.</li>
-<li><strong>·</strong>I want to improve my writing skill in English and Japanese so all the articles in this Blog will be written in English or Japanese. Because I am not a native speaker so there must be some mistakes that I ignored and some weird expressions that may confuse you in my articles and I’d appreciate it if you could point out them in the comment section or contact me.</li>
-</ul>
-<h3 id="Blog-Contents"><a href="#Blog-Contents" class="headerlink" title="Blog Contents"></a><strong>Blog Contents</strong></h3><p>I will keep updating this content.</p>
-<ul>
-<li><strong>· Algorithms</strong><ul>
-<li>· Basics of Algorithm Analysis</li>
-<li>· Algorithms with Numbers</li>
-<li>· Classical Algorithms<ul>
-<li>Divide and Conquer</li>
-<li>Greedy Algorithms</li>
-<li>Dynamic Programing</li>
-</ul>
+<li><p><strong>·</strong> Write the script  in the text editor and execute it in the command window or just type commands into the Python interpreter.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python xxx.py</span><br></pre></td></tr></table></figure>
 </li>
-<li>· Graphs</li>
-<li>· Network Flow</li>
-<li>· NP</li>
-<li>· Approximation Algorithms</li>
-<li>· Local Search</li>
-<li>· Randomized Algorithms</li>
-<li>· Quantum Algorithms</li>
-</ul>
-</li>
-<li><strong>· Programming</strong><ul>
-<li>· Scheme</li>
-<li>· Python<ul>
-<li>Language Basis</li>
-<li>Web Devolpment</li>
-<li>Crawler</li>
-<li>Operation and Maintenance of Automation</li>
-<li>Data Mining</li>
-<li>Machine Learnning</li>
-</ul>
+<li><p><strong>·</strong> Write and run the code in a interactive programming tool (such as IPython).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ipython</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-</li>
-<li><strong>· Machine learning</strong></li>
-</ul>
-<p><strong>Hope you enjoy this journey!</strong></p>
+<h4 id="How-do-the-programs-work-inside-the-computer"><a href="#How-do-the-programs-work-inside-the-computer" class="headerlink" title="How do the programs work inside the computer?"></a>How do the programs work inside the computer?</h4><p>First, let’s have a quick look at the simplified computer structure.</p>
+ <img src="E:\MyBlog\source\_posts\img\computer structure.PNG" alt="computer structure" style="zoom:30%;">
+
+<p>(from <em>Python for Everybody</em>)</p>
+<p>When we finish our code and store it in the  <em>secondary memory</em> , the Python interpreter will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
+<p>Then when we execute the program, it will be stored in the <em>main memory</em> temporarily. The computer will retrieve the data form the <em>input devices</em> or the <em>network</em>, get the instructions form the <em>main memory</em> and do the computations in the <em>center processing unit(CPU)</em> with a high speed(billion times per second). In the end, the computer will send the results to the <em>output devices</em>.</p>
+<p><strong>(Not finished yet!)</strong></p>
 
             </div>
 
