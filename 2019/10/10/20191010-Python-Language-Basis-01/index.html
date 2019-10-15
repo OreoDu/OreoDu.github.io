@@ -135,29 +135,24 @@
 <h4 id="Part-1-Installing-Python-3-On-Windows-10"><a href="#Part-1-Installing-Python-3-On-Windows-10" class="headerlink" title="Part.1 Installing Python 3 On Windows 10"></a>Part.1 Installing Python 3 On Windows 10</h4><p>Download and install Python 3.x.x from <u><a href="https://www.python.org/download/" target="_blank" rel="noopener">here</a></u>. (When you’re installing Python you should make sure that you have chosen “Add Python 3.x.x  to PATH” or you can do this by yourself later.)</p>
 <p>Download and install the text editor. (I installed <u><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a></u>.)</p>
 <p>Two ways that you run your code.</p>
-<ul>
-<li><p><strong>·</strong> Write the script  in the text editor and execute it in the command window or type commands into the Python interpreter.</p>
-<pre class="line-numbers language-python"><code class="language-python">python xxx<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>·</strong> Write and run the code in a interactive programming tool (such as IPython).</p>
-<pre class="line-numbers language-python"><code class="language-python">pip install ipython<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-</ul>
+<p>  <strong>·</strong> Write the script  in the text editor and execute it in the command window or type commands into the Python interpreter.</p>
+<pre class="line-numbers language-python"><code class="language-python">  python xxx<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>  <strong>·</strong> Write and run the code in a interactive programming tool (such as IPython).</p>
+<pre class="line-numbers language-python"><code class="language-python">  pip install ipython<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Part-2-How-do-the-programs-work-inside-the-computer"><a href="#Part-2-How-do-the-programs-work-inside-the-computer" class="headerlink" title="Part.2 How do the programs work inside the computer?"></a>Part.2 How do the programs work inside the computer?</h4><p>First, let’s have a quick look at the simplified computer structure</p>
 <img src="http://pz5e2xrx9.bkt.clouddn.com/static/images/com-stru.PNG?imageView2/2/w/500">
 <p>(from <i>Python for Everybody</i>)</p>
 <p>When we finish our code and store it in the <i>secondary memory</i>, the Python interpreter will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
 <p>Then when we execute the program, it will be stored in the <i>main memory</i> temporarily. The computer will retrieve the data form the <i>input devices</i> or the <i>network</i>, get the instructions form the <i>main memory</i> and do the computations in the <i>center processing unit(CPU)</i> with a high speed(billion times per second). In the end, the computer will send the results to the <i>output devices</i>.</p>
 <h4 id="Part-3-Language-element"><a href="#Part-3-Language-element" class="headerlink" title="Part.3 Language element"></a>Part.3 Language element</h4><p>A language must have its own vocabulary and grammar. In the vocabulary of Python, basically, we have <i>Reserved words (keywords)</i>, <i>Variable</i>, <i>constant(numbers,letters,strings)</i> and <i>operators</i>.</p>
-<p><strong>Ⅰ. Reserved words</strong> (keywords):</p>
-<p>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
+<p><strong>Ⅰ. Reserved words</strong> (keywords):<br>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
  <img src="http://pz5e2xrx9.bkt.clouddn.com/static/images/reserved-w.PNG?imageView2/2/w/500">
 <p>(from <i>Python for Everybody</i>)</p>
-<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>  <strong>integer</strong>(can use different radixes: 0b100,0o100,100,0x100)<br>  <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>  <strong>complex number</strong>(ex: 3+2j)<br>  <strong>string</strong>(be enclosed in single or double quotation marks)<br>  <strong>Boolean</strong>(True, False)</p>
-<p>  We can use <code>type</code> function to get the type of the variables.</p>
+<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>integer</strong>(can use different radixes: 0b100,0o100,100,0x100)<br>    <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>    <strong>complex number</strong>(ex: 3+2j)<br>    <strong>string</strong>(be enclosed in single or double quotation marks)<br>    <strong>Boolean</strong>(True, False)</p>
+<p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>  Variable types can be converted using functions built in Python.<br>    <strong>·</strong><code>int()</code>: Convert a number or string to an integer and specify a radix.<br>    <strong>·</strong><code>float()</code>: Convert a string to a floating point number.<br>    <strong>·</strong><code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>    <strong>·</strong><code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>    <strong>·</strong><code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).</p>
+<p>  Variable types can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a string to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).</p>
 <p><strong>·</strong> Name rules: (usually use a mnemonic name)<br>    1.Combination of numbers, letters, underscore (can not start with a number)<br>    2.Case sensitive<br>    3.Can not use reserved words<br>    4.PEP 8 <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">(<u> Style Guide for Python Code</u> )</a></p>
 <p> <strong>·</strong> How do we use variables?<br>    1.Use variables to save data and perform arithmetic operations</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234</span>
@@ -168,8 +163,7 @@ b <span class="token operator">=</span> <span class="token number">2.345</span>
 b  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.3</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d +%d = %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>( <code>%x</code> is a placeholder. <code>%d</code> is for the integer.  <code>%f</code> is for the decimal.<code>%%</code> is for the percent sign. The strings after the <code>%</code> will replace the placeholder and output to the terminal )</p>
-<p><strong>Ⅲ. Operators</strong>:</p>
-<p>(ordered by the priority of the operators from high to low )</p>
+<p><strong>Ⅲ. Operators</strong>:<br>(ordered by the priority of the operators from high to low )</p>
 <table>
 <thead>
 <tr>
