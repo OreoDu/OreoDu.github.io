@@ -134,21 +134,19 @@
 <p>(概略图)<br><strong>· materials:</strong><br>  · <i>Python for Everybody (Exploring Data Using Python 3)</i>  by Charles R. Severance (<a href="https://www.py4e.com/" target="_blank" rel="noopener">https://www.py4e.com/</a>)<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued</p>
 <h4 id="Part-1-Installing-Python-3-On-Windows-10"><a href="#Part-1-Installing-Python-3-On-Windows-10" class="headerlink" title="Part.1 Installing Python 3 On Windows 10"></a>Part.1 Installing Python 3 On Windows 10</h4><p>Download and install Python 3.x.x from <u><a href="https://www.python.org/download/" target="_blank" rel="noopener">here</a></u>. (When you’re installing Python you should make sure that you have chosen “Add Python 3.x.x  to PATH” or you can do this by yourself later.)</p>
 <p>Download and install the text editor. (I installed <u><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a></u>.)</p>
-<p>Two ways that you run your code.</p>
-<p>  <strong>·</strong> Write the script  in the text editor and execute it in the command window or type commands into the Python interpreter.</p>
+<p>Two ways that you run your code：<br>    <strong>·</strong> Write the script  in the text editor and execute it in the command window or type commands into the Python interpreter.</p>
 <pre class="line-numbers language-python"><code class="language-python">  python xxx<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>  <strong>·</strong> Write and run the code in a interactive programming tool (such as IPython).</p>
-<pre class="line-numbers language-python"><code class="language-python">  pip install ipython<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>**·** Write and run the code in a interactive programming tool (such as IPython).</code></pre><pre class="line-numbers language-python"><code class="language-python">  pip install ipython<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Part-2-How-do-the-programs-work-inside-the-computer"><a href="#Part-2-How-do-the-programs-work-inside-the-computer" class="headerlink" title="Part.2 How do the programs work inside the computer?"></a>Part.2 How do the programs work inside the computer?</h4><p>First, let’s have a quick look at the simplified computer structure</p>
-<img src="http://pz5e2xrx9.bkt.clouddn.com/static/images/com-stru.PNG?imageView2/2/w/500">
+{% qnimg com-stru.PNG extend:?imageView2/2/w/500 %}
 <p>(from <i>Python for Everybody</i>)</p>
 <p>When we finish our code and store it in the <i>secondary memory</i>, the Python interpreter will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
 <p>Then when we execute the program, it will be stored in the <i>main memory</i> temporarily. The computer will retrieve the data form the <i>input devices</i> or the <i>network</i>, get the instructions form the <i>main memory</i> and do the computations in the <i>center processing unit(CPU)</i> with a high speed(billion times per second). In the end, the computer will send the results to the <i>output devices</i>.</p>
 <h4 id="Part-3-Language-element"><a href="#Part-3-Language-element" class="headerlink" title="Part.3 Language element"></a>Part.3 Language element</h4><p>A language must have its own vocabulary and grammar. In the vocabulary of Python, basically, we have <i>Reserved words (keywords)</i>, <i>Variable</i>, <i>constant(numbers,letters,strings)</i> and <i>operators</i>.</p>
 <p><strong>Ⅰ. Reserved words</strong> (keywords):<br>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
- <img src="http://pz5e2xrx9.bkt.clouddn.com/static/images/reserved-w.PNG?imageView2/2/w/500">
+ {% qnimg reserved-w.PNG extend:?imageView2/2/w/500 %}
 <p>(from <i>Python for Everybody</i>)</p>
-<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>integer</strong>(can use different radixes: 0b100,0o100,100,0x100)<br>    <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>    <strong>complex number</strong>(ex: 3+2j)<br>    <strong>string</strong>(be enclosed in single or double quotation marks)<br>    <strong>Boolean</strong>(True, False)</p>
+<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong>(can use different radixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong>(ex: 3+2j)<br>    <strong>string</strong>(be enclosed in single or double quotation marks)<br>    <strong>Boolean</strong>(True, False)</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -163,7 +161,7 @@ b <span class="token operator">=</span> <span class="token number">2.345</span>
 b  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.3</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d +%d = %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>( <code>%x</code> is a placeholder. <code>%d</code> is for the integer.  <code>%f</code> is for the decimal.<code>%%</code> is for the percent sign. The strings after the <code>%</code> will replace the placeholder and output to the terminal )</p>
-<p><strong>Ⅲ. Operators</strong>:<br>(ordered by the priority of the operators from high to low )</p>
+<p><strong>Ⅲ. Operators</strong>:<br>The values(most of them are numbers) the operators is applied to are called <i>operands</i> and an expression is a combination of operands and operators.<br>(ordered by the priority of the operators from high to low )</p>
 <table>
 <thead>
 <tr>
@@ -213,6 +211,23 @@ b  <span class="token operator">=</span> int<span class="token punctuation">(</s
 </tr>
 </tbody></table>
 <p><strong>·</strong>  The priority of the operators:<br>Parentheses <code>()</code> have the highest precedence and can be used to force an expression to evaluate in the order we want. </p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
+b <span class="token operator">=</span> <span class="token number">3</span>
+a <span class="token operator">*=</span> b <span class="token operator">+</span> <span class="token number">2</span> <span class="token comment" spellcheck="true"># equivalent to: a=a*(b+2)=50</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">flag1 <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">&lt;</span> <span class="token number">2</span>
+flag2 <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">1</span>
+flag3 <span class="token operator">=</span> flag1 <span class="token operator">and</span> flag2
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag3 <span class="token keyword">is</span> <span class="token operator">not</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#False</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag2 <span class="token keyword">is</span> <span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Part-4-Language-structure"><a href="#Part-4-Language-structure" class="headerlink" title="Part. 4 Language structure"></a>Part. 4 Language structure</h4><p>We put these language elements together to form different statements so that we can solve a certain problem. The way we organize the statements can be divided into different types of structures in order to make our program more effective. Generally, there are three types: <i>sequential structure, conditional structure</i> and <i>iteration</i>.</p>
+<p>Python uses <strong>indentation</strong> to set the hierarchy of different compound statements instead of using<code>{}</code>.  If the continuous statements maintains the same indentation then they belong to the same code block, which is equivalent to one specific function.</p>
+<p><strong>Ⅰ. Conditional structure</strong></p>
+<p>Sometimes, we have to separate our solutions into different <strong>branches</strong> and change the actions of the program according to some conditions. In python, we use <code>if</code> statement(use the keywords <code>if</code>, <code>else</code>, <code>elif</code>) to realize it.</p>
+<p><strong>·</strong> Chained conditionals: (two branches or more)</p>
+<p>If more than one condition is true, only the first true branch executes.</p>
+<p><strong>·</strong> Nested conditionals:</p>
+<p><strong>Ⅱ. Iteration</strong></p>
 <h4 id="Part-Bug"><a href="#Part-Bug" class="headerlink" title="Part. Bug"></a>Part. Bug</h4><p>Program should be written precisely otherwise the deviations and mistakes in your code will cause the Python to stop and can’t work out the final result. There are three main types of errors that you may encounter during.</p>
 <p> <strong>·</strong> Syntax errors:  </p>
 <blockquote>
@@ -226,6 +241,11 @@ b  <span class="token operator">=</span> int<span class="token punctuation">(</s
 <blockquote>
 <p> The program is perfectly correct but it does not do what you intended for it to do. </p>
 </blockquote>
+<h4 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h4><p><strong>Ex.1</strong>: Enter the year to determine if it is a leap year.</p>
+<pre class="line-numbers language-python"><code class="language-python">year <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">' Please enter the year: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+is_leap <span class="token operator">=</span> <span class="token punctuation">(</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">or</span> \
+          year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>is_leap<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 
