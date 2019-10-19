@@ -146,7 +146,7 @@
 <p><strong>Ⅰ. Reserved words</strong> (keywords):<br>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
  {% qnimg reserved-w.PNG extend:?imageView2/2/w/500 %}
 <p>(from <i>Python for Everybody</i>)</p>
-<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong>(can use different radixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong>(ex: 3+2j)<br>    <strong>string</strong>(be enclosed in single or double quotation marks)<br>    <strong>Boolean</strong>(True, False)</p>
+<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong>(can use different radfixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong>(sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong>(ex: 3+2j)<br>    <strong>string</strong>(be enclosed in single or double quotation marks)<br>    <strong>Boolean</strong>(True, False)</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -182,8 +182,8 @@ b  <span class="token operator">=</span> int<span class="token punctuation">(</s
 <td align="left">Shift right, left shift</td>
 </tr>
 <tr>
-<td><code>&amp;</code>  `</td>
-<td align="left"><code></code>^`</td>
+<td><code>&amp;</code>  <code>^</code></td>
+<td align="left">bitwise and, bitwise XOR, bitwise or</td>
 </tr>
 <tr>
 <td><code>&lt;=</code> <code>&lt;</code> <code>&gt;</code> <code>&gt;=</code></td>
@@ -220,14 +220,67 @@ flag2 <span class="token operator">=</span> <span class="token number">2</span> 
 flag3 <span class="token operator">=</span> flag1 <span class="token operator">and</span> flag2
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag3 <span class="token keyword">is</span> <span class="token operator">not</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#False</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag2 <span class="token keyword">is</span> <span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>·</strong>  Short-circuit evaluation of logical expressions:<br>The evaluation stops when the overall value is already know. <code>y!=0</code> acts as a guard to insure that we only execute <code>(x/y)</code> if y is non-zero.</p>
+<pre class="line-numbers language-python"><code class="language-python">x <span class="token operator">>=</span> <span class="token number">2</span> <span class="token operator">and</span> y<span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">and</span> <span class="token punctuation">(</span>x<span class="token operator">/</span>y<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="Part-4-Language-structure"><a href="#Part-4-Language-structure" class="headerlink" title="Part. 4 Language structure"></a>Part. 4 Language structure</h4><p>We put these language elements together to form different statements so that we can solve a certain problem. The way we organize the statements can be divided into different types of structures in order to make our program more effective. Generally, there are three types: <i>sequential structure, conditional structure</i> and <i>iteration</i>.</p>
 <p>Python uses <strong>indentation</strong> to set the hierarchy of different compound statements instead of using<code>{}</code>.  If the continuous statements maintains the same indentation then they belong to the same code block, which is equivalent to one specific function.</p>
-<p><strong>Ⅰ. Conditional structure</strong></p>
-<p>Sometimes, we have to separate our solutions into different <strong>branches</strong> and change the actions of the program according to some conditions. In python, we use <code>if</code> statement(use the keywords <code>if</code>, <code>else</code>, <code>elif</code>) to realize it.</p>
+<p><strong>Ⅰ. Conditional structure</strong><br>Sometimes, we have to separate our solutions into different <strong>branches</strong> and change the actions of the program according to some conditions. In python, we use <code>if</code> statement(use the keywords <code>if</code>, <code>else</code>, <code>elif</code>) to implement it.</p>
 <p><strong>·</strong> Chained conditionals: (two branches or more)</p>
-<p>If more than one condition is true, only the first true branch executes.</p>
-<p><strong>·</strong> Nested conditionals:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># calculate the payment</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    fh <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the hour: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fr <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the rate: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
+        pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
+    <span class="token keyword">else</span> <span class="token punctuation">:</span>
+        pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pay: '</span><span class="token punctuation">,</span> pay<span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pease enter numeric input!'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>elif</code>: one of the conditions, <code>else</code>: catch the exceptions<br>(If more than one condition is true, only the first true branch executes.)</p>
+<p><strong>·</strong> Nested conditionals: </p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span> <span class="token punctuation">:</span> <span class="token keyword">if</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
+           pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
+       <span class="token keyword">else</span> <span class="token punctuation">:</span>
+           pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Usually, we use chained conditionals rather than nested conditionals or simplify it with operators. “Flat is better than nested”. Because the nested structure will have a serious impact on the readability of code.</p>
 <p><strong>Ⅱ. Iteration</strong></p>
+<p>Repetitive tasks are the main work for computers. Python provides the <code>while</code> statement and <code>for</code> statement  to  let  the computers do the tasks in a more efficient way.</p>
+<p><strong>·</strong>  <code>while</code> statement (indefinite loops):</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># output the max and min</span>
+smallest <span class="token operator">=</span> None
+largest <span class="token operator">=</span> None
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    num <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'Enter the num: '</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token string">'Done'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        num <span class="token operator">=</span> int<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Invalid input!'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> smallest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">&lt;</span>smallest<span class="token punctuation">:</span>
+        smallest <span class="token operator">=</span> num
+    <span class="token keyword">if</span> largest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">></span>largest<span class="token punctuation">:</span>
+        largest <span class="token operator">=</span> num
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The smallest:'</span><span class="token punctuation">,</span>smallest<span class="token punctuation">,</span><span class="token string">'The largest:'</span><span class="token punctuation">,</span>largest<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>break</code>:  If the condition is met, the program will jump out of the loop.</p>
+<p><code>continue</code>:  Skip to the next iteration without finishing the body of the loop for the current iteration.</p>
+<p><strong>·</strong>  <code>for</code> statement (definite loops)</p>
+<p>When we want to loop through a set of words, the lines in a file, a list of numbers and so on, we can construct a definite loop using a <code>for</code> statement. </p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Multiplication table</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>range(101)</code>A sequence of integers from 0 to 100 can be generated.<br><code>range(1, 100)</code>A sequence of integers from 1 to 99 can be generated.<br><code>range(1, 100, 2)</code>An odd sequence of 1 to 99 can be generated and 2 is the the increment of the sequence of values (step size).</p>
+<pre class="line-numbers language-python"><code class="language-python">friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'oreo'</span><span class="token punctuation">,</span> <span class="token string">'sermantha'</span><span class="token punctuation">,</span> <span class="token string">'Damon'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> friend <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Happy New Year!'</span><span class="token punctuation">,</span>friend<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="Part-Bug"><a href="#Part-Bug" class="headerlink" title="Part. Bug"></a>Part. Bug</h4><p>Program should be written precisely otherwise the deviations and mistakes in your code will cause the Python to stop and can’t work out the final result. There are three main types of errors that you may encounter during.</p>
 <p> <strong>·</strong> Syntax errors:  </p>
 <blockquote>
@@ -241,11 +294,58 @@ flag3 <span class="token operator">=</span> flag1 <span class="token operator">a
 <blockquote>
 <p> The program is perfectly correct but it does not do what you intended for it to do. </p>
 </blockquote>
-<h4 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h4><p><strong>Ex.1</strong>: Enter the year to determine if it is a leap year.</p>
+<h4 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h4><p><strong>Ex.1</strong>: Enter the year to determine if it is a <strong>leap year</strong>.</p>
 <pre class="line-numbers language-python"><code class="language-python">year <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">' Please enter the year: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 is_leap <span class="token operator">=</span> <span class="token punctuation">(</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">or</span> \
           year <span class="token operator">%</span> <span class="token number">400</span> <span class="token operator">==</span> <span class="token number">0</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>is_leap<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Ex.2</strong>: Enter two positive integers and calculate their greatest common divisor and least common multiple.</p>
+<pre class="line-numbers language-python"><code class="language-python">x <span class="token operator">=</span>  int <span class="token punctuation">(</span> input <span class="token punctuation">(</span> <span class="token string">' x = '</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span>  int <span class="token punctuation">(</span> input <span class="token punctuation">(</span> <span class="token string">' y = '</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token keyword">if</span> x <span class="token operator">></span> y<span class="token punctuation">:</span>
+     <span class="token comment" spellcheck="true"># swap the values of x and y</span>
+    x <span class="token punctuation">,</span> y <span class="token operator">=</span> y<span class="token punctuation">,</span> x
+<span class="token keyword">for</span> factor <span class="token keyword">in</span>  range <span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">if</span> x <span class="token operator">%</span> factor <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> y <span class="token operator">%</span> factor <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>
+         <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'The greatest common divisor of %d and %d  is %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> factor<span class="token punctuation">)</span><span class="token punctuation">)</span>
+         <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'The least common multiple of %d and %d is %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> x <span class="token operator">*</span> y <span class="token operator">//</span> factor<span class="token punctuation">)</span><span class="token punctuation">)</span>
+         <span class="token keyword">break</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Ex.3</strong>:  Look for the <strong>Narcissistic number</strong>.</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> num <span class="token keyword">in</span>  range <span class="token punctuation">(</span> <span class="token number">100</span> <span class="token punctuation">,</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    low <span class="token operator">=</span> num <span class="token operator">%</span>  <span class="token number">10</span> 
+    mid <span class="token operator">=</span> num <span class="token operator">//</span> <span class="token number">10</span> <span class="token operator">%</span> <span class="token number">10</span> 
+    high <span class="token operator">=</span> num <span class="token operator">//</span> <span class="token number">100</span> 
+    <span class="token keyword">if</span> num <span class="token operator">==</span> low <span class="token operator">**</span> <span class="token number">3</span>  <span class="token operator">+</span> mid <span class="token operator">**</span> <span class="token number">3</span>  <span class="token operator">+</span> high <span class="token operator">**</span> <span class="token number">3</span> <span class="token punctuation">:</span>
+         <span class="token keyword">print</span> <span class="token punctuation">(</span>num<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Ex.4</strong>:  Generate the first 20 numbers of the <strong>Fibonacci sequence</strong> </p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">0</span>
+b <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Ex.5</strong>:   Find the <strong>perfect number</strong> within 10,000  </p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> math
+
+<span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> factor <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> num <span class="token operator">%</span> factor <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            result <span class="token operator">+=</span> factor
+            <span class="token keyword">if</span> factor <span class="token operator">></span> <span class="token number">1</span> <span class="token operator">and</span> num <span class="token operator">//</span> factor <span class="token operator">!=</span> factor<span class="token punctuation">:</span>
+                result <span class="token operator">+=</span> num <span class="token operator">//</span> factor
+    <span class="token keyword">if</span> result <span class="token operator">==</span> num<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Ex.6</strong>:   Output <strong>all prime numbers</strong> within 100</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> math
+
+<span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    is_prime <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> factor <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> num <span class="token operator">%</span> factor <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            is_prime <span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">if</span> is_prime<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 
