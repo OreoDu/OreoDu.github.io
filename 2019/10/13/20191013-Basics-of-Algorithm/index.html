@@ -127,26 +127,35 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="Basics-of-Algorithm"><a href="#Basics-of-Algorithm" class="headerlink" title="Basics of Algorithm"></a>Basics of Algorithm</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
-<p><strong>· materials:</strong><br>  · <i>Algorithms</i>  by Dasgupta, C. H. Papadimitriou, U. V. Vazirani<br>  · <i>Algorithm Design</i> by John Kleinberg, Eva Tardos<br>  · Wikipedia</p>
-<h4 id="Part-1-What-is-Algorithm"><a href="#Part-1-What-is-Algorithm" class="headerlink" title="Part.1 What is Algorithm?"></a>Part.1 What is Algorithm?</h4><p>The program is designed to solve certain problems and it mainly contains algorithms and data structures.</p>
-<blockquote>
-<p>An algorithm is a sequence of instructions. (from <i>Algorithm</i> wikipedia)</p>
-</blockquote>
-<p>As usual, the algorithm use control structures (sequential, conditional, recurrent) and operators to make the instructions. A effective algorithms must have several characteristics as follows:<br><strong>1.Correctness</strong>: For each legal input, the algorithms must produce the expected output after a few precise and feasible instructions. (End within finite time.)<br><strong>2.Robustness</strong>: The algorithms must can apply in all possible circumstances that could arise and have the ability of tolerating perturbations and unexcepted exceptions.<br><strong>3.High efficiency and low storage requirement</strong></p>
-<h4 id="Part-2-How-to-design-a-proper-algorithm"><a href="#Part-2-How-to-design-a-proper-algorithm" class="headerlink" title="Part.2 How to design a proper algorithm?"></a>Part.2 How to design a proper algorithm?</h4><p>Typical steps in the development of algorithms:<br>1.Problem definition<br>2.Development of a model<br>3.Specification of the algorithm<br><strong>4</strong>.Designing an algorithm<br><strong>5</strong>.Checking the correctness of the algorithm<br><strong>6</strong>.Analysis of algorithm<br><strong>7</strong>.Implementation of algorithm<br>8.Program testing<br>9.Documentation preparation<br>(from <i>Algorithm</i> wikipedia)</p>
+                <h2 id="basics-of-algorithm">Basics of Algorithm</h2>
+<h3 id="overview">Overview</h3>
+<p>(概略图)</p>
+<p><strong>· materials:</strong> · <i>Algorithms</i> by Dasgupta, C. H. Papadimitriou, U. V. Vazirani · <i>Efficient Algorithms and Intractable Problems</i> (CS170 2018 Fall at UCB) · <i>Algorithm Design</i> by John Kleinberg, Eva Tardos · Wikipedia</p>
+<h4 id="part.1-what-is-algorithm">Part.1 What is Algorithm?</h4>
+<p>The program is designed to solve certain problems and it mainly contains algorithms and data structures. &gt; An algorithm is a sequence of instructions. (from <i>Algorithm</i> Wikipedia)</p>
+<p>As usual, the algorithm use control structures (sequential, conditional, recurrent) and operators to make the instructions. A effective algorithms must have several characteristics as follows: <strong>1.Correctness</strong>: For each legal input, the algorithms must produce the expected output after a few precise and feasible instructions. (End within finite time.) <strong>2.Robustness</strong>: The algorithms must can apply in all possible circumstances that could arise and have the ability of tolerating perturbations and unexcepted exceptions. <strong>3.High efficiency and low storage requirement</strong></p>
+<h4 id="part.2-how-to-design-a-proper-algorithm">Part.2 How to design a proper algorithm?</h4>
+<p>Typical steps in the development of algorithms: 1.Problem definition 2.Development of a model 3.Specification of the algorithm <strong>4</strong>.Designing an algorithm <strong>5</strong>.Checking the correctness of the algorithm <strong>6</strong>.Analysis of algorithm <strong>7</strong>.Implementation of algorithm 8.Program testing 9.Documentation preparation (from <i>Algorithm</i> Wikipedia)</p>
 <p>When we finished design the algorithm, we should keep asking ourselves three questions as follows in order to make it more efficient.</p>
 <blockquote>
-<p>1.Is it correct (produce the expected output) ?  (<strong>Check</strong>)<br>2.How much time and storage does it take?  (<strong>Analyze</strong>)<br>3.Can we do better (higher efficiency and lower storage) ?  (<strong>optimize</strong>)<br>(from <i>Algorithms</i>  by Dasgupta, C. H. Papadimitriou, U. V. Vazirani)</p>
+<p>1.Is it correct (produce the expected output) ? (<strong>Check</strong>) 2.How much time and storage does it take? (<strong>Analyze</strong>) 3.Can we do better (higher efficiency and lower storage) ? (<strong>optimize</strong>) (from <i>Algorithms</i> by Dasgupta, C. H. Papadimitriou, U. V. Vazirani)</p>
 </blockquote>
-<h4 id="Part-3-Classification"><a href="#Part-3-Classification" class="headerlink" title="Part.3 Classification"></a>Part.3 Classification</h4><p> There are various ways to classify algorithms.</p>
-<p><strong>By design paradigm</strong>:<br>· Brute-force or exhaustive search (try every possible solution)<br>· Search and enumeration<br>· Back tracking<br>· Divide and conquer (repeatedly reduces an instance of a problem to one or more smaller instances  until the instances are small enough to solve easily)<br>· Randomized algorithm (make some choices randomly (or pseudo-randomly))<br>· Reduction of complexity (transform the difficult problem into a better-known problem that we have asymptotically optimal algorithms.)</p>
-<p><strong>By implementation</strong>:<br>· Recursion ( invokes itself repeatedly)<br>· Logical (logic + control)<br>· Serial (execute one algorithm at a time), parallel or distributed (several processors work on a problem at the same time)<br>· Deterministic (exact decision at every step of the algorithm) or non-deterministic (guess through the use of heuristics)<br>· Exact (reach an exact solution) or approximate (closer to the true solution)<br>· Quantum algorithm</p>
-<p><strong>Optimization problems</strong><br>· Linear programming (the constraints of the problem can be used directly in producing the optimal solutions.)<br>· Dynamic programming (the optimal solution to a problem can be constructed from optimal solutions to subproblems and overlapping subproblems)<br>· The greedy method (start with some given or modified solutions)<br>· The heuristic method (find a solution close to the optimal solution)</p>
-<h4 id="Part-4-How-to-analyze-an-algorithm"><a href="#Part-4-How-to-analyze-an-algorithm" class="headerlink" title="Part.4 How to analyze an algorithm?"></a>Part.4 How to analyze an algorithm?</h4><blockquote>
-<p>It is frequently important to know how much of a particular resource (such as <strong>time or storage</strong>) is theoretically required for a given algorithm.  (from <i>Algorithm</i> wikipedia)</p>
+<h4 id="part.3-classification">Part.3 Classification</h4>
+<p>There are various ways to classify algorithms.</p>
+<p><strong>By design paradigm</strong>: · Brute-force or exhaustive search (try every possible solution) · Search and enumeration · Back tracking · Divide and conquer (repeatedly reduces an instance of a problem to one or more smaller instances until the instances are small enough to solve easily) · Randomized algorithm (make some choices randomly (or pseudo-randomly)) · Reduction of complexity (transform the difficult problem into a better-known problem that we have asymptotically optimal algorithms.)</p>
+<p><strong>By implementation</strong>: · Recursion ( invokes itself repeatedly) · Logical (logic + control) · Serial (execute one algorithm at a time), parallel or distributed (several processors work on a problem at the same time) · Deterministic (exact decision at every step of the algorithm) or non-deterministic (guess through the use of heuristics) · Exact (reach an exact solution) or approximate (closer to the true solution) · Quantum algorithm</p>
+<p><strong>Optimization problems</strong> · Linear programming (the constraints of the problem can be used directly in producing the optimal solutions.) · Dynamic programming (the optimal solution to a problem can be constructed from optimal solutions to subproblems and overlapping subproblems) · The greedy method (start with some given or modified solutions) · The heuristic method (find a solution close to the optimal solution)</p>
+<h4 id="part.4-how-to-analyze-an-algorithm">Part.4 How to analyze an algorithm?</h4>
+<blockquote>
+<p>It is frequently important to know how much of a particular resource (such as <strong>time or storage</strong>) is theoretically required for a given algorithm. (from <i>Algorithm</i> Wikipedia)</p>
 </blockquote>
-<h4 id="Part-5-Algorithms-with-Numbers"><a href="#Part-5-Algorithms-with-Numbers" class="headerlink" title="Part.5 Algorithms with Numbers"></a>Part.5 Algorithms with Numbers</h4><h4 id="Part-6-Representative-Probelms"><a href="#Part-6-Representative-Probelms" class="headerlink" title="Part. 6 Representative Probelms"></a>Part. 6 Representative Probelms</h4>
+<p>asymptotic notation O()</p>
+<p>ignore the constant factors</p>
+<p>ignore the smaller order terms</p>
+<p>Upper bound: $ 1^2 $</p>
+<h4 id="part.5-algorithms-with-numbers">Part.5 Algorithms with Numbers</h4>
+<h4 id="part.-6-representative-problems">Part. 6 Representative Problems</h4>
+
             </div>
 
             <!-- Post Comments -->
