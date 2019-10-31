@@ -146,16 +146,18 @@
 <p><strong>Ⅰ. Time complexity</strong></p>
 <p>In theory, we quantify the time through counting the number of elementary operations performed by the algorithm and multiply it by the time spent on each operation, where an elementary operation takes a fixed amount of time. Thus the amount of time taken by the same algorithm differ by a constant factor which is depended on the performance of different computers.</p>
 <p>In most cases, in order to analyze the algorithms in a more efficient way we should simplify the way we estimate the time complexity. We can ignore the constant time spent on each elementary operation and express the running time by counting the number of the operations, as a function of the size of the input. Further, as the input size goes to infinity, we can describe it asymptotically. So it is commonly expressed using the <strong>asymptotic notation</strong>, which lets us only focus on the big pictures. Asymptotic notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same notation. </p>
+<p>Since an algorithm’s performance time may vary with different inputs of  the same size, we commonly use the worst-case time complexity, denoted as $T(n)$, which is defined as the maximum amount of time taken on any input of size n. </p>
 <p><strong>Asymptotic notation</strong>:</p>
 <p>Let <i>f(n)</i> and <i>g(n)</i> be functions from positive integers to positive reals and think of them as the running time of two algorithms on inputs of size n. </p>
 <p>1.$ f = O(g)$, if there is a constant $c&gt;0$ and $n_0$, such that $|f(n)| \leq c · g(n)$ for all $n&gt;n_0$<br>Big O notation provides an upper bound on the growth rate of the function.  <i>f</i> grows no faster than <i>g</i>.<br>If the function <i>f</i> can be written as a finite sum of other functions, then the fastest growing one determines the order of $f(n)$. Here are some rules that can simplify <i>f</i> to <i>O(g)</i> by omitting coefficients and lower order terms.</p>
 <p>· Multiplicative constants can be omitted.<br>· log a dominates log b, $n^a$ dominates $n^b$ and $a^n$ dominates $b^n$ if $a&gt;b$<br>· Any exponential dominates any polynomial<br>· Any polynomial dominates any logarithm</p>
 <p>· $f_1= O(g_1)$ and $f_2 = O(g_2)$, $f_1· f_2 = O(g_1· g_2))$<br>· $f_1 = O(g_1)$ and $f_2 = O(g_2)$, $f_1 + f_2 = O(max(g_1, g_2))$</p>
-<p>· Orders of common functions:<br>$O(1)$, $O(\log(\log(n)))$, $O(\log(n))$, $O((\log(n))^c) c&gt;1$, $O(n^c) 0&lt;c&lt;1$, $O(n)$, $O(n\log (n)) = O(log n!)$, $O(n^2)$, $O(n^c)$, $O(c^n) c&gt;1$, $O(n!)$</p>
-<p>2.$g = Ω(f)$ (“<i>f</i> grows no faster than <i>g</i>“) if there is a constant $c &gt; 0$, such that $g(n) \geq c · f(n)$</p>
-<p>3.$f = Θ(g)$(“<i>g</i> grows the same as <i>f</i>“) if there is a constant $c &gt; 0$, such that $g(n) = c · f(n)$</p>
+<p>· Orders of common functions:<br>$O(1)$, $O(\log(\log(n)))$, $O(\log(n))$, $O((\log(n))^c) c&gt;1$,<br>$O(n^c) 0&lt;c&lt;1$, $O(n)$, $O(n\log (n)) = O(\log(n!))$,<br>$O(n^2)$, $O(n^c)$, $O(c^n) c&gt;1$, $O(n!)$</p>
+<p>2.$g = Ω(f)$ ( <i>f</i> grows no faster than <i>g</i> ) if there is a constant $c &gt; 0$, such that $g(n) \geq c · f(n)$</p>
+<p>3.$f = Θ(g)$( <i>g</i> grows the same as <i>f</i> ) if there is a constant $c &gt; 0$, such that $g(n) = c · f(n)$</p>
 <p><strong>Ⅱ. Space complexity</strong></p>
-<h4 id="Part-5-Algorithms-with-Numbers"><a href="#Part-5-Algorithms-with-Numbers" class="headerlink" title="Part.5 Algorithms with Numbers"></a>Part.5 Algorithms with Numbers</h4><h4 id="Part-6-Representative-Problems"><a href="#Part-6-Representative-Problems" class="headerlink" title="Part. 6 Representative Problems"></a>Part. 6 Representative Problems</h4>
+<p>The space complexity of an algorithm is the amount of the memory required by an algorithm to execute a program and produce output as a function of the size of the input. Similar to time complexity, Space complexity is often expressed asymptotically. such as $O(1)$,$O(n)$, $O(n\log(n))$, $O(n^(\alpha))$, $O(2^(n))$, etc., where n is the input size in units of bits needed to represent the input.</p>
+<h4 id="Part-5-Numeric-Algorithms"><a href="#Part-5-Numeric-Algorithms" class="headerlink" title="Part.5 Numeric Algorithms"></a>Part.5 Numeric Algorithms</h4>
             </div>
 
             <!-- Post Comments -->
