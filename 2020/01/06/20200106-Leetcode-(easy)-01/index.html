@@ -122,11 +122,36 @@
 
         <div id="main">
             <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q36cj7bgu.bkt.clouddn.com/static/images/peach.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode (easy) 01</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Leetcode_01</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="Leetcode-easy-01"><a href="#Leetcode-easy-01" class="headerlink" title="Leetcode (easy) 01"></a>Leetcode (easy) 01</h2>
+                <h2 id="Leetcode-01"><a href="#Leetcode-01" class="headerlink" title="Leetcode_01"></a>Leetcode_01</h2><p><strong>2020-01-07:</strong></p>
+<p><strong>1.Two Sum</strong></p>
+<p>Keyword ：<strong>Search, Hash, Map</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    h <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span>num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> target <span class="token operator">-</span> num <span class="token keyword">in</span> h<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span>h<span class="token punctuation">[</span>target <span class="token operator">-</span> num<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span>
+        h<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i
+
+<span class="token comment" spellcheck="true">#T(n) = O(n)</span></code></pre>
+<p><strong>2020-01-09:</strong></p>
+<p><strong>167.Two Sum Ⅱ</strong> - Input array is sorted</p>
+<p>Keyword: <strong>Double pointer</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lens <span class="token operator">=</span> len<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    j <span class="token operator">=</span> lens<span class="token number">-1</span>
+    <span class="token keyword">while</span> i<span class="token operator">&lt;</span>j<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>numbers<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">:</span>
+            j<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">elif</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>numbers<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">:</span>
+            i<span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span></code></pre>
+
             </div>
 
             <!-- Post Comments -->
