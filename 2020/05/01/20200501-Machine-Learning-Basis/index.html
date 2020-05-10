@@ -145,7 +145,7 @@
 <h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 x + \theta_0 $</p>
 <h4 id="·-Cost-Function"><a href="#·-Cost-Function" class="headerlink" title="· Cost Function"></a>· Cost Function</h4><p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. </p>
 <p><strong>Squared error function</strong></p>
-<p>$$ J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left ( \hat{y}</em>{i}- y_{i} \right)^2= \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left (h_\theta (x</em>{i}) - y_{i} \right)^2 $$</p>
+<p>$  J(\theta_0, \theta_1) =  \frac{1}{2m} \sum^{m}_ {i=1} {( h_ \theta(x_i) - y_i )^2} $</p>
 <p>$ J(\theta_0, \theta_1) $ can be ploted by a contour figure.</p>
 <p><strong>Gradient descent</strong> (minizining the cost function J)</p>
 <p>$ \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0, \theta_1) $ </p>
@@ -177,7 +177,7 @@
 <p><strong>Normal Equation</strong></p>
 <p>Normal Equation a second way of minimizing J.</p>
 <p> In the “Normal Equation” method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. </p>
-<p>$ \theta =( X_T  X)^{-1}X_T  $</p>
+<p>$ \theta =( X_T  X)^{-1}X_TY  $</p>
 <table>
 <thead>
 <tr>
