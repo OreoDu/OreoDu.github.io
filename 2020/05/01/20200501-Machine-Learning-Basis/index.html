@@ -142,11 +142,11 @@
 <p>Hypothesis function: h</p>
 <p>Cost function : J</p>
 <p>Objective function: minimize (J)</p>
-<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 \times x + \theta_0 $</p>
+<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 x + \theta_0 $</p>
 <h4 id="·-Cost-Function"><a href="#·-Cost-Function" class="headerlink" title="· Cost Function"></a>· Cost Function</h4><p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. </p>
 <p><strong>Squared error function</strong></p>
-<p>$ J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left ( \hat{y}</em>{i}- y_{i} \right)^2= \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left (h_\theta (x</em>{i}) - y_{i} \right)^2 $</p>
-<p>$ J(\theta_0, \theta_1) &amp; can be ploted by a contour figure.</p>
+<p>$$ J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left ( \hat{y}</em>{i}- y_{i} \right)^2= \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left (h_\theta (x</em>{i}) - y_{i} \right)^2 $$</p>
+<p>$ J(\theta_0, \theta_1) $ can be ploted by a contour figure.</p>
 <p><strong>Gradient descent</strong> (minizining the cost function J)</p>
 <p>$ \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0, \theta_1) $ </p>
 <p>(Update $\theta_j$ simultaneously)</p>
@@ -168,7 +168,7 @@
 <p><strong>Debugging gradient descent.</strong> </p>
 <p>Make a plot with <em>number of iterations</em> and cost function J(θ).  It has been proven that if learning rate α is sufficiently small, then J(θ) will decrease on every iteration. </p>
 <p>If <em>α</em> is too small: slow convergence.</p>
-<p>If <em>α</em> is too large: ￼may not decrease on every iteration and thus may not converge.</p>
+<p>If <em>α</em> is too large: may not decrease on every iteration and thus may not converge.</p>
 <p>(Try like this: … 0.001 … 0.01 … 0.1 … 1)</p>
 <h3 id="Polynomial-Regression"><a href="#Polynomial-Regression" class="headerlink" title="Polynomial Regression"></a>Polynomial Regression</h3><p>We can <strong>change the behavior or curve</strong> of our hypothesis function by making it a quadratic, cubic or square root function (or any other form).</p>
 <p>e.g.  $ h_\theta (x) = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $</p>
@@ -177,7 +177,7 @@
 <p><strong>Normal Equation</strong></p>
 <p>Normal Equation a second way of minimizing J.</p>
 <p> In the “Normal Equation” method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. </p>
-<p>$ \theta =( X_T X)^-1X_T y$</p>
+<p>$ \theta =( X_T  X)^{-1}X_T  $</p>
 <table>
 <thead>
 <tr>
