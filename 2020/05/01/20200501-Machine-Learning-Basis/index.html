@@ -171,7 +171,7 @@
 <p>If <em>α</em> is too large: may not decrease on every iteration and thus may not converge.</p>
 <p>(Try like this: … 0.001 … 0.01 … 0.1 … 1)</p>
 <p><strong>Normal Equation</strong></p>
-<p>Normal Equation a second way of minimizing J.</p>
+<p>Normal Equation is a second way of minimizing J.</p>
 <p> In the “Normal Equation” method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. </p>
 <p>$ \theta =( X_T  X)^{-1}X_TY  $</p>
 <table>
@@ -204,33 +204,32 @@
 <p>e.g.  $ h_\theta (x) = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $</p>
 <p>( if you choose your features this way then feature scaling becomes very important. $ 10^3 = 1000 $)</p>
 <p>Feature choosing: We can <strong>combine</strong> multiple features into one. </p>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><h3 id="Logistic-regression"><a href="#Logistic-regression" class="headerlink" title="Logistic regression"></a>Logistic regression</h3><h4 id="Binary-classification"><a href="#Binary-classification" class="headerlink" title="Binary classification"></a>Binary classification</h4><p><strong>· Sigmoid Function</strong> (maps any real number to the (0, 1) interval)</p>
+<h2 id="Classification-Logistic-regression"><a href="#Classification-Logistic-regression" class="headerlink" title="Classification(Logistic regression)"></a>Classification(Logistic regression)</h2><h3 id="Binary-classification"><a href="#Binary-classification" class="headerlink" title="Binary classification"></a>Binary classification</h3><p><strong>· Sigmoid Function</strong> (maps any real number to the (0, 1) interval)</p>
 <p>$ h_\theta (x) = g(\theta^T x) = \dfrac{1}{1 + e^{- \theta^T x}} $</p>
 <p>$ h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) $</p>
 <p><strong>Decision Boundary</strong> (The property of the Hypothesis function)</p>
 <p>$ h_\theta(x) = g(\theta^T x) \geq 0.5     when ; \theta^T x \geq 0     \Rightarrow y = 1$</p>
 <p>Non-linear decision boundary : $ \theta^T x = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $ </p>
-<p>*<em>· Cost function *</em></p>
+<p><strong>· Cost function</strong></p>
 <p>We cannot use the same cost function that we use for linear regression because the Logistic Function will not be a convex function, causing many local optima.</p>
 <p>$ J(\theta) = \dfrac{1}{m} \sum_ {i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) $</p>
-<p>$ Cost (h_ \theta(x^{(i)}),y^{(i)}) = -y^{(i)} \log(h_ \theta(x^{(i)}))  - (1- ,y^{(i)}) \log(1-h_ \theta(x^{(i)}))  $</p>
-<p>$ \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y $</p>
-<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ if } y=0 ; \mathrm{and} ; h_\theta(x) \rightarrow 1 $</p>
-<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ if } y=1 ; \mathrm{and} ; h_\theta(x) \rightarrow 0 $</p>
+<p>$ Cost (h_ \theta(x^{(i)}),y^{(i)}) = -y^{(i)} \log(h_ \theta(x^{(i)}))  - (1- y^{(i)}) \log(1-h_ \theta(x^{(i)}))  $</p>
+<p>$ \mathrm{Cost}(h_\theta(x),y) = 0 \text{ ,if } h_\theta(x) = y $</p>
+<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ ,if } y=0 \mathrm{and}  h_\theta(x) \rightarrow 1 $</p>
+<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ ,if } y=1  \mathrm{and}  h_\theta(x) \rightarrow 0 $</p>
 <p><strong>· Gradient descent</strong></p>
 <p>$ \theta_j := \theta_j - \frac{\alpha}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} $</p>
 <p>  <strong>Advanced Optimization</strong> </p>
 <p> “Conjugate gradient”, “BFGS”, and “L-BFGS” are more sophisticated, faster ways to optimize θ and also no need to manually pick $ \alpha $ which can be used instead of gradient descent. </p>
-<h4 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h4><p><strong>One-vs-all</strong></p>
+<h3 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h3><p><strong>One-vs-all</strong></p>
 <p>$ h_\theta^{(i)}(x) = P(y = i | x ; \theta)   y \in \lbrace0, 1 … n\rbrace$</p>
 <p>$ \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) ) $</p>
-<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h2><h3 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h3><p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
+<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
 <p><strong>Overfitting</strong>, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.</p>
 <p>Options address the issue of overfitting:</p>
 <p>1) Reduce the number of features. (Manually or use model selection algorithm)</p>
 <p>2) Regularization. (Keep all the features, but reduce the magnitude of parameters $ \theta_j$.)</p>
-<p><strong>For linear regression:</strong></p>
-<p><strong>Cost function:</strong></p>
+<h3 id="For-linear-regression"><a href="#For-linear-regression" class="headerlink" title="For linear regression:"></a>For linear regression:</h3><p><strong>Cost function:</strong></p>
 <p> $  J(\theta) =  \frac{1}{2m} [ \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} +  \lambda \sum^{n}_ {j=1} \theta_j^2 ] $</p>
 <p>$ \lambda $ is the regularization parameter. It determines how much the costs of our theta parameters are inflated. (we don’t penalize the $\theta_0 $)</p>
 <p>Using the above cost function with the extra summation, we can smooth the output of our hypothesis function to reduce overfitting. If lambda is chosen to be too large, it may smooth out the function too much and cause underfitting.</p>
@@ -240,7 +239,12 @@
 <p><strong>Normal Equation:</strong></p>
 <p>$\theta = \left( X^TX + \lambda \cdot L \right)^{-1} X^Ty $</p>
 <p>$ \text{where}\ \ L = \begin{bmatrix} 0 &amp; &amp; &amp; &amp; \newline &amp; 1 &amp; &amp; &amp; \newline &amp; &amp; 1 &amp; &amp; \newline &amp; &amp; &amp; \ddots &amp; \newline &amp; &amp; &amp; &amp; 1 \newline\end{bmatrix} $</p>
-<p>If m &lt; n (features), then X^TX is non-invertible. However, when we add the term λ⋅L, then X^TX + λ⋅L becomes invertible.</p>
+<p>If m &lt; n (features), then $ X^TX $ is non-invertible. However, when we add the term λ⋅L, then $X^TX + λ⋅L $ becomes invertible.</p>
+<h3 id="For-logistic-regression"><a href="#For-logistic-regression" class="headerlink" title="For logistic regression:"></a>For logistic regression:</h3><p><strong>Cost function:</strong></p>
+<p>$ J(\theta) = - \dfrac{1}{m} \sum_ {i=1}^m[y^{(i)} \log(h_ \theta(x^{(i)})) + (1- y^{(i)}) \log(1-h_ \theta(x^{(i)})) ] + \frac{1}{2m} \lambda \sum^{n}_ {j=1} \theta_j^2  $</p>
+<p><strong>Gradient descent:</strong> </p>
+<p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
+<p>$ \theta_j := \theta_j (1-\alpha \frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_ {i=1}^m ( h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $</p>
 
             </div>
 
