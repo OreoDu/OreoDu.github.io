@@ -130,7 +130,7 @@
 <p><strong>· materials:</strong></p>
 <p>  · Wikipedia</p>
 <p>  · Machine Learning </p>
-<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Tom Mitchell provides a more modern definition: “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
+<h2 id="1-Intro"><a href="#1-Intro" class="headerlink" title="1. Intro"></a>1. Intro</h2><p>Tom Mitchell provides a more modern definition: “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
 <h4 id="·-Supervised-Learning"><a href="#·-Supervised-Learning" class="headerlink" title="· Supervised Learning"></a>· Supervised Learning</h4><p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
 <p>Supervised learning problems are categorized into <strong>“regression”</strong> and **”classification” ** problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
 <h4 id="·-Unsupervised-Learning"><a href="#·-Unsupervised-Learning" class="headerlink" title="· Unsupervised Learning"></a>· Unsupervised Learning</h4><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
@@ -142,7 +142,7 @@
 <p>Hypothesis function: h</p>
 <p>Cost function : J</p>
 <p>Objective function: minimize (J)</p>
-<h2 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h2><h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 x + \theta_0 $</p>
+<h2 id="2-Regression"><a href="#2-Regression" class="headerlink" title="2. Regression"></a>2. Regression</h2><h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 x + \theta_0 $</p>
 <h4 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h4><p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. </p>
 <p><strong>Squared error function</strong></p>
 <p>$  J(\theta_0, \theta_1) =  \frac{1}{2m} \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} $</p>
@@ -204,7 +204,7 @@
 <p>e.g.  $ h_\theta (x) = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $</p>
 <p>( if you choose your features this way then feature scaling becomes very important. $ 10^3 = 1000 $)</p>
 <p>Feature choosing: We can <strong>combine</strong> multiple features into one. </p>
-<h2 id="Classification-Logistic-regression"><a href="#Classification-Logistic-regression" class="headerlink" title="Classification(Logistic regression)"></a>Classification(Logistic regression)</h2><h3 id="Binary-classification"><a href="#Binary-classification" class="headerlink" title="Binary classification"></a>Binary classification</h3><p><strong>· Sigmoid Function</strong> (maps any real number to the (0, 1) interval)</p>
+<h2 id="3-Classification-Logistic-regression"><a href="#3-Classification-Logistic-regression" class="headerlink" title="3. Classification(Logistic regression)"></a>3. Classification(Logistic regression)</h2><h3 id="Binary-classification"><a href="#Binary-classification" class="headerlink" title="Binary classification"></a>Binary classification</h3><p><strong>· Sigmoid Function</strong> (maps any real number to the (0, 1) interval)</p>
 <p>$ h_\theta (x) = g(\theta^T x) = \dfrac{1}{1 + e^{- \theta^T x}} $</p>
 <p>$ h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) $</p>
 <p><strong>Decision Boundary</strong> (The property of the Hypothesis function)</p>
@@ -224,7 +224,7 @@
 <h3 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h3><p><strong>One-vs-all</strong></p>
 <p>$ h_\theta^{(i)}(x) = P(y = i | x ; \theta)   y \in \lbrace0, 1 … n\rbrace$</p>
 <p>$ \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) ) $</p>
-<h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
+<h2 id="4-Overfitting"><a href="#4-Overfitting" class="headerlink" title="4. Overfitting"></a>4. Overfitting</h2><p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
 <p><strong>Overfitting</strong>, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.</p>
 <p>Options address the issue of overfitting:</p>
 <p>1) Reduce the number of features. (Manually or use model selection algorithm)</p>
