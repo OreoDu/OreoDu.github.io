@@ -139,27 +139,18 @@
 <h3 id="Backpropagation-Algorithm"><a href="#Backpropagation-Algorithm" class="headerlink" title="Backpropagation Algorithm"></a>Backpropagation Algorithm</h3><p>· Given training set $ { (x^{(1)}, y^{(1)}) … (x^{(m)}, y^{(m)})} $</p>
 <p>· Set $ \Delta^{(l)}_{i,j} := 0 for all (l,i,j) $</p>
 <p>· For training example t =1 to m:</p>
-<ol>
-<li><p>$ a^{(1)} = x $</p>
-</li>
-<li><p>Perform forward propagation to compute a^{(l)} for l=2,3,…,L</p>
-</li>
-</ol>
-<p>​       $ z^{(l)} = \Theta^{(l-1)} a^{(l-1)} $</p>
-<p>​       $ a^{(l)} = g(z^{(l)}) $</p>
-<ol start="3">
-<li><p>Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)} $</p>
-</li>
-<li><p>Compute $ \delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)} $ using \delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* g^{′}(z^{(l)}) ) $ ( $g^{′}(z^{(l)})=a^{(l)} .* (1−a^{(l)})$ )</p>
-</li>
-<li><p>$\Delta^{(l)}_ {i,j} := \Delta^{(l)}_ {i,j} + a^{(l)}_ j \delta^{(l+1)}_ j $ or with vectorization, $\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T $</p>
-<p>Hence we update our new $\Delta$ matrix. ($\frac{∂J(/Theta)}{∂\Theta^{(l)}_ {i,j}} = D^{(l)}_ {i,j}$)</p>
-<p>$ D^{(l)}_ {i,j} = - \frac{1}{m} \Delta^{(l)}_ {i,j} $, if j = 0</p>
-<p>$ D^{(l)}_ {i,j} = - \frac{1}{m}(\Delta^{(l)}_ {i,j} + \lambda \Theta^{(l)}_ {i,j}) $, if j≠0</p>
-</li>
-</ol>
+<p>   1.$ a^{(1)} = x $</p>
+<p>   2.Perform forward propagation to compute a^{(l)} for l=2,3,…,L</p>
+<p>​           $$ z^{(l)} = \Theta^{(l-1)} a^{(l-1)} $$</p>
+<p>​           $$ a^{(l)} = g(z^{(l)}) $$</p>
+<p>​    3.Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)} $</p>
+<p>​    4.Compute $ \delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)} $ using $\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* g^{′}(z^{(l)}) ) $ ( $g^{′}(z^{(l)})=a^{(l)} .* (1−a^{(l)})$ )</p>
+<p>​    5.$\Delta^{(l)}_ {i,j} := \Delta^{(l)}_ {i,j} + a^{(l)}_ j \delta^{(l+1)}_ j $ or with vectorization, $\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T $</p>
+<p>​      Hence we update our new $\Delta$ matrix. ($\frac{∂J(\Theta)}{∂\Theta^{(l)}_ {i,j}} = D^{(l)}_ {i,j}$)</p>
+<p>$$ D^{(l)}_ {i,j} = - \frac{1}{m} \Delta^{(l)}_ {i,j}, if j = 0 $$</p>
+<p>$$ D^{(l)}_ {i,j} = - \frac{1}{m}(\Delta^{(l)}_ {i,j} + \lambda \Theta^{(l)}_ {i,j}), if j≠0 $$</p>
 <h3 id="Gradient-Checking"><a href="#Gradient-Checking" class="headerlink" title="Gradient Checking"></a>Gradient Checking</h3><p>Gradient checking will assure that our backpropagation works as intended. We can approximate the derivative of our cost function with: ($ ϵ =10^{−4} $)</p>
-<p>$ \frac{∂J(/Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
+<p>$ \frac{∂J(\Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
 <h3 id="Main-Steps"><a href="#Main-Steps" class="headerlink" title="Main Steps"></a>Main Steps</h3><p>First, pick a network architecture.</p>
 <p>​    · Number of input units = dimension of features $x^{(i)}$</p>
 <p>​    · Number of output units = number of classes</p>
