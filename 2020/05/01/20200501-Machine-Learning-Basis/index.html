@@ -224,27 +224,38 @@
 <h3 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h3><p><strong>One-vs-all</strong></p>
 <p>$ h_\theta^{(i)}(x) = P(y = i | x ; \theta)   y \in \lbrace0, 1 … n\rbrace$</p>
 <p>$ \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) ) $</p>
-<h2 id="4-Overfitting"><a href="#4-Overfitting" class="headerlink" title="4. Overfitting"></a>4. Overfitting</h2><p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
-<p><strong>Overfitting</strong>, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.</p>
-<p>Options address the issue of overfitting:</p>
-<p>1) Reduce the number of features. (Manually or use model selection algorithm)</p>
-<p>2) Regularization. (Keep all the features, but reduce the magnitude of parameters $ \theta_j$.)</p>
-<h3 id="For-linear-regression"><a href="#For-linear-regression" class="headerlink" title="For linear regression:"></a>For linear regression:</h3><p><strong>Cost function:</strong></p>
-<p> $  J(\theta) =  \frac{1}{2m} [ \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} +  \lambda \sum^{n}_ {j=1} \theta_j^2 ] $</p>
-<p>$ \lambda $ is the regularization parameter. It determines how much the costs of our theta parameters are inflated. (we don’t penalize the $\theta_0 $)</p>
-<p>Using the above cost function with the extra summation, we can smooth the output of our hypothesis function to reduce overfitting. If lambda is chosen to be too large, it may smooth out the function too much and cause underfitting.</p>
-<p><strong>Gradient descent:</strong> </p>
-<p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
-<p>$ \theta_j := \theta_j (1-\alpha \frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_ {i=1}^m ( h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $</p>
-<p><strong>Normal Equation:</strong></p>
-<p>$\theta = \left( X^TX + \lambda \cdot L \right)^{-1} X^Ty $</p>
-<p>$ \text{where}\ \ L = \begin{bmatrix} 0 &amp; &amp; &amp; &amp; \newline &amp; 1 &amp; &amp; &amp; \newline &amp; &amp; 1 &amp; &amp; \newline &amp; &amp; &amp; \ddots &amp; \newline &amp; &amp; &amp; &amp; 1 \newline\end{bmatrix} $</p>
-<p>If m &lt; n (features), then $ X^TX $ is non-invertible. However, when we add the term λ⋅L, then $X^TX + λ⋅L $ becomes invertible.</p>
-<h3 id="For-logistic-regression"><a href="#For-logistic-regression" class="headerlink" title="For logistic regression:"></a>For logistic regression:</h3><p><strong>Cost function:</strong></p>
-<p>$ J(\theta) = - \dfrac{1}{m} \sum_ {i=1}^m[y^{(i)} \log(h_ \theta(x^{(i)})) + (1- y^{(i)}) \log(1-h_ \theta(x^{(i)})) ] + \frac{1}{2m} \lambda \sum^{n}_ {j=1} \theta_j^2  $</p>
-<p><strong>Gradient descent:</strong> </p>
-<p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
-<p>$ \theta_j := \theta_j (1-\alpha \frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_ {i=1}^m ( h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $</p>
+<h2 id="4-Neural-Network-or-MLP"><a href="#4-Neural-Network-or-MLP" class="headerlink" title="4. Neural Network or MLP"></a>4. Neural Network or MLP</h2><h3 id="Cost-Function-regularized"><a href="#Cost-Function-regularized" class="headerlink" title="Cost Function (regularized)"></a>Cost Function (regularized)</h3><p><strong>·</strong> L = total number of layers in the network</p>
+<p><strong>·</strong> $ s_l $ = number of units (not counting bias unit) in layer l</p>
+<p><strong>·</strong> K = number of output units/classes</p>
+<p>$ J(\Theta) = - \frac{1}{m} \sum_ {i=1}^m \sum_ {k=1}^K \left[y^{(i)}_ k \log ((h_ \Theta (x^{(i)}))_ k) + (1 - y^{(i)}_ k)\log (1 - (h_ \Theta(x^{(i)}))_ k)\right] + \frac{\lambda}{2m}\sum_ {l=1}^{L-1} \sum_ {i=1}^{s_l} \sum_ {j=1}^{s_ {l+1}} ( \Theta_{j,i}^{(l)})^2 $</p>
+<h3 id="Backpropagation-Algorithm"><a href="#Backpropagation-Algorithm" class="headerlink" title="Backpropagation Algorithm"></a>Backpropagation Algorithm</h3><p><strong>·</strong> Given training set $ { (x^{(1)}, y^{(1)}) … (x^{(m)}, y^{(m)})} $</p>
+<p><strong>·</strong> Set $ \Delta^{(l)}_{i,j} := 0$ for all (l,i,j)</p>
+<p><strong>·</strong> For training example t =1 to m:</p>
+<p>​     <strong>1)</strong> $ a^{(1)} = x $</p>
+<p>​     <strong>2)</strong> Perform forward propagation to compute $a^{(l)}$ for l=2,3,…,L</p>
+<p>​           $ z^{(l)} = \Theta^{(l-1)} a^{(l-1)} $</p>
+<p>​           $ a^{(l)} = g(z^{(l)}) $</p>
+<p>​     <strong>3)</strong> Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)} $</p>
+<p>​     <strong>4)</strong> Compute $ \delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)} $ </p>
+<p>using $\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})  .* g^{′}(z^{(l)}) ),  ( g^{′}(z^{(l)})=a^{(l)} .* (1−a^{(l)}) ) $</p>
+<p>​     <strong>5)</strong> $\Delta^{(l)}_ {i,j} := \Delta^{(l)}_ {i,j} + a^{(l)}_ j \delta^{(l+1)}_ j $ or with vectorization, $\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T $</p>
+<p>​     Hence we update our new $\Delta$ matrix. ($\frac{∂J(\Theta)}{∂\Theta^{(l)}_ {i,j}} = D^{(l)}_ {i,j}$)</p>
+<p>​     $ D^{(l)}_ {i,j} = - \frac{1}{m} \Delta^{(l)}_ {i,j}, $ if j = 0</p>
+<p>​     $D^{(l)}_ {i,j} = - \frac{1}{m}(\Delta^{(l)}_ {i,j} + \lambda \Theta^{(l)}_ {i,j}),$ if j≠0</p>
+<h3 id="Gradient-Checking"><a href="#Gradient-Checking" class="headerlink" title="Gradient Checking"></a>Gradient Checking</h3><p>Gradient checking will assure that our backpropagation works as intended. </p>
+<p>We can approximate the derivative of our cost function with: ($ ϵ =10^{−4} $)</p>
+<p>$ \frac{∂J(\Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
+<h3 id="Main-Steps"><a href="#Main-Steps" class="headerlink" title="Main Steps"></a>Main Steps</h3><p>First, pick a network architecture.</p>
+<p>​    · Number of input units = dimension of features $x^{(i)}$</p>
+<p>​    · Number of output units = number of classes</p>
+<p>​    · Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</p>
+<p>Next, training a Neural Network.</p>
+<p>​    · Randomly initialize the weights</p>
+<p>​    · Implement forward propagation to get $ h_\Theta(x^{(i)}) $ for any $ x^{(i)} $</p>
+<p>​    · Implement the cost function</p>
+<p>​    · Implement backpropagation to compute partial derivatives</p>
+<p>​    · Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.</p>
+<p>​    · Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.</p>
 
             </div>
 

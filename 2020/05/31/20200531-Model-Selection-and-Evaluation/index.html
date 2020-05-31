@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/sha-blue.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Model Selection and Evaluation</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Model-Selection-and-Evaluation"><a href="#Model-Selection-and-Evaluation" class="headerlink" title="Model Selection and Evaluation"></a>Model Selection and Evaluation</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong></p>
+<p>  · Wikipedia</p>
+<p>  · Machine Learning </p>
+<p>The recommended approach to solving machine learning problems is to:</p>
+<ul>
+<li>*<em>1) *</em>Start with a simple algorithm, implement it quickly, test it early on your cross validation data.</li>
+<li><strong>2)</strong> Diagnosing bias and variance by ploting learning curves($ J_ {CV}(\Theta)$ and $ J_ {train}(\Theta)$ with different hyperparameters and gain guidance as to choose the right and effective solution to improve its performance.</li>
+<li><strong>3)</strong> Tune the model hyperparameters.</li>
+</ul>
+<p>​      For example: Getting more training examples, Adding features, Decreasing λ…</p>
+<ul>
+<li>*<em>4) *</em>Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.</li>
+</ul>
+<h2 id="Model-Evaluation"><a href="#Model-Evaluation" class="headerlink" title="Model Evaluation"></a>Model Evaluation</h2><p>During the process of assessing the learning algorithm’s performance, it is important to do error analysis using some error metrics.</p>
+<h3 id="1-Bias-Variance-Trade-Off"><a href="#1-Bias-Variance-Trade-Off" class="headerlink" title="1. Bias-Variance Trade-Off"></a>1. Bias-Variance Trade-Off</h3><p>The prediction error for most machine learning algorithm can be broken down into three parts:</p>
+<ul>
+<li>Bias Error</li>
+<li>Variance Error</li>
+<li>Irreducible Error (introduced from the chosen framing of the problem which cannot be reduced.)</li>
+</ul>
+<p><strong>· Bias</strong> are the simplifying assumptions made by a model to make the target function easier to learn.</p>
+<ul>
+<li><strong>Low Bias</strong>: Suggests less assumptions about the form of the target function.</li>
+<li><strong>High-Bias</strong>: Suggests more assumptions about the form of the target function.</li>
+</ul>
+<p><strong>· Variance</strong> is the amount that the estimate of the target function will change if different training data was used.</p>
+<ul>
+<li><strong>Low Variance</strong>: Suggests small changes to the estimate of the target function with changes to the training dataset, meaning that the algorithm is good at picking out the hidden underlying mapping between the inputs and the output variables.</li>
+<li><strong>High Variance</strong>: Suggests large changes to the estimate of the target function with changes to the training dataset, meaning that the specifics of the training have influences the number and types of parameters used to characterize the mapping function.</li>
+</ul>
+<p>Examples of <strong>low-bias</strong> and <strong>high-variance</strong> machine learning algorithms include: Decision Trees, k-Nearest Neighbors and support Vector Machine.</p>
+<p>Examples of <strong>high-bias</strong> and <strong>low-variance</strong> machine learning algorithms include: Linear Regression, Linear Discriminant Analysis and Logistic Regression.</p>
+<p><a href="https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/" target="_blank" rel="noopener">More details from here</a>.</p>
+<p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
+<p><strong>Overfitting</strong>, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.</p>
+<p>Options address the issue of overfitting:</p>
+<p>1) Reduce the number of features. (Manually or use model selection algorithm)</p>
+<p>2) Regularization. (Keep all the features, but reduce the magnitude of parameters $ \theta_j$.)</p>
+<h4 id="For-linear-regression"><a href="#For-linear-regression" class="headerlink" title="For linear regression:"></a>For linear regression:</h4><p><strong>Cost function:</strong></p>
+<p> $  J(\theta) =  \frac{1}{2m} [ \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} +  \lambda \sum^{n}_ {j=1} \theta_j^2 ] $</p>
+<p>$ \lambda $ is the regularization parameter. It determines how much the costs of our theta parameters are inflated. (we don’t penalize the $\theta_0 $)</p>
+<p>Using the above cost function with the extra summation, we can smooth the output of our hypothesis function to reduce overfitting. If lambda is chosen to be too large, it may smooth out the function too much and cause underfitting.</p>
+<p><strong>Gradient descent:</strong> </p>
+<p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
+<p>$ \theta_j := \theta_j (1-\alpha \frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_ {i=1}^m ( h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $</p>
+<p><strong>Normal Equation:</strong></p>
+<p>$\theta = \left( X^TX + \lambda \cdot L \right)^{-1} X^Ty $</p>
+<p>$ \text{where}\ \ L = \begin{bmatrix} 0 &amp; &amp; &amp; &amp; \newline &amp; 1 &amp; &amp; &amp; \newline &amp; &amp; 1 &amp; &amp; \newline &amp; &amp; &amp; \ddots &amp; \newline &amp; &amp; &amp; &amp; 1 \newline\end{bmatrix} $</p>
+<p>If m &lt; n (features), then $ X^TX $ is non-invertible. However, when we add the term λ⋅L, then $X^TX + λ⋅L $ becomes invertible.</p>
+<h4 id="For-logistic-regression"><a href="#For-logistic-regression" class="headerlink" title="For logistic regression:"></a>For logistic regression:</h4><p><strong>Cost function:</strong></p>
+<p>$ J(\theta) = - \dfrac{1}{m} \sum_ {i=1}^m[y^{(i)} \log(h_ \theta(x^{(i)})) + (1- y^{(i)}) \log(1-h_ \theta(x^{(i)})) ] + \frac{1}{2m} \lambda \sum^{n}_ {j=1} \theta_j^2  $</p>
+<p><strong>Gradient descent:</strong> </p>
+<p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
+<p>$ \theta_j := \theta_j (1-\alpha \frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_ {i=1}^m ( h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} $</p>
+<h3 id="2-Precision-and-Recall-Trade-Off"><a href="#2-Precision-and-Recall-Trade-Off" class="headerlink" title="2. Precision and Recall Trade-Off"></a>2. Precision and Recall Trade-Off</h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th>Actual positive</th>
+<th>Actual negative</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>Predicted positive</strong></td>
+<td>True Positive</td>
+<td>False Positive</td>
+</tr>
+<tr>
+<td align="center"><strong>Predicted negative</strong></td>
+<td>False Negative</td>
+<td>True Negative</td>
+</tr>
+</tbody></table>
+<p>$ Accuracy  = \frac{TP +TN }{TP + FP + FP + TN} $</p>
+<p>Accuracy is the most intuitive performance measure and it is simply a ratio of correctly predicted observation to the total observations and it is a great measure only when you have symmetric datasets and  false positives and false negatives have similar cost. If the cost of false positives and false negatives are very different, we have to breakdown the accuracy formula even further and find a better evaluation metric.</p>
+<p>$ Precision  = \frac{TP}{TP + FP}$</p>
+<p>High precision means less data is predicted positive and relates to high false negative and low false positive.</p>
+<p>$ Recall  = \frac{TP}{TP + FN}$ (Sensitivity)</p>
+<p>High recall means more data is predicted positive and relates to high false positive and low false negative.</p>
+<p>$ F_1  = 2 * \frac{Precision * Recall}{Precision + Recall} $</p>
+<p>F1 Score is the weighted average of precision and recall. Therefore, this score takes both false positives and false negatives into account. So we can evaluate the model based on  the F1 score.</p>
+<p><img src="https://i.loli.net/2020/05/31/ADnS1bRrB6pK5qc.png" alt="precision"></p>
+<p>(from wikipedia)</p>
+<h2 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h2><h3 id="Train-Test-and-Validation-Datasets"><a href="#Train-Test-and-Validation-Datasets" class="headerlink" title="Train, Test and Validation Datasets"></a>Train, Test and Validation Datasets</h3><ul>
+<li><strong>Training Dataset</strong>: The sample of data used to fit the parameters of model. (60%)</li>
+<li><strong>Validation Dataset</strong>: The sample of data used to provide an unbiased evaluation of a model fit on the training dataset while tuning model hyperparameters. The evaluation becomes more biased as skill on the validation dataset is incorporated into the model configuration. (20%)</li>
+<li><strong>Test Dataset</strong>: The sample of data that has not been used prior, either for training the model or tuning the model parameters and only used to provide an unbiased evaluation of the skill of the final tuned model when comparing or selecting between final models. (20%)</li>
+</ul>
+<h3 id="Learning-curve"><a href="#Learning-curve" class="headerlink" title="Learning curve"></a>Learning curve</h3><p>When we test our simple model on validation dataset, we can plot a learning curve with different hyperparameters to help us to gain guidance as to choose the right and effective solution to improve its performance.</p>
+<p>For example: the size of training set.</p>
+<p><strong>1) Experiencing high bias:</strong></p>
+<p><img src="https://i.loli.net/2020/05/31/bz2sP7rSZlapHov.png" alt="high bias"></p>
+<p><strong>Low training set size</strong>: causes $ J_ {train}(\Theta)$ to be low and $ J_ {CV}(\Theta)$ to be high.</p>
+<p><strong>Large training set size</strong>: causes both $ J_ {CV}(\Theta)$ and $ J_ {train}(\Theta)$ to be high with $ J_ {CV}(\Theta) ≈ J_ {train}(\Theta) $</p>
+<p>If a learning algorithm is suffering from <strong>high bias</strong>, getting more training data will not help much.</p>
+<p><strong>2) Experiencing high variance:</strong></p>
+<p><img src="https://i.loli.net/2020/05/31/d5fATNm4KjUVSeC.png" alt="high variance"></p>
+<p><strong>Low training set size</strong>: $ J_ {train}(\Theta)$ will be low and $ J_ {CV}(\Theta)$ will be high.</p>
+<p><strong>Large training set size</strong>: $ J_ {train}(\Theta)$ increases with training set size and $ J_ {CV}(\Theta)$ continues to decrease without leveling off. Also,$ J_ {train}(\Theta) &lt;  J_ {CV}(\Theta)$ but the difference between them remains significant.</p>
+<p>If a learning algorithm is suffering from <strong>high variance</strong>, getting more training data is likely to help.</p>
+<p>After ploting the learning curve, we can tune the model hyperparameters targetedly.</p>
+<p>For example:</p>
+<ul>
+<li><p><strong>Getting more training examples:</strong> Fixes high variance</p>
+</li>
+<li><p><strong>Trying smaller sets of features:</strong> Fixes high variance</p>
+</li>
+<li><p><strong>Adding features:</strong> Fixes high bias</p>
+</li>
+<li><p><strong>Adding polynomial features:</strong> Fixes high bias</p>
+</li>
+<li><p><strong>Decreasing λ:</strong> Fixes high bias</p>
+</li>
+<li><p><strong>Increasing λ:</strong> Fixes high variance.</p>
+</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
