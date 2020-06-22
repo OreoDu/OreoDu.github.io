@@ -122,24 +122,20 @@
 
         <div id="main">
             <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/sha-blue.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Model Selection and Evaluation</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Basic Model Selection and Evaluation</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Model-Selection-and-Evaluation"><a href="#Model-Selection-and-Evaluation" class="headerlink" title="Model Selection and Evaluation"></a>Model Selection and Evaluation</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+                <h1 id="Basic-Model-Selection-and-Evaluation"><a href="#Basic-Model-Selection-and-Evaluation" class="headerlink" title="Basic Model Selection and Evaluation"></a>Basic Model Selection and Evaluation</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
 <p><strong>· materials:</strong></p>
 <p>  · Wikipedia</p>
 <p>  · Machine Learning </p>
 <p>The recommended approach to solving machine learning problems is to:</p>
-<ul>
-<li>*<em>1) *</em>Start with a simple algorithm, implement it quickly, test it early on your cross validation data.</li>
-<li><strong>2)</strong> Diagnosing bias and variance by ploting learning curves($ J_ {CV}(\Theta)$ and $ J_ {train}(\Theta)$ with different hyperparameters and gain guidance as to choose the right and effective solution to improve its performance.</li>
-<li><strong>3)</strong> Tune the model hyperparameters.</li>
-</ul>
+<p>  <strong>1)</strong> Start with a simple algorithm, implement it quickly, test it early on your cross validation data.</p>
+<p>  <strong>2)</strong> Diagnosing bias and variance by ploting learning curves($ J_ {CV}(\Theta)$ and $ J_ {train}(\Theta)$) and gain guidance as to choose the right and effective solution to improve its performance.</p>
+<p>  <strong>3)</strong> Tune the model hyperparameters.</p>
 <p>​      For example: Getting more training examples, Adding features, Decreasing λ…</p>
-<ul>
-<li>*<em>4) *</em>Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.</li>
-</ul>
+<p>  <strong>4)</strong> Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.</p>
 <h2 id="Model-Evaluation"><a href="#Model-Evaluation" class="headerlink" title="Model Evaluation"></a>Model Evaluation</h2><p>During the process of assessing the learning algorithm’s performance, it is important to do error analysis using some error metrics.</p>
 <h3 id="1-Bias-Variance-Trade-Off"><a href="#1-Bias-Variance-Trade-Off" class="headerlink" title="1. Bias-Variance Trade-Off"></a>1. Bias-Variance Trade-Off</h3><p>The prediction error for most machine learning algorithm can be broken down into three parts:</p>
 <ul>
@@ -159,7 +155,7 @@
 </ul>
 <p>Examples of <strong>low-bias</strong> and <strong>high-variance</strong> machine learning algorithms include: Decision Trees, k-Nearest Neighbors and support Vector Machine.</p>
 <p>Examples of <strong>high-bias</strong> and <strong>low-variance</strong> machine learning algorithms include: Linear Regression, Linear Discriminant Analysis and Logistic Regression.</p>
-<p><a href="https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/" target="_blank" rel="noopener">More details from here</a>.</p>
+<p><u><a href="https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/" target="_blank" rel="noopener">More details from here</a></u>.</p>
 <p><strong>Underfitting</strong>, or high bias, is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. </p>
 <p><strong>Overfitting</strong>, or high variance, is caused by a hypothesis function that fits the available data but does not generalize well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.</p>
 <p>Options address the issue of overfitting:</p>

@@ -122,11 +122,11 @@
 
         <div id="main">
             <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/sha1-blue.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Machine Learing Basis</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Basis &amp; Regression &amp; Classification</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Machine-Learning-Basis"><a href="#Machine-Learning-Basis" class="headerlink" title="Machine Learning Basis"></a>Machine Learning Basis</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+                <h1 id="Basis-amp-Regression-amp-Classification"><a href="#Basis-amp-Regression-amp-Classification" class="headerlink" title="Basis &amp; Regression &amp; Classification"></a>Basis &amp; Regression &amp; Classification</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
 <p><strong>· materials:</strong></p>
 <p>  · Wikipedia</p>
 <p>  · Machine Learning </p>
@@ -224,38 +224,6 @@
 <h3 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h3><p><strong>One-vs-all</strong></p>
 <p>$ h_\theta^{(i)}(x) = P(y = i | x ; \theta)   y \in \lbrace0, 1 … n\rbrace$</p>
 <p>$ \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) ) $</p>
-<h2 id="4-Neural-Network-or-MLP"><a href="#4-Neural-Network-or-MLP" class="headerlink" title="4. Neural Network or MLP"></a>4. Neural Network or MLP</h2><h3 id="Cost-Function-regularized"><a href="#Cost-Function-regularized" class="headerlink" title="Cost Function (regularized)"></a>Cost Function (regularized)</h3><p><strong>·</strong> L = total number of layers in the network</p>
-<p><strong>·</strong> $ s_l $ = number of units (not counting bias unit) in layer l</p>
-<p><strong>·</strong> K = number of output units/classes</p>
-<p>$ J(\Theta) = - \frac{1}{m} \sum_ {i=1}^m \sum_ {k=1}^K \left[y^{(i)}_ k \log ((h_ \Theta (x^{(i)}))_ k) + (1 - y^{(i)}_ k)\log (1 - (h_ \Theta(x^{(i)}))_ k)\right] + \frac{\lambda}{2m}\sum_ {l=1}^{L-1} \sum_ {i=1}^{s_l} \sum_ {j=1}^{s_ {l+1}} ( \Theta_{j,i}^{(l)})^2 $</p>
-<h3 id="Backpropagation-Algorithm"><a href="#Backpropagation-Algorithm" class="headerlink" title="Backpropagation Algorithm"></a>Backpropagation Algorithm</h3><p><strong>·</strong> Given training set $ { (x^{(1)}, y^{(1)}) … (x^{(m)}, y^{(m)})} $</p>
-<p><strong>·</strong> Set $ \Delta^{(l)}_{i,j} := 0$ for all (l,i,j)</p>
-<p><strong>·</strong> For training example t =1 to m:</p>
-<p>​     <strong>1)</strong> $ a^{(1)} = x $</p>
-<p>​     <strong>2)</strong> Perform forward propagation to compute $a^{(l)}$ for l=2,3,…,L</p>
-<p>​           $ z^{(l)} = \Theta^{(l-1)} a^{(l-1)} $</p>
-<p>​           $ a^{(l)} = g(z^{(l)}) $</p>
-<p>​     <strong>3)</strong> Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)} $</p>
-<p>​     <strong>4)</strong> Compute $ \delta^{(L-1)}, \delta^{(L-2)},\dots,\delta^{(2)} $ </p>
-<p>using $\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)})  .* g^{′}(z^{(l)}) ),  ( g^{′}(z^{(l)})=a^{(l)} .* (1−a^{(l)}) ) $</p>
-<p>​     <strong>5)</strong> $\Delta^{(l)}_ {i,j} := \Delta^{(l)}_ {i,j} + a^{(l)}_ j \delta^{(l+1)}_ j $ or with vectorization, $\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T $</p>
-<p>​     Hence we update our new $\Delta$ matrix. ($\frac{∂J(\Theta)}{∂\Theta^{(l)}_ {i,j}} = D^{(l)}_ {i,j}$)</p>
-<p>​     $ D^{(l)}_ {i,j} = - \frac{1}{m} \Delta^{(l)}_ {i,j}, $ if j = 0</p>
-<p>​     $D^{(l)}_ {i,j} = - \frac{1}{m}(\Delta^{(l)}_ {i,j} + \lambda \Theta^{(l)}_ {i,j}),$ if j≠0</p>
-<h3 id="Gradient-Checking"><a href="#Gradient-Checking" class="headerlink" title="Gradient Checking"></a>Gradient Checking</h3><p>Gradient checking will assure that our backpropagation works as intended. </p>
-<p>We can approximate the derivative of our cost function with: ($ ϵ =10^{−4} $)</p>
-<p>$ \frac{∂J(\Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
-<h3 id="Main-Steps"><a href="#Main-Steps" class="headerlink" title="Main Steps"></a>Main Steps</h3><p>First, pick a network architecture.</p>
-<p>​    · Number of input units = dimension of features $x^{(i)}$</p>
-<p>​    · Number of output units = number of classes</p>
-<p>​    · Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</p>
-<p>Next, training a Neural Network.</p>
-<p>​    · Randomly initialize the weights</p>
-<p>​    · Implement forward propagation to get $ h_\Theta(x^{(i)}) $ for any $ x^{(i)} $</p>
-<p>​    · Implement the cost function</p>
-<p>​    · Implement backpropagation to compute partial derivatives</p>
-<p>​    · Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.</p>
-<p>​    · Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.</p>
 
             </div>
 
