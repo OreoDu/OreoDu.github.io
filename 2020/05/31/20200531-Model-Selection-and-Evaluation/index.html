@@ -96,7 +96,7 @@
 	            <a href="#s1">Classification</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Lerning/">Deep Lerning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
 	                    </li></ul>
 	        </li>
 	        
@@ -161,7 +161,11 @@
 <p>Options address the issue of overfitting:</p>
 <p>1) Reduce the number of features. (Manually or use model selection algorithm)</p>
 <p>2) Regularization. (Keep all the features, but reduce the magnitude of parameters $ \theta_j$.)</p>
-<h4 id="For-linear-regression"><a href="#For-linear-regression" class="headerlink" title="For linear regression:"></a>For linear regression:</h4><p><strong>Cost function:</strong></p>
+<p>Reduces over-fitting by adding a penalty to the loss function.</p>
+<p>3) Dropout</p>
+<h4 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h4><p><u><a href="https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/" target="_blank" rel="noopener">More details from here</a></u>.</p>
+<p><strong>1.For linear regression:</strong></p>
+<p><strong>Cost function:</strong></p>
 <p> $  J(\theta) =  \frac{1}{2m} [ \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} +  \lambda \sum^{n}_ {j=1} \theta_j^2 ] $</p>
 <p>$ \lambda $ is the regularization parameter. It determines how much the costs of our theta parameters are inflated. (we don’t penalize the $\theta_0 $)</p>
 <p>Using the above cost function with the extra summation, we can smooth the output of our hypothesis function to reduce overfitting. If lambda is chosen to be too large, it may smooth out the function too much and cause underfitting.</p>
@@ -172,7 +176,8 @@
 <p>$\theta = \left( X^TX + \lambda \cdot L \right)^{-1} X^Ty $</p>
 <p>$ \text{where}\ \ L = \begin{bmatrix} 0 &amp; &amp; &amp; &amp; \newline &amp; 1 &amp; &amp; &amp; \newline &amp; &amp; 1 &amp; &amp; \newline &amp; &amp; &amp; \ddots &amp; \newline &amp; &amp; &amp; &amp; 1 \newline\end{bmatrix} $</p>
 <p>If m &lt; n (features), then $ X^TX $ is non-invertible. However, when we add the term λ⋅L, then $X^TX + λ⋅L $ becomes invertible.</p>
-<h4 id="For-logistic-regression"><a href="#For-logistic-regression" class="headerlink" title="For logistic regression:"></a>For logistic regression:</h4><p><strong>Cost function:</strong></p>
+<p><strong>2.For logistic regression:</strong></p>
+<p><strong>Cost function:</strong></p>
 <p>$ J(\theta) = - \dfrac{1}{m} \sum_ {i=1}^m[y^{(i)} \log(h_ \theta(x^{(i)})) + (1- y^{(i)}) \log(1-h_ \theta(x^{(i)})) ] + \frac{1}{2m} \lambda \sum^{n}_ {j=1} \theta_j^2  $</p>
 <p><strong>Gradient descent:</strong> </p>
 <p>$ \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_ {i=1}^m (h_\theta(x^{(i)}) - y^{(i)})x_0^{(i)} $</p>
