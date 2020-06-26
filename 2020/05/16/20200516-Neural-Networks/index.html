@@ -96,7 +96,7 @@
 	            <a href="#s1">Classification</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Lerning/">Deep Lerning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
 	                    </li></ul>
 	        </li>
 	        
@@ -149,6 +149,8 @@
 <p>​     Hence we update our new $\Delta$ matrix. ($\frac{∂J(\Theta)}{∂\Theta^{(l)}_ {i,j}} = D^{(l)}_ {i,j}$)</p>
 <p>​     $ D^{(l)}_ {i,j} =  \frac{1}{m} \Delta^{(l)}_ {i,j}, $ if j = 0</p>
 <p>​     $D^{(l)}_ {i,j} =  \frac{1}{m}(\Delta^{(l)}_ {i,j} + \lambda \Theta^{(l)}_ {i,j}),$ if j≠0</p>
+<p>In the actual programming implementation, we can separate back propagation through layers. </p>
+<p><u><a href="https://github.com/oreilly-japan/deep-learning-from-scratch/blob/master/common/layers.py" target="_blank" rel="noopener">See  more details</a></u></p>
 <h3 id="Gradient-Checking"><a href="#Gradient-Checking" class="headerlink" title="Gradient Checking"></a>Gradient Checking</h3><p>Gradient checking will assure that our backpropagation works as intended. </p>
 <p>We can approximate the derivative of our cost function with: ($ ϵ =10^{−4} $)</p>
 <p>$ \frac{∂J(\Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
