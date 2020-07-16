@@ -157,7 +157,7 @@
 <h3 id="Activation-Function"><a href="#Activation-Function" class="headerlink" title="Activation Function"></a>Activation Function</h3><p><u><a href="https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/" target="_blank" rel="noopener">See  more details</a></u></p>
 <h4 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function:"></a>Sigmoid Function:</h4><p>$ h_\theta (x) = g(\theta^T x) = \dfrac{1}{1 + e^{- \theta^T x}} $</p>
 <p>Avoid overflow: </p>
-<p>$  \dfrac{1}{1 + e^{- \theta^T x}} = \ frac {tan(\frac{x}{2}) + 1}{2}$</p>
+<p>$  \dfrac{1}{1 + e^{- \theta^T x}} = \frac{1}{2} (tan(\frac{x}{2}) + 1)$</p>
 <p>$ tanx = \frac{e^x - e^{-x}}{e^x + e^{-x}}  =  \frac{e^{2x} - 1 }{e^{2x} + 1} = \frac{1 - e^{-2x} }{1 + e^{-2x} }$</p>
 <h4 id="ReLU-Function"><a href="#ReLU-Function" class="headerlink" title="ReLU Function:"></a>ReLU Function:</h4><p>$  h(x)= x ( x &gt; 0 )  or  0   ( x \leq 0 )  $</p>
 <h4 id="Softmax-Function"><a href="#Softmax-Function" class="headerlink" title="Softmax Function:"></a>Softmax Function:</h4><p>$ h(x)_ k = \frac{exp(a_k)}{\sum_ {i=1}^K exp(a_i)} $</p>
