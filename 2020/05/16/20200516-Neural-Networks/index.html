@@ -130,7 +130,14 @@
 <p><strong>· materials:</strong></p>
 <p>  · Wikipedia</p>
 <p>  · Machine Learning </p>
-<h2 id="Neural-Network-or-MLP"><a href="#Neural-Network-or-MLP" class="headerlink" title="Neural Network or MLP"></a>Neural Network or MLP</h2><p><img src="https://i.loli.net/2020/06/22/DvejB2L6YuKFCcO.png" alt="mlp"></p>
+<h3 id="Why-Neural-Networks"><a href="#Why-Neural-Networks" class="headerlink" title="Why Neural Networks?"></a>Why Neural Networks?</h3><h4 id="·-Decision-Boundary"><a href="#·-Decision-Boundary" class="headerlink" title="· Decision Boundary"></a>· Decision Boundary</h4><p>Every Machine Learning algorithm learns the mapping from an input to output. </p>
+<p>In the case of classification problems, a decision boundary helps us in determining whether a given data point belongs to a certain class. Traditional machine learning algoritms cannot learn decision boundaries for nonlinear data.  However, Neural Network is capable of learning any nonlinear function.</p>
+<p>Also, those algorithms are not capable of learning all the functions.</p>
+<h4 id="·-Feature-engineering"><a href="#·-Feature-engineering" class="headerlink" title="· Feature engineering"></a>· Feature engineering</h4><p>In machine learning, we have to do feature  extraction and feature selection before we train the model. Feature engineering is a key step in the model building process. However, in deep Learning, we can automate the process of feature engineering.</p>
+<h2 id="Feed-Forward-Neural-network-Multilayer-Perceptron"><a href="#Feed-Forward-Neural-network-Multilayer-Perceptron" class="headerlink" title="Feed-Forward Neural network (Multilayer Perceptron)"></a>Feed-Forward Neural network (Multilayer Perceptron)</h2><img src="https://i.loli.net/2020/06/22/DvejB2L6YuKFCcO.png" alt="mlp" style="zoom: 50%;">
+
+
+
 <h3 id="Cost-Function-regularized"><a href="#Cost-Function-regularized" class="headerlink" title="Cost Function (regularized)"></a>Cost Function (regularized)</h3><p><strong>·</strong> L = total number of layers in the network</p>
 <p><strong>·</strong> $ s_l $ = number of units (not counting bias unit) in layer l</p>
 <p><strong>·</strong> K = number of output units/classes</p>
@@ -154,12 +161,13 @@
 <h3 id="Gradient-Checking"><a href="#Gradient-Checking" class="headerlink" title="Gradient Checking"></a>Gradient Checking</h3><p>Gradient checking will assure that our backpropagation works as intended. </p>
 <p>We can approximate the derivative of our cost function with: ($ ϵ =10^{−4} $)</p>
 <p>$ \frac{∂J(\Theta)}{∂\Theta_ {j}} = \frac{J(\Theta_1 ,…, \Theta_j + ϵ ,…, \Theta_n) - J(\Theta_1 ,…, \Theta_j - ϵ ,…, \Theta_n)}{2ϵ}  $</p>
-<h3 id="Activation-Function"><a href="#Activation-Function" class="headerlink" title="Activation Function"></a>Activation Function</h3><p><u><a href="https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/" target="_blank" rel="noopener">See  more details</a></u></p>
+<h3 id="Activation-Function"><a href="#Activation-Function" class="headerlink" title="Activation Function"></a>Activation Function</h3><p>Activation functions introduce non-linearity to the model which allows it to learn complex functional mappings between the inputs and response variables. There are quite a few different activation functions like sigmoid, tanh, RelU, Leaky RelU, etc.</p>
+<p><u><a href="https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/" target="_blank" rel="noopener">See  more details</a></u></p>
 <h4 id="Sigmoid-Function"><a href="#Sigmoid-Function" class="headerlink" title="Sigmoid Function:"></a>Sigmoid Function:</h4><p>$ h_\theta (x) = g(\theta^T x) = \dfrac{1}{1 + e^{- \theta^T x}} $</p>
 <p>Avoid overflow: </p>
 <p>$  \dfrac{1}{1 + e^{- \theta^T x}} = \frac{1}{2} (tan(\frac{x}{2}) + 1)$</p>
 <p>$ tanx = \frac{e^x - e^{-x}}{e^x + e^{-x}}  =  \frac{e^{2x} - 1 }{e^{2x} + 1} = \frac{1 - e^{-2x} }{1 + e^{-2x} }$</p>
-<h4 id="ReLU-Function"><a href="#ReLU-Function" class="headerlink" title="ReLU Function:"></a>ReLU Function:</h4><p>$  h(x)= x ( x &gt; 0 )  or  0   ( x \leq 0 )  $</p>
+<h4 id="ReLU-Function（Rectified-Linear-Unit）"><a href="#ReLU-Function（Rectified-Linear-Unit）" class="headerlink" title="ReLU Function（Rectified Linear Unit）:"></a>ReLU Function（Rectified Linear Unit）:</h4><p>$  h(x)= x ( x &gt; 0 )  or  0   ( x \leq 0 )  $</p>
 <h4 id="Softmax-Function"><a href="#Softmax-Function" class="headerlink" title="Softmax Function:"></a>Softmax Function:</h4><p>$ h(x)_ k = \frac{exp(a_k)}{\sum_ {i=1}^K exp(a_i)} $</p>
 <p>Avoid overflow: (c can be the - max(a))</p>
 <p>$ h(x)_ k = \frac{exp(a_k + c)}{\sum_ {i=1}^K exp(a_i + c)} $ </p>
@@ -179,18 +187,31 @@
 <p>It adopts the learning rate(η) based on the <strong>sparsity</strong> of features. So the parameters with small updates(sparse features) have high <em>learning rate</em> whereas the parameters with large  updates(dense features) have low <em>learning rate</em>. Therefore adagrad uses a different <em>learning rate</em> for each <em>parameter.</em></p>
 <p>(Extension: RMSProp)</p>
 <h4 id="Adam-Adaptive-Moment-Estimation"><a href="#Adam-Adaptive-Moment-Estimation" class="headerlink" title="Adam(Adaptive Moment Estimation)"></a>Adam(Adaptive Moment Estimation)</h4><p>Adam algorithm introduces the concept of adaptive momentum along with adaptive learning rate. Adam is a combined form of Momentum-based GD and RMSProp.</p>
-<p><img src="https://i.loli.net/2020/06/25/3eEICUzJWN5xLQA.png" alt="adm"></p>
+<img src="https://i.loli.net/2020/06/25/3eEICUzJWN5xLQA.png" alt="adm" style="zoom:50%;">
+
+
+
 <h3 id="Initialize-the-weights"><a href="#Initialize-the-weights" class="headerlink" title="Initialize the weights"></a>Initialize the weights</h3><p><u><a href="https://towardsdatascience.com/weight-initialization-techniques-in-neural-networks-26c649eb3b78" target="_blank" rel="noopener">See  more details</a></u></p>
 <h4 id="Zero-initialization-and-Random-initialization"><a href="#Zero-initialization-and-Random-initialization" class="headerlink" title="Zero initialization and Random initialization"></a>Zero initialization and Random initialization</h4><p>In general practice biases are initialized with 0 and weights are initialized with random numbers.</p>
 <p>Usually, we can not initialize weight with the same values, high values or very low values. Otherwize, weight uniformity will happen or the gradients may vanish or explode quickly.</p>
 <h4 id="Xavier-initialization"><a href="#Xavier-initialization" class="headerlink" title="Xavier initialization"></a>Xavier initialization</h4><p>It is mostly used for tanh() or sigmoid() activation function.</p>
-<p><img src="https://i.loli.net/2020/06/25/AKQsCMUT6bedVtw.png" alt="Xavier"></p>
-<p><img src="https://i.loli.net/2020/06/25/6QfRzvADObthNVy.png" alt="Xavier1"></p>
+<img src="https://i.loli.net/2020/06/25/AKQsCMUT6bedVtw.png" alt="Xavier" style="zoom: 50%;">
+
+<img src="https://i.loli.net/2020/06/25/6QfRzvADObthNVy.png" alt="Xavier1" style="zoom: 50%;">
+
+
+
 <h4 id="He-initialization"><a href="#He-initialization" class="headerlink" title="He initialization"></a>He initialization</h4><p>It is mostly used for ReLU() activation function.</p>
-<p><img src="https://i.loli.net/2020/06/25/x5W4gyvkenXT3zf.png" alt="he"></p>
+<img src="https://i.loli.net/2020/06/25/x5W4gyvkenXT3zf.png" alt="he" style="zoom: 50%;">
+
+
+
 <h3 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h3><p>Apart from the input layer, we can also normalize the hiden layer by adjusting and scaling the input. Batch normalization reduces the amount by what the hidden unit values shift around (covariance shift) and allows each layer of a network to learn by itself a little bit more independently of other layers. Also, it reduces overfitting because it has a slight regularization effects. Similar to dropout, it adds some noise to each hidden layer’s activations.</p>
 <p>See  more details <u><a href="https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html" target="_blank" rel="noopener">here</a></u> and <u><a href="https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c" target="_blank" rel="noopener">here</a></u></p>
-<p><img src="https://i.loli.net/2020/06/25/IGgC3xaJDARne75.png" alt="BN"></p>
+<img src="https://i.loli.net/2020/06/25/IGgC3xaJDARne75.png" alt="BN" style="zoom:50%;">
+
+
+
 <h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p><u><a href="https://medium.com/@amarbudhiraja/https-medium-com-amarbudhiraja-learning-less-to-learn-better-dropout-in-deep-machine-learning-74334da4bfc5" target="_blank" rel="noopener">More details from here</a></u>.</p>
 <p>In order to prevent over-fitting, we can use dropout to ignore units (i.e. neurons) during the training phase of certain set of neurons which is chosen at random so we can reduce interdependent learning amongst the neurons.</p>
 <p><img src="https://i.loli.net/2020/06/25/hFOIB3paKbc1jmG.png" alt="drop"></p>
