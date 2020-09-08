@@ -127,12 +127,10 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h1 id="Python-Language-Basis-02"><a href="#Python-Language-Basis-02" class="headerlink" title="Python Language Basis 02"></a>Python Language Basis 02</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><img src="https://i.loli.net/2020/09/08/Oz3UJF4QW1m2yos.png" alt="11" style="zoom:50%;">
-**· materials:**
-  · [<i>Python for Everybody (Exploring Data Using Python 3)</i>](https://www.py4e.com/)  by Charles R. Severance
-  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw
-  · <u>[Python-100-Days](https://github.com/jackfrued/Python-100-Days)</u> by jackfrued
-  · <u>[Python documents](https://docs.python.org/3/tutorial/index.html)</u>
 
+
+
+<p><strong>· materials:</strong><br>  · <a href="https://www.py4e.com/" target="_blank" rel="noopener"><i>Python for Everybody (Exploring Data Using Python 3)</i></a>  by Charles R. Severance<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued<br>  · <u><a href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener">Python documents</a></u></p>
 <h3 id="Part-1-Input-and-Output"><a href="#Part-1-Input-and-Output" class="headerlink" title="Part.1 Input and Output"></a>Part.1 Input and Output</h3><p>Usually, we have several ways to get the data we need from the outside. There are two main ways.</p>
 <p>We can simply use <code>input()</code> to get the data from the input devices like keyboards.</p>
 <pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Enter the data:"</span><span class="token punctuation">)</span></code></pre>
@@ -421,7 +419,7 @@ myiter <span class="token operator">=</span> iter<span class="token punctuation"
 <span class="token keyword">for</span> x <span class="token keyword">in</span> myiter<span class="token punctuation">:</span>
   <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
 <p>The <code>__iter__()</code> method returns a special iterator object, which implements the <code>__next__()</code> method that returns the next iterator object and accesses elements in the container one at a time. When there are no more elements, <code>__next__()</code> raises a  <code>StopIteration</code> exception  to identify the completion of the iteration. </p>
-<p>*<em>Ⅱ. *</em>Generators</p>
+<p><strong>Ⅱ.</strong> Generators</p>
 <p>In Python, a function that uses <code>yield</code> is called a generator. </p>
 <p>Generators are a simple and powerful tool for creating iterators. They are written like regular functions but use the <code>yield</code> statement whenever they want to return data. Each time <code>next()</code> is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed). </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
@@ -744,7 +742,7 @@ s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'
 <p><a href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions" target="_blank" rel="noopener">Built-in Exceptions</a>  lists the built-in exceptions and their meanings.</p>
 <p>2) Handling Exceptions</p>
 <p>It is possible to write programs that handle selected exceptions. A user-generated interruption is signaled by raising different types of exception.</p>
-<p>*<em>try/except : *</em></p>
+<p> <strong>try/except :</strong></p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
 
 <span class="token keyword">try</span><span class="token punctuation">:</span>
@@ -758,7 +756,7 @@ s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'
 <span class="token keyword">except</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Unexpected error:"</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>exc_info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token keyword">raise</span></code></pre>
-<p>*<em>try/except … else : *</em></p>
+<p> <strong>try/except … else :</strong></p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> arg <span class="token keyword">in</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         f <span class="token operator">=</span> open<span class="token punctuation">(</span>arg<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
@@ -768,7 +766,7 @@ s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'
         <span class="token comment" spellcheck="true"># Excute when there is no error happen</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>arg<span class="token punctuation">,</span> <span class="token string">'has'</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'lines'</span><span class="token punctuation">)</span> 
         f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>*<em>try-finally : *</em></p>
+<p> <strong>try-finally :</strong></p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
     function<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">except</span> AssertionError <span class="token keyword">as</span> error<span class="token punctuation">:</span>
