@@ -209,7 +209,8 @@
 <p>High recall means more data is predicted positive and relates to high false positive and low false negative.</p>
 <p>$ F_1  = 2 * \frac{Precision * Recall}{Precision + Recall} $</p>
 <p>F1 Score is the weighted average of precision and recall. Therefore, this score takes both false positives and false negatives into account. So we can evaluate the model based on  the F1 score.</p>
-<p><img src="https://i.loli.net/2020/05/31/ADnS1bRrB6pK5qc.png" alt="precision"></p>
+<img src="https://i.loli.net/2020/05/31/ADnS1bRrB6pK5qc.png" alt="precision" style="zoom:80%;">
+
 <p>(from wikipedia)</p>
 <h2 id="Model-Selection"><a href="#Model-Selection" class="headerlink" title="Model Selection"></a>Model Selection</h2><h3 id="Train-Test-and-Validation-Datasets"><a href="#Train-Test-and-Validation-Datasets" class="headerlink" title="Train, Test and Validation Datasets"></a>Train, Test and Validation Datasets</h3><ul>
 <li><strong>Training Dataset</strong>: The sample of data used to fit the parameters of model. (60%)</li>
@@ -219,12 +220,14 @@
 <h3 id="Learning-curve"><a href="#Learning-curve" class="headerlink" title="Learning curve"></a>Learning curve</h3><p>When we test our simple model on validation dataset, we can plot a learning curve with different hyperparameters to help us to gain guidance as to choose the right and effective solution to improve its performance.</p>
 <p>For example: the size of training set.</p>
 <p><strong>1) Experiencing high bias:</strong></p>
-<p><img src="https://i.loli.net/2020/05/31/bz2sP7rSZlapHov.png" alt="high bias"></p>
+<img src="https://i.loli.net/2020/05/31/bz2sP7rSZlapHov.png" alt="high bias" style="zoom:150%;">
+
 <p><strong>Low training set size</strong>: causes $ J_ {train}(\Theta)$ to be low and $ J_ {CV}(\Theta)$ to be high.</p>
 <p><strong>Large training set size</strong>: causes both $ J_ {CV}(\Theta)$ and $ J_ {train}(\Theta)$ to be high with $ J_ {CV}(\Theta) ≈ J_ {train}(\Theta) $</p>
 <p>If a learning algorithm is suffering from <strong>high bias</strong>, getting more training data will not help much.</p>
 <p><strong>2) Experiencing high variance:</strong></p>
-<p><img src="https://i.loli.net/2020/05/31/d5fATNm4KjUVSeC.png" alt="high variance"></p>
+<img src="https://i.loli.net/2020/05/31/d5fATNm4KjUVSeC.png" alt="high variance" style="zoom:150%;">
+
 <p><strong>Low training set size</strong>: $ J_ {train}(\Theta)$ will be low and $ J_ {CV}(\Theta)$ will be high.</p>
 <p><strong>Large training set size</strong>: $ J_ {train}(\Theta)$ increases with training set size and $ J_ {CV}(\Theta)$ continues to decrease without leveling off. Also,$ J_ {train}(\Theta) &lt;  J_ {CV}(\Theta)$ but the difference between them remains significant.</p>
 <p>If a learning algorithm is suffering from <strong>high variance</strong>, getting more training data is likely to help.</p>

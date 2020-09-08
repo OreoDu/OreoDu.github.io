@@ -126,33 +126,34 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="Language-Basis-01"><a href="#Language-Basis-01" class="headerlink" title="Language Basis 01"></a>Language Basis 01</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Programming is a method that we use computers to do the complicated calculations and repetitive tasks which human are not very good at in order to solve the difficult problem.</p>
+                <h1 id="Python-Language-Basis-01"><a href="#Python-Language-Basis-01" class="headerlink" title="Python Language Basis 01"></a>Python Language Basis 01</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Programming is a method that we use computers to do the complicated calculations and repetitive tasks which human are not very good at in order to solve the difficult problem.</p>
 <blockquote>
 <p>Python is a high-level language intended to be relatively straightforward for humans to read and write and for computers to read and process.  (from <i>Python for Everybody</i>)</p>
 </blockquote>
-<p>(概略图)<br><strong>· materials:</strong><br>  · <i>Python for Everybody (Exploring Data Using Python 3)</i>  by Charles R. Severance (<a href="https://www.py4e.com/" target="_blank" rel="noopener">https://www.py4e.com/</a>)<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued</p>
+<p><img src="https://i.loli.net/2020/09/06/ohHcd45Qz6wTumq.png" alt="11"><br><strong>· materials:</strong><br>  · <a href="https://www.py4e.com/" target="_blank" rel="noopener"><i>Python for Everybody (Exploring Data Using Python 3)</i></a>  by Charles R. Severance<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued<br>  · <u><a href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener">Python documents</a></u></p>
 <h4 id="Part-1-Installing-Python-3-On-Windows-10"><a href="#Part-1-Installing-Python-3-On-Windows-10" class="headerlink" title="Part.1 Installing Python 3 On Windows 10"></a>Part.1 Installing Python 3 On Windows 10</h4><p>Download and install Python 3.x.x from <u><a href="https://www.python.org/download/" target="_blank" rel="noopener">here</a></u>. (When you’re installing Python you should make sure that you have chosen “Add Python 3.x.x  to PATH” or you can do this by yourself later.)</p>
 <p>Download and install the text editor. (I installed <u><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a></u>.)</p>
 <p>Two ways that you run your code：<br> <strong>·</strong> Write the script  in the text editor and execute it in the command window or type commands into the Python interpreter.</p>
-<pre class=" language-python"><code class="language-python">  python xxx<span class="token punctuation">.</span>py</code></pre>
+<pre class=" language-python"><code class="language-python">  python xxx<span class="token punctuation">.</span>py arg1 arg2 arg3</code></pre>
 <p><strong>·</strong> Write and run the code in a interactive programming tool (such as IPython).</p>
-<pre class=" language-python"><code class="language-python">  pip install ipython</code></pre>
 <h4 id="Part-2-How-do-the-programs-work-inside-the-computer"><a href="#Part-2-How-do-the-programs-work-inside-the-computer" class="headerlink" title="Part.2 How do the programs work inside the computer?"></a>Part.2 How do the programs work inside the computer?</h4><p>First, let’s have a quick look at the simplified computer structure.</p>
-<img src="http://q9c32mgkt.bkt.clouddn.com/static/images/com-stru.PNG?imageView2/2/w/500">
+<img src="https://i.loli.net/2020/09/06/a8eSX7ofZg4IVNp.png" alt="com-stru" style="zoom:50%;">
 
 <p>(from <i>Python for Everybody</i>)</p>
-<p>When we finish our code and store it in the <i>secondary memory</i>, the Python interpreter will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
+<p>When we finish our code and store it in the <i>secondary memory</i>, the Python interpreter(CPython、IPython、Jython、PyPy ) will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
 <p>Then when we execute the program, it will be stored in the <i>main memory</i> temporarily. The computer will retrieve the data form the <i>input devices</i> or the <i>network</i>, get the instructions form the <i>main memory</i> and do the computations in the <i>center processing unit(CPU)</i> with a high speed(billion times per second). In the end, the computer will send the results to the <i>output devices</i>.</p>
 <h4 id="Part-3-Language-element"><a href="#Part-3-Language-element" class="headerlink" title="Part.3 Language element"></a>Part.3 Language element</h4><p>A language must have its own vocabulary and grammar. In the vocabulary of Python, basically, we have <i>Reserved words (keywords)</i>, <i>Variable</i>, <i>constant(numbers,letters,strings)</i> and <i>operators</i>.</p>
 <p><strong>Ⅰ. Reserved words</strong> (keywords):<br>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
- <img src="http://q9c32mgkt.bkt.clouddn.com/static/images/reserved-w.PNG">
-
+<p><img src="https://i.loli.net/2020/09/06/hJebFXYLdgN3wGx.png" alt="reserved-w"></p>
 <p>(from <i>Python for Everybody</i>)</p>
-<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong> (sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong> (ex: 3+2j)<br>    <strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks, immutable)<br>    <strong>Boolean</strong> (True, False)<br>    <strong>Other built-in data types</strong>: list, tuple, set, dictionary</p>
+<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong> (sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong> (ex: 3+2j)<br>    <strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks, immutable)<br>    <strong>Boolean</strong> (True, False)<br>    <strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
+<p>In python, variables don’t have types(only the objects have types) and it’s just a reference to an object (a pointer), which can point to a type of object(String,list…). </p>
+<p>Mutable objects: numbers,strings, tuples.</p>
+<p>Immutable objects: list, set, dictionary.</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span></code></pre>
-<p>  Variable types can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a string to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).</p>
+<p>  Variable types can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a string to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).<br>     ·  …</p>
 <p><strong>·</strong> Name rules: (usually use a mnemonic name)<br>    1.Combination of numbers, letters, underscore (can not start with a number)<br>    2.Case sensitive<br>    3.Can not use reserved words<br>    4.PEP 8 <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">(<u> Style Guide for Python Code</u> )</a></p>
 <p> <strong>·</strong> How do we use variables?</p>
 <p>1.Use variables to save data and perform arithmetic operations</p>
@@ -164,19 +165,12 @@ fruit <span class="token operator">=</span> <span class="token string">'banana'<
 letter <span class="token operator">=</span> fruit<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># extracts the character at index position 1 from the fruit variable</span>
 letter1 <span class="token operator">=</span> fruit<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">,</span>letter1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># r t</span></code></pre>
-<p>2.Use the <code>input()</code> function to get the keyboard input</p>
-<pre class=" language-python"><code class="language-python">a  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.4</span>
-b  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.3</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d +%d = %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{a}+{b} = {a+b}'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0}+{1} = {2}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span></code></pre>
-<p>( <code>%</code> is  format operator.  <code>%x</code> is a placeholder. <code>%d</code> is for the integer.  <code>%f</code> is for the decimal.<code>%%</code> is for the percent sign. The strings after the <code>%</code> will replace the placeholder and output to the terminal )</p>
-<p>3.The use of backslash <code>\</code><br>We can use <code>\</code> in a string to indicate escaping, which means that the character after <code>\</code> is no longer its original meaning.<br><code>\n</code> means a new line<br><code>\t</code> means tab<br><code>\141</code>(octal) or <code>\x61</code>(hexadecimal )  means  lowercase letter <code>a</code><br><code>\u9a86</code>(Unicode ) means ‘骆’ in Chinese</p>
+<p>2.The use of backslash <code>\</code><br>We can use <code>\</code> in a string to indicate escaping, which means that the character after <code>\</code> is no longer its original meaning.<br><code>\n</code> means a new line<br><code>\t</code> means tab<br><code>\141</code>(octal) or <code>\x61</code>(hexadecimal )  means  lowercase letter <code>a</code><br><code>\u9a86</code>(Unicode ) means ‘骆’ in Chinese</p>
 <p>If we do not want to escape characters after the <code>\</code> or you want to print <code>\</code> , you can use <code>r</code> before the string.</p>
 <pre class=" language-python"><code class="language-python">s1 <span class="token operator">=</span>  r<span class="token string">' \' hello, world! \' '</span>  <span class="token comment" spellcheck="true"># print: \' hello, world! \'</span>
 s2 <span class="token operator">=</span> <span class="token string">' \'hello, world!\\ \n '</span> <span class="token comment" spellcheck="true"># print: 'hello, world!\</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">' '</span> <span class="token punctuation">)</span></code></pre>
-<p>4.The object string has some built-in methods to process itself.<br>We can use <code>dir</code> function to show the available methods. (<u><a href="https://docs.python.org/3.5/library/stdtypes.html#string-methods" target="_blank" rel="noopener">more methods</a></u>)</p>
+<p>3.The object string has some built-in methods to process itself.<br>We can use <code>dir</code> function to show the available methods. (<u><a href="https://docs.python.org/3.5/library/stdtypes.html#string-methods" target="_blank" rel="noopener">more methods</a></u>)</p>
 <pre class=" language-python"><code class="language-python">str1 <span class="token operator">=</span> <span class="token string">'hello,World!'</span> 
 <span class="token comment" spellcheck="true"># calculates the length</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>len <span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 13</span>
@@ -209,7 +203,7 @@ str2 <span class="token operator">=</span>  <span class="token string">' abc1234
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str2<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span><span class="token string">',!'</span><span class="token punctuation">,</span><span class="token string">'  '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># hello World </span></code></pre>
 <p><strong>Ⅲ. Operators</strong>:<br>The values the operators is applied to are called <i>operands</i> and an expression is a combination of operands and operators.</p>
-<p>1.For number and Boolean<br>(ordered by the priority of the operators from high to low )</p>
+<p>1.For number and Boolean</p>
 <table>
 <thead>
 <tr>
@@ -218,32 +212,36 @@ str2 <span class="token operator">=</span>  <span class="token string">' abc1234
 </tr>
 </thead>
 <tbody><tr>
-<td><code>**</code> <code>~</code> <code>+</code> <code>-</code></td>
-<td align="left">bitwise negation, index,sign</td>
+<td><code>+</code> <code>-</code></td>
+<td align="left">index,sign</td>
 </tr>
 <tr>
-<td><code>*</code> <code>/</code> <code>%</code> <code>//</code> <code>+</code> <code>-</code></td>
-<td align="left">Multiply, division, mold, integer division(round down), add, subtract,</td>
+<td><code>**</code> <code>*</code> <code>/</code> <code>%</code> <code>//</code> <code>+</code> <code>-</code></td>
+<td align="left">power, multiply, division, mold, integer division(round down), add, subtract,</td>
 </tr>
 <tr>
 <td><code>&gt;&gt;</code> <code>&lt;&lt;</code></td>
-<td align="left">Shift right, left shift</td>
+<td align="left">shift right, left shift</td>
 </tr>
 <tr>
-<td><code>&amp;</code>  <code>^</code></td>
-<td align="left">bitwise and, bitwise XOR, bitwise or</td>
+<td><code>~</code> <code>&amp;</code>  <code>^</code> `</td>
+<td align="left">`</td>
 </tr>
 <tr>
 <td><code>&lt;=</code> <code>&lt;</code> <code>&gt;</code> <code>&gt;=</code></td>
 <td align="left">Less than or equal to, less than, greater than, greater than or equal to</td>
 </tr>
 <tr>
-<td><code>==</code> <code>!=(&lt;&gt;)</code></td>
+<td><code>==</code> <code>!=</code></td>
 <td align="left">Equal to, not equal to</td>
 </tr>
 <tr>
 <td><code>=</code> <code>%=</code> <code>/=</code> <code>//=</code> <code>*=</code></td>
 <td align="left"><code>**=</code> <code>+=</code> <code>-=</code> <code>&amp;=</code> <code>^=</code> <code>&gt;&gt;=</code> <code>&lt;&lt;=</code></td>
+</tr>
+<tr>
+<td><code>:=</code></td>
+<td align="left">walrus operator</td>
 </tr>
 <tr>
 <td><code>is</code> <code>is not</code></td>
@@ -258,7 +256,9 @@ str2 <span class="token operator">=</span>  <span class="token string">' abc1234
 <td align="left">Logical Operators</td>
 </tr>
 </tbody></table>
-<p><strong>·</strong>  The priority of the operators:<br>Parentheses <code>()</code> have the highest precedence and can be used to force an expression to evaluate in the order we want. </p>
+<p><strong>·</strong>  The priority of the operators: </p>
+<p><code>**</code>, <code>~ + -</code>, <code>* / % //</code>, <code>+ -</code>, <code>&gt;&gt; &lt;&lt;</code>, <code>&amp;</code>, <code>^ |</code>, <code>&lt;= &lt; &gt; &gt;=</code>, <code>== !=</code>, <code>= %= /= //= -= += *= **=</code></p>
+<p>Parentheses <code>()</code> have the highest precedence and can be used to force an expression to evaluate in the order we want. </p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">10</span>
 b <span class="token operator">=</span> <span class="token number">3</span>
 a <span class="token operator">*=</span> b <span class="token operator">+</span> <span class="token number">2</span> <span class="token comment" spellcheck="true"># equivalent to: a=a*(b+2)=50</span>
@@ -286,130 +286,7 @@ str1 <span class="token operator">=</span> <span class="token string">'hello,wor
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#or</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#dlr</span></code></pre>
 <p><strong>Ⅳ. Constant</strong>:<br>There are some <u><a href="https://docs.python.org/3.5/library/constants.html" target="_blank" rel="noopener">built-in constants</a></u> in python.</p>
-<h4 id="Part-4-Language-structure"><a href="#Part-4-Language-structure" class="headerlink" title="Part. 4 Language structure"></a>Part. 4 Language structure</h4><p>We put these language elements together to form different statements so that we can solve a certain problem. The way we organize the statements can be divided into different types of structures in order to make our program more effective. Generally, there are three types: <i>sequential structure, conditional structure</i> and <i>iteration</i>.</p>
-<p>Python uses <strong>indentation</strong> to set the hierarchy of different compound statements instead of using<code>{}</code>.  If the continuous statements maintains the same indentation then they belong to the same code block, which is equivalent to one specific function.</p>
-<p><strong>Ⅰ. Conditional structure</strong><br>Sometimes, we have to separate our solutions into different <strong>branches</strong> and change the actions of the program according to some conditions. In python, we use <code>if</code> statement(use the keywords <code>if</code>, <code>else</code>, <code>elif</code>) to implement it.</p>
-<p><strong>·</strong> Chained conditionals: (two branches or more)</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># calculate the payment</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    fh <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the hour: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    fr <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the rate: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
-    <span class="token keyword">elif</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
-        pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
-    <span class="token keyword">else</span> <span class="token punctuation">:</span>
-        pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pay: '</span><span class="token punctuation">,</span> pay<span class="token punctuation">)</span>
-<span class="token keyword">except</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pease enter numeric input!'</span><span class="token punctuation">)</span></code></pre>
-<p><code>elif</code>: one of the conditions, <code>else</code>: catch the exceptions<br>(If more than one condition is true, only the first true branch executes.)</p>
-<p><strong>·</strong> Nested conditionals: </p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span> <span class="token punctuation">:</span> <span class="token keyword">if</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
-           pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
-       <span class="token keyword">else</span> <span class="token punctuation">:</span>
-           pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr</code></pre>
-<p>Usually, we use chained conditionals rather than nested conditionals or simplify it with operators. “Flat is better than nested”. Because the nested structure will have a serious impact on the readability of code.</p>
-<p><strong>Ⅱ. Iteration</strong><br>Repetitive tasks are the main work for computers. Python provides the <code>while</code> statement and <code>for</code> statement  to  let  the computers do the tasks in a more efficient way.</p>
-<p><strong>·</strong>  <code>while</code> statement (indefinite loops):</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># output the max and min</span>
-smallest <span class="token operator">=</span> None
-largest <span class="token operator">=</span> None
-<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-    num <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'Enter the num: '</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token string">'Done'</span><span class="token punctuation">:</span>
-        <span class="token keyword">break</span>
-    <span class="token keyword">try</span><span class="token punctuation">:</span>
-        num <span class="token operator">=</span> int<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
-    <span class="token keyword">except</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Invalid input!'</span><span class="token punctuation">)</span>
-        <span class="token keyword">continue</span>
-    <span class="token keyword">if</span> smallest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">&lt;</span>smallest<span class="token punctuation">:</span>
-        smallest <span class="token operator">=</span> num
-    <span class="token keyword">if</span> largest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">></span>largest<span class="token punctuation">:</span>
-        largest <span class="token operator">=</span> num
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The smallest:'</span><span class="token punctuation">,</span>smallest<span class="token punctuation">,</span><span class="token string">'The largest:'</span><span class="token punctuation">,</span>largest<span class="token punctuation">)</span></code></pre>
-<p><code>break</code>:  If the condition is met, the program will jump out of the loop.</p>
-<p><code>continue</code>:  Skip to the next iteration without finishing the body of the loop for the current iteration.</p>
-<p><strong>·</strong>  <code>for</code> statement (definite loops)</p>
-<p>When we want to loop through a set of words, the lines in a file, a list of numbers and so on, we can construct a definite loop using a <code>for</code> statement. </p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Multiplication table</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p><code>range(101)</code>A sequence of integers from 0 to 100 can be generated.<br><code>range(1, 100)</code>A sequence of integers from 1 to 99 can be generated.<br><code>range(1, 100, 2)</code>An odd sequence of 1 to 99 can be generated and 2 is the the increment of the sequence of values (step size).</p>
-<pre class=" language-python"><code class="language-python">friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'oreo'</span><span class="token punctuation">,</span> <span class="token string">'sermantha'</span><span class="token punctuation">,</span> <span class="token string">'Damon'</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> friend <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Happy New Year!'</span><span class="token punctuation">,</span>friend<span class="token punctuation">)</span></code></pre>
-<p>*<em>Ⅲ. Functions and Modules *</em><br>In order to  write high-quality code, we should eliminate the repetitive code which is doing the same type of  operations. We can encapsulate those repetitive codes into a function module called “function” so that we “call” the “function” when we need it. Generally, function is a named and reusable sequence of statements that takes arguments as input, performs a computation and return results. (The naming rules of function are consistent with the naming rules of variables. )</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># How to define a function? Example:calculate the factorial</span>
-<span class="token keyword">def</span> <span class="token function">factorial</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span>  <span class="token number">1</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> range <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        result <span class="token operator">*=</span> n
-    <span class="token keyword">return</span> result</code></pre>
-<p>Actually, factorial function is a built-in function in python, we can use such kind of functions directly without defining them. <u><a href="https://docs.python.org/3.5/library/functions.html" target="_blank" rel="noopener">More built-in functions in python.</a></u></p>
-<p><strong>·</strong> Function argument<br>In Python, function arguments can have default values and also support for variable arguments which is quite different from other languages.</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> randint
-
-<span class="token keyword">def</span> <span class="token function">roll_dice</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># The default value is 2.</span>
-    total <span class="token operator">=</span>  <span class="token number">0</span> 
-    <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        Total <span class="token operator">+=</span> randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span>
-     <span class="token keyword">return</span> total
-<span class="token comment" spellcheck="true"># '*' indicates that args is a variable parameter. The type of the arg is tuple.</span>
-<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    Total <span class="token operator">=</span>  <span class="token number">0</span> 
-    <span class="token keyword">for</span> val <span class="token keyword">in</span> args<span class="token punctuation">:</span>
-        Total <span class="token operator">+=</span> val
-    <span class="token keyword">return</span> total
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<p>Python looks for a variable in the order of “local scope”, “nested scope”, “global scope” and “built-in scope”. </p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    b <span class="token operator">=</span>  <span class="token string">' hello '</span> <span class="token comment" spellcheck="true"># b belongs to nested scope</span>
-    <span class="token keyword">def</span> bar <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        c <span class="token operator">=</span>  <span class="token boolean">True</span> <span class="token comment" spellcheck="true"># c belongs to local scope as a local variable</span>
-
-<span class="token keyword">if</span>  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
-    a <span class="token operator">=</span>  <span class="token number">100</span>  <span class="token comment" spellcheck="true"># a belons to global scope as a global variable</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>Some identifiers like <code>input</code>,<code>print</code> and <code>int</code>  are built  inside the python which belong to built-in scope. The local variables can only be used inside the function it belongs to, but we can access the global variables anywhere we want to. However, if we want to modify the value of the global variables inside a specific function, we should add <code>global</code> before the variables.</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span>  foo <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> a
-    a <span class="token operator">=</span>  <span class="token number">200</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span>
-
-If  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
-    a <span class="token operator">=</span>  <span class="token number">100</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    Print <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span></code></pre>
-<p>In the actual development process, we should reduce the use of global variables due to its wide scope.  Unexpected modifications may occur and also the memory occupied by variables are unable to be recycled. </p>
-<p><strong>·</strong> Module<br>Maybe sometimes, we are faced with naming conflicts. When this happens, the latter definition will override the previous definition, which means that only one of the two functions with the same name is actually executed. At such a moment, it is better to define the function with the same name in different files. In Python, every file represents a module. We can use the <code>import</code>  to import the specified module to distinguish different functions. </p>
-<p><code>module1.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-     <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'hello, world!'</span> <span class="token punctuation">)</span></code></pre>
-<p><code>module2.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-     <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'goodbye, world!'</span><span class="token punctuation">)</span></code></pre>
-<p><code>test.py</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> module1 <span class="token keyword">as</span> m1
-<span class="token keyword">import</span> module2 <span class="token keyword">as</span> m2
-m1<span class="token punctuation">.</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#hello, world!</span>
-m2<span class="token punctuation">.</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#goodbye, world!</span></code></pre>
-<p>However, besides the functions defined in the module we import, if there are some other executable codes, it’d be better to put those codes into the condition shown below so that the python interpreter will only execute them when the module is run directly and will not execute them when we import the module into other files.</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'goodbye, world!'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># __name__ is an implicit variable in Python that represents the name of the module.</span>
-<span class="token keyword">if</span>  __name__ <span class="token operator">==</span> <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'hello, world!'</span><span class="token punctuation">)</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h4 id="Part-5-Other-Built-in-Data-Types"><a href="#Part-5-Other-Built-in-Data-Types" class="headerlink" title="Part.5 Other Built-in Data Types"></a>Part.5 Other Built-in Data Types</h4><p><strong>Ⅰ. Sequence Type</strong></p>
+<h4 id="Part-4-Built-in-Data-Structures"><a href="#Part-4-Built-in-Data-Structures" class="headerlink" title="Part.4  Built-in Data Structures"></a>Part.4  Built-in Data Structures</h4><p><strong>Ⅰ. Sequence Type</strong></p>
 <p><strong>1.list</strong><br>Numeric types(<code>int</code> <code>float</code> ) are scalar types, which means that objects have no internal structure to access. However, string type is a structured, non-scalar type, so it has a range of properties and methods. List is the same as the string. However, list is mutable.</p>
 <p>List is an ordered sequence of values, each of which can be identified by an index, placed in the <code>[]</code> and separated by <code>,</code>. The values can be any type.</p>
 <pre class=" language-python"><code class="language-python">list1 <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -421,6 +298,7 @@ list2 <span class="token operator">=</span> <span class="token punctuation">[</s
 <span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 5 </span>
 list1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span>  <span class="token number">300</span> 
 <span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 3, 300, 7, 100]</span>
+
 <span class="token comment" spellcheck="true"># split and join</span>
 list3 <span class="token operator">=</span> <span class="token string">'list'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>list3<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['l','i','s','t']</span>
@@ -430,13 +308,18 @@ t <span class="token operator">=</span> list4<span class="token punctuation">.</
 <span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['here','it','is']</span>
 delimiter <span class="token operator">=</span> <span class="token string">' '</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>delimiter<span class="token punctuation">.</span>join<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># here it is</span>
+
 <span class="token comment" spellcheck="true"># Traverse element in the list</span>
 <span class="token keyword">for</span> index <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
      <span class="token keyword">print</span><span class="token punctuation">(</span>list1<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> elem <span class="token keyword">in</span> list1<span class="token punctuation">:</span>
      <span class="token keyword">print</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span>
 <span class="token keyword">for</span> index<span class="token punctuation">,</span>elem <span class="token keyword">in</span> enumerate <span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">:</span>
-     Print <span class="token punctuation">(</span>index<span class="token punctuation">,</span> elem<span class="token punctuation">)</span></code></pre>
+     <span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> elem<span class="token punctuation">)</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> zip<span class="token punctuation">(</span>list1<span class="token punctuation">,</span>list3<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> reversed<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Add and remove elements</span>
 list1<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
 list1<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span>
@@ -550,7 +433,7 @@ set2 <span class="token operator">=</span> <span class="token punctuation">{</sp
 <span class="token comment" spellcheck="true"># print(set2.issubset(set1))</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">>=</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># False</span>
 <span class="token comment" spellcheck="true"># print(set1.issuperset(set2))</span></code></pre>
-<p><strong>Ⅲ. Mapping Type：dictionary</strong></p>
+<p><strong>Ⅲ. Mapping Type:  dictionary</strong></p>
 <p>A mapping object maps hashtable values to arbitrary objects. Mappings are mutable objects.</p>
 <pre class=" language-python"><code class="language-python">scores <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Alice'</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token string">'Peter'</span><span class="token punctuation">:</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token string">'Oreo'</span><span class="token punctuation">:</span> <span class="token number">82</span><span class="token punctuation">}</span>
 items1 <span class="token operator">=</span> dict<span class="token punctuation">(</span>one<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> two<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> three<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> four<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
@@ -571,13 +454,198 @@ vals <span class="token operator">=</span> list<span class="token punctuation">(
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scores<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scores<span class="token punctuation">,</span>items<span class="token punctuation">)</span> 
 <span class="token comment" spellcheck="true"># dict_values([89, 82, 67]) dict_keys(['Peter', 'Oreo', 'John']) dict_items([('Peter', 89), ('Oreo', 82), ('John', 67)])</span>
 scores<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h4 id="Part-Bug"><a href="#Part-Bug" class="headerlink" title="Part. Bug"></a>Part. Bug</h4><p>Program should be written precisely otherwise the deviations and mistakes in your code will cause the Python to stop and can’t work out the final result. There are three main types of errors that you may encounter during.</p>
-<p> <strong>·</strong> Syntax errors: </p>
-<p> A syntax error means that you have violated the “grammar” rules of Python.</p>
-<p> <strong>·</strong> Logic errors: </p>
-<p> A mistake in the order of the statements or in how the statements relate to one another. </p>
-<p> <strong>·</strong> Semantic errors: </p>
-<p>The program is perfectly correct but it does not do what you intended for it to do. </p>
+<h4 id="Part-5-Language-structure"><a href="#Part-5-Language-structure" class="headerlink" title="Part. 5 Language structure"></a>Part. 5 Language structure</h4><p>We put these language elements together to form different statements so that we can solve a certain problem. The way we organize the statements can be divided into different types of structures in order to make our program more effective. Generally, there are three types: <i>sequential structure, conditional structure</i> and <i>iteration</i>.</p>
+<p>Python uses <strong>indentation</strong> to set the hierarchy of different compound statements instead of using<code>{}</code>.  If the continuous statements maintains the same indentation then they belong to the same code block, which is equivalent to one specific function.</p>
+<p><strong>Ⅰ. Conditional structure</strong><br>Sometimes, we have to separate our solutions into different <strong>branches</strong> and change the actions of the program according to some conditions. In python, we use <code>if</code> statement(use the keywords <code>if</code>, <code>else</code>, <code>elif</code>) to implement it.</p>
+<p><strong>·</strong> Chained conditionals: (two branches or more)</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># calculate the payment</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    fh <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the hour: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fr <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'Enter the rate: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
+        pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
+    <span class="token keyword">else</span> <span class="token punctuation">:</span>
+        pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pay: '</span><span class="token punctuation">,</span> pay<span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pease enter numeric input!'</span><span class="token punctuation">)</span></code></pre>
+<p><code>elif</code>: one of the conditions, <code>else</code>: catch the exceptions<br>(If more than one condition is true, only the first true branch executes.)</p>
+<p><strong>·</strong> Nested conditionals: </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">if</span> fh<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Pleae enter the right number'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span> <span class="token punctuation">:</span> <span class="token keyword">if</span> fh<span class="token operator">>=</span><span class="token number">40</span> <span class="token punctuation">:</span>
+           pay <span class="token operator">=</span> <span class="token punctuation">(</span>fh<span class="token number">-40</span><span class="token punctuation">)</span><span class="token operator">*</span>fr<span class="token operator">*</span><span class="token number">1.5</span><span class="token operator">+</span><span class="token number">40</span><span class="token operator">*</span>fr
+       <span class="token keyword">else</span> <span class="token punctuation">:</span>
+           pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr</code></pre>
+<p>Usually, we use chained conditionals rather than nested conditionals or simplify it with operators. “Flat is better than nested”. Because the nested structure will have a serious impact on the readability of code.</p>
+<p><strong>Ⅱ. Iteration</strong><br>Repetitive tasks are the main work for computers. Python provides the <code>while</code> statement and <code>for</code> statement  to  let  the computers do the tasks in a more efficient way.</p>
+<p><strong>·</strong>  <code>while</code> statement (indefinite loops):</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># output the max and min</span>
+smallest <span class="token operator">=</span> None
+largest <span class="token operator">=</span> None
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    num <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'Enter the num: '</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token string">'Done'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        num <span class="token operator">=</span> int<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Invalid input!'</span><span class="token punctuation">)</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> smallest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">&lt;</span>smallest<span class="token punctuation">:</span>
+        smallest <span class="token operator">=</span> num
+    <span class="token keyword">if</span> largest <span class="token keyword">is</span> None <span class="token operator">or</span> num<span class="token operator">></span>largest<span class="token punctuation">:</span>
+        largest <span class="token operator">=</span> num
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The smallest:'</span><span class="token punctuation">,</span>smallest<span class="token punctuation">,</span><span class="token string">'The largest:'</span><span class="token punctuation">,</span>largest<span class="token punctuation">)</span></code></pre>
+<p><code>break</code>:  If the condition is met, the program will jump out of the loop.</p>
+<p><code>continue</code>:  Skip to the next iteration without finishing the body of the loop for the current iteration.</p>
+<p><strong>·</strong>  <code>for</code> statement (definite loops)</p>
+<p>When we want to loop through a set of words, the lines in a file, a list of numbers and so on, we can construct a definite loop using a <code>for</code> statement. </p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Multiplication table</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d*%d=%d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i <span class="token operator">*</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">'\t'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><code>range(101)</code>A sequence of integers from 0 to 100 can be generated.<br><code>range(1, 100)</code>A sequence of integers from 1 to 99 can be generated.<br><code>range(1, 100, 2)</code>An odd sequence of 1 to 99 can be generated and 2 is the the increment of the sequence of values (step size).</p>
+<pre class=" language-python"><code class="language-python">friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'oreo'</span><span class="token punctuation">,</span> <span class="token string">'sermantha'</span><span class="token punctuation">,</span> <span class="token string">'Damon'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> friend <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Happy New Year!'</span><span class="token punctuation">,</span>friend<span class="token punctuation">)</span></code></pre>
+<p>*<em>Ⅲ. Function, Module and Package *</em></p>
+<p><strong>· Function</strong></p>
+<p>In order to  write high-quality code, we should eliminate the repetitive code which is doing the same type of  operations. We can encapsulate those repetitive codes into a function module called “function” so that we “call” the “function” when we need it. Generally, function is a named and reusable sequence of statements that takes arguments as input, performs a computation and return results. (The naming rules of function are consistent with the naming rules of variables. )</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># How to define a function? Example:calculate the factorial</span>
+<span class="token keyword">def</span> <span class="token function">factorial</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span>  <span class="token number">1</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> range <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        result <span class="token operator">*=</span> n
+    <span class="token keyword">return</span> result</code></pre>
+<p>1.Arguements</p>
+<p>In Python, function arguments can have default values and also support for variable arguments which is quite different from other languages.</p>
+<p>When the arguments passed by a function is an object of an immutable type, what is passed is not the actual value but a reference to the object. However, as for mutable type, the actual value will be passed to the function.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> randint
+
+<span class="token keyword">def</span> <span class="token function">roll_dice</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># The default value is 2.</span>
+    total <span class="token operator">=</span>  <span class="token number">0</span> 
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        Total <span class="token operator">+=</span> randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span>
+     <span class="token keyword">return</span> total
+
+<span class="token comment" spellcheck="true"># '*' and '**' indicate that args is a variable parameter. </span>
+<span class="token comment" spellcheck="true"># tu_args will be passed to the function as a tuple and dic_args will be  a dictionary.</span>
+<span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">*</span>tu_args<span class="token punctuation">,</span><span class="token operator">**</span>dic_args<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    Total <span class="token operator">=</span>  <span class="token number">0</span> 
+    <span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> dic_args<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> val <span class="token keyword">in</span> tu_args<span class="token punctuation">:</span>
+        Total <span class="token operator">+=</span> val
+    <span class="token keyword">return</span> total
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span>a<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Python looks for a variable in the order of “local scope”, “nested scope”, “global scope” and “built-in scope”. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    b <span class="token operator">=</span>  <span class="token string">' hello '</span> <span class="token comment" spellcheck="true"># b belongs to nested scope</span>
+    <span class="token keyword">def</span> bar <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        c <span class="token operator">=</span>  <span class="token boolean">True</span> <span class="token comment" spellcheck="true"># c belongs to local scope as a local variable</span>
+
+<span class="token keyword">if</span>  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
+    a <span class="token operator">=</span>  <span class="token number">100</span>  <span class="token comment" spellcheck="true"># a belons to global scope as a global variable</span>
+    foo<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Some identifiers like <code>input</code>,<code>print</code> and <code>int</code>  are built  inside the python which belong to built-in scope. The local variables can only be used inside the function it belongs to, but we can access the global variables anywhere we want to. However, if we want to modify the value of the global variables inside a specific function, we should add <code>global</code> before the variables.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span>  foo <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> a
+    a <span class="token operator">=</span>  <span class="token number">200</span> 
+    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span>
+
+If  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
+    a <span class="token operator">=</span>  <span class="token number">100</span>
+    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span></code></pre>
+<p>In the actual development process, we should reduce the use of global variables due to its wide scope.  Unexpected modifications may occur and also the memory occupied by variables are unable to be recycled. </p>
+<p>2.Docstring</p>
+<p>We can write documentation strings (or docstrings) to provide a convenient way of associating documentation with Python modules, functions, classes, and methods. The docstring should describe what the function does, not how.</p>
+<p>The rules of writing docstrings:</p>
+<ul>
+<li>· The doc string line should begin with a capital letter and end with a period.</li>
+<li>· The first line should be a short description.</li>
+<li>· If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description.</li>
+<li>· The following lines should be one or more paragraphs describing the object’s calling conventions, its side effects, etc.</li>
+</ul>
+<p>The way of declaring docstrings:</p>
+<p>Using ”’triple single quotes”’  just below the class, method or function declaration. </p>
+<p>The way of accessing docstrings:</p>
+<p>Using the  _<em>doc_</em> method of the object or using the help function.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">my_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+    <span class="token triple-quoted-string string">'''Demonstrates triple double quotes 
+    docstrings and does nothing really.'''</span>
+
+    <span class="token keyword">return</span> None
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Using __doc__:"</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_function<span class="token punctuation">.</span>__doc__<span class="token punctuation">)</span> 
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Using help:"</span><span class="token punctuation">)</span> 
+help<span class="token punctuation">(</span>my_function<span class="token punctuation">)</span> </code></pre>
+<pre><code>Using __doc__:
+Demonstrates triple double quotes
+    docstrings and does nothing really.
+Using help:
+Help on function my_function in module __main__:
+
+my_function()
+    Demonstrates triple double quotes
+    docstrings and does nothing really.</code></pre><p>3.Built-in functions.</p>
+<p>Actually, factorial function is a built-in function in python, we can use such kind of functions directly without defining them. <u><a href="https://docs.python.org/3.5/library/functions.html" target="_blank" rel="noopener">More built-in functions in python.</a></u></p>
+<p>4.Anonymous functions</p>
+<p>Python uses lambda to create anonymous functions. The so-called anonymous means that a function is no longer defined in a standard form such as the def statement.</p>
+<pre><code>lambda [arg1 [,arg2,.....argn]]:expression</code></pre><p>The body of the function is an expression, which can only encapsulate limited logic in it. And the lambda function has its own namespace and cannot access parameters outside of its parameter list or in the global namespace.</p>
+<p><strong>· Module</strong><br>If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Or sometimes, you are faced with naming conflicts of different functions in one file. Or as your program gets longer, you may want to split it into several files for easier maintenance. Or you may also want to use a handy function that you’ve written in several programs without copying its definition into each program. At such moments, python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. In Python, every file represents a module. </p>
+<p>We can use the <code>import</code>  to import the specified module to distinguish different functions. </p>
+<p>The variable <code>sys.path</code> is a list of strings that determines the interpreter’s search path for modules. It is initialized to a default path taken from the environment variable <code>PYTHONPATH</code>, or from a built-in default if <code>PYTHONPATH</code> is not set. You can modify it using standard list operations: sys.path.append(‘/lib/python’).</p>
+<p><code>module1.py</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'hello, world!'</span> <span class="token punctuation">)</span></code></pre>
+<p><code>module2.py</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'goodbye, world!'</span><span class="token punctuation">)</span></code></pre>
+<p><code>test.py</code></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> module1 <span class="token keyword">as</span> m1
+<span class="token keyword">import</span> module2 <span class="token keyword">as</span> m2
+m1<span class="token punctuation">.</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#hello, world!</span>
+m2<span class="token punctuation">.</span>foo<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#goodbye, world!</span></code></pre>
+<p>Each module has its own private symbol table, which is used as the global symbol table by all functions defined in the module.</p>
+<p>However, besides the functions defined in the module we import, if there are some other executable codes, it’d be better to put those codes into the condition shown below so that the python interpreter will only execute them when the module is run directly and will not execute them when we import the module into other files.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'goodbye, world!'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># __name__ is an implicit variable in Python that represents the name of the module.</span>
+<span class="token keyword">if</span>  __name__ <span class="token operator">==</span> <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'hello, world!'</span><span class="token punctuation">)</span>
+    foo<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><strong>· Package</strong></p>
+<p>Sometimes you may need to create and maintain a growing collection of modules for dealing with difficult problems in an actual project. Packages are a way to achieve this and also structure Python’s module namespace by using “dotted module names”. </p>
+<pre><code>sound/                          Top-level package
+      __init__.py               Initialize the sound package
+      formats/                  Subpackage for file format conversions
+              __init__.py
+              wavread.py
+              ...
+      effects/                  Subpackage for sound effects
+              __init__.py
+              echo.py
+              ...
+      filters/                  Subpackage for filters
+              __init__.py
+              equalizer.py
+              ...</code></pre><p>When importing the package, Python searches through the directories on <code>sys.path</code> looking for the package subdirectory. The <code>__init__.py</code> files are required to make Python treat directories containing the file as packages. </p>
+<p>We can use leading dots to indicate the current and parent packages involved in the relative import.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sound<span class="token punctuation">.</span>effects<span class="token punctuation">.</span>echo
+
+<span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> echo
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">import</span> formats
+<span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token punctuation">.</span>filters <span class="token keyword">import</span> equalizer</code></pre>
 <h4 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h4><p><strong>Ex.1</strong>: Enter the year to determine if it is a <strong>leap year</strong>.</p>
 <pre class=" language-python"><code class="language-python">year <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">' Please enter the year: '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 is_leap <span class="token operator">=</span> <span class="token punctuation">(</span>year <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> year <span class="token operator">%</span> <span class="token number">100</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">or</span> \

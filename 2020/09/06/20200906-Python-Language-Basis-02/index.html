@@ -1,0 +1,861 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/pink.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python Language Basis 02</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Python-Language-Basis-02"><a href="#Python-Language-Basis-02" class="headerlink" title="Python Language Basis 02"></a>Python Language Basis 02</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><img src="https://i.loli.net/2020/09/08/Oz3UJF4QW1m2yos.png" alt="11" style="zoom:50%;">
+**· materials:**
+  · [<i>Python for Everybody (Exploring Data Using Python 3)</i>](https://www.py4e.com/)  by Charles R. Severance
+  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw
+  · <u>[Python-100-Days](https://github.com/jackfrued/Python-100-Days)</u> by jackfrued
+  · <u>[Python documents](https://docs.python.org/3/tutorial/index.html)</u>
+
+<h3 id="Part-1-Input-and-Output"><a href="#Part-1-Input-and-Output" class="headerlink" title="Part.1 Input and Output"></a>Part.1 Input and Output</h3><p>Usually, we have several ways to get the data we need from the outside. There are two main ways.</p>
+<p>We can simply use <code>input()</code> to get the data from the input devices like keyboards.</p>
+<pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Enter the data:"</span><span class="token punctuation">)</span></code></pre>
+<p>Another way is to read the files from our computers or different database.</p>
+<p><strong>Ⅰ. File</strong> </p>
+<p>Open the file.</p>
+<pre class=" language-python"><code class="language-python">file <span class="token operator">=</span> open<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> buffering<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span>None<span class="token punctuation">,</span> errors<span class="token operator">=</span>None<span class="token punctuation">,</span> newline<span class="token operator">=</span>None<span class="token punctuation">,</span> closefd<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> opener<span class="token operator">=</span>None<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># mode can be 'w','r','a'... (describing the way in which the file will be used)</span></code></pre>
+<img src="https://i.loli.net/2020/09/06/3LOGRnblwHTKBDJ.png" alt="11" style="zoom: 50%;">
+
+<p>It is good practice to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'workfile'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    read_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>The <code>open()</code> method returns a file object and it has lots of built-in methods to deal with the data.</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Reads some quantity of data and returns it as a string (in text mode)</span>
+f<span class="token punctuation">.</span>read<span class="token punctuation">(</span>size<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Read a single line from the file,a newline character (\n) is left.</span>
+f<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Read lines from a file, you can loop over the file object. </span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Read all the lines of a file in a list or use readlines().</span>
+list<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Write the contents of string to the file, returning the number of characters written.</span>
+<span class="token comment" spellcheck="true"># Other types of objects need to be converted before writing to the file.</span>
+f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>string<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Returns an integer giving the file object’s current position.</span>
+f<span class="token punctuation">.</span>tell<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Change the file object’s position</span>
+<span class="token comment" spellcheck="true"># whence: 0-begining,1-current,2-end</span>
+f<span class="token punctuation">.</span>seek<span class="token punctuation">(</span>offset<span class="token punctuation">,</span> whence<span class="token punctuation">)</span></code></pre>
+<p> *<em>Ⅱ. Output Formatting *</em></p>
+<p>There are several ways to present the output of a program : <em>expression statements</em> and the <code>print()</code> function. (A third way is using the <code>write()</code> method of file objects;)</p>
+<pre class=" language-python"><code class="language-python">a  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.4</span>
+b  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%d +%d = %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{a}+{b} = {a+b}'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{0}+{1} = {2}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 + 123 = 246</span></code></pre>
+<p>( <code>%</code> is  format operator.  <code>%x</code> is a placeholder. <code>%d</code> is for the integer.  <code>%f</code> is for the decimal.<code>%%</code> is for the percent sign. The strings after the <code>%</code> will replace the placeholder and output to the terminal )</p>
+<p>When you don’t need fancy output but just want a quick display of some variables for debugging purposes, you can convert any value to a string with the <code>repr()</code> or <code>str()</code> functions.</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> s <span class="token operator">=</span> <span class="token string">'Hello, world.'</span>
+<span class="token operator">>></span><span class="token operator">></span> str<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token string">'Hello, world.'</span>
+<span class="token operator">>></span><span class="token operator">></span> repr<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token string">"'Hello, world.'"</span></code></pre>
+<h3 id="Part-2-Scopes-and-Namespaces"><a href="#Part-2-Scopes-and-Namespaces" class="headerlink" title="Part.2  Scopes and Namespaces"></a>Part.2  Scopes and Namespaces</h3><p><strong>Ⅰ. Namespaces</strong></p>
+<p>A <em>namespace</em> is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries. </p>
+<p>Examples of namespaces are:<br>  <strong>·</strong> the set of built-in names (containing functions such as <code>abs()</code>, and built-in exception names);<br>  <strong>·</strong> the global names in a module;<br> <strong>·</strong> the local names in a function invocation.</p>
+<p>There is absolutely no relation between names in different namespaces. Users of the modules must prefix the  items, which are the same name, with the module name.</p>
+<p>Namespaces are created at different moments and have different lifetimes.<br>The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted.<br>The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits.<br>The local namespace for a function is created when the function is called, and deleted when the function returns or raises an exception that is not handled within the function.</p>
+<p><strong>Ⅱ. Scope</strong></p>
+<p>A <em>scope</em> is a textual region of a Python program where an unqualified reference to a name attempts to find the name in the namespace.</p>
+<p>Although scopes are determined statically, they are used dynamically. At any time during execution, there are 3 or 4 nested scopes whose namespaces are directly accessible:</p>
+<ul>
+<li><strong>·</strong> the innermost scope, which is searched first, contains the local names</li>
+<li><strong>·</strong> the scopes of any enclosing functions, which are searched starting with the nearest enclosing scope, contains non-local, but also non-global names</li>
+<li><strong>·</strong> the next-to-last scope contains the current module’s global names</li>
+<li><strong>·</strong> the outermost scope (searched last) is the namespace containing built-in names</li>
+</ul>
+<p>The <code>global</code> statement can be used to indicate that particular variables live in the global scope and should be rebound there;<br>The <code>nonlocal</code> statement is used to rebind variables found outside of the innermost scope and indicates that particular variables live in an enclosing scope.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">scope_test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">do_local</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        spam <span class="token operator">=</span> <span class="token string">"local spam"</span>
+
+    <span class="token keyword">def</span> <span class="token function">do_nonlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        nonlocal spam
+        spam <span class="token operator">=</span> <span class="token string">"nonlocal spam"</span>
+
+    <span class="token keyword">def</span> <span class="token function">do_global</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">global</span> spam
+        spam <span class="token operator">=</span> <span class="token string">"global spam"</span>
+
+    spam <span class="token operator">=</span> <span class="token string">"test spam"</span>
+    do_local<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"After local assignment:"</span><span class="token punctuation">,</span> spam<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># After local assignment: test spam</span>
+    do_nonlocal<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"After nonlocal assignment:"</span><span class="token punctuation">,</span> spam<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># After nonlocal assignment: nonlocal spam</span>
+    do_global<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"After global assignment:"</span><span class="token punctuation">,</span> spam<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># After global assignment: nonlocal spam</span>
+
+scope_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"In global scope:"</span><span class="token punctuation">,</span> spam<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># In global scope: global spam</span></code></pre>
+<h3 id="Part-3-Class"><a href="#Part-3-Class" class="headerlink" title="Part.3  Class"></a>Part.3  Class</h3><p>*<em>Ⅰ. *</em>Object-oriented programming (OOP)</p>
+<p>Python is  an object-oriented programing language and almost every operational item in python is an object. OOP is a computer programming model that organizes software design around objects, rather than functions and logic.  An object can be defined as a data field that has unique attributes and behavior.</p>
+<p>Object-oriented programming is based on the following principles:</p>
+<p>1) Encapsulation: The implementation and state of each object are privately held inside a defined  class and other objects are only able to call a list of public functions, or methods.</p>
+<p>2) Abstraction:  Objects only reveal internal mechanisms that are relevant for the use of other objects, hiding any unnecessary implementation code.</p>
+<p>3) Inheritance: Relationships and subclasses between objects can be assigned, allowing developers to reuse a common logic while still maintaining a unique hierarchy.</p>
+<p>4) Polymorphism: It is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types. </p>
+<p>Python is multi-paradigm with OOP support and is class-based. Classes provide a means of bundling data and functionality together. Each class instance can have attributes attached to it for maintaining its state and methods (defined by its class) for modifying its state.</p>
+<p>*<em>Ⅱ. *</em> Create a class</p>
+<p>Some concepts:</p>
+<p> <strong>·</strong> Class: Used to describe a collection of objects with the same properties and methods. It defines the attributes and methods common to each object in the collection. Objects are instances of classes.</p>
+<p> <strong>·</strong> Method: The function defined in the class.</p>
+<p> <strong>·</strong> Local variable: The variable defined in the method only acts on the class of the current instance.</p>
+<p> <strong>·</strong> Class variable: Class variables are common in the entire instantiated object and are defined in the class and outside the function body. Class variables are usually not used as instance variables.</p>
+<p> <strong>·</strong> Instance variable: In the declaration of a class, the attribute is represented by a variable. Such a variable is called an instance variable, and an instance variable is a variable modified with <code>self</code>.</p>
+<p> <strong>·</strong> Data members: Class variables or instance variables which are used to process data related to the class and its instance objects.</p>
+<p> <strong>·</strong> Instantiation: Create an instance of a class, the concrete object of the class.</p>
+<p>Class objects support two kinds of operations: attribute references and instantiation.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">people</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># define the basic attribute</span>
+    kind <span class="token operator">=</span> <span class="token string">'mammalia'</span> <span class="token comment" spellcheck="true"># class variable shared by all instances</span>
+
+    <span class="token comment" spellcheck="true"># define the construction method with '__init__()'.</span>
+    <span class="token comment" spellcheck="true"># the instantiation operation of the class will automatically call this method.</span>
+    <span class="token comment" spellcheck="true"># The class method must contain the parameter 'self' in the first.</span>
+    <span class="token comment" spellcheck="true"># 'Self' represents an instance of the class.</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> n   <span class="token comment" spellcheck="true"># instance variable unique to each instance</span>
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> a
+        <span class="token comment" spellcheck="true"># define private attributes which cannot be accessed directly outside the class</span>
+        <span class="token comment" spellcheck="true"># starting with two underscores '__'.</span>
+        self<span class="token punctuation">.</span>__weight <span class="token operator">=</span> w
+    <span class="token comment" spellcheck="true"># define private method</span>
+    <span class="token keyword">def</span> <span class="token function">__foo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>          
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'This is a private method.'</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s said: I am %d years old."</span> <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>__foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Instance objects can only understand attribute references operations. </span>
+<span class="token comment" spellcheck="true"># There are two kinds of valid attribute names: data attributes and methods.</span>
+<span class="token comment" spellcheck="true"># The instantiation operation of the class</span>
+p <span class="token operator">=</span> people<span class="token punctuation">(</span><span class="token string">'Oreo'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Oreo said: I am 10 years old. This is a private method.</span></code></pre>
+<p>When a class definition is entered, a new namespace is created, and used as the local scope — thus, all assignments to local variables go into this new namespace. In particular, function definitions bind the name of the new function here.</p>
+<p>*<em>Ⅲ. *</em>Features</p>
+<p>1) Inheritance  </p>
+<p>This allows classes to be arranged in a hierarchy that represents “is-a-type-of” relationships and allows easy re-use of the same procedures and data definitions.</p>
+<p>2) Method override</p>
+<p>Subclasses can override the methods defined by superclass.</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Single inheritance</span>
+<span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    grade <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">,</span>g<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Call the constructor of the parent class</span>
+        people<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>grade <span class="token operator">=</span> g
+    <span class="token comment" spellcheck="true"># Override the method of the parent class</span>
+    <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s said: I am %d years old and is %d grade."</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>age<span class="token punctuation">,</span>self<span class="token punctuation">.</span>grade<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">speaker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    topic <span class="token operator">=</span> <span class="token string">''</span>
+    name <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> n
+        self<span class="token punctuation">.</span>topic <span class="token operator">=</span> t
+    <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"My name is %s，I am a speaker and the topic of my speech is %s."</span><span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>topic<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Multiple inheritance</span>
+<span class="token keyword">class</span> <span class="token class-name">sample</span><span class="token punctuation">(</span>speaker<span class="token punctuation">,</span>student<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span><span class="token string">''</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">,</span>g<span class="token punctuation">,</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        student<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">,</span>g<span class="token punctuation">)</span>
+        speaker<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>t<span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> sample<span class="token punctuation">(</span><span class="token string">"Oreo"</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">"Python"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># If the method names are the same, </span>
+<span class="token comment" spellcheck="true"># the method of the parent class in front of the brackets is called by default.</span>
+test<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># My name is Oreo，I am a speaker and the topic of my speech is Python.</span>
+<span class="token comment" spellcheck="true"># test.speak() is a method object and can be stored away and called at a later time.</span></code></pre>
+<p>The <code>super()</code> function is a method used to call the parent class. <code>super(student,test1).speak()</code></p>
+<p>3) Operator overloading</p>
+<p>It is a specific case of polymorphism, where different operators have different implementations depending on their arguments. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Vector</span><span class="token punctuation">:</span>
+   <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>a <span class="token operator">=</span> a
+      self<span class="token punctuation">.</span>b <span class="token operator">=</span> b
+
+   <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token string">'Vector (%d, %d)'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>a<span class="token punctuation">,</span> self<span class="token punctuation">.</span>b<span class="token punctuation">)</span>
+
+   <span class="token keyword">def</span> <span class="token function">__add__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>other<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Vector<span class="token punctuation">(</span>self<span class="token punctuation">.</span>a <span class="token operator">+</span> other<span class="token punctuation">.</span>a<span class="token punctuation">,</span> self<span class="token punctuation">.</span>b <span class="token operator">+</span> other<span class="token punctuation">.</span>b<span class="token punctuation">)</span>
+
+v1 <span class="token operator">=</span> Vector<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+v2 <span class="token operator">=</span> Vector<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>v1 <span class="token operator">+</span> v2<span class="token punctuation">)</span></code></pre>
+<p>4) Special method</p>
+<p>They are a variety of instance methods that are reserved by Python, which affect an object’s high level behavior and its interactions with operators. </p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Signature</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Returns string for a printable representation of object</td>
+<td><code>__repr__(self)</code></td>
+<td><code>repr(x)</code> invokes <code>x.__repr__()</code>,this is also invoked when an object is returned by a console.</td>
+</tr>
+<tr>
+<td>Returns string representation of an object</td>
+<td><code>__str__(self)</code></td>
+<td><code>str(x)</code> invokes <code>x.__str__()</code></td>
+</tr>
+<tr>
+<td>Add</td>
+<td><code>__add__(self, other)</code></td>
+<td><code>x + y</code> invokes <code>x.__add__(y)</code></td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td><code>__sub__(self, other)</code></td>
+<td><code>x - y</code> invokes <code>x.__sub__(y)</code></td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td><code>__mul__(self, other)</code></td>
+<td><code>x * y</code> invokes <code>x.__mul__(y)</code></td>
+</tr>
+<tr>
+<td>Divide</td>
+<td><code>__truediv__(self, other)</code></td>
+<td><code>x / y</code> invokes <code>x.__truediv__(y)</code></td>
+</tr>
+<tr>
+<td>Power</td>
+<td><code>__pow__(self, other)</code></td>
+<td><code>x ** y</code> invokes <code>x.__pow__(y)</code></td>
+</tr>
+<tr>
+<td>Length</td>
+<td><code>__len__(self)</code></td>
+<td><code>len(x)</code> invokes <code>x.__len__()</code></td>
+</tr>
+<tr>
+<td>Get Item</td>
+<td><code>__getitem__(self, key)</code></td>
+<td><code>x[key]</code> invokes <code>x.__getitem__(key)</code></td>
+</tr>
+<tr>
+<td>Set Item</td>
+<td><code>__setitem__(self, key, item)</code></td>
+<td><code>x[key] = item</code> invokes <code>x.__setitem__(key, item)</code></td>
+</tr>
+<tr>
+<td>Contains</td>
+<td><code>__contains__(self, item)</code></td>
+<td><code>item in x</code> invokes <code>x.__contains__(item)</code></td>
+</tr>
+<tr>
+<td>Iterator</td>
+<td><code>__iter__(self)</code></td>
+<td><code>iter(x)</code> invokes <code>x.__iter__()</code></td>
+</tr>
+<tr>
+<td>Next</td>
+<td><code>__next__(self)</code></td>
+<td><code>next(x)</code> invokes <code>x.__next__()</code></td>
+</tr>
+</tbody></table>
+<h3 id="Part-4-Iterators-and-Generators"><a href="#Part-4-Iterators-and-Generators" class="headerlink" title="Part.4 Iterators and Generators"></a>Part.4 Iterators and Generators</h3><p><strong>Ⅰ.</strong> Iterators</p>
+<p>An iterator is an object that can remember the position of the traversal. It accesses the first element of the collection(any container object) until all the elements are accessed and it can only go forward.</p>
+<p>There are two basic methods for iterators: <code>iter()</code> and <code>next()</code>. String, list or tuple objects can all be used to create iterators.</p>
+<pre class=" language-python"><code class="language-python">list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+it <span class="token operator">=</span> iter<span class="token punctuation">(</span>list<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># Create iterator object</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># Output the next element of the iterator # 1</span></code></pre>
+<p>Using a class as an iterator requires implementing two methods in the class <code>__iter__()</code> and <code>__next__()</code>.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyNumbers</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> self
+
+  <span class="token keyword">def</span> <span class="token function">__next__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>a <span class="token operator">&lt;=</span> <span class="token number">20</span><span class="token punctuation">:</span>
+      x <span class="token operator">=</span> self<span class="token punctuation">.</span>a
+      self<span class="token punctuation">.</span>a <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">return</span> x
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+      <span class="token keyword">raise</span> StopIteration 
+    <span class="token comment" spellcheck="true"># be triggered to end the iteration after completing the specified number of loops.</span>
+
+myclass <span class="token operator">=</span> MyNumbers<span class="token punctuation">(</span><span class="token punctuation">)</span>
+myiter <span class="token operator">=</span> iter<span class="token punctuation">(</span>myclass<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> myiter<span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
+<p>The <code>__iter__()</code> method returns a special iterator object, which implements the <code>__next__()</code> method that returns the next iterator object and accesses elements in the container one at a time. When there are no more elements, <code>__next__()</code> raises a  <code>StopIteration</code> exception  to identify the completion of the iteration. </p>
+<p>*<em>Ⅱ. *</em>Generators</p>
+<p>In Python, a function that uses <code>yield</code> is called a generator. </p>
+<p>Generators are a simple and powerful tool for creating iterators. They are written like regular functions but use the <code>yield</code> statement whenever they want to return data. Each time <code>next()</code> is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed). </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+
+<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">></span> n<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+            <span class="token keyword">return</span>
+        <span class="token keyword">yield</span> a
+        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
+        counter <span class="token operator">+=</span> <span class="token number">1</span>
+
+f <span class="token operator">=</span> fibonacci<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># f is an iterator and return by the generator function(fibonacci).</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
+        sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Part-5-Regular-Expressions"><a href="#Part-5-Regular-Expressions" class="headerlink" title="Part.5 Regular Expressions"></a>Part.5 Regular Expressions</h3><p><strong>Ⅰ.</strong> Basic concept</p>
+<p>Regular expression is a sequence of characters that define a search pattern. It can be used to check whether a string contains a certain substring, replace the matched substring, or extract it.</p>
+<pre class=" language-perl"><code class="language-perl">Oreoisa<span class="token variable">*irl</span> <span class="token comment" spellcheck="true"># '*' means the preceding character can appear 0 or 1 or more times.</span>
+Oreoisa<span class="token operator">+</span>irl <span class="token comment" spellcheck="true"># '+' means the preceding character must appear at least once.</span>
+Oreoisa<span class="token operator">?</span>irl <span class="token comment" spellcheck="true"># '?' means the preceding character can appear only 0 or 1 time.</span></code></pre>
+<p>Regular expressions are text patterns composed of ordinary characters (such as characters a to z) and special characters (called “metacharacters”). The components of a regular expression can be a single or a set of characters, the range of characters, a selection between characters, or any combination of all these components.</p>
+<p>1) ordinary character</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ABC]</code></td>
+<td>match all the characters in the […]</td>
+</tr>
+<tr>
+<td><code>[^ABC]</code></td>
+<td>match any character except the ones in the […]</td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td>match all the characters range from the first character in the […] to the last one.</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>matches any single character except the newline character (\n, \r), which is equivalent to <code>[^\n\r]</code>.</td>
+</tr>
+<tr>
+<td><code>[\s\S]</code></td>
+<td>match all the characters. <code>\s</code> matches all whitespace characters, including newlines, <code>\S</code> matches non-whitespace characters, including newlines.</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>match letters, numbers, and underscores. Equivalent to [A-Za-z0-9_]</td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>2) Non-printing characters</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\f</code></td>
+<td>Matches a form feed character. Equivalent to \x0c and \cL.</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>Match a newline character. Equivalent to \x0a and \cJ.</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>Matches a carriage return character. Equivalent to \x0d and \cM.</td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>3) Special characters</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$</code></td>
+<td>Match the end position of the input string. To match the $ character itself, use <code>\$</code>.</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>Mark the beginning and end of a sub-expression. The sub-expression can be retrieved for later use. To match these characters, use <code>\(</code> and <code>\)</code>.</td>
+</tr>
+<tr>
+<td><code>*</code>,<code>+</code>,<code>?</code></td>
+<td>See details above. To match the <em>,+,? character itself, use `\</em><code>,</code>+<code>,</code>?`</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>4)  Qualifier</p>
+<p>The qualifier is used to specify how many times a given component of the regular expression must appear to satisfy the match. There are 6 kinds of <code>*</code> or <code>+</code> or <code>?</code>Or <code>{n}</code> or <code>{n,}</code> or <code>{n,m}</code>.</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>{n}</code></td>
+<td>n is a non-negative integer. Matches certain character n times.</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>n is a non-negative integer. Matches certain character at least n times.</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>Both m and n are non-negative integers, where n &lt;= m. Matches certain character at least n times and at most m times.</td>
+</tr>
+</tbody></table>
+<p>5)  Locator</p>
+<p>The locator allows you to fix the regular expression to the beginning or end of a line. Or used to describe the boundary of a string or word.</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code></td>
+<td>Matches the position at the beginning of the input string.</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Matches the position at the end of the input string.</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Match a word boundary, that is, the position between a word and a space.</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Match any character except a word boundary.</td>
+</tr>
+</tbody></table>
+<p>6) Selection</p>
+<p><code>()</code> means the capture group, <code>()</code> will save the matching value in each group, multiple matching values can be viewed by the number n (n is a number, representing the content of the nth capture group).</p>
+<pre class=" language-perl"><code class="language-perl"><span class="token regex">/([0-9])([a-z]+)  \1 /g</span>  <span class="token comment" spellcheck="true"># \1 specifies the first submatch.</span>
+<span class="token comment" spellcheck="true"># Capture all strings that start with a number and end with multiple letters</span></code></pre>
+<p>7) Non-capturing element</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>?=</code></td>
+<td>exp1(?=exp2) : Find exp1 before exp2</td>
+</tr>
+<tr>
+<td><code>?&lt;=</code></td>
+<td>(?&lt;=exp2)exp1 : Find exp1 after exp2</td>
+</tr>
+<tr>
+<td><code>?!</code></td>
+<td>exp1(?!exp2) : Find exp1 that does not follow exp2.</td>
+</tr>
+<tr>
+<td><code>?&lt;!</code></td>
+<td>(?&lt;!=exp2)exp1 : Find exp1 that is not preceding exp2.</td>
+</tr>
+</tbody></table>
+<p>8) Modifier (tag)</p>
+<p>Tags are used to specify additional matching strategies and are written outside the expression.</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>i</code></td>
+<td>ignore : not case sensitive</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>global : Global match</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>more : Multi-line matching</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Make the special character dot contains the newline character <code>\n</code></td>
+</tr>
+</tbody></table>
+<p>9) Operator precedence</p>
+<p><code>\</code>, <code>(), (?:), (?=), []</code>, <code>*, +, ?, {n}, {n,}, {n,m}</code>, <code>^, $, \any character、any character</code>, <code>|</code></p>
+<p>*<em>Ⅱ. *</em> re — Regular expression operation</p>
+<p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener">More details</a></p>
+<p>1）re.match and re.search</p>
+<p><code>re.match</code> only matches the beginning of the string. If the string does not match the regular expression at the beginning, the match fails, the function returns None, and <code>re.search</code> matches the entire string until a match is found.</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># re.match(pattern, string, flags=0)</span>
+
+<span class="token keyword">import</span> re
+
+line <span class="token operator">=</span> <span class="token string">"Cats are smarter than dogs"</span>
+
+matchObj <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span> r<span class="token string">'dogs'</span><span class="token punctuation">,</span> line<span class="token punctuation">,</span> re<span class="token punctuation">.</span>M<span class="token operator">|</span>re<span class="token punctuation">.</span>I<span class="token punctuation">)</span>
+<span class="token keyword">if</span> matchObj<span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"match --> matchObj.group() : "</span><span class="token punctuation">,</span> matchObj<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"No match!!"</span><span class="token punctuation">)</span>
+
+matchObj <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span> r<span class="token string">'dogs'</span><span class="token punctuation">,</span> line<span class="token punctuation">,</span> re<span class="token punctuation">.</span>M<span class="token operator">|</span>re<span class="token punctuation">.</span>I<span class="token punctuation">)</span>
+<span class="token keyword">if</span> matchObj<span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"search --> matchObj.group() : "</span><span class="token punctuation">,</span> matchObj<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+   <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"No match!!"</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""
+No match!!
+search --> matchObj.group() :  dogs
+"""</span></code></pre>
+<p>2) re.sub</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># re.sub(pattern, repl, string, count=0, flags=0)</span>
+<span class="token keyword">import</span> re
+
+<span class="token comment" spellcheck="true"># Multiply the matched number by 2</span>
+<span class="token keyword">def</span> <span class="token function">double</span><span class="token punctuation">(</span>matched<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    value <span class="token operator">=</span> int<span class="token punctuation">(</span>matched<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> str<span class="token punctuation">(</span>value <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'(?P&lt;value>\d+)'</span><span class="token punctuation">,</span> double<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># A46G8HFD1134</span></code></pre>
+<p>3) re.compile</p>
+<p>The compile function is used to compile regular expressions and generate a regular expression (Pattern) object for use by the match() and search() functions.</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span><span class="token keyword">import</span> re
+<span class="token operator">>></span><span class="token operator">></span> pattern <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">)</span>                    <span class="token comment" spellcheck="true"># Match at least one digit</span>
+<span class="token operator">>></span><span class="token operator">></span> m <span class="token operator">=</span> pattern<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">'one12twothree34four'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Match from the position of '1'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span> m <span class="token punctuation">)</span>                                        <span class="token comment" spellcheck="true"># Returns a Match object</span>
+<span class="token operator">&lt;</span>_sre<span class="token punctuation">.</span>SRE_Match object at <span class="token number">0x10a42aac0</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> m<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   
+<span class="token string">'12'</span>
+<span class="token operator">>></span><span class="token operator">></span> m<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   
+<span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span> m<span class="token punctuation">.</span>end<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>     
+<span class="token number">5</span>
+<span class="token operator">>></span><span class="token operator">></span> m<span class="token punctuation">.</span>span<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>    
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p><strong>Ⅰ.</strong> doctest — Test interactive Python examples</p>
+<p>The <code>doctest</code> module searches for pieces of text that look like interactive Python sessions, and then executes those sessions to verify that they work exactly as shown. </p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    >>> multiply(4, 3)
+    12
+    >>> multiply('a', 3)
+    'aaa'
+    """</span>
+    <span class="token keyword">return</span> a <span class="token operator">*</span> b
+
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">import</span> doctest
+    doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span>verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<p>*<em>Ⅱ. *</em>unittest — Unit testing framework</p>
+<p>The unittest unit testing framework was originally inspired by JUnit and has a similar flavor as major unit testing frameworks in other languages. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> unittest
+
+<span class="token keyword">class</span> <span class="token class-name">TestStringMethods</span><span class="token punctuation">(</span>unittest<span class="token punctuation">.</span>TestCase<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">test_upper</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>assertEqual<span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'FOO'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">test_isupper</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>assertTrue<span class="token punctuation">(</span><span class="token string">'FOO'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>assertFalse<span class="token punctuation">(</span><span class="token string">'Foo'</span><span class="token punctuation">.</span>isupper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">test_split</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        s <span class="token operator">=</span> <span class="token string">'hello world'</span>
+        self<span class="token punctuation">.</span>assertEqual<span class="token punctuation">(</span>s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'world'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># check that s.split fails when the separator is not a string</span>
+        <span class="token keyword">with</span> self<span class="token punctuation">.</span>assertRaises<span class="token punctuation">(</span>TypeError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    unittest<span class="token punctuation">.</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h3 id="Part-6-Errors-and-Exceptions"><a href="#Part-6-Errors-and-Exceptions" class="headerlink" title="Part.6 Errors and Exceptions"></a>Part.6 Errors and Exceptions</h3><p>Program should be written precisely otherwise the deviations and mistakes in your code will cause the Python to stop and can’t work out the final result. There are three main types of errors that you may encounter during.</p>
+<p> <strong>·</strong> Syntax errors: </p>
+<p> A syntax error means that you have violated the “grammar” rules of Python.</p>
+<p> <strong>·</strong> Logic errors: </p>
+<p> A mistake in the order of the statements or in how the statements relate to one another. </p>
+<p> <strong>·</strong> Semantic errors: </p>
+<p>The program is perfectly correct but it does not do what you intended for it to do. </p>
+<p>1) Exceptions</p>
+<p>Errors detected during execution are called <em>exceptions</em> and are not unconditionally fatal. Most exceptions are not handled by programs, however, and result in error messages. Exceptions come in different types, and the type is printed as part of the message.</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions" target="_blank" rel="noopener">Built-in Exceptions</a>  lists the built-in exceptions and their meanings.</p>
+<p>2) Handling Exceptions</p>
+<p>It is possible to write programs that handle selected exceptions. A user-generated interruption is signaled by raising different types of exception.</p>
+<p>*<em>try/except : *</em></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'myfile.txt'</span><span class="token punctuation">)</span>
+    s <span class="token operator">=</span> f<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    i <span class="token operator">=</span> int<span class="token punctuation">(</span>s<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> OSError <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"OS error: {0}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Could not convert data to an integer."</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Unexpected error:"</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>exc_info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">raise</span></code></pre>
+<p>*<em>try/except … else : *</em></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">for</span> arg <span class="token keyword">in</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        f <span class="token operator">=</span> open<span class="token punctuation">(</span>arg<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> IOError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'cannot open'</span><span class="token punctuation">,</span> arg<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Excute when there is no error happen</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>arg<span class="token punctuation">,</span> <span class="token string">'has'</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'lines'</span><span class="token punctuation">)</span> 
+        f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>*<em>try-finally : *</em></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> AssertionError <span class="token keyword">as</span> error<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'file.log'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> file<span class="token punctuation">:</span>
+            read_data <span class="token operator">=</span> file<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> FileNotFoundError <span class="token keyword">as</span> fnf_error<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>fnf_error<span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'This line will be executed regardless of whether an exception occurs.'</span><span class="token punctuation">)</span></code></pre>
+<p>3) Raising Exceptions</p>
+<p>The sole argument to <code>raise</code> indicates the exception to be raised. This must be either an exception instance or an exception class</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'x can not be greater than 5。x : {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'An exception flew by!'</span><span class="token punctuation">)</span>
+     <span class="token keyword">raise</span></code></pre>
+<p>4) User-defined Exceptions</p>
+<p>Programs may name their own exceptions by creating a new exception class</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyError</span><span class="token punctuation">(</span>Exception<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>value <span class="token operator">=</span> value
+        <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> repr<span class="token punctuation">(</span>self<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> MyError<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> MyError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'My exception occurred, value:'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># My exception occurred, value: 4</span></code></pre>
+<p>5) Assert</p>
+<p>The <code>assert</code> keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">assert</span> expression
+
+<span class="token keyword">if</span> <span class="token operator">not</span> expression<span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> AssertionError
+
+<span class="token keyword">import</span> sys
+<span class="token keyword">assert</span> <span class="token punctuation">(</span><span class="token string">'linux'</span> <span class="token keyword">in</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"This code can only be excuted in Linux."</span></code></pre>
+<h3 id="Part-7-Standard-Library"><a href="#Part-7-Standard-Library" class="headerlink" title="Part.7 Standard Library"></a>Part.7 Standard Library</h3><p><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener">For details</a></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
