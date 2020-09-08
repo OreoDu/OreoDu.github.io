@@ -223,7 +223,7 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
 <p>2) Abstraction:  Objects only reveal internal mechanisms that are relevant for the use of other objects, hiding any unnecessary implementation code.</p>
 <p>3) Inheritance: Relationships and subclasses between objects can be assigned, allowing developers to reuse a common logic while still maintaining a unique hierarchy.</p>
 <p>4) Polymorphism: It is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types. </p>
-<p>Python is multi-paradigm with OOP support and is class-based. Classes provide a means of bundling data and functionality together. Each class instance can have attributes attached to it for maintaining its state and methods (defined by its class) for modifying its state.</p>
+<p>Python is multi-paradigm with OOP support and is class-based. Classes provide a means of bundling data and functionality together. Each class instance can have attributes attached to it for maintaining its state(the set of values of the attributes of a particular instance) and methods (defined by its class) for modifying its state.</p>
 <p>*<em>Ⅱ. *</em> Create a class</p>
 <p>Some concepts:</p>
 <p> <strong>·</strong> Class: Used to describe a collection of objects with the same properties and methods. It defines the attributes and methods common to each object in the collection. Objects are instances of classes.</p>
@@ -248,19 +248,41 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
         <span class="token comment" spellcheck="true"># define private attributes which cannot be accessed directly outside the class</span>
         <span class="token comment" spellcheck="true"># starting with two underscores '__'.</span>
         self<span class="token punctuation">.</span>__weight <span class="token operator">=</span> w
+
+    @property <span class="token comment" spellcheck="true"># Accessor-getter method</span>
+    <span class="token keyword">def</span> <span class="token function">weight</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__weight
+
+    @weight<span class="token punctuation">.</span>setter <span class="token comment" spellcheck="true"># Modifier-setter method</span>
+    <span class="token keyword">def</span> <span class="token function">weight</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> weight<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__weight <span class="token operator">=</span> weight
+
     <span class="token comment" spellcheck="true"># define private method</span>
     <span class="token keyword">def</span> <span class="token function">__foo</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>          
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'This is a private method.'</span><span class="token punctuation">)</span>
+
     <span class="token keyword">def</span> <span class="token function">speak</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s said: I am %d years old."</span> <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>__foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># Both static and class methods can be accessed through class objects and instances.</span>
+    @staticmethod
+    <span class="token keyword">def</span> <span class="token function">staticm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">)</span>
+
+    @classmethod
+    <span class="token keyword">def</span> <span class="token function">classm</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'class'</span><span class="token punctuation">,</span>cls）
 
 <span class="token comment" spellcheck="true"># Instance objects can only understand attribute references operations. </span>
 <span class="token comment" spellcheck="true"># There are two kinds of valid attribute names: data attributes and methods.</span>
 <span class="token comment" spellcheck="true"># The instantiation operation of the class</span>
 p <span class="token operator">=</span> people<span class="token punctuation">(</span><span class="token string">'Oreo'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span>
-p<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Oreo said: I am 10 years old. This is a private method.</span></code></pre>
+p<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Oreo said: I am 10 years old. This is a private method. </span>
+<span class="token comment" spellcheck="true"># This is equal to people.speak(p)</span></code></pre>
 <p>When a class definition is entered, a new namespace is created, and used as the local scope — thus, all assignments to local variables go into this new namespace. In particular, function definitions bind the name of the new function here.</p>
+<p>Python allows you to define a special <code>__slots__</code> variable when defining a class to limit the attributes that can be added to the class instance.</p>
+<p>The <code>dir()</code> method can return a list of valid attributes and methods of the object.</p>
 <p>*<em>Ⅲ. *</em>Features</p>
 <p>1) Inheritance  </p>
 <p>This allows classes to be arranged in a hierarchy that represents “is-a-type-of” relationships and allows easy re-use of the same procedures and data definitions.</p>
@@ -559,6 +581,7 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 <td>Both m and n are non-negative integers, where n &lt;= m. Matches certain character at least n times and at most m times.</td>
 </tr>
 </tbody></table>
+<p>The repeat character(<code>*</code> or <code>+</code> ) push outward in both directions(greedy matching) to match the largest possible string. However, if we add a <code>?</code> , <code>*</code> or <code>+</code>  chill out a bit.</p>
 <p>5)  Locator</p>
 <p>The locator allows you to fix the regular expression to the beginning or end of a line. Or used to describe the boundary of a string or word.</p>
 <table>
@@ -589,6 +612,7 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 <p><code>()</code> means the capture group, <code>()</code> will save the matching value in each group, multiple matching values can be viewed by the number n (n is a number, representing the content of the nth capture group).</p>
 <pre class=" language-perl"><code class="language-perl"><span class="token regex">/([0-9])([a-z]+)  \1 /g</span>  <span class="token comment" spellcheck="true"># \1 specifies the first submatch.</span>
 <span class="token comment" spellcheck="true"># Capture all strings that start with a number and end with multiple letters</span></code></pre>
+<p>Parentheses tell where to start and stop what string to extract.</p>
 <p>7) Non-capturing element</p>
 <table>
 <thead>
@@ -678,6 +702,7 @@ search --> matchObj.group() :  dogs
     <span class="token keyword">return</span> str<span class="token punctuation">(</span>value <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
 
 s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'</span>
+<span class="token comment" spellcheck="true"># ?P&lt;value> means to name a group as value to match the rule to match the following /d+</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'(?P&lt;value>\d+)'</span><span class="token punctuation">,</span> double<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># A46G8HFD1134</span></code></pre>
 <p>3) re.compile</p>
 <p>The compile function is used to compile regular expressions and generate a regular expression (Pattern) object for use by the match() and search() functions.</p>
@@ -694,6 +719,15 @@ s <span class="token operator">=</span> <span class="token string">'A23G4HFD567'
 <span class="token number">5</span>
 <span class="token operator">>></span><span class="token operator">></span> m<span class="token punctuation">.</span>span<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>    
 <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+<p>4) findall</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> re
+
+pattern <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># find number</span>
+result1 <span class="token operator">=</span> pattern<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'runoob 123 google 456'</span><span class="token punctuation">)</span>
+result2 <span class="token operator">=</span> pattern<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'run88oob123google456'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>result1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['123', '456']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['88', '12']</span></code></pre>
 <h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p><strong>Ⅰ.</strong> doctest — Test interactive Python examples</p>
 <p>The <code>doctest</code> module searches for pieces of text that look like interactive Python sessions, and then executes those sessions to verify that they work exactly as shown. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
