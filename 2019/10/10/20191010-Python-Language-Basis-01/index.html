@@ -121,7 +121,7 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/pink.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/hpqrHXILJGxeSbO.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python Language Basis 01</h2></a>
             </div>
             <!-- Post -->
@@ -142,21 +142,20 @@
 <p>(from <i>Python for Everybody</i>)</p>
 <p>When we finish our code and store it in the <i>secondary memory</i>, the Python interpreter(CPython、IPython、Jython、PyPy ) will parses the source code and interprets the instructions and the complier will translate the high-level source code into machine language and put the resulting machine language into a file for later execution.</p>
 <p>Then when we execute the program, it will be stored in the <i>main memory</i> temporarily. The computer will retrieve the data form the <i>input devices</i> or the <i>network</i>, get the instructions form the <i>main memory</i> and do the computations in the <i>center processing unit(CPU)</i> with a high speed(billion times per second). In the end, the computer will send the results to the <i>output devices</i>.</p>
-<h4 id="Part-3-Language-element"><a href="#Part-3-Language-element" class="headerlink" title="Part.3 Language element"></a>Part.3 Language element</h4><p>A language must have its own vocabulary and grammar. In the vocabulary of Python, basically, we have <i>Reserved words (keywords)</i>, <i>Variable</i>, <i>constant(numbers,letters,strings)</i> and <i>operators</i>.</p>
+<h4 id="Part-3-Language-element"><a href="#Part-3-Language-element" class="headerlink" title="Part.3 Language element"></a>Part.3 Language element</h4><p>A language must have its own vocabulary and grammar. In the vocabulary of Python, basically, we have <i>Reserved words (keywords)</i>, <i>variable</i>, <i>constant</i> and <i>operators</i>.</p>
 <p><strong>Ⅰ. Reserved words</strong> (keywords):<br>Special identifiers with specific meanings and functions in python that can’t be used by programmer.</p>
 <p><img src="https://i.loli.net/2020/09/06/hJebFXYLdgN3wGx.png" alt="reserved-w"></p>
 <p>(from <i>Python for Everybody</i>)</p>
-<p><strong>Ⅱ. Variable</strong>:<br><strong>·</strong> Types :<br>    <strong>numbers</strong>: <strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)<br>                       <strong>float</strong> (sometimes use scientific notation: 1.234e2)<br>                       <strong>complex number</strong> (ex: 3+2j)<br>    <strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks, immutable)<br>    <strong>Boolean</strong> (True, False)<br>    <strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
-<p>In python, variables don’t have types(only the objects have types) and it’s just a reference to an object (a pointer), which can point to a type of object(String,list…). </p>
-<p>Mutable objects: numbers,strings, tuples.</p>
-<p>Immutable objects: list, set, dictionary.</p>
+<p><strong>Ⅱ. Variable</strong>:</p>
+<p>In python, variables don’t have types(only the objects have types) and it’s just a reference to an object (a pointer), which can point to a type of object(string,list…). </p>
+<p><strong>·</strong> Types :<br>    <strong>numbers</strong>:<br>               <strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)<br>                <strong>float</strong> (sometimes use scientific notation: 1.234e2)<br>                <strong>complex number</strong> (ex: 3+2j)<br>    <strong>Boolean: True, False</strong><br>    <strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks)<br>    <strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
+<p>Immutable objects: numbers,strings, tuples.<br>Mutable objects: list, set, dictionary.</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span></code></pre>
-<p>  Variable types can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a string to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).<br>     ·  …</p>
+<p>The type of the objects can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a number or stringS to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).<br>     ·  …</p>
 <p><strong>·</strong> Name rules: (usually use a mnemonic name)<br>    1.Combination of numbers, letters, underscore (can not start with a number)<br>    2.Case sensitive<br>    3.Can not use reserved words<br>    4.PEP 8 <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">(<u> Style Guide for Python Code</u> )</a></p>
-<p> <strong>·</strong> How do we use variables?</p>
-<p>1.Use variables to save data and perform arithmetic operations</p>
+<p> <strong>·</strong> How do we use variables?<br>1.Use variables to save data and perform arithmetic operations</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234</span>
 b <span class="token operator">=</span> <span class="token number">2.345</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3.579</span>
@@ -172,26 +171,30 @@ s2 <span class="token operator">=</span> <span class="token string">' \'hello, w
 <span class="token keyword">print</span> <span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">' '</span> <span class="token punctuation">)</span></code></pre>
 <p>3.The object string has some built-in methods to process itself.<br>We can use <code>dir</code> function to show the available methods. (<u><a href="https://docs.python.org/3.5/library/stdtypes.html#string-methods" target="_blank" rel="noopener">more methods</a></u>)</p>
 <pre class=" language-python"><code class="language-python">str1 <span class="token operator">=</span> <span class="token string">'hello,World!'</span> 
-<span class="token comment" spellcheck="true"># calculates the length</span>
+<span class="token comment" spellcheck="true"># calculate the length</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>len <span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 13</span>
+
 <span class="token comment" spellcheck="true"># obtain capitalized string copy </span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>capitalize <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#Hello, world! </span>
 <span class="token comment" spellcheck="true"># obtain the first character of each word capitalized copy </span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Hello, World! </span>
 <span class="token comment" spellcheck="true"># obtain an each character capitalized copy  </span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>upper <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># HELLO, WORLD! </span>
+<span class="token comment" spellcheck="true">#replace the specific substring with another one</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># helle,werld</span>
+
 <span class="token comment" spellcheck="true">#Find the location of the substring</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token number">5</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 7 </span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'shit '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># -1 </span>
-<span class="token comment" spellcheck="true">#replace the specific substring with another one</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># helle,werld</span>
 <span class="token comment" spellcheck="true"># check whether the string starts with the specified string</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>startswith <span class="token punctuation">(</span><span class="token string">'He'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># False </span>
 <span class="token comment" spellcheck="true"># checks whether the string ends with the specified string </span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>endswith <span class="token punctuation">(</span><span class="token string">'!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># True </span>
+
 <span class="token comment" spellcheck="true"># Center the string at the specified width and fill with the specified characters </span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span>center<span class="token punctuation">(</span> <span class="token number">50</span> <span class="token punctuation">,</span><span class="token string">'*'</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">.</span>rjust<span class="token punctuation">(</span> <span class="token number">50</span> <span class="token punctuation">,</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
 str2 <span class="token operator">=</span>  <span class="token string">' abc123456 '</span> 
 <span class="token comment" spellcheck="true"># check whether the character string configured by numbers</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str2<span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># False </span>
@@ -213,7 +216,7 @@ str2 <span class="token operator">=</span>  <span class="token string">' abc1234
 </thead>
 <tbody><tr>
 <td><code>+</code> <code>-</code></td>
-<td align="left">index,sign</td>
+<td align="left">unary plus and minus</td>
 </tr>
 <tr>
 <td><code>**</code> <code>*</code> <code>/</code> <code>%</code> <code>//</code> <code>+</code> <code>-</code></td>
@@ -277,7 +280,7 @@ flag3 <span class="token operator">=</span> flag1 <span class="token operator">a
 s2 <span class="token operator">=</span>  <span class="token string">' world '</span> 
 s1 <span class="token operator">+=</span> s2
 <span class="token keyword">print</span> <span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># hello hello hello world </span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'ll'</span> <span class="token keyword">in</span> s1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># True</span>
+
 str1 <span class="token operator">=</span> <span class="token string">'hello,world'</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#l</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#ll</span>
@@ -287,17 +290,17 @@ str1 <span class="token operator">=</span> <span class="token string">'hello,wor
 <span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#dlr</span></code></pre>
 <p><strong>Ⅳ. Constant</strong>:<br>There are some <u><a href="https://docs.python.org/3.5/library/constants.html" target="_blank" rel="noopener">built-in constants</a></u> in python.</p>
 <h4 id="Part-4-Built-in-Data-Structures"><a href="#Part-4-Built-in-Data-Structures" class="headerlink" title="Part.4  Built-in Data Structures"></a>Part.4  Built-in Data Structures</h4><p><strong>Ⅰ. Sequence Type</strong></p>
-<p><strong>1.list</strong><br>Numeric types(<code>int</code> <code>float</code> ) are scalar types, which means that objects have no internal structure to access. However, string type is a structured, non-scalar type, so it has a range of properties and methods. List is the same as the string. However, list is mutable.</p>
+<p><strong>1.list</strong><br>Numeric types(<code>int</code> <code>float</code> …) are scalar types, which means that objects have no internal structure to access. However, string type is a structured, non-scalar type, so it has a range of properties and methods. List is the same as the string. However, list is mutable.</p>
 <p>List is an ordered sequence of values, each of which can be identified by an index, placed in the <code>[]</code> and separated by <code>,</code>. The values can be any type.</p>
-<pre class=" language-python"><code class="language-python">list1 <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
-list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span>
-list2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hello'</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">3</span> 
-<span class="token keyword">print</span> <span class="token punctuation">(</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['Hello','Hello','Hello'] </span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#5 </span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 1 </span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 5 </span>
-list1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span>  <span class="token number">300</span> 
-<span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 3, 300, 7, 100]</span>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># create a list</span>
+list0 <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
+list0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span>
+list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hello'</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">3</span> 
+list2 <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">,</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['Hello','Hello','Hello'] [0,1,2,3]</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>list0<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#5 </span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>list0<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 1 </span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>list0<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 5 </span>
 
 <span class="token comment" spellcheck="true"># split and join</span>
 list3 <span class="token operator">=</span> <span class="token string">'list'</span>
@@ -316,27 +319,30 @@ delimiter <span class="token operator">=</span> <span class="token string">' '</
      <span class="token keyword">print</span><span class="token punctuation">(</span>elem<span class="token punctuation">)</span>
 <span class="token keyword">for</span> index<span class="token punctuation">,</span>elem <span class="token keyword">in</span> enumerate <span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">:</span>
      <span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> elem<span class="token punctuation">)</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> zip<span class="token punctuation">(</span>list1<span class="token punctuation">,</span>list3<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> zip<span class="token punctuation">(</span>list2<span class="token punctuation">,</span>list3<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> reversed<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Add and remove elements</span>
-list1<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
-list1<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span>
-list1<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
-list1 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000] </span>
-<span class="token keyword">if</span>  <span class="token number">3</span>  <span class="token keyword">in</span> list1<span class="token punctuation">:</span>
-    list1<span class="token punctuation">.</span>remove<span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span>
-list1<span class="token punctuation">.</span>pop <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-l <span class="token operator">=</span> list1<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># delete and return the last element</span>
-<span class="token keyword">del</span> list1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+list0<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+list0<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span>
+list0<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+list0 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>list0<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000] </span>
+
+<span class="token keyword">if</span>  <span class="token number">3</span>  <span class="token keyword">in</span> list0<span class="token punctuation">:</span>
+    list0<span class="token punctuation">.</span>remove<span class="token punctuation">(</span> <span class="token number">3</span> <span class="token punctuation">)</span>
+list0<span class="token punctuation">.</span>pop <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># delete and return the 0th element</span>
+l <span class="token operator">=</span> list0<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># delete and return the last element</span>
+<span class="token keyword">del</span> list0<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+
 <span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">,</span>l<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [100, 200, 1000] 2000</span>
 list1<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Slice the list</span>
 fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'grape'</span><span class="token punctuation">,</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'strawberry'</span><span class="token punctuation">,</span><span class="token string">'waxberry'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>fruits<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># apple strawberry</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>fruits<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># waxberry strawberry apple</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fruits<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['apple', 'strawberry']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fruits<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['waxberry', 'strawberry', 'apple', 'grape']</span>
+
 <span class="token comment" spellcheck="true"># Sort the list</span>
 list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'orange'</span><span class="token punctuation">,</span><span class="token string">'apple'</span><span class="token punctuation">,</span><span class="token string">'zoo'</span><span class="token punctuation">,</span><span class="token string">'blueberry'</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sorted <span class="token punctuation">(</span>list1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['apple', 'blueberry', 'orange', 'zoo']</span>
@@ -350,15 +356,6 @@ f <span class="token operator">=</span> <span class="token punctuation">[</span>
 f1 <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#Generator objects don't take extra space to store data </span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>getsizeof<span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#120</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;generator object &lt;genexpr> at 0x000001C05E2952C8></span></code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># yield</span>
-<span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span> 
-    <span class="token keyword">for</span> _ <span class="token keyword">in</span>  range <span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
-        <span class="token keyword">yield</span> a
-
-<span class="token keyword">for</span> val <span class="token keyword">in</span> fib<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># fib(20) is a list</span>
-         <span class="token keyword">print</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span></code></pre>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># objects and values</span>
 a <span class="token operator">=</span> <span class="token string">'banana'</span>
 b <span class="token operator">=</span> <span class="token string">'banana'</span>
@@ -378,14 +375,17 @@ w<span class="token punctuation">,</span>x<span class="token punctuation">,</spa
 <span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 'tuple'  100  12.1  True</span>
 w<span class="token punctuation">,</span>x <span class="token operator">=</span> x<span class="token punctuation">,</span>w
 <span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 100 'tuple'</span>
+
 t1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'single'</span><span class="token punctuation">,</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># To creat a single element, you have to include the final comma.</span>
 t2 <span class="token operator">=</span> tuple<span class="token punctuation">(</span><span class="token string">'single'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ('s','i','n','g','l','e')</span>
+
 <span class="token comment" spellcheck="true">#Traverse elements in the list</span>
 <span class="token keyword">for</span> element <span class="token keyword">in</span> t<span class="token punctuation">:</span>
      <span class="token keyword">print</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+
 <span class="token comment" spellcheck="true"># t[0] = 'change' # TypeError # It can not be modified.</span>
 t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">12.1</span> <span class="token punctuation">,</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># The variable t refers to a new tuple and the old one is recycled.</span>
-l <span class="token operator">=</span> list<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#convert the tuple into a list </span>
+l <span class="token operator">=</span> list<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># convert the tuple into a list </span>
 l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'tuple'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># tuple 100 12.1 True</span>
 t <span class="token operator">=</span> tuple<span class="token punctuation">(</span>l<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># convert the list into a tuple</span></code></pre>
@@ -396,17 +396,13 @@ t <span class="token operator">=</span> list<span class="token punctuation">(</s
 <span class="token keyword">for</span> word <span class="token keyword">in</span> words<span class="token punctuation">:</span>
     t<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">)</span>
 t<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-res <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-<span class="token keyword">for</span> length<span class="token punctuation">,</span> word <span class="token keyword">in</span> t<span class="token punctuation">:</span>
-    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['yonder', 'window', 'breaks', 'light', 'what', 'soft', 'but', 'in']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># [(6, 'yonder'), (6, 'window'), (6, 'breaks'), (5, 'light'), (4, 'what'), (4, 'soft'), (3, 'but'), (2, 'in')]</span>
 
 <span class="token comment" spellcheck="true"># be used in dictionary</span>
 d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">}</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sorted<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>k<span class="token punctuation">)</span> <span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> d<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#[(6,'c'),(3,'a'),(2,'b')]</span></code></pre>
-<p>There are two main advantages of the tuple listed as follows, meanwhile, they are also the reasons why we sometimes use tuple rather than list.<br>1.In fact, we may prefer to use the invariant objects in the project, especially in the multi-threaded environment because a constant object is much easier to maintain than a variable object and also can be easily shared and accessed.  So if we don’t need to add, delete, or modify elements, we can consider using tuples.</p>
-<p>2.Tuples are better than lists in both creation time and occupied space.</p>
-<p>3.There are a few cases where you might prefer tuples:<br>  · in a return statement<br>  · use a sequence as a dictionary key<br>  · pass a sequence as an argument to a function</p>
+<p>There are two main advantages of the tuple listed as follows, meanwhile, they are also the reasons why we sometimes use tuple rather than list.<br>1.In fact, we may prefer to use the invariant objects in the project, especially in the multi-threaded environment because a constant object is much easier to maintain than a variable object and also can be easily shared and accessed.  So if we don’t need to add, delete, or modify elements, we can consider using tuples.<br>2.Tuples are better than lists in both creation time and occupied space.<br>3.There are a few cases where you might prefer tuples:<br>  · in a return statement<br>  · use a sequence as a dictionary key<br>  · pass a sequence as an argument to a function</p>
 <p><strong>Ⅱ. Set Type</strong><br>The set in python is consistent with the mathematical set. It can not contain repetitive element.</p>
 <pre class=" language-python"><code class="language-python">set1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true"># {1, 2, 3}</span>
 set2 <span class="token operator">=</span> set<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {1, 2, 3, 4, 5, 6, 7, 8, 9}</span>
@@ -418,6 +414,7 @@ set1<span class="token punctuation">.</span>update<span class="token punctuation
 set1<span class="token punctuation">.</span>discard<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> <span class="token number">4</span> <span class="token keyword">in</span> set1<span class="token punctuation">:</span>
     set1<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {2, 3, 11, 12}</span>
+<span class="token comment" spellcheck="true"># delete and return the first element</span>
 set1<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># {3, 11, 12} # It's different from the list.</span></code></pre>
 <pre class=" language-python"><code class="language-python">set1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>
 set2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span>
@@ -435,20 +432,24 @@ set2 <span class="token operator">=</span> <span class="token punctuation">{</sp
 <span class="token comment" spellcheck="true"># print(set1.issuperset(set2))</span></code></pre>
 <p><strong>Ⅲ. Mapping Type:  dictionary</strong></p>
 <p>A mapping object maps hashtable values to arbitrary objects. Mappings are mutable objects.</p>
-<pre class=" language-python"><code class="language-python">scores <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Alice'</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token string">'Peter'</span><span class="token punctuation">:</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token string">'Oreo'</span><span class="token punctuation">:</span> <span class="token number">82</span><span class="token punctuation">}</span>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># create the dictionarys</span>
+scores <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Alice'</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token string">'Peter'</span><span class="token punctuation">:</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token string">'Oreo'</span><span class="token punctuation">:</span> <span class="token number">82</span><span class="token punctuation">}</span>
 items1 <span class="token operator">=</span> dict<span class="token punctuation">(</span>one<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> two<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> three<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> four<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
 items2 <span class="token operator">=</span> dict<span class="token punctuation">(</span>zip<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 items3 <span class="token operator">=</span> <span class="token punctuation">{</span>num<span class="token punctuation">:</span> num <span class="token operator">**</span> <span class="token number">2</span> <span class="token keyword">for</span> num <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+
 scores<span class="token punctuation">[</span><span class="token string">'Peter'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">89</span>
 scores<span class="token punctuation">.</span>update<span class="token punctuation">(</span>John<span class="token operator">=</span><span class="token number">67</span><span class="token punctuation">,</span> Marry<span class="token operator">=</span><span class="token number">85</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> key <span class="token keyword">in</span> scores<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># scores.keys() scores.values() scores.items() </span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{key}: {scores[key]}'</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> <span class="token string">'John'</span> <span class="token keyword">in</span> scores<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">[</span><span class="token string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'Oreo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 82</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'Jonny'</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 60</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>popitem<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ('Marry', 85)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 95</span>
+
 vals <span class="token operator">=</span> list<span class="token punctuation">(</span>scores<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>vals<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['Peter', 'Oreo', 'John']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>scores<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scores<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>scores<span class="token punctuation">,</span>items<span class="token punctuation">)</span> 
@@ -480,6 +481,20 @@ scores<span class="token punctuation">.</span>clear<span class="token punctuatio
        <span class="token keyword">else</span> <span class="token punctuation">:</span>
            pay <span class="token operator">=</span> fh<span class="token operator">*</span>fr</code></pre>
 <p>Usually, we use chained conditionals rather than nested conditionals or simplify it with operators. “Flat is better than nested”. Because the nested structure will have a serious impact on the readability of code.</p>
+<p>In the <code>if</code>  statement, we have to execute the subsequent steps through the result of the logical expression (True or False). <code>True</code> and <code>False</code> are specific attributes of each object in python. Examples of <code>True</code> and <code>False</code> values of objects in python:</p>
+<pre class=" language-python"><code class="language-python"><span class="token string">"spam"</span>   <span class="token comment" spellcheck="true"># True</span>
+<span class="token string">""</span>       <span class="token comment" spellcheck="true"># False</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span>       <span class="token comment" spellcheck="true"># False</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>       <span class="token comment" spellcheck="true"># False</span>
+<span class="token number">1</span>        <span class="token comment" spellcheck="true"># True</span>
+<span class="token operator">-</span><span class="token number">1</span>       <span class="token comment" spellcheck="true"># False</span>
+<span class="token number">0.0</span>      <span class="token comment" spellcheck="true"># False </span>
+None     <span class="token comment" spellcheck="true"># False</span></code></pre>
+<p>And also the result of some logical expressions.</p>
+<pre class=" language-python"><code class="language-python"><span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">2</span>      <span class="token comment" spellcheck="true"># False</span>
+a <span class="token operator">==</span> b   <span class="token comment" spellcheck="true"># True</span>
+a <span class="token keyword">is</span> b   <span class="token comment" spellcheck="true"># False</span>
+ele <span class="token keyword">in</span> list1 <span class="token comment" spellcheck="true"># True</span></code></pre>
 <p><strong>Ⅱ. Iteration</strong><br>Repetitive tasks are the main work for computers. Python provides the <code>while</code> statement and <code>for</code> statement  to  let  the computers do the tasks in a more efficient way.</p>
 <p><strong>·</strong>  <code>while</code> statement (indefinite loops):</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># output the max and min</span>
@@ -527,24 +542,24 @@ largest <span class="token operator">=</span> None
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> randint
 
 <span class="token keyword">def</span> <span class="token function">roll_dice</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># The default value is 2.</span>
-    total <span class="token operator">=</span>  <span class="token number">0</span> 
+    Total <span class="token operator">=</span>  <span class="token number">0</span> 
     <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
         Total <span class="token operator">+=</span> randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span>
-     <span class="token keyword">return</span> total
+    <span class="token keyword">return</span> Total
 
 <span class="token comment" spellcheck="true"># '*' and '**' indicate that args is a variable parameter. </span>
 <span class="token comment" spellcheck="true"># tu_args will be passed to the function as a tuple and dic_args will be  a dictionary.</span>
 <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">*</span>tu_args<span class="token punctuation">,</span><span class="token operator">**</span>dic_args<span class="token punctuation">)</span><span class="token punctuation">:</span> 
     Total <span class="token operator">=</span>  <span class="token number">0</span> 
-    <span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> dic_args<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> key<span class="token punctuation">,</span>value <span class="token keyword">in</span> dic_args<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
     <span class="token keyword">for</span> val <span class="token keyword">in</span> tu_args<span class="token punctuation">:</span>
         Total <span class="token operator">+=</span> val
-    <span class="token keyword">return</span> total
+    <span class="token keyword">return</span> Total
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span>a<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>              <span class="token comment" spellcheck="true"># 8</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true"># 24</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span>a<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true"># a 24 b 44 47</span></code></pre>
 <p>Python looks for a variable in the order of “local scope”, “nested scope”, “global scope” and “built-in scope”. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     b <span class="token operator">=</span>  <span class="token string">' hello '</span> <span class="token comment" spellcheck="true"># b belongs to nested scope</span>
@@ -574,12 +589,11 @@ If  __name__  <span class="token operator">==</span>  <span class="token string"
 <li>· If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description.</li>
 <li>· The following lines should be one or more paragraphs describing the object’s calling conventions, its side effects, etc.</li>
 </ul>
-<p>The way of declaring docstrings:</p>
-<p>Using ”’triple single quotes”’  just below the class, method or function declaration. </p>
-<p>The way of accessing docstrings:</p>
-<p>Using the  _<em>doc_</em> method of the object or using the help function.</p>
+<p>The way of declaring docstrings:<br>Using ”’triple single quotes”’  just below the class, method or function declaration. </p>
+<p>The way of accessing docstrings:<br>Using the  _<em>doc_</em> method of the object or using the help function.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">my_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
     <span class="token triple-quoted-string string">'''Demonstrates triple double quotes 
+
     docstrings and does nothing really.'''</span>
 
     <span class="token keyword">return</span> None
@@ -597,7 +611,7 @@ Help on function my_function in module __main__:
 
 my_function()
     Demonstrates triple double quotes
-    docstrings and does nothing really.</code></pre><p>3.Built-in functions.</p>
+    docstrings and does nothing really.</code></pre><p>3.Built-in functions</p>
 <p>Actually, factorial function is a built-in function in python, we can use such kind of functions directly without defining them. <u><a href="https://docs.python.org/3.5/library/functions.html" target="_blank" rel="noopener">More built-in functions in python.</a></u></p>
 <p>4.Anonymous functions</p>
 <p>Python uses lambda to create anonymous functions. The so-called anonymous means that a function is no longer defined in a standard form such as the def statement.</p>

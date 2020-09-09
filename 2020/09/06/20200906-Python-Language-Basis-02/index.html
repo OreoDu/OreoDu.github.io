@@ -121,7 +121,7 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://q9c32mgkt.bkt.clouddn.com/static/images/pink.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/SHh9rGn2vqzDLwY.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python Language Basis 02</h2></a>
             </div>
             <!-- Post -->
@@ -130,18 +130,17 @@
 
 
 
-<p><strong>· materials:</strong><br>  · <a href="https://www.py4e.com/" target="_blank" rel="noopener"><i>Python for Everybody (Exploring Data Using Python 3)</i></a>  by Charles R. Severance<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued<br>  · <u><a href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener">Python documents</a></u></p>
+<p><strong>· materials:</strong><br>  · <a href="https://www.py4e.com/" target="_blank" rel="noopener"><u><i>Python for Everybody (Exploring Data Using Python 3)</i></u></a>  by Charles R. Severance<br>  · <i>Learn Python 3 the Hard Way</i> by Zed A. Shaw<br>  · <u><a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a></u> by jackfrued<br>  · <u><a href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener">Python documents</a></u></p>
 <h3 id="Part-1-Input-and-Output"><a href="#Part-1-Input-and-Output" class="headerlink" title="Part.1 Input and Output"></a>Part.1 Input and Output</h3><p>Usually, we have several ways to get the data we need from the outside. There are two main ways.</p>
 <p>We can simply use <code>input()</code> to get the data from the input devices like keyboards.</p>
 <pre class=" language-python"><code class="language-python">data <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"Enter the data:"</span><span class="token punctuation">)</span></code></pre>
 <p>Another way is to read the files from our computers or different database.</p>
-<p><strong>Ⅰ. File</strong> </p>
-<p>Open the file.</p>
+<p><strong>Ⅰ. File</strong><br>Open the file.</p>
 <pre class=" language-python"><code class="language-python">file <span class="token operator">=</span> open<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> buffering<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span>None<span class="token punctuation">,</span> errors<span class="token operator">=</span>None<span class="token punctuation">,</span> newline<span class="token operator">=</span>None<span class="token punctuation">,</span> closefd<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> opener<span class="token operator">=</span>None<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># mode can be 'w','r','a'... (describing the way in which the file will be used)</span></code></pre>
 <img src="https://i.loli.net/2020/09/06/3LOGRnblwHTKBDJ.png" alt="11" style="zoom: 50%;">
 
-<p>It is good practice to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
+<p>It is better to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after all the operation have finished, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'workfile'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     read_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <p>The <code>open()</code> method returns a file object and it has lots of built-in methods to deal with the data.</p>
@@ -165,7 +164,7 @@ f<span class="token punctuation">.</span>tell<span class="token punctuation">(</
 <span class="token comment" spellcheck="true"># Change the file object’s position</span>
 <span class="token comment" spellcheck="true"># whence: 0-begining,1-current,2-end</span>
 f<span class="token punctuation">.</span>seek<span class="token punctuation">(</span>offset<span class="token punctuation">,</span> whence<span class="token punctuation">)</span></code></pre>
-<p> *<em>Ⅱ. Output Formatting *</em></p>
+<p> <strong>Ⅱ. Output Formatting</strong></p>
 <p>There are several ways to present the output of a program : <em>expression statements</em> and the <code>print()</code> function. (A third way is using the <code>write()</code> method of file objects;)</p>
 <pre class=" language-python"><code class="language-python">a  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.4</span>
 b  <span class="token operator">=</span> int<span class="token punctuation">(</span>input <span class="token punctuation">(</span><span class="token string">'a = '</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123.3</span>
@@ -183,7 +182,7 @@ b  <span class="token operator">=</span> int<span class="token punctuation">(</s
 <p>A <em>namespace</em> is a mapping from names to objects. Most namespaces are currently implemented as Python dictionaries. </p>
 <p>Examples of namespaces are:<br>  <strong>·</strong> the set of built-in names (containing functions such as <code>abs()</code>, and built-in exception names);<br>  <strong>·</strong> the global names in a module;<br> <strong>·</strong> the local names in a function invocation.</p>
 <p>There is absolutely no relation between names in different namespaces. Users of the modules must prefix the  items, which are the same name, with the module name.</p>
-<p>Namespaces are created at different moments and have different lifetimes.<br>The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted.<br>The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits.<br>The local namespace for a function is created when the function is called, and deleted when the function returns or raises an exception that is not handled within the function.</p>
+<p>Namespaces are created at different moments and have different lifetimes.<br>The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted.<br>The global namespace for a module is created when the module definition is read in. Normally, module namespaces also last until the interpreter quits.<br>The local namespace for a function is created when the function is called, and deleted when the function returns or raises an exception that is not handled within the function.</p>
 <p><strong>Ⅱ. Scope</strong></p>
 <p>A <em>scope</em> is a textual region of a Python program where an unqualified reference to a name attempts to find the name in the namespace.</p>
 <p>Although scopes are determined statically, they are used dynamically. At any time during execution, there are 3 or 4 nested scopes whose namespaces are directly accessible:</p>
@@ -216,7 +215,7 @@ b  <span class="token operator">=</span> int<span class="token punctuation">(</s
 
 scope_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"In global scope:"</span><span class="token punctuation">,</span> spam<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># In global scope: global spam</span></code></pre>
-<h3 id="Part-3-Class"><a href="#Part-3-Class" class="headerlink" title="Part.3  Class"></a>Part.3  Class</h3><p>*<em>Ⅰ. *</em>Object-oriented programming (OOP)</p>
+<h3 id="Part-3-Class"><a href="#Part-3-Class" class="headerlink" title="Part.3  Class"></a>Part.3  Class</h3><p><strong>Ⅰ. Object-oriented programming (OOP)</strong> </p>
 <p>Python is  an object-oriented programing language and almost every operational item in python is an object. OOP is a computer programming model that organizes software design around objects, rather than functions and logic.  An object can be defined as a data field that has unique attributes and behavior.</p>
 <p>Object-oriented programming is based on the following principles:</p>
 <p>1) Encapsulation: The implementation and state of each object are privately held inside a defined  class and other objects are only able to call a list of public functions, or methods.</p>
@@ -224,15 +223,16 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
 <p>3) Inheritance: Relationships and subclasses between objects can be assigned, allowing developers to reuse a common logic while still maintaining a unique hierarchy.</p>
 <p>4) Polymorphism: It is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types. </p>
 <p>Python is multi-paradigm with OOP support and is class-based. Classes provide a means of bundling data and functionality together. Each class instance can have attributes attached to it for maintaining its state(the set of values of the attributes of a particular instance) and methods (defined by its class) for modifying its state.</p>
-<p>*<em>Ⅱ. *</em> Create a class</p>
+<p>*<em>Ⅱ. Create a class *</em> </p>
 <p>Some concepts:</p>
 <p> <strong>·</strong> Class: Used to describe a collection of objects with the same properties and methods. It defines the attributes and methods common to each object in the collection. Objects are instances of classes.</p>
 <p> <strong>·</strong> Method: The function defined in the class.</p>
-<p> <strong>·</strong> Local variable: The variable defined in the method only acts on the class of the current instance.</p>
 <p> <strong>·</strong> Class variable: Class variables are common in the entire instantiated object and are defined in the class and outside the function body. Class variables are usually not used as instance variables.</p>
 <p> <strong>·</strong> Instance variable: In the declaration of a class, the attribute is represented by a variable. Such a variable is called an instance variable, and an instance variable is a variable modified with <code>self</code>.</p>
 <p> <strong>·</strong> Data members: Class variables or instance variables which are used to process data related to the class and its instance objects.</p>
 <p> <strong>·</strong> Instantiation: Create an instance of a class, the concrete object of the class.</p>
+<p> <strong>·</strong> Class method: A class method receives the class as implicit first argument, just like an instance method receives the instance which is bound to the class and not the object of the class. They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance. It can modify a class state that would apply across all the instances of the class. For example it can modify a class variable that will be applicable to all the instances.</p>
+<p> <strong>·</strong> Static method: A static method does not receive an implicit first argument. A static method is also a method which is bound to the class and not the object of the class. It can’t access or modify class state.<br>It is present in a class because it makes sense for the method to be present in class.</p>
 <p>Class objects support two kinds of operations: attribute references and instantiation.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">people</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># define the basic attribute</span>
@@ -240,7 +240,7 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
 
     <span class="token comment" spellcheck="true"># define the construction method with '__init__()'.</span>
     <span class="token comment" spellcheck="true"># the instantiation operation of the class will automatically call this method.</span>
-    <span class="token comment" spellcheck="true"># The class method must contain the parameter 'self' in the first.</span>
+    <span class="token comment" spellcheck="true"># The method must contain the parameter 'self' in the first.</span>
     <span class="token comment" spellcheck="true"># 'Self' represents an instance of the class.</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>name <span class="token operator">=</span> n   <span class="token comment" spellcheck="true"># instance variable unique to each instance</span>
@@ -265,7 +265,6 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s said: I am %d years old."</span> <span class="token operator">%</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span>self<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>__foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    <span class="token comment" spellcheck="true"># Both static and class methods can be accessed through class objects and instances.</span>
     @staticmethod
     <span class="token keyword">def</span> <span class="token function">staticm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">)</span>
@@ -283,7 +282,7 @@ p<span class="token punctuation">.</span>speak<span class="token punctuation">(<
 <p>When a class definition is entered, a new namespace is created, and used as the local scope — thus, all assignments to local variables go into this new namespace. In particular, function definitions bind the name of the new function here.</p>
 <p>Python allows you to define a special <code>__slots__</code> variable when defining a class to limit the attributes that can be added to the class instance.</p>
 <p>The <code>dir()</code> method can return a list of valid attributes and methods of the object.</p>
-<p>*<em>Ⅲ. *</em>Features</p>
+<p><strong>Ⅲ. Features</strong></p>
 <p>1) Inheritance  </p>
 <p>This allows classes to be arranged in a hierarchy that represents “is-a-type-of” relationships and allows easy re-use of the same procedures and data definitions.</p>
 <p>2) Method override</p>
@@ -321,7 +320,7 @@ test <span class="token operator">=</span> sample<span class="token punctuation"
 <span class="token comment" spellcheck="true"># the method of the parent class in front of the brackets is called by default.</span>
 test<span class="token punctuation">.</span>speak<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># My name is Oreo，I am a speaker and the topic of my speech is Python.</span>
 <span class="token comment" spellcheck="true"># test.speak() is a method object and can be stored away and called at a later time.</span></code></pre>
-<p>The <code>super()</code> function is a method used to call the parent class. <code>super(student,test1).speak()</code></p>
+<p>The <code>super()</code> function is a method used to call the parent class. <code>super(student,test).speak()</code></p>
 <p>3) Operator overloading</p>
 <p>It is a specific case of polymorphism, where different operators have different implementations depending on their arguments. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Vector</span><span class="token punctuation">:</span>
@@ -548,7 +547,7 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 </tr>
 <tr>
 <td><code>*</code>,<code>+</code>,<code>?</code></td>
-<td>See details above. To match the <em>,+,? character itself, use `\</em><code>,</code>+<code>,</code>?`</td>
+<td>See details above. To match the <code>*,+,?</code> character itself, use <code>\*</code>,<code>\+</code>,<code>\?</code></td>
 </tr>
 <tr>
 <td>`</td>
@@ -667,9 +666,8 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 <p>9) Operator precedence</p>
 <p><code>\</code>, <code>(), (?:), (?=), []</code>, <code>*, +, ?, {n}, {n,}, {n,m}</code>, <code>^, $, \any character、any character</code>, <code>|</code></p>
 <p>*<em>Ⅱ. *</em> re — Regular expression operation</p>
-<p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener">More details</a></p>
-<p>1）re.match and re.search</p>
-<p><code>re.match</code> only matches the beginning of the string. If the string does not match the regular expression at the beginning, the match fails, the function returns None, and <code>re.search</code> matches the entire string until a match is found.</p>
+<p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener"><u>More details</u></a></p>
+<p>1）re.match and re.search<br><code>re.match</code> only matches the beginning of the string. If the string does not match the regular expression at the beginning, the match fails, the function returns None, and <code>re.search</code> matches the entire string until a match is found.</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># re.match(pattern, string, flags=0)</span>
 
 <span class="token keyword">import</span> re
@@ -728,7 +726,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>result1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['123', '456']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['88', '12']</span></code></pre>
-<h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p><strong>Ⅰ.</strong> doctest — Test interactive Python examples</p>
+<h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p>*<em>Ⅰ. doctest — Test interactive Python examples *</em></p>
 <p>The <code>doctest</code> module searches for pieces of text that look like interactive Python sessions, and then executes those sessions to verify that they work exactly as shown. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
@@ -742,7 +740,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
     <span class="token keyword">import</span> doctest
     doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span>verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
-<p>*<em>Ⅱ. *</em>unittest — Unit testing framework</p>
+<p>*<em>Ⅱ. unittest — Unit testing framework *</em></p>
 <p>The unittest unit testing framework was originally inspired by JUnit and has a similar flavor as major unit testing frameworks in other languages. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> unittest
 
@@ -842,7 +840,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 
 <span class="token keyword">import</span> sys
 <span class="token keyword">assert</span> <span class="token punctuation">(</span><span class="token string">'linux'</span> <span class="token keyword">in</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"This code can only be excuted in Linux."</span></code></pre>
-<h3 id="Part-7-Standard-Library"><a href="#Part-7-Standard-Library" class="headerlink" title="Part.7 Standard Library"></a>Part.7 Standard Library</h3><p><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener">For details</a></p>
+<h3 id="Part-7-Standard-Library"><a href="#Part-7-Standard-Library" class="headerlink" title="Part.7 Standard Library"></a>Part.7 Standard Library</h3><p><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener"><u>For details</u></a></p>
 
             </div>
 
