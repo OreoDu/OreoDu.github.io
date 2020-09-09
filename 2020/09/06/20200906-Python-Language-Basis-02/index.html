@@ -223,7 +223,7 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
 <p>3) Inheritance: Relationships and subclasses between objects can be assigned, allowing developers to reuse a common logic while still maintaining a unique hierarchy.</p>
 <p>4) Polymorphism: It is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types. </p>
 <p>Python is multi-paradigm with OOP support and is class-based. Classes provide a means of bundling data and functionality together. Each class instance can have attributes attached to it for maintaining its state(the set of values of the attributes of a particular instance) and methods (defined by its class) for modifying its state.</p>
-<p>*<em>Ⅱ. Create a class *</em> </p>
+<p><strong>Ⅱ. Create a class</strong> </p>
 <p>Some concepts:</p>
 <p> <strong>·</strong> Class: Used to describe a collection of objects with the same properties and methods. It defines the attributes and methods common to each object in the collection. Objects are instances of classes.</p>
 <p> <strong>·</strong> Method: The function defined in the class.</p>
@@ -413,7 +413,7 @@ v2 <span class="token operator">=</span> Vector<span class="token punctuation">(
 <td><code>next(x)</code> invokes <code>x.__next__()</code></td>
 </tr>
 </tbody></table>
-<h3 id="Part-4-Iterators-and-Generators"><a href="#Part-4-Iterators-and-Generators" class="headerlink" title="Part.4 Iterators and Generators"></a>Part.4 Iterators and Generators</h3><p><strong>Ⅰ.</strong> Iterators</p>
+<h3 id="Part-4-Iterators-and-Generators"><a href="#Part-4-Iterators-and-Generators" class="headerlink" title="Part.4 Iterators and Generators"></a>Part.4 Iterators and Generators</h3><p><strong>Ⅰ. Iterators</strong> </p>
 <p>An iterator is an object that can remember the position of the traversal. It accesses the first element of the collection(any container object) until all the elements are accessed and it can only go forward.</p>
 <p>There are two basic methods for iterators: <code>iter()</code> and <code>next()</code>. String, list or tuple objects can all be used to create iterators.</p>
 <pre class=" language-python"><code class="language-python">list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
@@ -440,7 +440,7 @@ myiter <span class="token operator">=</span> iter<span class="token punctuation"
 <span class="token keyword">for</span> x <span class="token keyword">in</span> myiter<span class="token punctuation">:</span>
   <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
 <p>The <code>__iter__()</code> method returns a special iterator object, which implements the <code>__next__()</code> method that returns the next iterator object and accesses elements in the container one at a time. When there are no more elements, <code>__next__()</code> raises a  <code>StopIteration</code> exception  to identify the completion of the iteration. </p>
-<p><strong>Ⅱ.</strong> Generators</p>
+<p><strong>Ⅱ.  Generators</strong> </p>
 <p>In Python, a function that uses <code>yield</code> is called a generator. </p>
 <p>Generators are a simple and powerful tool for creating iterators. They are written like regular functions but use the <code>yield</code> statement whenever they want to return data. Each time <code>next()</code> is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed). </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> sys
@@ -461,7 +461,7 @@ f <span class="token operator">=</span> fibonacci<span class="token punctuation"
         <span class="token keyword">print</span> <span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
     <span class="token keyword">except</span> StopIteration<span class="token punctuation">:</span>
         sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h3 id="Part-5-Regular-Expressions"><a href="#Part-5-Regular-Expressions" class="headerlink" title="Part.5 Regular Expressions"></a>Part.5 Regular Expressions</h3><p><strong>Ⅰ.</strong> Basic concept</p>
+<h3 id="Part-5-Regular-Expressions"><a href="#Part-5-Regular-Expressions" class="headerlink" title="Part.5 Regular Expressions"></a>Part.5 Regular Expressions</h3><p><strong>Ⅰ. Basic concept</strong> </p>
 <p>Regular expression is a sequence of characters that define a search pattern. It can be used to check whether a string contains a certain substring, replace the matched substring, or extract it.</p>
 <pre class=" language-perl"><code class="language-perl">Oreoisa<span class="token variable">*irl</span> <span class="token comment" spellcheck="true"># '*' means the preceding character can appear 0 or 1 or more times.</span>
 Oreoisa<span class="token operator">+</span>irl <span class="token comment" spellcheck="true"># '+' means the preceding character must appear at least once.</span>
@@ -665,7 +665,7 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 </tbody></table>
 <p>9) Operator precedence</p>
 <p><code>\</code>, <code>(), (?:), (?=), []</code>, <code>*, +, ?, {n}, {n,}, {n,m}</code>, <code>^, $, \any character、any character</code>, <code>|</code></p>
-<p>*<em>Ⅱ. *</em> re — Regular expression operation</p>
+<p><strong>Ⅱ. re — Regular expression operation</strong> </p>
 <p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener"><u>More details</u></a></p>
 <p>1）re.match and re.search<br><code>re.match</code> only matches the beginning of the string. If the string does not match the regular expression at the beginning, the match fails, the function returns None, and <code>re.search</code> matches the entire string until a match is found.</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># re.match(pattern, string, flags=0)</span>
@@ -726,7 +726,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>result1<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['123', '456']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>result2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['88', '12']</span></code></pre>
-<h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p>*<em>Ⅰ. doctest — Test interactive Python examples *</em></p>
+<h3 id="Part-5-Test"><a href="#Part-5-Test" class="headerlink" title="Part.5 Test"></a>Part.5 Test</h3><p><strong>Ⅰ. doctest — Test interactive Python examples</strong></p>
 <p>The <code>doctest</code> module searches for pieces of text that look like interactive Python sessions, and then executes those sessions to verify that they work exactly as shown. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
@@ -740,7 +740,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
     <span class="token keyword">import</span> doctest
     doctest<span class="token punctuation">.</span>testmod<span class="token punctuation">(</span>verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
-<p>*<em>Ⅱ. unittest — Unit testing framework *</em></p>
+<p><strong>Ⅱ. unittest — Unit testing framework</strong></p>
 <p>The unittest unit testing framework was originally inspired by JUnit and has a similar flavor as major unit testing frameworks in other languages. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> unittest
 
@@ -841,7 +841,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 <span class="token keyword">import</span> sys
 <span class="token keyword">assert</span> <span class="token punctuation">(</span><span class="token string">'linux'</span> <span class="token keyword">in</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"This code can only be excuted in Linux."</span></code></pre>
 <h3 id="Part-7-Standard-Library"><a href="#Part-7-Standard-Library" class="headerlink" title="Part.7 Standard Library"></a>Part.7 Standard Library</h3><p><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener"><u>For details</u></a></p>
-
+<h3 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h3>
             </div>
 
             <!-- Post Comments -->

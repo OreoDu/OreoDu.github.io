@@ -148,12 +148,44 @@
 <p>(from <i>Python for Everybody</i>)</p>
 <p><strong>Ⅱ. Variable</strong>:</p>
 <p>In python, variables don’t have types(only the objects have types) and it’s just a reference to an object (a pointer), which can point to a type of object(string,list…). </p>
-<p><strong>·</strong> Types :<br>    <strong>numbers</strong>:<br>               <strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)<br>                <strong>float</strong> (sometimes use scientific notation: 1.234e2)<br>                <strong>complex number</strong> (ex: 3+2j)<br>    <strong>Boolean: True, False</strong><br>    <strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks)<br>    <strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
+<p><strong>·</strong> Types : </p>
+<ul>
+<li><p><strong>numbers</strong>: </p>
+<ul>
+<li><p><strong>integer</strong> (can use different radixes: 0b100,0o100,100,0x100)</p>
+</li>
+<li><p><strong>float</strong>(sometimes use scientific notation: 1.234e2)</p>
+</li>
+<li><p><strong>complex number</strong> (ex: 3+2j)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Boolean: True, False</strong></p>
+</li>
+<li><p><strong>Text Sequence: string</strong> (be enclosed in single or double quotation marks)</p>
+</li>
+<li><p><strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
+</li>
+</ul>
 <p>Immutable objects: numbers,strings, tuples.<br>Mutable objects: list, set, dictionary.</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span></code></pre>
-<p>The type of the objects can be converted using functions built in Python.<br>     · <code>int()</code>: Convert a number or string to an integer and specify a radix.<br>     · <code>float()</code>: Convert a number or stringS to a floating point number.<br>     · <code>str()</code>: Convert the specified object to a string and specifies the encoding.<br>     · <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).<br>     · <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).<br>     ·  …</p>
+<p>The type of the objects can be converted using functions built in Python.</p>
+<ul>
+<li><p>· <code>int()</code>: Convert a number or string to an integer and specify a radix.</p>
+</li>
+<li><p>· <code>float()</code>: Convert a number or stringS to a floating point number.</p>
+</li>
+<li><p>· <code>str()</code>: Convert the specified object to a string and specifies the encoding.</p>
+</li>
+<li><p>· <code>chr()</code>: Convert the corresponding encoding (integer) to the string (a character).</p>
+</li>
+<li><p>· <code>ord()</code>: Convert a string (a character) to the corresponding encoding (integer).</p>
+</li>
+<li><p>·  …</p>
+</li>
+</ul>
 <p><strong>·</strong> Name rules: (usually use a mnemonic name)<br>    1.Combination of numbers, letters, underscore (can not start with a number)<br>    2.Case sensitive<br>    3.Can not use reserved words<br>    4.PEP 8 <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">(<u> Style Guide for Python Code</u> )</a></p>
 <p> <strong>·</strong> How do we use variables?<br>1.Use variables to save data and perform arithmetic operations</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234</span>
@@ -527,7 +559,7 @@ largest <span class="token operator">=</span> None
 <pre class=" language-python"><code class="language-python">friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'oreo'</span><span class="token punctuation">,</span> <span class="token string">'sermantha'</span><span class="token punctuation">,</span> <span class="token string">'Damon'</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span> friend <span class="token keyword">in</span> friends<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Happy New Year!'</span><span class="token punctuation">,</span>friend<span class="token punctuation">)</span></code></pre>
-<p>*<em>Ⅲ. Function, Module and Package *</em></p>
+<p><strong>Ⅲ. Function, Module and Package</strong></p>
 <p><strong>· Function</strong></p>
 <p>In order to  write high-quality code, we should eliminate the repetitive code which is doing the same type of  operations. We can encapsulate those repetitive codes into a function module called “function” so that we “call” the “function” when we need it. Generally, function is a named and reusable sequence of statements that takes arguments as input, performs a computation and return results. (The naming rules of function are consistent with the naming rules of variables. )</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># How to define a function? Example:calculate the factorial</span>
