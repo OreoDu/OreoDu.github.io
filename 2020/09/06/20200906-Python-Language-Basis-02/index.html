@@ -140,6 +140,7 @@
 <span class="token comment" spellcheck="true"># mode can be 'w','r','a'... (describing the way in which the file will be used)</span></code></pre>
 <img src="https://i.loli.net/2020/09/06/3LOGRnblwHTKBDJ.png" alt="11" style="zoom: 50%;">
 
+<p>(from <a href="https://www.runoob.com/python/python-files-io.html" target="_blank" rel="noopener"><u>here</u></a>)</p>
 <p>It is better to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after all the operation have finished, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'workfile'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     read_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
@@ -559,7 +560,7 @@ Oreoisa<span class="token operator">?</span>irl <span class="token comment" spel
 </tr>
 </tbody></table>
 <p>4)  Qualifier</p>
-<p>The qualifier is used to specify how many times a given component of the regular expression must appear to satisfy the match. There are 6 kinds of <code>*</code> or <code>+</code> or <code>?</code>Or <code>{n}</code> or <code>{n,}</code> or <code>{n,m}</code>.</p>
+<p>The qualifier is used to specify how many times a given component of the regular expression must appear to satisfy the match. There are 6 kinds of <code>*</code> or <code>+</code> or <code>?</code> or <code>{n}</code> or <code>{n,}</code> or  <code>{n,m}</code>.</p>
 <table>
 <thead>
 <tr>
