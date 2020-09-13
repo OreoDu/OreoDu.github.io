@@ -128,7 +128,22 @@
             <div class="typo" style="padding: 3rem;">
                 <h2 id="Classical-Algorithms"><a href="#Classical-Algorithms" class="headerlink" title="Classical Algorithms"></a>Classical Algorithms</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
 <p><strong>· materials:</strong><br>  · <i>Algorithms</i>  by Dasgupta, C. H. Papadimitriou, U. V. Vazirani<br>  · <i>Efficient Algorithms and Intractable Problems</i>  (CS170 2018 Fall at UCB)<br>  · <i>Algorithm Design</i> by John Kleinberg, Eva Tardos<br>  · Wikipedia</p>
-<h4 id="Part-1-Search"><a href="#Part-1-Search" class="headerlink" title="Part.1 Search"></a>Part.1 Search</h4><h4 id="Part-2-Sort"><a href="#Part-2-Sort" class="headerlink" title="Part.2 Sort"></a>Part.2 Sort</h4><h4 id="Part-3-Recursion"><a href="#Part-3-Recursion" class="headerlink" title="Part.3 Recursion"></a>Part.3 Recursion</h4><h4 id="Part-4-Back-Tracking"><a href="#Part-4-Back-Tracking" class="headerlink" title="Part.4 Back Tracking"></a>Part.4 Back Tracking</h4><h4 id="Part-5-Dynamic-Programing"><a href="#Part-5-Dynamic-Programing" class="headerlink" title="Part.5 Dynamic Programing"></a>Part.5 Dynamic Programing</h4><h4 id="Part-6-Greedy-Algorithms"><a href="#Part-6-Greedy-Algorithms" class="headerlink" title="Part.6 Greedy Algorithms"></a>Part.6 Greedy Algorithms</h4>
+<h4 id="Part-1-Search"><a href="#Part-1-Search" class="headerlink" title="Part.1 Search"></a>Part.1 Search</h4><h4 id="Part-2-Sort"><a href="#Part-2-Sort" class="headerlink" title="Part.2 Sort"></a>Part.2 Sort</h4><h4 id="Part-3-Recursion"><a href="#Part-3-Recursion" class="headerlink" title="Part.3 Recursion"></a>Part.3 Recursion</h4><p>Recursion is useful for solving problems with a naturally repeating structure - they are defined in terms of themselves.</p>
+<p>It requires you to find patterns of smaller problems, and to define the smallest problem possible</p>
+<p>Structure of a Recursive Function:</p>
+<p>1.One or more <strong>base cases</strong>, usually the smallest input.<br>2.One or more ways of <strong>reducing the problem</strong>, and then <strong>solving the smaller problem using recursion</strong>.<br>3.One or more ways of <strong>using the solution to each smaller problem</strong> to solve our larger problem.</p>
+<p><strong>Recursion</strong> has three main components<br><strong>Base case/s</strong>: The simplest form of the problem<br><strong>Recursive call/s</strong>: Smaller version of the problem<br>Use the solution to the smaller version of the problem to arrive at the solution to the original problem</p>
+<p><strong>Functional abstraction</strong>: When working with recursion, use <em>functional abstraction</em>: assume the recursive call gives the correct result.</p>
+<p>List out all the cases.<br>Identify <strong>patterns</strong> between each case.<br>Simplify repeated code with <strong>recursive calls</strong>.</p>
+<p><strong>Verifying the correctness of recursive functions</strong>:</p>
+<p>Verify that the base cases work as expected.</p>
+<p>For each larger case, verify that it works by <strong>assuming the smaller recursive calls are correct</strong>.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">cascade</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        cascade<span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span></code></pre>
+<h4 id="Part-4-Back-Tracking"><a href="#Part-4-Back-Tracking" class="headerlink" title="Part.4 Back Tracking"></a>Part.4 Back Tracking</h4><h4 id="Part-5-Dynamic-Programing"><a href="#Part-5-Dynamic-Programing" class="headerlink" title="Part.5 Dynamic Programing"></a>Part.5 Dynamic Programing</h4><h4 id="Part-6-Greedy-Algorithms"><a href="#Part-6-Greedy-Algorithms" class="headerlink" title="Part.6 Greedy Algorithms"></a>Part.6 Greedy Algorithms</h4>
             </div>
 
             <!-- Post Comments -->

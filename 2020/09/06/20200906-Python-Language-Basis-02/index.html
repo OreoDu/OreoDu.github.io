@@ -141,7 +141,7 @@
 <img src="https://i.loli.net/2020/09/06/3LOGRnblwHTKBDJ.png" alt="11" style="zoom: 50%;">
 
 <p>(from <a href="https://www.runoob.com/python/python-files-io.html" target="_blank" rel="noopener"><u>here</u></a>)</p>
-<p>It is better to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after all the operation have finished, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
+<p>It is better to use the <code>with</code> keyword when dealing with file objects. The advantage is that the file is properly closed after all the operations have finished, even if an exception is raised at some point. Otherwise,  you should call <code>f.close()</code> to close the file and immediately free up any system resources used by it. </p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'workfile'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     read_data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <p>The <code>open()</code> method returns a file object and it has lots of built-in methods to deal with the data.</p>
@@ -228,12 +228,13 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
 <p>Some concepts:</p>
 <p> <strong>·</strong> Class: Used to describe a collection of objects with the same properties and methods. It defines the attributes and methods common to each object in the collection. Objects are instances of classes.</p>
 <p> <strong>·</strong> Method: The function defined in the class.</p>
-<p> <strong>·</strong> Class variable: Class variables are common in the entire instantiated object and are defined in the class and outside the function body. Class variables are usually not used as instance variables.</p>
-<p> <strong>·</strong> Instance variable: In the declaration of a class, the attribute is represented by a variable. Such a variable is called an instance variable, and an instance variable is a variable modified with <code>self</code>.</p>
+<p> <strong>·</strong> Class variable: Class Variables are variables that are shared by all instances of a class and are defined in the class and outside the function body. Class variables are usually not used as instance variables.</p>
+<p> <strong>·</strong> Instance variable: Instance variables are variables used for data that is unique to a particular instance and an instance variable is a variable modified with <code>self</code>.</p>
 <p> <strong>·</strong> Data members: Class variables or instance variables which are used to process data related to the class and its instance objects.</p>
 <p> <strong>·</strong> Instantiation: Create an instance of a class, the concrete object of the class.</p>
-<p> <strong>·</strong> Class method: A class method receives the class as implicit first argument, just like an instance method receives the instance which is bound to the class and not the object of the class. They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance. It can modify a class state that would apply across all the instances of the class. For example it can modify a class variable that will be applicable to all the instances.</p>
-<p> <strong>·</strong> Static method: A static method does not receive an implicit first argument. A static method is also a method which is bound to the class and not the object of the class. It can’t access or modify class state.<br>It is present in a class because it makes sense for the method to be present in class.</p>
+<p> <strong>·</strong> Class method: A class method receives the class as implicit first argument  which is bound to the class and not the object of the class. They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance. It can modify a class state that would apply across all the instances of the class. For example it can modify a class variable that will be applicable to all the instances.</p>
+<p> <strong>·</strong> Static method: A static method does not receive an implicit first argument. A static method is also a method which is bound to the class and not the object of the class. It can’t access or modify class state. It is present in a class because it makes sense for the method to be present in class.</p>
+<p> <strong>·</strong> Abstract method: An abstract method represents a method of the base class, which is not implemented, so the base class cannot be instantiated. And the subclass can only be instantiated if the abstract method is implemented.</p>
 <p>Class objects support two kinds of operations: attribute references and instantiation.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">people</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># define the basic attribute</span>
@@ -248,6 +249,7 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
         self<span class="token punctuation">.</span>age <span class="token operator">=</span> a
         <span class="token comment" spellcheck="true"># define private attributes which cannot be accessed directly outside the class</span>
         <span class="token comment" spellcheck="true"># starting with two underscores '__'.</span>
+        <span class="token comment" spellcheck="true"># It can be accessed by getter and modified by setter.</span>
         self<span class="token punctuation">.</span>__weight <span class="token operator">=</span> w
 
     @property <span class="token comment" spellcheck="true"># Accessor-getter method</span>
@@ -273,6 +275,10 @@ scope_test<span class="token punctuation">(</span><span class="token punctuation
     @classmethod
     <span class="token keyword">def</span> <span class="token function">classm</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'class'</span><span class="token punctuation">,</span>cls）
+
+    @abstractmethod
+    <span class="token keyword">def</span> <span class="token function">abstractm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
 
 <span class="token comment" spellcheck="true"># Instance objects can only understand attribute references operations. </span>
 <span class="token comment" spellcheck="true"># There are two kinds of valid attribute names: data attributes and methods.</span>
@@ -832,7 +838,7 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
     <span class="token keyword">raise</span> MyError<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
 <span class="token keyword">except</span> MyError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'My exception occurred, value:'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># My exception occurred, value: 4</span></code></pre>
-<p>5) Assert</p>
+<p>5) Assert (prevent bugs)</p>
 <p>The <code>assert</code> keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">assert</span> expression
 
@@ -842,7 +848,117 @@ result2 <span class="token operator">=</span> pattern<span class="token punctuat
 <span class="token keyword">import</span> sys
 <span class="token keyword">assert</span> <span class="token punctuation">(</span><span class="token string">'linux'</span> <span class="token keyword">in</span> sys<span class="token punctuation">.</span>platform<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"This code can only be excuted in Linux."</span></code></pre>
 <h3 id="Part-7-Standard-Library"><a href="#Part-7-Standard-Library" class="headerlink" title="Part.7 Standard Library"></a>Part.7 Standard Library</h3><p><a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener"><u>For details</u></a></p>
-<h3 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h3>
+<h3 id="Part-Exercise"><a href="#Part-Exercise" class="headerlink" title="Part. Exercise"></a>Part. Exercise</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+
+
+<span class="token keyword">class</span> <span class="token class-name">Card</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""One card"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> suite<span class="token punctuation">,</span> face<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_suite <span class="token operator">=</span> suite
+        self<span class="token punctuation">.</span>_face <span class="token operator">=</span> face
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">face</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_face
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">suite</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_suite
+
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>_face <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            face_str <span class="token operator">=</span> <span class="token string">'A'</span>
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>_face <span class="token operator">==</span> <span class="token number">11</span><span class="token punctuation">:</span>
+            face_str <span class="token operator">=</span> <span class="token string">'J'</span>
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>_face <span class="token operator">==</span> <span class="token number">12</span><span class="token punctuation">:</span>
+            face_str <span class="token operator">=</span> <span class="token string">'Q'</span>
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>_face <span class="token operator">==</span> <span class="token number">13</span><span class="token punctuation">:</span>
+            face_str <span class="token operator">=</span> <span class="token string">'K'</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            face_str <span class="token operator">=</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_face<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">'%s%s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>_suite<span class="token punctuation">,</span> face_str<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__str__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Poker</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""A deck of cards"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_cards <span class="token operator">=</span> <span class="token punctuation">[</span>Card<span class="token punctuation">(</span>suite<span class="token punctuation">,</span> face<span class="token punctuation">)</span> 
+                       <span class="token keyword">for</span> suite <span class="token keyword">in</span> <span class="token string">'♠♥♣♦'</span>
+                       <span class="token keyword">for</span> face <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>_current <span class="token operator">=</span> <span class="token number">0</span>
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">cards</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_cards
+
+    <span class="token keyword">def</span> <span class="token function">shuffle</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Shuffle (random out of order)"""</span>
+        self<span class="token punctuation">.</span>_current <span class="token operator">=</span> <span class="token number">0</span>
+        random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_cards<span class="token punctuation">)</span>
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Deal a card"""</span>
+        card <span class="token operator">=</span> self<span class="token punctuation">.</span>_cards<span class="token punctuation">[</span>self<span class="token punctuation">.</span>_current<span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>_current <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> card
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">has_next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""have card or not"""</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_current <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_cards<span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Player</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Player"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>_cards_on_hand <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_name
+
+    @property
+    <span class="token keyword">def</span> <span class="token function">cards_on_hand</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_cards_on_hand
+
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> card<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Draw a card"""</span>
+        self<span class="token punctuation">.</span>_cards_on_hand<span class="token punctuation">.</span>append<span class="token punctuation">(</span>card<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">arrange</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> card_key<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Arrange the cards in his hand"""</span>
+        self<span class="token punctuation">.</span>_cards_on_hand<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span>card_key<span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># Sorting rules-sort by suit and then by points</span>
+<span class="token keyword">def</span> <span class="token function">get_key</span><span class="token punctuation">(</span>card<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>card<span class="token punctuation">.</span>suite<span class="token punctuation">,</span> card<span class="token punctuation">.</span>face<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    p <span class="token operator">=</span> Poker<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    p<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    players <span class="token operator">=</span> <span class="token punctuation">[</span>Player<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Player<span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Player<span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Player<span class="token punctuation">(</span><span class="token string">'4'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> player <span class="token keyword">in</span> players<span class="token punctuation">:</span>
+            player<span class="token punctuation">.</span>get<span class="token punctuation">(</span>p<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> player <span class="token keyword">in</span> players<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">':'</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>
+        player<span class="token punctuation">.</span>arrange<span class="token punctuation">(</span>get_key<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>player<span class="token punctuation">.</span>cards_on_hand<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
             </div>
 
             <!-- Post Comments -->

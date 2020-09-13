@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/hpqrHXILJGxeSbO.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Basic Knowledge of Programs 01</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Basic-knowledge-of-Programs-01"><a href="#Basic-knowledge-of-Programs-01" class="headerlink" title="Basic knowledge of Programs 01"></a>Basic knowledge of Programs 01</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br>  · <i>Structure and Interpretation of Computer Programs</i> by Harold Abelson and Gerald Jay Sussman with Julie Sussman<br>  · <a href="https://inst.eecs.berkeley.edu/~cs61a/su19/" target="_blank" rel="noopener"><u>CS61A Summer 2019 at UCB</u></a><br>  · Wikipedia</p>
+<p>Goals of Program Decomposition<br>1.Complexity Management<br>2.Reusability and abstraction</p>
+<h3 id="Part-1-Building-Abstractions-with-Procedures"><a href="#Part-1-Building-Abstractions-with-Procedures" class="headerlink" title="Part.1 Building Abstractions with Procedures"></a>Part.1 Building Abstractions with Procedures</h3><p>A <strong>function</strong> should solve one problem.</p>
+<p>A function should have the <strong>smallest</strong> <strong>number of parameters</strong> possible to solve its problem.</p>
+<p>A repeated sequence should be put in its own function.<br>    Avoid repeating more than a couple lines of code. </p>
+<p>micro level - take one of those smaller functions and identify smaller problems within that that WONT necessarily identifying separate questions and reusing them</p>
+<h3 id="Part-2-Building-Abstractions-with-Data"><a href="#Part-2-Building-Abstractions-with-Data" class="headerlink" title="Part.2 Building Abstractions with Data"></a>Part.2 Building Abstractions with Data</h3><p>Data abstraction lets us manipulate compound values as units.</p>
+<p>Isolate two parts of any program that uses data:<br>How data are represented (as parts)<br>How data are manipulated (as units)<br>Data abstraction: A methodology by which functions enforce an abstraction barrier between representation and use.</p>
+<p><strong>Abstraction Barriers:</strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># constructor rational(n,d)  returns a rational number </span>
+<span class="token comment" spellcheck="true"># Selector numerator(x),     returns the numerator of x</span>
+<span class="token comment" spellcheck="true">#          denominator(x)    returns the denominator of x</span>
+<span class="token keyword">def</span> <span class="token function">mul_rational</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> rational<span class="token punctuation">(</span>numer<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> numer<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    denom<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> denom<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">add_rational</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    nx<span class="token punctuation">,</span> dx <span class="token operator">=</span> numer<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> denom<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    ny<span class="token punctuation">,</span> dy <span class="token operator">=</span> numer<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> denom<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> rational<span class="token punctuation">(</span>nx <span class="token operator">*</span> dy <span class="token operator">+</span> ny <span class="token operator">*</span> dx<span class="token punctuation">,</span> dx <span class="token operator">*</span> dy<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">print_rational</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>numer<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">,</span> denom<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">rationals_are_equal</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> numer<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> denom<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">==</span> numer<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">*</span> denom<span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
+<table>
+<thead>
+<tr>
+<th>Parts of the program that…</th>
+<th>Treat rationals as…</th>
+<th>Using…</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use rational numbers to perform computation</td>
+<td>whole data values</td>
+<td>add_rational, mul_rational, rationals_are_equal, print_rational</td>
+</tr>
+<tr>
+<td>Create rationals or implement rational operations</td>
+<td>numerators and denominators</td>
+<td>rational, numer, denom</td>
+</tr>
+<tr>
+<td>Implement selectors and constructor for rationals</td>
+<td>two-element lists</td>
+<td>list literals and element selection</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Decomposition</p>
+<p><strong>Program Decomposition</strong> is a process for breaking down large problems into logical sub-problems.</p>
+</li>
+</ul>
+<p>1.A well decomposed function is sometimes likened to a “black box”. The black box presents the simplest possible abstraction to describe what the output will be and hides the implementation. Its inner workings are not revealed. </p>
+<p>Data abstraction is an example of this. For constructors &amp; selectors, we don’t care about the body of the function. We only need to know what they take as input and their intended result.</p>
+<p>2.Decomposition is a divide and conquer strategy. （The process of breaking a large problem into more manageable sub-problems）</p>
+<p>From the outside, black boxes are simply defined in terms of their input and output, so they are easy to piece together.</p>
+<h3 id="Part-3-Program-Paradigms"><a href="#Part-3-Program-Paradigms" class="headerlink" title="Part.3 Program Paradigms"></a>Part.3 Program Paradigms</h3><h3 id="Part-4-Interpreting-Computer-Programs"><a href="#Part-4-Interpreting-Computer-Programs" class="headerlink" title="Part.4 Interpreting Computer Programs"></a>Part.4 Interpreting Computer Programs</h3><h3 id="Part-3-Modularity-Objects-and-State"><a href="#Part-3-Modularity-Objects-and-State" class="headerlink" title="Part.3 Modularity, Objects, and State"></a>Part.3 Modularity, Objects, and State</h3><h3 id="Part-4-Meta-Linguistic-Abstraction"><a href="#Part-4-Meta-Linguistic-Abstraction" class="headerlink" title="Part.4 Meta-Linguistic Abstraction"></a>Part.4 Meta-Linguistic Abstraction</h3><h3 id="Part-5-Register-Machine’-Model-of-Control"><a href="#Part-5-Register-Machine’-Model-of-Control" class="headerlink" title="Part.5 Register Machine’ Model of Control"></a>Part.5 Register Machine’ Model of Control</h3>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
