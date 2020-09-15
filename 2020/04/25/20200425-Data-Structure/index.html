@@ -96,7 +96,7 @@
 	            <a href="#s1">Classification</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programing/">Programing</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
 	                    </li></ul>
 	        </li>
 	        
@@ -132,6 +132,7 @@
 <p>Relative Description: Each location in a tree is called a nodeEach node has a label valueOne node can be the parent/child of another.</p>
 <p><img src="https://i.loli.net/2020/09/13/fDJtsRH6xkdKNCG.png" alt="11"></p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Use the recursive description</span>
+<span class="token comment" spellcheck="true"># We can also use the class to define the tree and its related attributes and methods.</span>
 <span class="token comment" spellcheck="true"># Constructor</span>
 <span class="token keyword">def</span> <span class="token function">tree</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> branches<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> branch <span class="token keyword">in</span> branches<span class="token punctuation">:</span>
@@ -184,7 +185,14 @@
     lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">for</span> b <span class="token keyword">in</span> brannches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
         lst <span class="token operator">+=</span> <span class="token punctuation">[</span>suqare_tree<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span>
-    <span class="token keyword">return</span> tree<span class="token punctuation">(</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span>lst<span class="token punctuation">)</span></code></pre>
+    <span class="token keyword">return</span> tree<span class="token punctuation">(</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span>lst<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># prune the tree </span>
+<span class="token keyword">def</span> <span class="token function">prune</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> label<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">==</span> x<span class="token punctuation">:</span> <span class="token keyword">return</span> null
+    branches<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span>b <span class="token keyword">for</span> b <span class="token keyword">in</span> branches<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">if</span> label<span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token operator">!=</span> x <span class="token punctuation">]</span>
+    <span class="token keyword">for</span> b <span class="token keyword">in</span> branchces<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        prune<span class="token punctuation">(</span> b<span class="token punctuation">,</span>x<span class="token punctuation">)</span></code></pre>
 <h3 id="Bag"><a href="#Bag" class="headerlink" title="Bag"></a>Bag</h3><h3 id="Union-find"><a href="#Union-find" class="headerlink" title="Union-find"></a>Union-find</h3><h3 id="Priority-queue"><a href="#Priority-queue" class="headerlink" title="Priority queue"></a>Priority queue</h3>
             </div>
 

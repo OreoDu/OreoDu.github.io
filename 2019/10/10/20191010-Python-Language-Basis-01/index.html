@@ -96,7 +96,7 @@
 	            <a href="#s1">Classification</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programing/">Programing</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
 	                    </li></ul>
 	        </li>
 	        
@@ -147,7 +147,7 @@
 <p><img src="https://i.loli.net/2020/09/06/hJebFXYLdgN3wGx.png" alt="reserved-w"></p>
 <p>(from <i>Python for Everybody</i>)</p>
 <p><strong>Ⅱ. Variable</strong>:</p>
-<p>In python, variables don’t have types(only the objects have types) and it just bind a reference of an object (a pointer) to the variable name or bind the object value  to the variable name. </p>
+<p>In python, variables don’t have types(only the objects have types) and they are <strong>all</strong> bind a reference of an object (a pointer) to the variable names. The size of the pointer’s memory space has nothing to do with the type, and its memory space just saves the memory address of the pointed data. You can use id() to view the address value of the current variable.</p>
 <p><strong>·</strong> Types : </p>
 <ul>
 <li><p><strong>numbers</strong>: </p>
@@ -167,7 +167,10 @@
 <li><p><strong>Built-in data structures</strong>: list, tuple, set, dictionary</p>
 </li>
 </ul>
-<p>Immutable objects: numbers,strings, tuples.<br>Mutable objects: list, set, dictionary.</p>
+<p><strong>Immutable objects:</strong> numbers, bool, strings, tuples. (value type)</p>
+<p>The value at the address referenced by the variable cannot be changed. The re-assignment of a variable which point to an immutable object is equivalent to creating a new object in memory instead of the previous object. The advantage of the immutable data type is that no matter how many references there are in the memory, the same object only occupies a piece of memory and all the references will point to it.</p>
+<p><strong>Mutable objects:</strong> list, set, dictionary. (reference type)</p>
+<p>When operating on mutable objects, their values are mutable and the change of the value will not create  new objects, that is, the address will not change, but the content in the address has changed or the address has been expanded. Different from immutable objects, for mutable objects, multiple objects with the same value are stored in memory with different address values.</p>
 <p>We can use <code>type()</code> function to get the type of the variables.</p>
 <pre class=" language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1.234e6</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#&lt;class 'float'></span></code></pre>
@@ -175,7 +178,7 @@
 <ul>
 <li><p>· <code>int()</code>: Convert a number or string to an integer and specify a radix.</p>
 </li>
-<li><p>· <code>float()</code>: Convert a number or stringS to a floating point number.</p>
+<li><p>· <code>float()</code>: Convert a number or strings to a floating point number.</p>
 </li>
 <li><p>· <code>str()</code>: Convert the specified object to a string and specifies the encoding.</p>
 </li>
@@ -325,12 +328,25 @@ str1 <span class="token operator">=</span> <span class="token string">'hello,wor
 <span class="token keyword">print</span> <span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#or</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#dlr</span></code></pre>
 <p><strong>Ⅳ. Constant</strong>:<br>There are some <u><a href="https://docs.python.org/3.5/library/constants.html" target="_blank" rel="noopener">built-in constants</a></u> in python.</p>
-<h4 id="Part-4-Built-in-Data-Structures"><a href="#Part-4-Built-in-Data-Structures" class="headerlink" title="Part.4  Built-in Data Structures"></a>Part.4  Built-in Data Structures</h4><p><strong>Ⅰ. Sequence Type</strong></p>
+<h4 id="Part-4-Built-in-Data-Structures"><a href="#Part-4-Built-in-Data-Structures" class="headerlink" title="Part.4  Built-in Data Structures"></a>Part.4  Built-in Data Structures</h4><ul>
+<li>Allow us to store related values together<ul>
+<li>Can process the values one-by-one or in aggregate</li>
+<li>Allows us to form compound values through data abstraction</li>
+</ul>
+</li>
+<li>Give rise to a number of ways of storing values<ul>
+<li>Lists store values in order, associated with an index</li>
+<li>Dictionaries have no order but associate values with any sort of key</li>
+<li>Trees allow for a hierarchical representation of data</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ⅰ. Sequence Type</strong></p>
 <p><strong>1.list</strong><br>Numeric types(<code>int</code> <code>float</code> …) are scalar types, which means that objects have no internal structure to access. However, string type is a structured, non-scalar type, so it has a range of properties and methods. List is the same as the string. However, list is mutable.</p>
 <p>List is an ordered sequence of values, each of which can be identified by an index, placed in the <code>[]</code> and separated by <code>,</code>. The values can be any type.</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># create a list</span>
 list0 <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">)</span>
-list0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span>
+list0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span>  
 list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hello'</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token number">3</span> 
 list2 <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># or [&lt;expr> for &lt;name> in &lt;seq> if &lt;cond>]</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>list1<span class="token punctuation">,</span>list2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['Hello','Hello','Hello'] [0,1,2,3]</span>
@@ -361,9 +377,9 @@ delimiter <span class="token operator">=</span> <span class="token string">' '</
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Add and remove elements</span>
 list0<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
-list0<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span>
-list0<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
-list0 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span>
+list0<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># insert 400 at index 1.</span>
+list0<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># append,insert,extend only change the original list.</span>
+list0 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># create a new list.</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>list0<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000] </span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1]+[2]+[3]+[] = [1,2,3]</span>
 
@@ -403,6 +419,7 @@ b <span class="token operator">=</span> <span class="token punctuation">[</span>
 a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
 b <span class="token operator">=</span> a
 <span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token keyword">is</span> b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># True # aliased but refer to the same object</span></code></pre>
+<p>It is important to keep track of when variables are identical versus just equal, since mutating one variable will mutate all other identical variables.</p>
 <p>The methods and operators that lists share with other sequences (like strings) are documented <u><a href="https://docs.python.org/2/library/stdtypes.html#string-methods" target="_blank" rel="noopener">here</a></u>.</p>
 <p>String is immutable so we have to create a new string to make any change. However, list is mutable so we can change the elements inside the list. The methods and operators that only apply to mutable sequences are documented <u><a href="https://docs.python.org/2/library/stdtypes.html#mutable-sequence-types" target="_blank" rel="noopener">here</a></u>.</p>
 <p><strong>2.Tuple</strong><br>Tuple in Python is similar to the list and most list operator also work on tuples, however, it can not be modified and it is comparable and hashable.</p>
@@ -472,7 +489,7 @@ set2 <span class="token operator">=</span> <span class="token punctuation">{</sp
 <span class="token keyword">print</span><span class="token punctuation">(</span>set1 <span class="token operator">>=</span> set2<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># False</span>
 <span class="token comment" spellcheck="true"># print(set1.issuperset(set2))</span></code></pre>
 <p><strong>Ⅲ. Mapping Type:  dictionary</strong></p>
-<p>A mapping object maps hashtable values to arbitrary objects. Mappings are mutable objects.</p>
+<p>A mapping object maps hashtable values to arbitrary objects. Mappings are mutable objects. But the key of the dictionary must be immutable variable.</p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># create the dictionarys</span>
 scores <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'Alice'</span><span class="token punctuation">:</span> <span class="token number">95</span><span class="token punctuation">,</span> <span class="token string">'Peter'</span><span class="token punctuation">:</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token string">'Oreo'</span><span class="token punctuation">:</span> <span class="token number">82</span><span class="token punctuation">}</span>
 items1 <span class="token operator">=</span> dict<span class="token punctuation">(</span>one<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> two<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> three<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> four<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span>
@@ -596,7 +613,7 @@ largest <span class="token operator">=</span> None
     <span class="token keyword">return</span> result</code></pre>
 <p>1.Arguements</p>
 <p>In Python, function arguments can have default values and also support for variable arguments which is quite different from other languages.</p>
-<p>When the arguments passed by a function is an object of an immutable type, what is passed is not the actual value but a reference to the object. However, as for mutable type, the actual value will be passed to the function.</p>
+<p>When the arguments passed by a function is an object of an immutable or mutable type, what is passed is not the actual value but a reference to the object.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> random <span class="token keyword">import</span> randint
 
 <span class="token keyword">def</span> <span class="token function">roll_dice</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># The default value is 2.</span>
@@ -619,10 +636,14 @@ largest <span class="token operator">=</span> None
 <span class="token keyword">print</span><span class="token punctuation">(</span>roll_dice<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true"># 24</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span>a<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">44</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true"># a 24 b 44 47</span></code></pre>
 <p>Python looks for a variable in the order of “local scope”, “nested scope” or the parent scope, “global scope” and “built-in scope”. </p>
+<p>Some identifiers like <code>input</code>,<code>print</code> and <code>int</code>  are built  inside the python which belong to built-in scope. The local variables can only be used inside the function it belongs to, but we can access the global variables anywhere we want to.</p>
+<p>However, if we want to modify the value of the global variables inside a specific function, we should add <code>global</code>  before the variables. Or we want to modify variables in an enclosing scope( the first non-local frame of the current environment), we can add <code>nonlocal</code> before the variable as a nonlocal assignment. Names listed in a nonlocal statement must refer to pre-existing bindings in an enclosing scope and also must not collide with pre-existing bindings in the local scope. Nonlocal allows you to modify a binding in a parent frame, instead of just looking it up.</p>
+<p>Mutable values can be changed <strong>without</strong> a nonlocal statement.</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">:</span>
     b <span class="token operator">=</span>  <span class="token string">'Hello'</span> <span class="token comment" spellcheck="true"># b belongs to nested scope</span>
+    <span class="token keyword">global</span> a
+    a <span class="token operator">=</span>  <span class="token number">200</span> 
     <span class="token keyword">def</span> bar <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># Future assignments to that name change its pre-existing binding in the first non-local scope of the current scope in which that name is bound.</span>
         nonlocal d
         c <span class="token operator">=</span>  <span class="token string">'You'</span> <span class="token comment" spellcheck="true"># c belongs to local scope as a local variable</span>
         <span class="token keyword">return</span> d<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> b <span class="token operator">+</span> c
@@ -630,17 +651,9 @@ largest <span class="token operator">=</span> None
 
 <span class="token keyword">if</span>  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
     a <span class="token operator">=</span>  <span class="token number">100</span>  <span class="token comment" spellcheck="true"># a belongs to global scope as a global variable</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>Some identifiers like <code>input</code>,<code>print</code> and <code>int</code>  are built  inside the python which belong to built-in scope. The local variables can only be used inside the function it belongs to, but we can access the global variables anywhere we want to. However, if we want to modify the value of the global variables inside a specific function, we should add <code>global</code> before the variables.</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span>  foo <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> a
-    a <span class="token operator">=</span>  <span class="token number">200</span> 
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span>
-
-If  __name__  <span class="token operator">==</span>  <span class="token string">' __main__ '</span> <span class="token punctuation">:</span>
-    a <span class="token operator">=</span>  <span class="token number">100</span>
-    foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span></code></pre>
+    foo<span class="token punctuation">(</span><span class="token string">'hey'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 200</span></code></pre>
+<p>Python pre-computes which frame contains each name before executing the body of a function. Within the body of a function, all instances of a name must refer to the same frame.</p>
 <p>In the actual development process, we should reduce the use of global variables due to its wide scope.  Unexpected modifications may occur and also the memory occupied by variables are unable to be recycled. </p>
 <p>2.Docstring</p>
 <p>We can write documentation strings (or docstrings) to provide a convenient way of associating documentation with Python modules, functions, classes, and methods. The docstring should describe what the function does, not how.</p>
