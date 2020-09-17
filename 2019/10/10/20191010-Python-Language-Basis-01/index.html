@@ -122,11 +122,11 @@
 
         <div id="main">
             <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/hpqrHXILJGxeSbO.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python Language Basis 01</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Python Basis 01</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Python-Language-Basis-01"><a href="#Python-Language-Basis-01" class="headerlink" title="Python Language Basis 01"></a>Python Language Basis 01</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Programming is a method that we use computers to do the complicated calculations and repetitive tasks which human are not very good at in order to solve the difficult problem.</p>
+                <h1 id="Python-Basis-01"><a href="#Python-Basis-01" class="headerlink" title="Python Basis 01"></a>Python Basis 01</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>Programming is a method that we use computers to do the complicated calculations and repetitive tasks which human are not very good at in order to solve the difficult problem.</p>
 <blockquote>
 <p>Python is a high-level language intended to be relatively straightforward for humans to read and write and for computers to read and process.  (from <i>Python for Everybody</i>)</p>
 </blockquote>
@@ -378,8 +378,8 @@ delimiter <span class="token operator">=</span> <span class="token string">' '</
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Add and remove elements</span>
 list0<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
 list0<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># insert 400 at index 1.</span>
-list0<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># append,insert,extend only change the original list.</span>
-list0 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># create a new list.</span>
+list0<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># append,insert,extend,remove and pop only change the original list.</span>
+list0 <span class="token operator">+=</span> <span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#Slicing,Shallow copying,Concatenating,List constructor create a new list.</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>list0<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 400, 3, 5, 7, 100, 200, 1000, 2000] </span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sum<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1]+[2]+[3]+[] = [1,2,3]</span>
 
@@ -730,6 +730,7 @@ my_function()
 
 print_sums<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span></code></pre>
 <p>Nested functions can access variables in outer function (adder) as well as the outer function itself (print_sums).</p>
+<p>Don’t conflate: function name vs. function call.</p>
 <p><strong>· Module</strong><br>If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Or sometimes, you are faced with naming conflicts of different functions in one file. Or as your program gets longer, you may want to split it into several files for easier maintenance. Or you may also want to use a handy function that you’ve written in several programs without copying its definition into each program. At such moments, python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. In Python, every file represents a module. </p>
 <p>We can use the <code>import</code>  to import the specified module to distinguish different functions. </p>
 <p>The variable <code>sys.path</code> is a list of strings that determines the interpreter’s search path for modules. It is initialized to a default path taken from the environment variable <code>PYTHONPATH</code>, or from a built-in default if <code>PYTHONPATH</code> is not set. You can modify it using standard list operations: sys.path.append(‘/lib/python’).</p>
