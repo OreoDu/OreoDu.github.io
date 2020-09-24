@@ -128,7 +128,113 @@
             <div class="typo" style="padding: 3rem;">
                 <h1 id="Java-Basics-02"><a href="#Java-Basics-02" class="headerlink" title="Java Basics 02"></a>Java Basics 02</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
 <p><strong>· materials:</strong><br>   · <a href="https://sp19.datastructur.es/" target="_blank" rel="noopener"><u>CS61B Spring 2019 at UCB</u></a><br>   · <a href="https://docs.oracle.com/javase/tutorial/" target="_blank" rel="noopener"><u>Java Tutorial</u></a><br>   · <a href="https://www.oracle.com/java/technologies/language-environment.html" target="_blank" rel="noopener"><u>The Java Language Environment</u></a> by <em>James Gosling</em> and <em>Henry McGilton</em><br>   · Wikipedia</p>
-<h3 id="Part-1-Interfaces"><a href="#Part-1-Interfaces" class="headerlink" title="Part.1 Interfaces"></a>Part.1 Interfaces</h3><h3 id="Part-2-Inheritance"><a href="#Part-2-Inheritance" class="headerlink" title="Part.2 Inheritance"></a>Part.2 Inheritance</h3><h3 id="Part-3-Annotation"><a href="#Part-3-Annotation" class="headerlink" title="Part.3 Annotation"></a>Part.3 Annotation</h3><p><em>Annotations</em>, a form of metadata, provide data about a program that has no direct effect on the operation of the code they annotate. Annotations can be applied to any <em>type use</em>.</p>
+<h3 id="Part-1-Interfaces"><a href="#Part-1-Interfaces" class="headerlink" title="Part.1 Interfaces"></a>Part.1 Interfaces</h3><p>A collection of methods with no implementation is called an <em>interface</em>. Methods form the object’s <em>interface</em> with the outside world. The interface is a blueprint of a class and is a mechanism to achieve abstraction.</p>
+<h4 id="Ⅰ-Defining-an-interface"><a href="#Ⅰ-Defining-an-interface" class="headerlink" title="Ⅰ. Defining an interface"></a>Ⅰ. Defining an interface</h4><p>An <em>interface</em> is a reference type that can contain <em>only</em> constants,  abstract methods, default methods, static methods, and nested types. Method bodies exist only for default methods and static methods. </p>
+<p>All abstract, default, and static methods in an interface are implicitly <code>public</code> and all constant values defined are implicitly <code>public</code>, <code>static</code>, and <code>final</code>. Interfaces cannot be instantiated—they can only be <em>implemented</em> by classes or <em>extended</em> by other interfaces and they can extend any number of other interfaces.</p>
+<p>Default method:  defined in the interface with the keyword <code>defualt</code> and enable you to add new functionality with implementation to the interfaces and ensure binary compatibility with code written for older versions of those interfaces. Implementation class can override the default method.</p>
+<p>Static method: defined in the interface with the keyword <code>static</code> and contain the complete definition of the function and cannot be overridden or changed in the implementation class.</p>
+<p>Abstract method: declared without an implementation.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">TestInterface</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">// abstract method </span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">square</span> <span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+    <span class="token comment" spellcheck="true">// static method </span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">showStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Static Method Executed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// default method </span>
+    <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">showDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Default Method Executed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+
+<span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token keyword">implements</span> <span class="token class-name">TestInterface</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">// Implementation of square abstract method </span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">square</span> <span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">*</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        TestClass d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        d<span class="token punctuation">.</span><span class="token function">square</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 16</span>
+        d<span class="token punctuation">.</span><span class="token function">showDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Default Method Executed</span>
+
+        <span class="token comment" spellcheck="true">// Static method executed </span>
+        TestInterface<span class="token punctuation">.</span><span class="token function">showStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Static Method Executed</span>
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> </code></pre>
+<h4 id="Ⅱ-Implementing-an-Interface"><a href="#Ⅱ-Implementing-an-Interface" class="headerlink" title="Ⅱ. Implementing an Interface"></a>Ⅱ. Implementing an Interface</h4><p>To declare a class that implements an interface, we should include an <code>implements</code> clause in the class declaration. The class can implement more than one interface. By convention, the <code>implements</code> clause follows the <code>extends</code> clause, if there is one.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Relatable</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">// this (object calling isLargerThan) and other must be instances of </span>
+    <span class="token comment" spellcheck="true">// the same class returns 1, 0, -1 if this is greater than, </span>
+    <span class="token comment" spellcheck="true">// equal to, or less than other</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">isLargerThan</span><span class="token punctuation">(</span>Relatable other<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RectanglePlus</span> <span class="token keyword">implements</span> <span class="token class-name">Relatable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> width <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> height <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Point origin<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">RectanglePlus</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        origin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        width <span class="token operator">=</span> w<span class="token punctuation">;</span>
+        height <span class="token operator">=</span> h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">RectanglePlus</span><span class="token punctuation">(</span>Point p<span class="token punctuation">,</span> <span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        origin <span class="token operator">=</span> p<span class="token punctuation">;</span>
+        width <span class="token operator">=</span> w<span class="token punctuation">;</span>
+        height <span class="token operator">=</span> h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// a method for computing the area of the rectangle</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> width <span class="token operator">*</span> height<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// a method required to implement the Relatable interface</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">isLargerThan</span><span class="token punctuation">(</span>Relatable other<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        RectanglePlus otherRect <span class="token operator">=</span> <span class="token punctuation">(</span>RectanglePlus<span class="token punctuation">)</span>other<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> otherRect<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> otherRect<span class="token punctuation">.</span><span class="token function">getArea</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>               
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>If we want to be able to compare the size of similar objects instantiated from the class and there is some way to compare the relative “size” of them, the class that instantiates them should and can implement <code>Relatable</code> interface.</p>
+<h4 id="Ⅲ-Using-an-Interface-as-a-Type"><a href="#Ⅲ-Using-an-Interface-as-a-Type" class="headerlink" title="Ⅲ. Using an Interface as a Type"></a>Ⅲ. Using an Interface as a Type</h4><p>Because interface is a reference data type so we can use the interface name as a data type, However if a reference variable whose type is an interface, any objects assigned to it should be an instance of the class that implements the interface.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Any objects that are instantiated from a class that implements Relatable.</span>
+<span class="token keyword">public</span> Object <span class="token function">findLargest</span><span class="token punctuation">(</span>Object object1<span class="token punctuation">,</span> Object object2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   Relatable obj1 <span class="token operator">=</span> <span class="token punctuation">(</span>Relatable<span class="token punctuation">)</span>object1<span class="token punctuation">;</span>
+   Relatable obj2 <span class="token operator">=</span> <span class="token punctuation">(</span>Relatable<span class="token punctuation">)</span>object2<span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isLargerThan</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> object1<span class="token punctuation">;</span>
+   <span class="token keyword">else</span> 
+      <span class="token keyword">return</span> object2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>When the classes implement <code>Relatable</code>, objects instantiated from those classes can be of both their own class (or superclass) type and a <code>Relatable</code> type. This gives them some of the advantages of multiple inheritance, where they can have behavior from both a superclass and an interface.</p>
+<h4 id="Ⅳ-Evolving-Interfaces"><a href="#Ⅳ-Evolving-Interfaces" class="headerlink" title="Ⅳ. Evolving Interfaces"></a>Ⅳ. Evolving Interfaces</h4><p>Normally, once we finished developing the interface we cannot modify it because all the classes that implemented the interface will break. So try to anticipate all uses for the interface and specify it completely from the beginning. However, you have several other options.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// create a DoItPlus interface that extends DoIt</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DoItPlus</span> <span class="token keyword">extends</span> <span class="token class-name">DoIt</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">boolean</span> <span class="token function">didItWork</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">double</span> x<span class="token punctuation">,</span> String s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// define new methods as default methods or static methods.</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DoIt</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">double</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">int</span> <span class="token function">doSomethingElse</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">default</span> <span class="token keyword">boolean</span> <span class="token function">didItWork</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">double</span> x<span class="token punctuation">,</span> String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// Method body </span>
+   <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>Users who have classes that implement interfaces enhanced with new default or static methods do not have to modify or recompile them to accommodate the additional methods.</p>
+<h3 id="Part-2-Inheritance"><a href="#Part-2-Inheritance" class="headerlink" title="Part.2 Inheritance"></a>Part.2 Inheritance</h3><h3 id="Part-3-Annotation"><a href="#Part-3-Annotation" class="headerlink" title="Part.3 Annotation"></a>Part.3 Annotation</h3><p><em>Annotations</em>, a form of metadata, provide data about a program that has no direct effect on the operation of the code they annotate. Annotations can be applied to any <em>type use</em>.</p>
 <p>The use of annotations:<br>·  Information for the compiler — Annotations can be used by the compiler to detect errors or suppress warnings.<br>· Compile-time and deployment-time processing — Software tools can process annotation information to generate code, XML files, and so forth.<br>· Runtime processing — Some annotations are available to be examined at runtime.</p>
 <p>The annotation type can be one of the types that are defined in the <code>java.lang</code> or <code>java.lang.annotation</code> packages of the Java SE API or custom annotation types.</p>
 <p>See predefined annotation types and annotations that apply to other annotations <a href="https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html" target="_blank" rel="noopener"><u>here</u></a>.</p>
