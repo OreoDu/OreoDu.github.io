@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js" id="body">
+
+	<!-- BEGIN HEAD -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>Data Structure</title>
+
+  
+
+  <meta name="description" content>
+
+  
+
+
+  <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/2980/5252/files/favicon_32x32.png?v=1521894486" type="image/png">
+
+  
+
+<!-- Open Graph data-->
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Data Structure">
+<meta property="og:site_name" content>
+<meta property="og:url" content="https://oreodu.github.io/2020/04/25/20200425-Data-Structure/">
+<meta property="og:description" content>
+
+
+
+
+
+<!-- end Open Graph data-->
+  
+<link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+  
+<!-- GLOBAL MANDATORY STYLES -->
+<link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/vendor/animate.css/animate.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/sass/layout.css">
+  
+
+
+
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+<!-- END HEAD -->
+
+  <body>
+		
+		
+
+
+<!--========== HEADER ==========-->
+<header class="header navbar-fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="menu-container js_nav-item">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="toggle-icon"></span>
+              </button>
+
+              <!-- Logo -->
+              <div class="logo">
+                <!-- En caso de una text -->
+                
+                    <a class="logo-wrap" href="/#body" style="text-decoration: none;" >
+                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                        <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+                    </a>
+                
+              </div>
+              <!-- End Logo -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-collapse">
+              <div class="menu-container">
+                  <ul class="nav navbar-nav navbar-nav-right">
+                      
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#body"
+                            >
+                            Home
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#about"
+                            >
+                            About
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#experience"
+                            >
+                            Experience
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#work"
+                            >
+                            Work
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#contact"
+                            >
+                            Contact
+                        </a>
+                        </li>
+                      
+                  </ul>
+              </div>
+          </div>
+          <!-- End Navbar Collapse -->
+      </div>
+  </nav>
+  <!-- Navbar -->
+
+</header>
+<!--========== END HEADER ==========-->
+
+		<section id="post">
+  <div class="content content-width">
+    <h1 class="post-title"> Data Structure</h1>
+    <p class="date"> Sat Apr 25 2020 15:45:00 GMT+0800 </p>
+    
+    <h2 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br>  · Wikipedia</p>
+<h3 id="Part-1-Linear-List"><a href="#Part-1-Linear-List" class="headerlink" title="Part.1 Linear List"></a>Part.1 Linear List</h3><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><h4 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h4><h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h4><h3 id="Part-2-Hash-Table"><a href="#Part-2-Hash-Table" class="headerlink" title="Part.2 Hash Table"></a>Part.2 Hash Table</h3><h3 id><a href="#" class="headerlink" title></a></h3><h3 id="Part-3-Tree"><a href="#Part-3-Tree" class="headerlink" title="Part.3 Tree"></a>Part.3 Tree</h3><p>Recursive Description: A tree has a root and a list of branchesEach branch is a treeA tree with zero branches is called a leaf.</p>
+<p>Relative Description: Each location in a tree is called a nodeEach node has a label valueOne node can be the parent/child of another.</p>
+<p><img src="https://i.loli.net/2020/09/13/fDJtsRH6xkdKNCG.png" alt="11"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Use the recursive description</span>
+<span class="token comment" spellcheck="true"># We can also use the class to define the tree and its related attributes and methods.</span>
+<span class="token comment" spellcheck="true"># Constructor</span>
+<span class="token keyword">def</span> <span class="token function">tree</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> branches<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> branch <span class="token keyword">in</span> branches<span class="token punctuation">:</span>
+        <span class="token keyword">assert</span> is_tree<span class="token punctuation">(</span>branch<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>label<span class="token punctuation">]</span> <span class="token operator">+</span> list<span class="token punctuation">(</span>branches<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># Selectors</span>
+<span class="token keyword">def</span> <span class="token function">label</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> tree<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">def</span> <span class="token function">branches</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> tree<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">is_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> type<span class="token punctuation">(</span>tree<span class="token punctuation">)</span> <span class="token operator">!=</span> list <span class="token operator">or</span> len<span class="token punctuation">(</span>tree<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+    <span class="token keyword">for</span> branch <span class="token keyword">in</span> branches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> is_tree<span class="token punctuation">(</span>branch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+    <span class="token keyword">return</span> <span class="token boolean">True</span>
+
+<span class="token keyword">def</span> <span class="token function">is_leaf</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token operator">not</span> branches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>tree<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>tree<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tree<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>tree<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tree<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [3, [1], [2, [1], [1]]]</span>
+
+<span class="token comment" spellcheck="true"># Tree processing</span>
+<span class="token comment" spellcheck="true"># conut the nodes in a Tree</span>
+<span class="token keyword">def</span> <span class="token function">count_nodes</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> is_leaf<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">1</span>
+    lst <span class="token operator">=</span> <span class="token punctuation">[</span>count_nodes<span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token keyword">for</span> b <span class="token keyword">in</span> branches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">(</span>lst<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># count the leaves</span>
+<span class="token keyword">def</span> <span class="token function">count_leaves</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> is_leaf<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># leaves = [count_leaves(b) for b in branches(tree)] #[[1],[[1],[1]]]</span>
+    leaves <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> b <span class="token keyword">in</span> branches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        leaves <span class="token operator">+=</span> count_leaves<span class="token punctuation">(</span>tree<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1,1,1]</span>
+    <span class="token keyword">return</span> leaves
+
+<span class="token comment" spellcheck="true"># print the tree</span>
+<span class="token keyword">def</span> <span class="token function">print_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">,</span>indent <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token operator">*</span>indent<span class="token punctuation">,</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> b <span class="token keyword">in</span> branches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            print_tree<span class="token punctuation">(</span>b<span class="token punctuation">,</span>indent<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># create a tree from an exsisted tree</span>
+<span class="token keyword">def</span> <span class="token function">square_tree</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> is_leaf<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> tree<span class="token punctuation">(</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+    lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> b <span class="token keyword">in</span> brannches<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        lst <span class="token operator">+=</span> <span class="token punctuation">[</span>suqare_tree<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> tree<span class="token punctuation">(</span>label<span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span>lst<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># prune the tree </span>
+<span class="token keyword">def</span> <span class="token function">prune</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> label<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">==</span> x<span class="token punctuation">:</span> <span class="token keyword">return</span> null
+    branches<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span>b <span class="token keyword">for</span> b <span class="token keyword">in</span> branches<span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token keyword">if</span> label<span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token operator">!=</span> x <span class="token punctuation">]</span>
+    <span class="token keyword">for</span> b <span class="token keyword">in</span> branchces<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        prune<span class="token punctuation">(</span> b<span class="token punctuation">,</span>x<span class="token punctuation">)</span></code></pre>
+<h3 id="Part-4-Others"><a href="#Part-4-Others" class="headerlink" title="Part.4 Others"></a>Part.4 Others</h3><h4 id="Ⅰ-Union-Find"><a href="#Ⅰ-Union-Find" class="headerlink" title="Ⅰ.  Union-Find"></a>Ⅰ.  Union-Find</h4><p>A  disjoint-set data structure is a data structure that keeps track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets. </p>
+<p>A  union-find algorithm is an algorithm that performs two useful operations on such a data structure:<br>· Find: Determine which subset a particular element is in. Used to check if two elements are in the same subset.<br>· Union: Join two subsets into a single subset.</p>
+<h5 id="1）Quik-Find-eager-approach"><a href="#1）Quik-Find-eager-approach" class="headerlink" title="1）Quik-Find (eager approach)"></a>1）Quik-Find (eager approach)</h5><p>Data structure: Integer array id[] of length N<br>Interpretation: <em>p</em> and <em>q</em> are connected iff they have the same id.<img src="https://i.loli.net/2020/09/25/4fotqNvk6Klr8R9.png" alt="1" style="zoom:50%;">     <img src="https://i.loli.net/2020/09/25/HDLj7Pg83npwJVG.png" alt="2" style="zoom: 33%;"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QuickFind</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> id<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token function">QuickFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    id  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">==</span> id<span class="token punctuation">[</span>q<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">//change all entries whose id equals id[p] to id[q].</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> pid <span class="token operator">=</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> qid <span class="token operator">=</span> id<span class="token punctuation">[</span>q<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>id<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pid<span class="token punctuation">)</span> id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> qid<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span></code></pre>
+<h5 id="2-Quik-Union-lazy-approach"><a href="#2-Quik-Union-lazy-approach" class="headerlink" title="2)  Quik-Union (lazy approach)"></a>2)  Quik-Union (lazy approach)</h5><p>Data structure: Integer array id[] of length N<br>Interpretation: id[i] is the parent of i.</p>
+<p><img src="https://i.loli.net/2020/09/25/CxwA365cELkj9pN.png" alt="3" style="zoom:50%;">        <img src="https://i.loli.net/2020/09/25/zYEd4WNAnvfsIyc.png" alt="4" style="zoom:33%;"></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QuickUnion</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> id<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">QuickUnion</span><span class="token punctuation">(</span><span class="token keyword">int</span> N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        id  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">root</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span> p <span class="token operator">=</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">connected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">root</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">root</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// set the id of p's root to the id of q's root.</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> pr <span class="token operator">=</span> <span class="token function">root</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> qr <span class="token operator">=</span> <span class="token function">root</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        id<span class="token punctuation">[</span>pr<span class="token punctuation">]</span> <span class="token operator">=</span> qr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="3-Improvement-Weighed-quick-union"><a href="#3-Improvement-Weighed-quick-union" class="headerlink" title="3)  Improvement: Weighed quick union"></a>3)  Improvement: Weighed quick union</h5><p>In order to avoid tall trees, we can keep track of the <em>size</em> of each tree and balance by linking root of smaller tree to root of larger tree.</p>
+<p>Data structure: Integer array id[] of length N and extra helper array size[].</p>
+<p><img src="https://i.loli.net/2020/09/25/n2XLPSoFVrMQwq7.png" alt="6" style="zoom:50%;">          <img src="https://i.loli.net/2020/09/25/t8GTg5mU2w6oIYA.png" alt="5" style="zoom: 25%;"></p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Only need to change the union method</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">union</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> q<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> pr <span class="token operator">=</span> <span class="token function">root</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> qr <span class="token operator">=</span> <span class="token function">root</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>pr <span class="token operator">==</span> qr<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>size<span class="token punctuation">[</span>pr<span class="token punctuation">]</span><span class="token operator">&lt;</span>size<span class="token punctuation">[</span>qr<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            id<span class="token punctuation">[</span>pr<span class="token punctuation">]</span> <span class="token operator">=</span> qr<span class="token punctuation">;</span>
+            size<span class="token punctuation">[</span>qr<span class="token punctuation">]</span> <span class="token operator">+=</span> size<span class="token punctuation">[</span>pr<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            id<span class="token punctuation">[</span>qr<span class="token punctuation">]</span> <span class="token operator">=</span> pr<span class="token punctuation">;</span>
+            size<span class="token punctuation">[</span>pr<span class="token punctuation">]</span> <span class="token operator">+=</span> size<span class="token punctuation">[</span>qr<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>We can also link the root based on the rank(or height). But tracking the size is better.</p>
+<img src="https://i.loli.net/2020/09/25/DgFo2cv6utdXqMO.jpg" alt="12" style="zoom: 25%;">
+
+
+
+<h5 id="4-Improvement-path-compression"><a href="#4-Improvement-path-compression" class="headerlink" title="4) Improvement: path compression"></a>4) Improvement: path compression</h5><p>In order to reduce the height of the trees, we can update the parent of the node to the root we found.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Only need to change the root method.</span>
+<span class="token comment" spellcheck="true">//add second loop to root() to set the id[] of each examined node to the root.</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">root</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> r <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">!=</span>id<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> r <span class="token operator">=</span> id<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> tmp <span class="token operator">=</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        id<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">;</span>
+        p <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Make every other node in path point to its grandparent</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">root</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        id<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> id<span class="token punctuation">[</span>id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        p <span class="token operator">=</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="5-Analysis-of-running-time"><a href="#5-Analysis-of-running-time" class="headerlink" title="5) Analysis of running time:"></a>5) Analysis of running time:</h5><p>(lg* : times you take logN to get one)</p>
+<img src="https://i.loli.net/2020/09/25/L6xFqZDORv8lkrP.png" alt="122" style="zoom:50%;">
+
+<h5 id="6-Union-Find-Application"><a href="#6-Union-Find-Application" class="headerlink" title="6) Union Find Application"></a>6) Union Find Application</h5><p>· Percolation.<br>· Games (Go, Hex).<br>· Dynamic connectivity.<br>· Least common ancestor.<br>· Equivalence of finite state automata.<br>· Hinley-Milner polymorphic type inference.<br>· Kruskal’s minimum spanning tree algorithm.<br>· Compiling equivalence statements in Fortran.<br>· Morphological attribute openings and closings.<br>· Matlab’s bwlabel() function in image processing.</p>
+<h3 id="Bag"><a href="#Bag" class="headerlink" title="Bag"></a>Bag</h3><h3 id="Union-find"><a href="#Union-find" class="headerlink" title="Union-find"></a>Union-find</h3><h3 id="Priority-queue"><a href="#Priority-queue" class="headerlink" title="Priority queue"></a>Priority queue</h3>
+  </div>
+</section>
+
+		
+
+
+<footer class="footer">
+  <div class="content container">
+      <!--// row -->
+      <div class="row">
+          <div class="col-xs-6">
+            
+              <img class="footer-logo" src="img/logo-dark.png" alt="">
+            
+          </div>
+          <div class="col-xs-6 text-right sm-text-left">
+              <p class="margin-b-0">
+                <a class="fweight-700" href="https://hexo.io/">Hexo.io</a> adaptation by <a class="fweight-700" href="https://molavec.com">Molavec</a>.
+                <br>
+                <br>
+                <a class="fweight-700" href="https://keenthemes.com/preview/aircv/">Aircv</a>. Theme Powered by: <a class="fweight-700" href="https://www.keenthemes.com/">KeenThemes.com</a>.
+            </p>
+          </div>
+      </div>
+      <!--// end row -->
+  </div>
+</footer>
+		<!-- Back To Top -->
+<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+<!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- CORE PLUGINS -->
+<script src="/vendor/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL PLUGINS -->
+<script src="/vendor/jquery.easing.js" type="text/javascript"></script>
+<script src="/vendor/jquery.back-to-top.js" type="text/javascript"></script>
+<script src="/vendor/jquery.wow.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery.parallax.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery.appear.js" type="text/javascript"></script>
+<script src="/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+<script src="/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL SCRIPTS -->
+
+
+<script src="/js/layout.js"></script>
+<script src="/js/components/progress-bar.js"></script>
+<script src="/js/components/masonry.js"></script>
+<script src="/js/components/wow.js"></script>
+
+		
+
+  </body>
+</html>

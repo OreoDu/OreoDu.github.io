@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js" id="body">
+
+	<!-- BEGIN HEAD -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>SQL Basics</title>
+
+  
+
+  <meta name="description" content>
+
+  
+
+
+  <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/2980/5252/files/favicon_32x32.png?v=1521894486" type="image/png">
+
+  
+
+<!-- Open Graph data-->
+<meta property="og:type" content="blog">
+<meta property="og:title" content="SQL Basics">
+<meta property="og:site_name" content>
+<meta property="og:url" content="https://oreodu.github.io/2020/09/16/20200916-SQL-Basics/">
+<meta property="og:description" content>
+
+
+
+
+
+<!-- end Open Graph data-->
+  
+<link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+  
+<!-- GLOBAL MANDATORY STYLES -->
+<link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/vendor/animate.css/animate.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/sass/layout.css">
+  
+
+
+
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+<!-- END HEAD -->
+
+  <body>
+		
+		
+
+
+<!--========== HEADER ==========-->
+<header class="header navbar-fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="menu-container js_nav-item">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="toggle-icon"></span>
+              </button>
+
+              <!-- Logo -->
+              <div class="logo">
+                <!-- En caso de una text -->
+                
+                    <a class="logo-wrap" href="/#body" style="text-decoration: none;" >
+                        <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                        <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+                    </a>
+                
+              </div>
+              <!-- End Logo -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-collapse">
+              <div class="menu-container">
+                  <ul class="nav navbar-nav navbar-nav-right">
+                      
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#body"
+                            >
+                            Home
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#about"
+                            >
+                            About
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#experience"
+                            >
+                            Experience
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#work"
+                            >
+                            Work
+                        </a>
+                        </li>
+                      
+                        <li class="js_nav-item nav-item">
+                            <a  class="nav-item-child nav-item-hover"
+                                href="/#contact"
+                            >
+                            Contact
+                        </a>
+                        </li>
+                      
+                  </ul>
+              </div>
+          </div>
+          <!-- End Navbar Collapse -->
+      </div>
+  </nav>
+  <!-- Navbar -->
+
+</header>
+<!--========== END HEADER ==========-->
+
+		<section id="post">
+  <div class="content content-width">
+    <h1 class="post-title"> SQL Basics</h1>
+    <p class="date"> Wed Sep 16 2020 15:42:00 GMT+0800 </p>
+    
+    <h1 id="SQL-Basics"><a href="#SQL-Basics" class="headerlink" title="SQL Basics"></a>SQL Basics</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br> · <a href="https://inst.eecs.berkeley.edu/~cs61a/su19/" target="_blank" rel="noopener"><u>CS61A Summer 2019 at UCB</u></a></p>
+<p>SQL is an example of a (declarative) language with interacts with a  database management system (DBMS) in order to make data processing easier and faster</p>
+<h3 id="Part-1-Create-the-Table"><a href="#Part-1-Create-the-Table" class="headerlink" title="Part.1 Create the Table"></a>Part.1 Create the Table</h3><p><strong>· Make a table</strong></p>
+<p>A CREATE TABLE statement gives a global name to a table.</p>
+<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE [name]([columns]); # create empty table
+
+CREATE TABLE dogs(name, fur, phrase DEFAULT 'woof'); # using default values</code></pre>
+<p><strong>· Create rows of data</strong></p>
+<p><code>CREATE TABLE [name] AS ...;</code></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [expr] AS [name], [expr] AS [name], ... UNION
+SELECT [expr] AS [name], [expr] AS [name], ... UNION
+SELECT [expr] AS [name], [expr] AS [name], ...;
+
+
+CREATE TABLE cities AS
+  SELECT 38 AS latitude, 122 AS longitude, "Berkeley" AS name   UNION
+  SELECT 42,                71,                 "Cambridge"        UNION
+  SELECT 45,                93,                 "Minneapolis";</code></pre>
+<p><strong>· Create rows of data from existing tables</strong></p>
+<p>A <code>SELECT</code> statement can specify an input table using a <code>FROM</code> clause. A subset of the rows of the input table can be selected using a <code>WHERE</code> clause. Can declare the order of the remaining rows using an <code>ORDER BY</code> clause. Otherwise, no order. Column descriptions determine how each input row is projected to a result row.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [columns] FROM [table] WHERE [condition] 
+ORDER BY [order] [ASC/DESC] LIMIT [number];
+
+SELECT "west coast" AS region, name FROM cities WHERE longitude >= 115 UNION
+SELECT "other",                  name FROM cities WHERE longitude < 115;</code></pre>
+<p><strong>· Arithmetic in SELECT Statements</strong></p>
+<p>In a SELECT expression, column names evaluate to row values.Arithmetic expressions can combine row values and constants.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT single + 2 * couple AS total FROM restaurant;</code></pre>
+<p><strong>· Join the Table</strong></p>
+<p>When we join two tables, we get a new table with one row for each combination of rows from the original tables.</p>
+<p><code>SELECT * FROM table1, table2;</code></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT * FROM parents, dogs;
+SELECT parent FROM parents, dogs WHERE child = name AND fur = "curly";</code></pre>
+<pre class=" language-mysql"><code class="language-mysql">SELECT s.name, s.artist 
+      FROM songs AS s, artists AS ar, albums AS al
+      WHERE album = al.name AND s.artist = ar.name
+            AND release_year = 2010
+            ORDER BY first_year_active;</code></pre>
+<p><strong>· Aliasing</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT a.child AS first, b.child AS second FROM parents AS a, parents AS b WHERE a.parent = b.parent AND a.child < b.child;</code></pre>
+<p><strong>· String Expression</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">sql> SELECT name || " dog" FROM dogs;
+abraham dog
+barack dog
+clinton dog</code></pre>
+<h3 id="Part-2-Aggregation"><a href="#Part-2-Aggregation" class="headerlink" title="Part.2 Aggregation"></a>Part.2 Aggregation</h3><p><strong>Aggregation</strong> is the process of doing operations on <em>groups of rows</em> instead of just a single row. SQL provides aggregate functions whose return values can be used as entries in a column.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT AVG(age) AS avg_age FROM dogs;
+SELECT COUNT(*) AS count FROM dogs;
+SELECT SUM(age) AS sum_age FROM dogs;
+SELECT MIN(name) AS min_name FROM dogs;</code></pre>
+<p><strong>· Group</strong></p>
+<p>By default, aggregation is performed over all the rows of the table. We can <code>GROUP BY</code> any valid SQL expression, which includes using multiple column names and operators. We can specify  a single group consists of all rows for which [expression] evaluates to the same value. The output table will have <strong>one row</strong> per group. </p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [columns] FROM [table] WHERE [condition] 
+       GROUP BY [expression]
+       ORDER BY [order] [ASC/DESC]
+       LIMIT [number];
+
+SELECT fur, AVG(age) AS avg_age FROM dogs GROUP BY fur;</code></pre>
+<p><strong>· Filtering Groups</strong></p>
+<p>We know how to filter individual rows using the <code>WHERE</code> clause.To filter groups, use the <code>HAVING [condition]</code> clause.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT fur, AVG(age) AS avg_age
+       FROM dogs GROUP BY fur
+       HAVING COUNT(*) > 1;</code></pre>
+<h3 id="Part-3-Mutating-Tables"><a href="#Part-3-Mutating-Tables" class="headerlink" title="Part.3 Mutating Tables"></a>Part.3 Mutating Tables</h3><p><strong>· Remove Table</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">DROP TABLE [IF EXISTS] [name];
+DROP TABLE IF EXISTS parents;</code></pre>
+<p><strong>· Inserting Records</strong></p>
+<pre class=" language-Mysql"><code class="language-Mysql">INSERT INTO [table]([columns]) VALUES([values]), ([values]);
+
+INSERT INTO dogs(name, fur) VALUES('fillmore', 'curly');
+INSERT INTO dogs VALUES('delano', 'long', 'hi!');</code></pre>
+<p><strong>· Updating Records</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">UPDATE [table] SET [column] = [expression] WHERE [condition];
+DELETE FROM [table] WHERE [condition];
+
+UPDATE dogs SET phrase = 'WOOF' WHERE fur = 'curly';
+DELETE FROM dogs WHERE fur = 'curly' and phrase = 'WOOF';</code></pre>
+
+  </div>
+</section>
+
+		
+
+
+<footer class="footer">
+  <div class="content container">
+      <!--// row -->
+      <div class="row">
+          <div class="col-xs-6">
+            
+              <img class="footer-logo" src="img/logo-dark.png" alt="">
+            
+          </div>
+          <div class="col-xs-6 text-right sm-text-left">
+              <p class="margin-b-0">
+                <a class="fweight-700" href="https://hexo.io/">Hexo.io</a> adaptation by <a class="fweight-700" href="https://molavec.com">Molavec</a>.
+                <br>
+                <br>
+                <a class="fweight-700" href="https://keenthemes.com/preview/aircv/">Aircv</a>. Theme Powered by: <a class="fweight-700" href="https://www.keenthemes.com/">KeenThemes.com</a>.
+            </p>
+          </div>
+      </div>
+      <!--// end row -->
+  </div>
+</footer>
+		<!-- Back To Top -->
+<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+<!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- CORE PLUGINS -->
+<script src="/vendor/jquery.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL PLUGINS -->
+<script src="/vendor/jquery.easing.js" type="text/javascript"></script>
+<script src="/vendor/jquery.back-to-top.js" type="text/javascript"></script>
+<script src="/vendor/jquery.wow.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery.parallax.min.js" type="text/javascript"></script>
+<script src="/vendor/jquery.appear.js" type="text/javascript"></script>
+<script src="/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+<script src="/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL SCRIPTS -->
+
+
+<script src="/js/layout.js"></script>
+<script src="/js/components/progress-bar.js"></script>
+<script src="/js/components/masonry.js"></script>
+<script src="/js/components/wow.js"></script>
+
+		
+
+  </body>
+</html>
