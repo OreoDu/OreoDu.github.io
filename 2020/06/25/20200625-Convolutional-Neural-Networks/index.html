@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/5oidcl2IVnwaL7g.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Convolutional Neural Networks</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Convolutional-Neural-Networks-CNN"><a href="#Convolutional-Neural-Networks-CNN" class="headerlink" title="Convolutional Neural Networks (CNN)"></a>Convolutional Neural Networks (CNN)</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong></p>
+<p>  · Wikipedia</p>
+<p>  · <u><a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53" target="_blank" rel="noopener">Sources NO.1</a></u></p>
+<p>  · <u><a href="https://www.analyticsvidhya.com/blog/2020/02/mathematics-behind-convolutional-neural-network/?utm_source=blog&utm_medium=cnn-vs-rnn-vs-mlp-analyzing-3-types-of-neural-networks-in-deep-learning" target="_blank" rel="noopener">Sources NO.2</a></u></p>
+<p>  · <u><a href="https://towardsdatascience.com/convolution-neural-networks-a-beginners-guide-implementing-a-mnist-hand-written-digit-8aa60330d022" target="_blank" rel="noopener">Sources NO.3</a></u></p>
+<p><img src="https://i.loli.net/2020/07/17/Ve2RsvIFM7WozLS.jpg" alt="m"></p>
+<p>A Convolutional Neural Network is a Deep Learning algorithm which can take in an input image, assign importance (learnable weights and biases) to various objects in the image and be able to differentiate one from the other. ConvNets have the ability to learn these characteristics.</p>
+<p>The architecture of a ConvNet is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.</p>
+<h2 id="Why-CNN"><a href="#Why-CNN" class="headerlink" title="Why CNN?"></a>Why CNN?</h2><p>A CNN, in specific, has one or more layers of convolution filters comparing to the multilayer perceptron. A convolution filter receives its input from multiple units from the previous layer which together create a proximity.</p>
+<p>The convolution layers (as well as pooling layers) are especially beneficial as:</p>
+<ul>
+<li><strong>·</strong>They uset the parameter sharing. A single filter is applied across different parts of an input to produce a feature map. So, they reduce the number of parameters in the network which reduces the chance of overfitting as the model would be less complex than a fully connected network (MLP).  Also, different filters can extract different kinds of features from an input.</li>
+<li><strong>·</strong> They consider the shared information (the spatial features) in the small neighborhoods. Filters in the ConNets are used to extract the relevant features from the input using the convolution operation.</li>
+<li><strong>·</strong> They learn the filters automatically without mentioning it explicitly. These filters help in extracting the right and relevant features from the input data.</li>
+</ul>
+<h2 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h2><h3 id="Convolution-layer"><a href="#Convolution-layer" class="headerlink" title="Convolution layer"></a>Convolution layer</h3><p><img src="https://i.loli.net/2020/07/17/gxehjuNRdkQEmM5.gif" alt="k"></p>
+<p>The convolution filters or kernels moves to the right with a certain Stride Value and  do the dot product till it parses the complete width. Moving on, it hops down to the beginning (left) of the image with the same Stride Value and repeats the process until the entire image is traversed.</p>
+<p>The objective of the Convolution Operation is to extract the high-level features such as edges, from the input image. Each filter can extract different features.</p>
+<h4 id="Pading"><a href="#Pading" class="headerlink" title="Pading"></a>Pading</h4><p>Padding is a technique to simply add zeros around the margin of the image to increase it’s dimension. Padding allows us to emphasize the border pixels and in order lose less information.</p>
+<img src="https://i.loli.net/2020/07/17/btVT1sBFp9c8I5E.gif" alt="pading" style="zoom: 67%;">
+
+<p>Same Padding: Dimensionality is remains the same.</p>
+<p>Valid Padding: Dimensionality is increased.</p>
+<p>Feature size = ((Image size + 2 * Padding size − Kernel size) / Stride)+1</p>
+<h3 id="Pooling-layer"><a href="#Pooling-layer" class="headerlink" title="Pooling layer"></a>Pooling layer</h3><p>Pooling layer helps reduce the spatial size of the convolved features and also helps reduce over-fitting by providing an abstracted representation of them. It is a sample-based discretization process. Furthermore, it is useful for extracting dominant features which are rotational and positional invariant, thus maintaining the process of effectively training of the model.</p>
+<p><img src="https://i.loli.net/2020/07/17/heRa2M5WCoPvilI.gif" alt="p"></p>
+<p>The kernel take the max or average of the region from the input overlapped by the kernel. </p>
+<p>Max Pooling also performs as a Noise Suppressant. It discards the noisy activations altogether and also performs de-noising along with dimensionality reduction. On the other hand, Average Pooling simply performs dimensionality reduction as a noise suppressing mechanism. Hence, we can say that Max Pooling performs a lot better than Average Pooling.</p>
+<h3 id="Fully-connected-layer"><a href="#Fully-connected-layer" class="headerlink" title="Fully connected layer"></a>Fully connected layer</h3><p>Adding a Fully-Connected layer is a cheap way of learning non-linear combinations of the high-level features as represented by the output of the convolutional layer.</p>
+<p>We flatten the image into a column vector. The flattened output is fed to a feed-forward neural network and backpropagation applied to every iteration of training. Over a series of epochs, the model is able to distinguish between dominating and certain low-level features in images and classify them using the Softmax Classification technique.</p>
+<img src="https://i.loli.net/2020/07/17/m6rhp5qJojD9PFN.jpg" alt="f" style="zoom: 67%;">
+
+
+
+<p>Usually, activation function and dropout layer are used between two consecutive fully connected layers to introduce non-linearity and reduce over-fitting respectively. At the last fully connected layer we choose the output size based on our application. </p>
+<h3 id="Dropout-layer"><a href="#Dropout-layer" class="headerlink" title="Dropout layer"></a>Dropout layer</h3><p>Dropout is a regularization technique used to reduce over-fitting on neural networks. Usually, deep learning models use dropout on the fully connected layers, but is also possible to use dropout after the max-pooling layers, creating image noise augmentation.</p>
+<p>Dropout randomly zeroes some of the connections of the input tensor with probability p using samples from a Bernoulli distribution.</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

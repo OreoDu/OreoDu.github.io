@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/HXeSE32DNiUcPfl.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Basis &amp; Regression &amp; Classification</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Basis-amp-Regression-amp-Classification"><a href="#Basis-amp-Regression-amp-Classification" class="headerlink" title="Basis &amp; Regression &amp; Classification"></a>Basis &amp; Regression &amp; Classification</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong></p>
+<p>  · Wikipedia</p>
+<p>  · Machine Learning </p>
+<h2 id="1-Intro"><a href="#1-Intro" class="headerlink" title="1. Intro"></a>1. Intro</h2><p>Tom Mitchell provides a more modern definition: “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
+<h4 id="·-Supervised-Learning"><a href="#·-Supervised-Learning" class="headerlink" title="· Supervised Learning"></a>· Supervised Learning</h4><p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
+<p>Supervised learning problems are categorized into <strong>“regression”</strong> and **”classification” ** problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
+<h4 id="·-Unsupervised-Learning"><a href="#·-Unsupervised-Learning" class="headerlink" title="· Unsupervised Learning"></a>· Unsupervised Learning</h4><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>We can derive this structure by <strong>clustering</strong> the data based on relationships among the variables in the data.</p>
+<p>With unsupervised learning there is no feedback based on the prediction results.</p>
+<h4 id="·-Model"><a href="#·-Model" class="headerlink" title="· Model"></a>· Model</h4><p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn the hypothesis function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. </p>
+<p>Inout : X</p>
+<p>Output: Y</p>
+<p>Hypothesis function: h</p>
+<p>Cost function : J</p>
+<p>Objective function: minimize (J)</p>
+<h2 id="2-Regression"><a href="#2-Regression" class="headerlink" title="2. Regression"></a>2. Regression</h2><h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>$ h_\theta (x) =  \theta_1 x + \theta_0 $</p>
+<h4 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h4><p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. </p>
+<p><strong>Mean Squared Error</strong></p>
+<p>$  J(\theta_0, \theta_1) =  \frac{1}{2m} \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} $</p>
+<p>$ J(\theta_0, \theta_1) $ can be ploted by a contour figure.</p>
+<h4 id="Gradient-descent-minizining-the-cost-function-J"><a href="#Gradient-descent-minizining-the-cost-function-J" class="headerlink" title="Gradient descent (minizining the cost function J)"></a>Gradient descent (minizining the cost function J)</h4><p>$ \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} $</p>
+<p>(Update $\theta_j$ simultaneously)</p>
+<p>learning rate: <strong>α</strong></p>
+<p>we should adjust our parameter <em>α</em> to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
+<p>The method looks at every example in the entire training set on every step, and is called <strong>batch gradient descent</strong></p>
+<p><u><a href="https://medium.com/@rohitpandey576/why-does-gradient-descent-work-128713588136" target="_blank" rel="noopener">Why does gradient descent work?</a></u></p>
+<h3 id="Multivariate-Linear-Regression"><a href="#Multivariate-Linear-Regression" class="headerlink" title="Multivariate Linear Regression"></a>Multivariate Linear Regression</h3><p>Linear regression with multiple variables.</p>
+<p>$ h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n $ </p>
+<p>$ h_\theta(x) =\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} … \hspace{2em} \theta_n\end{bmatrix}\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}= \theta^T X $</p>
+<p>$ x_{0}^{(i)} =1 \text{ for } (i\in { 1,\dots, m } ) $</p>
+<p>$  J(\theta) =  \frac{1}{2m} \sum^{m}_ {i=1} {( h_ \theta(x^{(i)}) - y^{(i)} )^2} $</p>
+<h4 id="Feature-Scaling"><a href="#Feature-Scaling" class="headerlink" title="Feature Scaling"></a>Feature Scaling</h4><p>We can speed up gradient descent by having each of our input values in roughly the same range. This is because θ will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.</p>
+<p>Two techniques to help with this are <strong>feature scaling</strong> and <strong>mean normalization</strong>.</p>
+<p>feature scaling : $ x_i = \frac{x_i}{s_i} $</p>
+<p>mean normalization : $ x_i = \frac{x_i - \mu_i}{s_i} $ </p>
+<p>($ s_i $:  standard deviation , $ \mu_i $: average)</p>
+<h4 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h4><p>$ \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} $</p>
+<p><strong>Debugging gradient descent.</strong> </p>
+<p>Make a plot with <em>number of iterations</em> and cost function J(θ).  It has been proven that if learning rate α is sufficiently small, then J(θ) will decrease on every iteration. </p>
+<p>If <em>α</em> is too small: slow convergence.</p>
+<p>If <em>α</em> is too large: may not decrease on every iteration and thus may not converge.</p>
+<p>(Try like this: … 0.001 … 0.01 … 0.1 … 1)</p>
+<h4 id="Normal-Equation"><a href="#Normal-Equation" class="headerlink" title="Normal Equation"></a>Normal Equation</h4><p>Normal Equation is a second way of minimizing J.</p>
+<p> In the “Normal Equation” method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. </p>
+<p>$ \theta =( X_T  X)^{-1}X_TY  $</p>
+<table>
+<thead>
+<tr>
+<th>Gradient Descent</th>
+<th><strong>Normal Equation</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Need to choose alpha</td>
+<td>No need to choose alpha</td>
+</tr>
+<tr>
+<td>Needs many iterations</td>
+<td>No need to iterate</td>
+</tr>
+<tr>
+<td>$ O(kn^2)$</td>
+<td>$ O(n^3)$, need to calculate inverse of $ X^TX $</td>
+</tr>
+<tr>
+<td>Works well when n is large</td>
+<td>Slow if n is very large</td>
+</tr>
+</tbody></table>
+<p>If $ X^TX $ is <strong>noninvertible,</strong> the common causes might be having :</p>
+<p><strong>·</strong> Redundant features, where two features are very closely related (i.e. they are linearly dependent)<br><strong>·</strong> Too many features (e.g. m ≤ n). In this case, delete some features or use “regularization”.</p>
+<h3 id="Polynomial-Regression"><a href="#Polynomial-Regression" class="headerlink" title="Polynomial Regression"></a>Polynomial Regression</h3><p>We can <strong>change the behavior or curve</strong> of our hypothesis function by making it a quadratic, cubic or square root function (or any other form).</p>
+<p>e.g.  $ h_\theta (x) = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $</p>
+<p>( if you choose your features this way then feature scaling becomes very important. $ 10^3 = 1000 $)</p>
+<p>Feature choosing: We can <strong>combine</strong> multiple features into one. </p>
+<h2 id="3-Classification-Logistic-regression"><a href="#3-Classification-Logistic-regression" class="headerlink" title="3. Classification(Logistic regression)"></a>3. Classification(Logistic regression)</h2><h3 id="Binary-classification"><a href="#Binary-classification" class="headerlink" title="Binary classification"></a>Binary classification</h3><h4 id="Activiation-Fuction"><a href="#Activiation-Fuction" class="headerlink" title="Activiation Fuction"></a>Activiation Fuction</h4><p>The activation Function of the output layer depend on the specific problems. </p>
+<p>For example: Binary classification — sigmoid function, Multiple Classification — softmax function, Regression — identity function</p>
+<p><strong>· Sigmoid Function</strong> (maps any real number to the (0, 1) interval)</p>
+<p>$ h_\theta (x) = g(\theta^T x) = \dfrac{1}{1 + e^{- \theta^T x}} $</p>
+<p>$ h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) $</p>
+<p><strong>Decision Boundary</strong> (The property of the Hypothesis function)</p>
+<p>$ h_\theta(x) = g(\theta^T x) \geq 0.5     when \theta^T x \geq 0 $</p>
+<p>Non-linear decision boundary : $ \theta^T x = \theta_0 + \theta_1 x + \theta_2 x^2 + \theta_3 x^3 $ </p>
+<h4 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h4><p>We cannot use the same cost function that we use for linear regression because the Logistic Function will not be a convex function, causing many local optima.</p>
+<p><strong>Cross Entropy Error</strong></p>
+<p>$ J(\theta) = \dfrac{1}{m} \sum_ {i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) $</p>
+<p>$ Cost (h_ \theta(x^{(i)}),y^{(i)}) = -y^{(i)} \log(h_ \theta(x^{(i)}))  - (1- y^{(i)}) \log(1-h_ \theta(x^{(i)}))  $</p>
+<p>$ \mathrm{Cost}(h_\theta(x),y) = 0 \text{ ,if } h_\theta(x) = y $</p>
+<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ ,if } y=0 \mathrm{and}  h_\theta(x) \rightarrow 1 $</p>
+<p>$ \mathrm{Cost}(h_ \theta(x),y) \rightarrow \infty \text{ ,if } y=1  \mathrm{and}  h_\theta(x) \rightarrow 0 $</p>
+<p>When $ h_ \theta(x^{(i)}) $ become so small, the value of log will become negative infinity. So in order to avoid such situation, we can add a small value to the $ h_ \theta(x^{(i)}) $, usually it can be 1e-7.</p>
+<h4 id="Gradient-descent-1"><a href="#Gradient-descent-1" class="headerlink" title="Gradient descent"></a>Gradient descent</h4><p>$ \theta_j := \theta_j - \frac{\alpha}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} $</p>
+<p>  <strong>Advanced Optimization</strong> </p>
+<p> “Conjugate gradient”, “BFGS”, and “L-BFGS” are more sophisticated, faster ways to optimize θ and also no need to manually pick $ \alpha $ which can be used instead of gradient descent. </p>
+<h3 id="Multiple-Classification"><a href="#Multiple-Classification" class="headerlink" title="Multiple Classification"></a>Multiple Classification</h3><p><strong>One-vs-all</strong></p>
+<p>$ h_\theta^{(i)}(x) = P(y = i | x ; \theta)   y \in \lbrace0, 1 … n\rbrace$</p>
+<p>$ \mathrm{prediction} = \max_i( h_\theta ^{(i)}(x) ) $</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/G5ZdMD1FTziltnx.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Basic Algorithm Ideas</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="Basic-Algorithm-Ideas"><a href="#Basic-Algorithm-Ideas" class="headerlink" title="Basic Algorithm Ideas"></a>Basic Algorithm Ideas</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br>  · <i>Algorithms</i>  by Dasgupta, C. H. Papadimitriou, U. V. Vazirani<br>  · <i>Efficient Algorithms and Intractable Problems</i>  (CS170 2018 Fall at UCB)<br>  · <i>Algorithm Design</i> by John Kleinberg, Eva Tardos<br>  · <a href="https://sp19.datastructur.es/" target="_blank" rel="noopener"><u>CS61B Spring 2019 at UCB</u></a><br>  · <a href="https://www.coursera.org/learn/algorithms-part1" target="_blank" rel="noopener"><u>Algorithms, Part I,Ⅱ by Princeton University</u></a><br>  · Wikipedia</p>
+<h3 id="Part-1-Greedy-Algorithms"><a href="#Part-1-Greedy-Algorithms" class="headerlink" title="Part.1 Greedy Algorithms"></a>Part.1 Greedy Algorithms</h3><h3 id="Part-2-Divide-and-Conquer"><a href="#Part-2-Divide-and-Conquer" class="headerlink" title="Part.2 Divide and Conquer"></a>Part.2 Divide and Conquer</h3><h3 id="Part-3-Recursion"><a href="#Part-3-Recursion" class="headerlink" title="Part.3 Recursion"></a>Part.3 Recursion</h3><p>Recursion is useful for solving problems with a naturally repeating structure - they are defined in terms of themselves.</p>
+<p>It requires you to find patterns of smaller problems, and to define the smallest problem possible</p>
+<p>Structure of a Recursive Function:</p>
+<p>1.One or more <strong>base cases</strong>, usually the smallest input.<br>2.One or more ways of <strong>reducing the problem</strong>, and then <strong>solving the smaller problem using recursion</strong>.<br>3.One or more ways of <strong>using the solution to each smaller problem</strong> to solve our larger problem.</p>
+<p><strong>Recursion</strong> has three main components<br><strong>Base case/s</strong>: The simplest form of the problem<br><strong>Recursive call/s</strong>: Smaller version of the problem<br>Use the solution to the smaller version of the problem to arrive at the solution to the original problem</p>
+<p><strong>Functional abstraction</strong>: When working with recursion, use <em>functional abstraction</em>: assume the recursive call gives the correct result.</p>
+<p>List out all the cases.<br>Identify <strong>patterns</strong> between each case.<br>Simplify repeated code with <strong>recursive calls</strong>.</p>
+<p><strong>Verifying the correctness of recursive functions</strong>:</p>
+<p>Verify that the base cases work as expected.</p>
+<p>For each larger case, verify that it works by <strong>assuming the smaller recursive calls are correct</strong>.</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">cascade</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">:</span>
+        cascade<span class="token punctuation">(</span>n <span class="token operator">//</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span></code></pre>
+<h3 id="Part-4-Back-Tracking"><a href="#Part-4-Back-Tracking" class="headerlink" title="Part.4 Back Tracking"></a>Part.4 Back Tracking</h3><h3 id="Part-5-Dynamic-Programing"><a href="#Part-5-Dynamic-Programing" class="headerlink" title="Part.5 Dynamic Programing"></a>Part.5 Dynamic Programing</h3><h3 id="Part-6-Enumeration-algorithm"><a href="#Part-6-Enumeration-algorithm" class="headerlink" title="Part.6 Enumeration algorithm"></a>Part.6 Enumeration algorithm</h3>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

@@ -1,0 +1,847 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a></li><li><a class="category-link" href="/categories/Start-with-me/">Start with me</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/r8vytkAuwUETsJZ.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Java Basics 01</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="Java-Basics-01"><a href="#Java-Basics-01" class="headerlink" title="Java Basics 01"></a>Java Basics 01</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br>   · <a href="https://sp19.datastructur.es/" target="_blank" rel="noopener"><u>CS61B Spring 2019 at UCB</u></a><br>   · <a href="https://docs.oracle.com/javase/tutorial/" target="_blank" rel="noopener"><u>Java Tutorial</u></a><br>   · <a href="https://www.oracle.com/java/technologies/language-environment.html" target="_blank" rel="noopener"><u>The Java Language Environment</u></a> by <em>James Gosling</em> and <em>Henry McGilton</em><br>   · Wikipedia<br>   · <a href="https://google.github.io/styleguide/javaguide.html" target="_blank" rel="noopener"><u>Google Java Style Guide</u></a></p>
+<h3 id="Part-1-General-View"><a href="#Part-1-General-View" class="headerlink" title="Part.1 General View"></a>Part.1 General View</h3><p>Java is the general term for Java object-oriented programming language and Java platform launched by Sun Microsystems in May 1995.</p>
+<p>Java is divided into three systems:<br>· JavaSE (Java2 Platform Standard Edition)<br>· JavaEE (Java 2 Platform, Enterprise Edition)<br>· JavaME (Java 2 Platform Micro Edition).</p>
+<p><strong>Java Platform：</strong><br>A platform is the hardware or software environment in which a program runs but Java platform is a software-only platform that runs on top of other hardware-based platforms. As a platform-independent environment, the Java platform can be a bit slower than native code. However, advances in compiler and virtual machine technologies are bringing performance close to that of native code without threatening portability.</p>
+<p>The Java platform has two components:<br><strong>· The Java Virtual Machine</strong><br>A Java virtual machine (JVM) is a virtual machine that enables a computer to run Java programs as well as programs written in other languages that are also compiled to Java bytecode.</p>
+<p><strong>· The Java Application Programming Interface (API)</strong><br>The API is a large collection of ready-made software components that provide many useful capabilities. It is grouped into libraries of related classes and interfaces; these libraries are known as <em>packages</em>.</p>
+<h4 id="Ⅰ-Main-Features"><a href="#Ⅰ-Main-Features" class="headerlink" title="Ⅰ. Main Features"></a>Ⅰ. Main Features</h4><p><a href="https://www.oracle.com/java/technologies/language-environment.html" target="_blank" rel="noopener"><u>See more details here</u></a></p>
+<p><strong>· Simple</strong></p>
+<p>Easy to learn and use from the very beginning.</p>
+<p><strong>· Object Oriented</strong></p>
+<p>Java language is a pure object-oriented programming language and provides object-oriented features such as classes, interfaces, and inheritance. It only supports single inheritance between classes, but supports multiple inheritance between interfaces, and supports the implementation mechanism between classes and interfaces.</p>
+<p><strong>· Portable and Architecture Neutral</strong></p>
+<p>Java technology is designed to support applications that will be deployed into heterogeneous network environments which requires that applications must be capable of executing on a variety of hardware architectures. The Java Compiler generates <em>bytecodes</em> – an <em>architecture neutral</em> intermediate format designed to transport code efficiently to multiple hardware and software platforms. The architecture-neutral and portable language platform of Java technology is known as the <em>Java virtual machine</em>.</p>
+<p>Also being strict in its definition of the basic language (specifies the sizes of its basic data types and the behavior of its arithmetic operators) makes the programs the same on every platform–there are no data type incompatibilities across hardware and software architectures.</p>
+<p> <strong>· Interpreted, Dynamic and Multithreaded</strong></p>
+<p>The <em>Java interpreter</em> can execute Java bytecodes directly on any machine to which the interpreter and run-time system have been ported. The classes required by the Java program can be <em>dynamically</em> loaded into the run-time system, and the required classes can also be loaded through the network. While the Java Compiler is strict in its compile-time static checking, the language and run-time system are dynamic in their linking stages. Classes are linked only as needed.</p>
+<p>The Java platform supports multithreading at the language level with the addition of sophisticated synchronization primitives: the language library provides the Thread class, and the run-time system provides monitor and condition lock primitives. </p>
+<p><strong>· Distributed</strong></p>
+<p>Java supports the development of Internet applications. There is a network application programming interface (java net) in the basic Java application programming interface, which provides a class library for network application programming, including URL,etc. Java’s RMI (Remote Method Activation) mechanism is also an important means of developing distributed applications.</p>
+<p><strong>· Robust and Secure</strong></p>
+<p>Java provides extensive compile-time checking, followed by a second level of run-time checking. Also there are no explicit programmer-defined pointer data types, no pointer arithmetic, and automatic garbage collection. </p>
+<p>Java is designed to operate in distributed environments,  which means that applications written in the Java programming language are secure from intrusion by unauthorized code attempting to get behind the scenes and create viruses or invade file systems.</p>
+<p><strong>· High performance</strong></p>
+<p>The Java platform achieves superior performance by adopting a scheme by which the interpreter can run at full speed without needing to check the run-time environment. The automatic garbage collector runs as a low-priority background thread, ensuring a high probability that memory is available when required, leading to better performance. </p>
+<h4 id="Ⅱ-A-Simple-Example"><a href="#Ⅱ-A-Simple-Example" class="headerlink" title="Ⅱ. A Simple Example"></a>Ⅱ. A Simple Example</h4><h5 id="1-To-write-a-java-program-you’ll-need"><a href="#1-To-write-a-java-program-you’ll-need" class="headerlink" title="1) To write a java program, you’ll need:"></a>1) To write a java program, you’ll need:</h5><p><strong>· The JDK</strong></p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Download the Windows version now</a>. (Make sure you download the <strong>JDK</strong>, <em>not</em> the JRE.)<br>Consult the <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank" rel="noopener">installation instructions</a>.</p>
+<p>JDK: (Java Development Kit) It is an implementation of either one of the Java Platform and is the core of the entire Java development.The JDK integrates a private JVM and a few other resources(such as javac…) to finish the development of a Java application.</p>
+<p>JRE: (Java Runtime Environment) It mainly contains two parts, the standard implementation of JVM and some basic Java libraries.</p>
+<p><strong>· A text editor</strong> </p>
+<h5 id="2-To-create-a-program-you-will"><a href="#2-To-create-a-program-you-will" class="headerlink" title="2) To create a program, you will:"></a>2) To create a program, you will:</h5><ul>
+<li><p>· Create a source file</p>
+<p>A source file contains code, written in the Java programming language. You can use any text editor to create and edit source files.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * The HelloWorldApp class implements an application that
+ * simply prints "Hello World!" to standard output.
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">HelloWorldApp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Display the string.</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>· Compile the source file into a .class file</p>
+<p>The Java programming language <em>compiler</em> (<code>javac</code>) takes your source file and translates its text into instructions that the Java virtual machine can understand. The instructions contained within this file are known as <em>bytecodes</em>.</p>
+</li>
+<li><p>· Run the program</p>
+<p>The Java application <em>launcher tool</em> uses the Java virtual machine to run your application.</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2020/09/17/Qdf4O7nWcZ2BsXu.gif" alt="getStarted-compiler"></p>
+<p>​                                                                              (from Java tutorial)</p>
+<h5 id="3-Content-in-the-source-file"><a href="#3-Content-in-the-source-file" class="headerlink" title="3) Content in the source file"></a>3) Content in the source file</h5><p>· Comment<br>Comments are ignored by the compiler but are useful to other programmers.<br><code>/* text */</code><br><code>/** documentation */</code><br>This indicates a documentation comment (<em>doc comment</em>, for short). The <code>javadoc</code> tool uses doc comments when preparing automatically generated documentation. For more information on <code>javadoc</code>, see the <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html" target="_blank" rel="noopener">Javadoc™ tool documentation</a> .<br><code>// text</code></p>
+<p>· Class definition<br>The file name must be consistent with the class name.</p>
+<p>· The <code>main</code> method<br>In the Java programming language, every application must contain a <code>main</code> method whose signature is:</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span></code></pre>
+<p>The <code>main</code> method accepts a single argument: an array of elements of type <code>String</code>. This array is the mechanism through which the runtime system passes information to your application. </p>
+<h3 id="Part-2-Language-Basics"><a href="#Part-2-Language-Basics" class="headerlink" title="Part.2 Language Basics"></a>Part.2 Language Basics</h3><h4 id="Ⅰ-Variables"><a href="#Ⅰ-Variables" class="headerlink" title="Ⅰ. Variables"></a>Ⅰ. Variables</h4><h5 id="·-Different-kinds-of-variables"><a href="#·-Different-kinds-of-variables" class="headerlink" title="· Different kinds of variables"></a>· Different kinds of variables</h5><p>1) Instance Variables (Non-Static Fields)<br>Objects store their individual states in non-static fields. The values of instance variables are unique to each <em>instance</em> of a class.</p>
+<p>2) Class Variables (Static Fields)<br>Any field declared with the <code>static</code> modifier is a class variable. It is  a common variable that applies to all instances.</p>
+<p>3) Local Variables<br>Methods store their temporary states in local variables. Local variables are only visible to the methods in which they are declared and they are not accessible from the rest of the class.</p>
+<p>4) Parameters</p>
+<p>Variables in method declarations.</p>
+<h5 id="·-Naming"><a href="#·-Naming" class="headerlink" title="· Naming"></a>· Naming</h5><p>1) Case-sensitive<br>2) Subsequent characters may be letters, digits, dollar signs, or underscore characters.<br>3) Not a <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html" target="_blank" rel="noopener"><u>keyword or reserved word</u></a>.</p>
+<p>The convention is to always begin your variable names with a letter and use full words instead of cryptic abbreviations. If the name consists of only one word, spell that word in all lowercase letters. If it consists of more than one word, capitalize the first letter of each subsequent word. ( e.g. <code>gearRatio</code> )</p>
+<h5 id="·-Primitive-Data-Types"><a href="#·-Primitive-Data-Types" class="headerlink" title="· Primitive Data Types"></a>· Primitive Data Types</h5><p>The Java programming language is statically-typed, which means that all variables must first be declared before they can be used. This involves stating the variable’s type and name. A variable’s data type determines the values it may contain, plus the operations that may be performed on it.</p>
+<p>Primitive types are special data types built into the language; they are not objects created from a class.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Range</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>8-bit signed two’s complement integer, -128 ~ 127 (inclusive)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16-bit signed two’s complement integer, -32,768 ~ 32,767 (inclusive)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32-bit signed two’s complement integer, -2e31 ~ 2e31 - 1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64-bit signed two’s complement integer, -2e63 ~ 2e63-1</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>single-precision 32-bit IEEE 754 floating point</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double-precision 64-bit IEEE 754 floating point</td>
+<td>0.0d</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>8-bit, <code>true</code> and <code>false</code></td>
+<td>‘\u0000’</td>
+</tr>
+<tr>
+<td>char</td>
+<td>single 16-bit Unicode character, <code>&#39;\u0000&#39;</code> (or 0) ~ <code>&#39;\uffff&#39;</code> (or 65,535 inclusive).</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<p>Fields that are declared but not initialized will be set to a reasonable default by the compiler. The compiler never assigns a default value to an uninitialized local variable. If you cannot initialize your local variable where it is declared, make sure to assign it a value before you attempt to use it. Accessing an uninitialized local variable will result in a compile-time error.</p>
+<h5 id="·-Literal"><a href="#·-Literal" class="headerlink" title="· Literal"></a>· Literal</h5><p>The value assigned to a primitive data type is called a literal.<br>Literals of types <code>byte</code>, <code>short</code>, <code>int</code> and <code>long</code>  can be expressed by these number systems: Decimal(26), Hexadecimal(0x1a), Binary(0b11010).</p>
+<p>A floating-point literal is of type <code>float</code> if it ends with the letter <code>F</code> or <code>f</code>; otherwise its type is <code>double</code> and it can optionally end with the letter <code>D</code> or <code>d</code>. Also it can use E or e (for scientific notation).</p>
+<p>Literals of types <code>char</code> and <code>String</code> may contain any Unicode (UTF-16) characters or you can use a “Unicode escape” such as <code>&#39;\u0108&#39;</code> (capital C with circumflex). Always use ‘single quotes’ for <code>char</code> literals and “double quotes” for <code>String</code> literals.</p>
+<p>A special <code>null</code> literal that can be used as a value for any reference type. <code>null</code> may be assigned to any variable, except variables of primitive types. </p>
+<p>The Java programming language also supports a few special escape sequences for <code>char</code> and <code>String</code> literals: <code>\b</code> (backspace), <code>\t</code> (tab), <code>\n</code> (line feed), <code>\f</code> (form feed), <code>\r</code> (carriage return), <code>\&quot;</code> (double quote), <code>\&#39;</code> (single quote), and <code>\\</code> (backslash).</p>
+<h5 id="·-Reference-Data-Type"><a href="#·-Reference-Data-Type" class="headerlink" title="· Reference Data Type"></a>· Reference Data Type</h5><p>Reference datatypes in java are those which contains reference/address(8 bytes) of dynamically created objects. These are not predefined like primitive data types. Default value of any reference variable is null. A reference variable can be used to refer any object of the declared type or any compatible type.</p>
+<p>Following are the reference types in Java.</p>
+<ul>
+<li>class types<br>This reference type points to an object of a class. See Number and String class <a href="https://oreodu.github.io/2020/09/23/20200923-Java-Basics-02/"><u>here</u></a>.</li>
+<li>interface types<br>This reference type points to an object of a class which implements an interface. See interface <a href="https://oreodu.github.io/2020/09/23/20200923-Java-Basics-02/"><u>here</u></a>.</li>
+<li>array types − This reference type points to an array.<br>An <em>array</em> is a container object (24 bytes + memory for each array entry) that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed. </li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// declares an array of integers</span>
+<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> anArray<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// create an array of integers</span>
+anArray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// initialize first element</span>
+anArray<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Create a multidimensional array</span>
+String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> names <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">{</span><span class="token string">"Mr. "</span><span class="token punctuation">,</span> <span class="token string">"Mrs. "</span><span class="token punctuation">,</span> <span class="token string">"Ms. "</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token string">"Smith"</span><span class="token punctuation">,</span> <span class="token string">"Jones"</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>anArray<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 10</span></code></pre>
+<p>For your convenience, Java SE provides several methods for performing array manipulations (common tasks, such as copying, sorting and searching arrays) in the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html" target="_blank" rel="noopener"><u>java.util.Arrays</u></a> class. </p>
+<h5 id="·-Enum-Types"><a href="#·-Enum-Types" class="headerlink" title="· Enum Types"></a>· Enum Types</h5><p>An <em>enum type</em> is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> Planet <span class="token punctuation">{</span>
+    <span class="token function">MERCURY</span> <span class="token punctuation">(</span><span class="token number">3.303e+23</span><span class="token punctuation">,</span> <span class="token number">2.4397e6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">VENUS</span>   <span class="token punctuation">(</span><span class="token number">4.869e+24</span><span class="token punctuation">,</span> <span class="token number">6.0518e6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">EARTH</span>   <span class="token punctuation">(</span><span class="token number">5.976e+24</span><span class="token punctuation">,</span> <span class="token number">6.37814e6</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">double</span> mass<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// in kilograms</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">double</span> radius<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// in meters</span>
+    <span class="token function">Planet</span><span class="token punctuation">(</span><span class="token keyword">double</span> mass<span class="token punctuation">,</span> <span class="token keyword">double</span> radius<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>mass <span class="token operator">=</span> mass<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>radius <span class="token operator">=</span> radius<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> <span class="token function">mass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> mass<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> <span class="token function">radius</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> radius<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// universal gravitational constant  (m3 kg-1 s-2)</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">double</span> G <span class="token operator">=</span> <span class="token number">6.67300E-11</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">double</span> <span class="token function">surfaceGravity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> G <span class="token operator">*</span> mass <span class="token operator">/</span> <span class="token punctuation">(</span>radius <span class="token operator">*</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">double</span> <span class="token function">surfaceWeight</span><span class="token punctuation">(</span><span class="token keyword">double</span> otherMass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> otherMass <span class="token operator">*</span> <span class="token function">surfaceGravity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Usage: java Planet &lt;earth_weight>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">double</span> earthWeight <span class="token operator">=</span> Double<span class="token punctuation">.</span><span class="token function">parseDouble</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> mass <span class="token operator">=</span> earthWeight<span class="token operator">/</span>EARTH<span class="token punctuation">.</span><span class="token function">surfaceGravity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Planet p <span class="token operator">:</span> Planet<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Your weight on %s is %f%n"</span><span class="token punctuation">,</span>
+                             p<span class="token punctuation">,</span> p<span class="token punctuation">.</span><span class="token function">surfaceWeight</span><span class="token punctuation">(</span>mass<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="Ⅱ-Operators"><a href="#Ⅱ-Operators" class="headerlink" title="Ⅱ. Operators"></a>Ⅱ. Operators</h4><p>Operators are special symbols that perform specific operations on one, two, or three <em>operands</em>, and then return a result.</p>
+<table>
+<thead>
+<tr>
+<th>Operators</th>
+<th>Precedence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>postfix</td>
+<td><code>expr++</code> <code>expr--</code></td>
+</tr>
+<tr>
+<td>unary</td>
+<td><code>++expr</code> <code>--expr</code> <code>+expr</code> <code>-expr</code> <code>~</code> <code>!</code></td>
+</tr>
+<tr>
+<td>multiplicative</td>
+<td><code>* / %</code></td>
+</tr>
+<tr>
+<td>additive</td>
+<td><code>+ -</code></td>
+</tr>
+<tr>
+<td>shift</td>
+<td><code>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></td>
+</tr>
+<tr>
+<td>relational</td>
+<td><code>&lt; &gt; &lt;= &gt;= instanceof</code></td>
+</tr>
+<tr>
+<td>equality</td>
+<td><code>== !=</code></td>
+</tr>
+<tr>
+<td>bitwise AND</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td>bitwise exclusive OR</td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td>bitwise inclusive OR</td>
+<td>`</td>
+</tr>
+<tr>
+<td>logical AND</td>
+<td><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>logical OR</td>
+<td>`</td>
+</tr>
+<tr>
+<td>ternary</td>
+<td><code>? :</code></td>
+</tr>
+<tr>
+<td>assignment</td>
+<td>`= += -= *= /= %= &amp;= ^=</td>
+</tr>
+</tbody></table>
+<p>The operators in the table above are listed according to precedence order. Operators with higher precedence are evaluated before operators with relatively lower precedence. </p>
+<p>Operators on the same line have equal precedence. When operators of equal precedence appear in the same expression, a rule must govern which is evaluated first. </p>
+<p>All binary operators except for the assignment operators are evaluated from left to right; assignment operators are evaluated right to left.</p>
+<h4 id="Ⅲ-Expressions-Statements-and-Blocks"><a href="#Ⅲ-Expressions-Statements-and-Blocks" class="headerlink" title="Ⅲ. Expressions, Statements, and Blocks"></a>Ⅲ. Expressions, Statements, and Blocks</h4><h5 id="1-Expressions"><a href="#1-Expressions" class="headerlink" title="1) Expressions"></a>1) Expressions</h5><p>An <em>expression</em> is a construct made up of variables, operators, and method invocations, which are constructed according to the syntax of the language, that evaluates to a single value. The data type of the value returned by an expression depends on the elements used in the expression.</p>
+<h5 id="2-Statements"><a href="#2-Statements" class="headerlink" title="2) Statements"></a>2) Statements</h5><p>A <em>statement</em> forms a complete unit of execution. The following types of expressions can be made into a statement by terminating the expression with a semicolon (<code>;</code>).</p>
+<ul>
+<li>Assignment expressions</li>
+<li>Any use of <code>++</code> or <code>--</code></li>
+<li>Method invocations</li>
+<li>Object creation expressions</li>
+<li>Declaration statements</li>
+<li>Control flow statements</li>
+</ul>
+<h5 id="3-Blocks"><a href="#3-Blocks" class="headerlink" title="3) Blocks"></a>3) Blocks</h5><p>A <em>block</em> is a group of zero or more statements between balanced braces and can be used anywhere a single statement is allowed. </p>
+<h4 id="Ⅳ-Control-Flow-Statements"><a href="#Ⅳ-Control-Flow-Statements" class="headerlink" title="Ⅳ. Control Flow Statements"></a>Ⅳ. Control Flow Statements</h4><p>This section describes the decision-making statements (<code>if-then</code>, <code>if-then-else</code>, <code>switch</code>), the looping statements (<code>for</code>, <code>while</code>, <code>do-while</code>), and the branching statements (<code>break</code>, <code>continue</code>, <code>return</code>)</p>
+<h5 id="1-The-if-then-else-Statement"><a href="#1-The-if-then-else-Statement" class="headerlink" title="1) The if-then-else Statement"></a>1) The <code>if-then-else</code> Statement</h5><p>It tells your program to execute a certain section of code <em>only if</em> a particular test evaluates to <code>true</code>.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">applyBrakes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>isMoving<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        currentSpeed<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The bicycle has already stopped!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> </code></pre>
+<h5 id="2-The-switch-Statement"><a href="#2-The-switch-Statement" class="headerlink" title="2) The switch Statement"></a>2) The <code>switch</code> Statement</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwitchDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">int</span> month <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        String monthString<span class="token punctuation">;</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>month<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>  monthString <span class="token operator">=</span> <span class="token string">"January"</span><span class="token punctuation">;</span>
+                     <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>  monthString <span class="token operator">=</span> <span class="token string">"February"</span><span class="token punctuation">;</span>
+                     <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>  monthString <span class="token operator">=</span> <span class="token string">"March"</span><span class="token punctuation">;</span>
+                     <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>monthString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>An <code>if-then-else</code> statement can test expressions based on ranges of values or conditions, whereas a <code>switch</code> statement tests expressions based only on a single integer, enumerated value, or <code>String</code> object.</p>
+<h5 id="3-The-while-and-do-while-Statements"><a href="#3-The-while-and-do-while-Statements" class="headerlink" title="3) The while and do-while Statements"></a>3) The while and do-while Statements</h5><p>The <code>while</code> statement evaluates <em>expression</em>, which must return a <code>boolean</code> value.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">WhileDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Count is: "</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">DoWhileDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">do</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Count is: "</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="4-The-for-Statement"><a href="#4-The-for-Statement" class="headerlink" title="4) The for Statement"></a>4) The for Statement</h5><p>The <code>for</code> statement provides a compact way to iterate over a range of values.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">ForDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Count is: "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The <code>for</code> statement also has another form designed for iteration through <a href="https://docs.oracle.com/javase/tutorial/collections/index.html" target="_blank" rel="noopener">Collections</a> and <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank" rel="noopener">arrays</a> .</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">EnhancedForDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> 
+             <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> item <span class="token operator">:</span> numbers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Count is: "</span> <span class="token operator">+</span> item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="5-Branching-Statements"><a href="#5-Branching-Statements" class="headerlink" title="5) Branching Statements"></a>5) Branching Statements</h5><p><code>break</code> : An unlabeled <code>break</code> statement terminates the innermost <code>switch</code>, <code>for</code>, <code>while</code>, or <code>do-while</code> statement, but a labeled <code>break</code> terminates an outer statement. </p>
+<p><code>continue</code>: The <code>continue</code> statement skips the current iteration of a <code>for</code>, <code>while</code> , or <code>do-while</code> loop. The unlabeled form skips to the end of the innermost loop’s body and evaluates the <code>boolean</code> expression that controls the loop. A labeled <code>continue</code> statement skips the current iteration of an outer loop marked with the given label.</p>
+<p><code>return</code>: The <code>return</code> statement exits from the current method, and control flow returns to where the method was invoked.</p>
+<h3 id="Part-3-Object-Oriented-Programming"><a href="#Part-3-Object-Oriented-Programming" class="headerlink" title="Part.3 Object-Oriented Programming"></a>Part.3 Object-Oriented Programming</h3><p>The principles of OOP can be found in the article <a href="https://oreodu.github.io/2020/09/06/20200906-Python-Basics-02/"><u>Python Basics 02</u></a> .</p>
+<h4 id="Ⅰ-Class-and-Object"><a href="#Ⅰ-Class-and-Object" class="headerlink" title="Ⅰ. Class and Object"></a>Ⅰ. Class and Object</h4><p><em>Objects</em> consist of state and related behavior. An object stores its state in <em>fields</em> and exposes its behavior through <em>methods</em>. Methods operate on an object’s internal state and serve as the primary mechanism for object-to-object communication. Typical memory usage for objects in java: Object overhead(16 bytes),  memory for each instance variable, pointer to enclosing class(8 bytes) and padding(each objects uses a multiple of 8 bytes).</p>
+<p>A <em>class</em> is the blueprint  or prototype from which individual objects are created and includes fields (class variables, constants, instance variables), nested classes and methods (class methods, abstract method…).</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * The class body contains all the code that provides
+ * for the life cycle of the objects created from the class.
+ */</span>
+
+<span class="token comment" spellcheck="true">// The class name, with the initial letter capitalized by convention.</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Bicycle</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">// declarations for the fields that provide the state of the class and its objects</span>
+    <span class="token comment" spellcheck="true">// public modifier—the field is accessible from all classes.</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> cadence<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> speed<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// private modifier—the field is accessible only within its own class.</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> numberOfBicycles <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment" spellcheck="true">// constructors with or without arguments for initializing new objects</span>
+    <span class="token keyword">public</span> <span class="token function">Bicycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cadence <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+        speed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">Bicycle</span><span class="token punctuation">(</span><span class="token keyword">int</span> startCadence<span class="token punctuation">,</span> <span class="token keyword">int</span> startSpeed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cadence <span class="token operator">=</span> startCadence<span class="token punctuation">;</span>
+        speed <span class="token operator">=</span> startSpeed<span class="token punctuation">;</span>
+        id <span class="token operator">=</span> <span class="token operator">++</span>numberOfBicycles<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// methods to implement the behavior of the class and its objects.</span>
+    <span class="token comment" spellcheck="true">// the first (or only) word in a method name should be a verb.</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCadence</span><span class="token punctuation">(</span><span class="token keyword">int</span> newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cadence <span class="token operator">=</span> newValue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// use a construct called varargs to pass an arbitrary number of values to a method</span>
+    <span class="token comment" spellcheck="true">// The method can be called either with an array or with a sequence of arguments.</span>
+    <span class="token comment" spellcheck="true">// The code in the method body will treat the parameter as an array in either case.</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">speedUp</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> increments<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> increment<span class="token operator">:</span>increments<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            speed <span class="token operator">+=</span> increment<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// static method</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">getNumberOfBicycles</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> numberOfBicycles<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// access private fields indirectly by adding public methods that obtain them.</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ClassDemo <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Bicycle myBike <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bicycle</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// invokes the no-argument constructor and create a new object called yourBike</span>
+        Bicycle yourBike <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bicycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+        yourBike<span class="token punctuation">.</span><span class="token function">speedUp</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="1-Provide-a-constructor"><a href="#1-Provide-a-constructor" class="headerlink" title="1) Provide a constructor"></a>1) Provide a constructor</h5><p>A class contains constructors that are invoked to create objects from the class blueprint. Constructor declarations look like method declarations—except that they use the name of the class and have no return type.</p>
+<p>As with methods, the Java platform differentiates constructors on the basis of the number of arguments in the list and their types. We can create two different constructor with different arguments.</p>
+<p>All classes have at least one constructor. If a class does not explicitly declare any, the Java compiler automatically provides a no-argument constructor, called the <em>default constructor</em>. This default constructor calls the class parent’s no-argument constructor, or the <code>Object</code> constructor if the class has no other parent. If the parent has no constructor (<code>Object</code> does have one), the compiler will reject the program.</p>
+<p>There are two alternatives to using a constructor to initialize instance variables: initializer blocks and final methods.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// initializer blocks</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// whatever code is needed for initialization goes here</span>
+<span class="token punctuation">}</span></code></pre>
+<p> This approach can be used to share a block of code between multiple constructors.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// final method</span>
+<span class="token keyword">class</span> <span class="token class-name">Whatever</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> varType myVar <span class="token operator">=</span> <span class="token function">initializeInstanceVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">final</span> varType <span class="token function">initializeInstanceVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">// initialization code goes here</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>A <em>final method</em> cannot be overridden in a subclass. This is useful if subclasses might want to reuse the initialization method. The method is final because calling non-final methods during instance initialization can cause problems.</p>
+<h5 id="2-Use-the-this-Keyword"><a href="#2-Use-the-this-Keyword" class="headerlink" title="2) Use the this Keyword"></a>2) Use the <code>this</code> Keyword</h5><p>Within an instance method or a constructor, <code>this</code> is a reference to the <em>current object</em> — the object whose method or constructor is being called. </p>
+<p>Using this with a Field: The most common reason for using the <code>this</code> keyword is because a field is shadowed(with the same name) by a method or constructor parameter.</p>
+<p>Using this with a Constructor: From within a constructor, you can also use the this keyword to call another constructor in the same class which is called <em>explicit constructor invocation</em>.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> width<span class="token punctuation">,</span> height<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> width<span class="token punctuation">,</span> <span class="token keyword">int</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">int</span> width<span class="token punctuation">,</span> <span class="token keyword">int</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="3-Overloading-Methods"><a href="#3-Overloading-Methods" class="headerlink" title="3) Overloading Methods"></a>3) Overloading Methods</h5><p>When we create a method  that need various types of data (strings, integers, and so on) in different situations, we can create methods with the same name but different parameter list. This can be supported by <em>overloading</em> methods in Java. They are differentiated by the number and the type of the arguments passed into the method.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DataArtist</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h5 id="4-Covariant-return-type"><a href="#4-Covariant-return-type" class="headerlink" title="4) Covariant return type"></a>4) Covariant return type</h5><p>A method returns to the code that invoked it when it completes all the statements in the method, reaches a return statement, or throws an exception. Any method declared <code>void</code> doesn’t return a value but we can use <code>return;</code> branch out of a control flow block and exit the method. The data type of the return value must match the method’s declared return type in the method that is not declared <code>void</code> .</p>
+<p>When a method uses a class name as its return type, the class of the type of the returned object must be either a subclass of, or the exact class of, the return type. We can also override a method and define it to return a subclass of the original method. This technique, called <em>covariant return type</em>, means that the return type is allowed to vary in the same direction as the subclass.</p>
+<h5 id="5-Pass-a-information-to-the-constructor-or-the-method"><a href="#5-Pass-a-information-to-the-constructor-or-the-method" class="headerlink" title="5) Pass a information to the constructor or the method"></a>5) Pass a information to the constructor or the method</h5><p>When we declare a parameter to a method or a constructor, we provide a name for that parameter. This name is used within the method body to refer to the passed-in argument. If the name is the same with the field in the class, we can use <code>this</code> to access the field.</p>
+<p>Primitive arguments, such as an <code>int</code> or a <code>double</code>, are passed into methods <em>by value</em>. This means that any changes to the values of the parameters exist only within the scope of the method. When the method returns, the parameters are gone and any changes to them are lost. </p>
+<p>Reference data type parameters, such as objects, are also passed into methods <em>by value</em>. This means that when the method returns, the passed-in reference still references the same object as before.  <em>However</em>, the values of the object’s fields <em>can</em> be changed in the method, if they have the proper access level.</p>
+<p>If we want to pass a method into a method, then use a <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html" target="_blank" rel="noopener">lambda expression</a> or a <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html" target="_blank" rel="noopener">method reference</a>.</p>
+<p>When invoke a method, the arguments used must match the declaration’s parameters in type and order.</p>
+<h5 id="6-Creating-Objects"><a href="#6-Creating-Objects" class="headerlink" title="6) Creating Objects"></a>6) Creating Objects</h5><p>· Declaring a Variable to Refer to an Object. </p>
+<p><code>type name;</code> notifies the compiler that you will use <em>name</em> to refer to data whose type is <em>type</em>. With a primitive variable, this declaration also reserves the proper amount of memory for the variable.</p>
+<p>· Instantiating a Class. Initializing an Object.</p>
+<p>The <code>new</code> operator instantiates a class by allocating memory for a new object and returning a reference to that memory. The <code>new</code> operator also invokes the object constructor so it requires a single, postfix argument: a call to a constructor. The name of the constructor provides the name of the class to instantiate. </p>
+<p>Objects of the same type have their own copy of the same instance fields. So if we want to access the fields or methods outside the class we have to use them in such way: <code>objectReference.fieldName</code> and <code>objectReference.methodName(argumentList)</code></p>
+<p>The Java runtime environment deletes objects when there are no more references to that object. This process is called <em>garbage collection</em>.</p>
+<h5 id="7-Controlling-Access-to-Members-of-a-Class"><a href="#7-Controlling-Access-to-Members-of-a-Class" class="headerlink" title="7) Controlling Access to Members of a Class"></a>7) Controlling Access to Members of a Class</h5><p>Access level modifiers determine whether other classes can use a particular field or invoke a particular method.</p>
+<p><strong>Access Levels</strong></p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Class</th>
+<th>Package</th>
+<th>Subclass</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>no modifier(package-private)</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody></table>
+<h5 id="8-static-keyword"><a href="#8-static-keyword" class="headerlink" title="8)  static keyword"></a>8)  <code>static</code> keyword</h5><p>Fields that have the <code>static</code> modifier in their declaration are called <em>static fields</em> or <em>class variables</em>. They are associated with the class, rather than with any object. Every instance of the class shares a class variable, which is in one fixed location in memory. Any object can change the value of a class variable, but class variables can also be manipulated without creating an instance of the class. Class variables are referenced by the class name itself: <code>ClassName.fieldName</code></p>
+<p>Complicated initialization of instance variables can be done through constructors, to provide the same capability for class variables, the Java programming language includes <em>static initialization blocks</em> or <em>private static method</em>. The advantage of private static methods is that they can be reused later if you need to reinitialize the class variable.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// static initialization block</span>
+<span class="token keyword">static</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// whatever code is needed for initialization goes here</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Whatever</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> varType myVar <span class="token operator">=</span> <span class="token function">initializeClassVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> varType <span class="token function">initializeClassVariable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">// initialization code goes here</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><em>Static methods</em>, which have the <code>static</code> modifier in their declarations, should be invoked with the class name, without the need for creating an instance of the class. (<code>ClassName.methodName(args)</code>). A common use for static methods is to access static fields. Class methods <strong>cannot</strong> access instance variables or instance methods directly—they must use an object reference. Also, class methods cannot use the <code>this</code> keyword as there is no instance for <code>this</code> to refer to.</p>
+<p>The <code>static</code> modifier, in combination with the <code>final</code> modifier, is also used to define constants. The <code>final</code> modifier indicates that the value of this field cannot change. By convention, the names of constant values are spelled in uppercase letters. If the name is composed of more than one word, the words are separated by an underscore (_).</p>
+<p>(If a primitive type or a string is defined as a constant and the value is known at compile time, the compiler replaces the constant name everywhere in the code with its value. This is called a <em>compile-time constant</em>. )</p>
+<h4 id="Ⅱ-More-about-class"><a href="#Ⅱ-More-about-class" class="headerlink" title="Ⅱ. More about class"></a>Ⅱ. More about class</h4><h5 id="1-Nested-Class"><a href="#1-Nested-Class" class="headerlink" title="1)  Nested Class"></a>1)  Nested Class</h5><p>Nested classes are divided into two categories: static and non-static. </p>
+<p>Nested classes that are declared <code>static</code> are called <em>static nested classes</em>. As with class methods and variables, a static nested class is associated with its outer class so they do not have access to other members of the enclosing class. It can use them only through an object reference.<br>To create an object for the static nested class:<br><code>OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedClass();</code></p>
+<p>Non-static nested classes are called <em>inner classes</em>. As with instance methods and variables, an inner class is associated with an instance of its enclosing class so they have access to other members of the enclosing class, even if they are declared private and it cannot define any static members itself. An instance of <code>InnerClass</code> can exist only within an instance of <code>OuterClass</code>. There are two special kinds of inner classes: local classes and anonymous classes.<br>To instantiate an inner class:<br><code>OuterClass.InnerClass innerObject = outerObject.new InnerClass();</code></p>
+<p>Nested class is a way of logically grouping classes that are only used in one place and increases encapsulation. </p>
+<h5 id="2-Local-Class"><a href="#2-Local-Class" class="headerlink" title="2) Local Class"></a>2) Local Class</h5><p>Local classes are classes that are defined in a <em>block</em>, which is a group of zero or more statements between balanced braces. For example, you can define a local class in a method body, a <code>for</code> loop, or an <code>if</code> clause.  </p>
+<p>Local classes has access to the members of its enclosing class. However, Local classes in static methods can only refer to static members of the enclosing class. </p>
+<p>Because they have access to instance members of the enclosing block. Consequently, they cannot contain most kinds of static declarations. However, they can have static members provided that they are constant variables. (A <em>constant variable</em> is a variable of primitive type or type <code>String</code> that is declared final and initialized with a compile-time constant expression.)</p>
+<p>They also can access local variables of the enclosing block that are final or <em>effectively final</em> (never changed after it is initialized) and can access the method’s parameters.</p>
+<p>We cannot declare an interface inside a block; interfaces are inherently static. </p>
+<pre class=" language-java"><code class="language-java">   <span class="token comment" spellcheck="true">// inside a method</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sayGoodbyeInEnglish</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">class</span> <span class="token class-name">EnglishGoodbye</span> <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String farewell <span class="token operator">=</span> <span class="token string">"Bye bye"</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sayGoodbye</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> farewell<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        EnglishGoodbye myEnglishGoodbye <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EnglishGoodbye</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myEnglishGoodbye<span class="token punctuation">.</span><span class="token function">sayGoodbye</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h5 id="3-Anonymous-classes"><a href="#3-Anonymous-classes" class="headerlink" title="3) Anonymous classes"></a>3) Anonymous classes</h5><p>Anonymous classes enable us to declare and instantiate a class at the same time. They are like local classes except that they do not have a name. Use them if you need to use a local class only once.</p>
+<p>An anonymous class has access to the members of its enclosing class and cannot access local variables in its enclosing scope that are not declared as <code>final</code> or effectively final. We cannot declare static initializers, member interfaces or <strong>constructors</strong> in an anonymous class but an anonymous class can have static members provided that they are constant variables.</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldAnonymousClasses</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">interface</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greetSomeone</span><span class="token punctuation">(</span>String someone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// local class</span>
+        <span class="token keyword">class</span> <span class="token class-name">EnglishGreeting</span> <span class="token keyword">implements</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+            String name <span class="token operator">=</span> <span class="token string">"world"</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">greetSomeone</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greetSomeone</span><span class="token punctuation">(</span>String someone<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                name <span class="token operator">=</span> someone<span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        HelloWorld englishGreeting <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EnglishGreeting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// anonymous class</span>
+        <span class="token comment" spellcheck="true">// an interface to implement or a class to extend</span>
+        HelloWorld frenchGreeting <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String name <span class="token operator">=</span> <span class="token string">"tout le monde"</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">greetSomeone</span><span class="token punctuation">(</span><span class="token string">"tout le monde"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">greetSomeone</span><span class="token punctuation">(</span>String someone<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                name <span class="token operator">=</span> someone<span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Salut "</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        englishGreeting<span class="token punctuation">.</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        frenchGreeting<span class="token punctuation">.</span><span class="token function">greetSomeone</span><span class="token punctuation">(</span><span class="token string">"Fred"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HelloWorldAnonymousClasses myApp <span class="token operator">=</span>
+            <span class="token keyword">new</span> <span class="token class-name">HelloWorldAnonymousClasses</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myApp<span class="token punctuation">.</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>            
+<span class="token punctuation">}</span></code></pre>
+<h5 id="4-Lambda-expressions"><a href="#4-Lambda-expressions" class="headerlink" title="4) Lambda expressions"></a>4) Lambda expressions</h5><p>Lambda expressions enable us to treat functionality as method argument, or code as data and express instances of single-method classes more compactly.</p>
+<p>Lambda expressions are lexically scoped. This means that they do not inherit any names from a supertype or introduce a new level of scoping. Declarations in a lambda expression are interpreted just as they are in the enclosing environment. Consequently, you can directly access fields, methods, and local variables of the enclosing scope. Local variables referenced from a lambda expression must be final or effectively final.</p>
+<p>To determine the type of a lambda expression, the Java compiler uses the target type(the data type that these methods expect) of the context or situation in which the lambda expression was found. It follows that you can only use lambda expressions in situations in which the Java compiler can determine a target type: Variable declarations, Assignments, Return statements, Array initializers, Method or constructor arguments, Lambda expression bodies, Conditional expressions, <code>?:</code>, Cast expressions.</p>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html" target="_blank" rel="noopener"><u>See more details.</u></a></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">CheckPerson</span> <span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span>Person p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// Specify Search Criteria Code in an Anonymous Class</span>
+<span class="token function">printPersons</span><span class="token punctuation">(</span>
+    roster<span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">CheckPerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span>Person p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> p<span class="token punctuation">.</span><span class="token function">getGender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> Person<span class="token punctuation">.</span>Sex<span class="token punctuation">.</span>MALE
+                <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">18</span>
+                <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Specify Search Criteria Code with a Lambda Expression</span>
+<span class="token function">printPersons</span><span class="token punctuation">(</span>
+    roster<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>Person p<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> p<span class="token punctuation">.</span><span class="token function">getGender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> Person<span class="token punctuation">.</span>Sex<span class="token punctuation">.</span>MALE
+        <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">18</span>
+        <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">25</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Use Standard Functional Interfaces with Lambda Expressions</span>
+<span class="token keyword">interface</span> <span class="token class-name">Predicate</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">printPersonsWithPredicate</span><span class="token punctuation">(</span>
+    roster<span class="token punctuation">,</span>
+    p <span class="token operator">-</span><span class="token operator">></span> p<span class="token punctuation">.</span><span class="token function">getGender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> Person<span class="token punctuation">.</span>Sex<span class="token punctuation">.</span>MALE
+        <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">18</span>
+        <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">25</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Use Aggregate Operations That Accept Lambda Expressions as Parameters</span>
+roster
+    <span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+        p <span class="token operator">-</span><span class="token operator">></span> p<span class="token punctuation">.</span><span class="token function">getGender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> Person<span class="token punctuation">.</span>Sex<span class="token punctuation">.</span>MALE
+            <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">18</span>
+            <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">25</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>p <span class="token operator">-</span><span class="token operator">></span> p<span class="token punctuation">.</span><span class="token function">getEmailAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>email <span class="token operator">-</span><span class="token operator">></span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>email<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>For more aggregate operations, see the <a href="https://docs.oracle.com/javase/tutorial/collections/streams/index.html" target="_blank" rel="noopener"><u>here</u></a>.</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// Method References: refer to the existing method by name</span>
+Person<span class="token punctuation">[</span><span class="token punctuation">]</span> rosterAsArray <span class="token operator">=</span> roster<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">[</span>roster<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PersonAgeComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token operator">&lt;</span>Person<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Person a<span class="token punctuation">,</span> Person b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">getBirthday</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">getBirthday</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>rosterAsArray<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">PersonAgeComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*
+Arrays.sort(rosterAsArray,
+    (Person a, Person b) -> {
+        return a.getBirthday().compareTo(b.getBirthday());
+    }
+);
+
+Arrays.sort(rosterAsArray,
+    (a, b) -> Person.compareByAge(a, b)
+);
+
+Arrays.sort(rosterAsArray, Person::compareByAge);
+*/</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Calculator</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">interface</span> <span class="token class-name">IntegerMath</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> <span class="token function">operation</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">operateBinary</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> IntegerMath op<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> op<span class="token punctuation">.</span><span class="token function">operation</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        Calculator myApp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        IntegerMath addition <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        IntegerMath subtraction <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"40 + 2 = "</span> <span class="token operator">+</span>
+            myApp<span class="token punctuation">.</span><span class="token function">operateBinary</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> addition<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"20 - 10 = "</span> <span class="token operator">+</span>
+            myApp<span class="token punctuation">.</span><span class="token function">operateBinary</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> subtraction<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>When to Use Nested Classes, Local Classes, Anonymous Classes, and Lambda Expressions, <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/whentouse.html" target="_blank" rel="noopener"><u>see more from here</u></a>.</p>
+<p>A namespace that organizes classes and interfaces by functionality is called a <em>package</em>. And the Java platform provides an enormous class library (a set of packages) suitable for use in applications. Application Programming Interface (API) provided by the Java platform:  <a href="https://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="noopener"><u>Java Platform API Specification</u></a> .</p>
+<h3 id="Part-6"><a href="#Part-6" class="headerlink" title="Part.6"></a>Part.6</h3><p>数据结构（ArrayList,LinkedList,HashSet,HashMap）</p>
+<p>集合框架</p>
+<p>各种类（Number,math,string,character,sccanner）</p>
+<p>正则式，日期，方法，io stream file, 异常处理，iterator</p>
+<p>泛型，序列化，网络编程，多线程，sql数据库连接</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
