@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.jpg">
+	<link rel="shortcut icon" href="/img/logo_miccall.jpg">
+	
+			    <title>
+    Oreo Du
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="oreodu">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Hello World</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Classification</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithms/">Algorithms</a></li><li><a class="category-link" href="/categories/Data-Structure/">Data Structure</a></li><li><a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/Machine-Lerning/">Machine Lerning</a></li><li><a class="category-link" href="/categories/Programming/">Programming</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/OreoDu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2020/09/09/y7JDtRIKMCnAuzq.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>SQL Basics</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="SQL-Basics"><a href="#SQL-Basics" class="headerlink" title="SQL Basics"></a>SQL Basics</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>(概略图)</p>
+<p><strong>· materials:</strong><br> · <a href="https://inst.eecs.berkeley.edu/~cs61a/su19/" target="_blank" rel="noopener"><u>CS61A Summer 2019 at UCB</u></a></p>
+<p>SQL is an example of a (declarative) language with interacts with a  database management system (DBMS) in order to make data processing easier and faster</p>
+<h3 id="Part-1-Create-the-Table"><a href="#Part-1-Create-the-Table" class="headerlink" title="Part.1 Create the Table"></a>Part.1 Create the Table</h3><p><strong>· Make a table</strong></p>
+<p>A CREATE TABLE statement gives a global name to a table.</p>
+<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE [name]([columns]); # create empty table
+
+CREATE TABLE dogs(name, fur, phrase DEFAULT 'woof'); # using default values</code></pre>
+<p><strong>· Create rows of data</strong></p>
+<p><code>CREATE TABLE [name] AS ...;</code></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [expr] AS [name], [expr] AS [name], ... UNION
+SELECT [expr] AS [name], [expr] AS [name], ... UNION
+SELECT [expr] AS [name], [expr] AS [name], ...;
+
+
+CREATE TABLE cities AS
+  SELECT 38 AS latitude, 122 AS longitude, "Berkeley" AS name   UNION
+  SELECT 42,                71,                 "Cambridge"        UNION
+  SELECT 45,                93,                 "Minneapolis";</code></pre>
+<p><strong>· Create rows of data from existing tables</strong></p>
+<p>A <code>SELECT</code> statement can specify an input table using a <code>FROM</code> clause. A subset of the rows of the input table can be selected using a <code>WHERE</code> clause. Can declare the order of the remaining rows using an <code>ORDER BY</code> clause. Otherwise, no order. Column descriptions determine how each input row is projected to a result row.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [columns] FROM [table] WHERE [condition] 
+ORDER BY [order] [ASC/DESC] LIMIT [number];
+
+SELECT "west coast" AS region, name FROM cities WHERE longitude >= 115 UNION
+SELECT "other",                  name FROM cities WHERE longitude < 115;</code></pre>
+<p><strong>· Arithmetic in SELECT Statements</strong></p>
+<p>In a SELECT expression, column names evaluate to row values.Arithmetic expressions can combine row values and constants.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT single + 2 * couple AS total FROM restaurant;</code></pre>
+<p><strong>· Join the Table</strong></p>
+<p>When we join two tables, we get a new table with one row for each combination of rows from the original tables.</p>
+<p><code>SELECT * FROM table1, table2;</code></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT * FROM parents, dogs;
+SELECT parent FROM parents, dogs WHERE child = name AND fur = "curly";</code></pre>
+<pre class=" language-mysql"><code class="language-mysql">SELECT s.name, s.artist 
+      FROM songs AS s, artists AS ar, albums AS al
+      WHERE album = al.name AND s.artist = ar.name
+            AND release_year = 2010
+            ORDER BY first_year_active;</code></pre>
+<p><strong>· Aliasing</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT a.child AS first, b.child AS second FROM parents AS a, parents AS b WHERE a.parent = b.parent AND a.child < b.child;</code></pre>
+<p><strong>· String Expression</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">sql> SELECT name || " dog" FROM dogs;
+abraham dog
+barack dog
+clinton dog</code></pre>
+<h3 id="Part-2-Aggregation"><a href="#Part-2-Aggregation" class="headerlink" title="Part.2 Aggregation"></a>Part.2 Aggregation</h3><p><strong>Aggregation</strong> is the process of doing operations on <em>groups of rows</em> instead of just a single row. SQL provides aggregate functions whose return values can be used as entries in a column.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT AVG(age) AS avg_age FROM dogs;
+SELECT COUNT(*) AS count FROM dogs;
+SELECT SUM(age) AS sum_age FROM dogs;
+SELECT MIN(name) AS min_name FROM dogs;</code></pre>
+<p><strong>· Group</strong></p>
+<p>By default, aggregation is performed over all the rows of the table. We can <code>GROUP BY</code> any valid SQL expression, which includes using multiple column names and operators. We can specify  a single group consists of all rows for which [expression] evaluates to the same value. The output table will have <strong>one row</strong> per group. </p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT [columns] FROM [table] WHERE [condition] 
+       GROUP BY [expression]
+       ORDER BY [order] [ASC/DESC]
+       LIMIT [number];
+
+SELECT fur, AVG(age) AS avg_age FROM dogs GROUP BY fur;</code></pre>
+<p><strong>· Filtering Groups</strong></p>
+<p>We know how to filter individual rows using the <code>WHERE</code> clause.To filter groups, use the <code>HAVING [condition]</code> clause.</p>
+<pre class=" language-mysql"><code class="language-mysql">SELECT fur, AVG(age) AS avg_age
+       FROM dogs GROUP BY fur
+       HAVING COUNT(*) > 1;</code></pre>
+<h3 id="Part-3-Mutating-Tables"><a href="#Part-3-Mutating-Tables" class="headerlink" title="Part.3 Mutating Tables"></a>Part.3 Mutating Tables</h3><p><strong>· Remove Table</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">DROP TABLE [IF EXISTS] [name];
+DROP TABLE IF EXISTS parents;</code></pre>
+<p><strong>· Inserting Records</strong></p>
+<pre class=" language-Mysql"><code class="language-Mysql">INSERT INTO [table]([columns]) VALUES([values]), ([values]);
+
+INSERT INTO dogs(name, fur) VALUES('fillmore', 'curly');
+INSERT INTO dogs VALUES('delano', 'long', 'hi!');</code></pre>
+<p><strong>· Updating Records</strong></p>
+<pre class=" language-mysql"><code class="language-mysql">UPDATE [table] SET [column] = [expression] WHERE [condition];
+DELETE FROM [table] WHERE [condition];
+
+UPDATE dogs SET phrase = 'WOOF' WHERE fur = 'curly';
+DELETE FROM dogs WHERE fur = 'curly' and phrase = 'WOOF';</code></pre>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 valine -->
+<div id="comment">
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#comment' ,
+        notify: false,
+        verify: false,
+        app_id: 'pi6wgQQwDcdAXXPAYDhLTXAM-gzGzoHsz',
+        app_key: 'apbjMMH4cLAjmeGJWDdGGE01',
+        placeholder: 'Please leave your footprints~~',
+        pageSize: '10',
+        avatar: 'retro',
+        avatar_cdn: ''
+    });
+</script>
+</div>
+<style>
+   #comment{
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
