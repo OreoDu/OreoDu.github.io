@@ -7,25 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <link rel="canonical" href="https://oreodu.github.io/post/20200917-Java-Basics-01/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<meta name="description" content="Java Basics 01Overview(概略图) · materials:   · CS61B Spring 2019 at UCB   · Java Tutorial   · The Java Language Environment by James Gosling and Henry McGilton   · Wikipedia   · Google Java Style Guide">
+<meta name="description" content="Java Basics 01· materials:  · CS61B Spring 2019 at UCB  · Java Tutorial · The Java Language Environment by James Gosling and Henry McGilton  · Wikipedia  · Google Java Style Guide Part.1 General ViewJ">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Java Basics 01">
 <meta property="og:url" content="https://oreodu.github.io/post/20200917-Java-Basics-01/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Java Basics 01Overview(概略图) · materials:   · CS61B Spring 2019 at UCB   · Java Tutorial   · The Java Language Environment by James Gosling and Henry McGilton   · Wikipedia   · Google Java Style Guide">
+<meta property="og:description" content="Java Basics 01· materials:  · CS61B Spring 2019 at UCB  · Java Tutorial · The Java Language Environment by James Gosling and Henry McGilton  · Wikipedia  · Google Java Style Guide Part.1 General ViewJ">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2020/09/09/r8vytkAuwUETsJZ.jpg">
-<meta property="og:updated_time" content="2020-09-29T08:13:15.156Z">
+<meta property="og:image" content="https://oreodu.github.io/post/20200917-Java-Basics-01/images/logo.jpg">
+<meta property="og:updated_time" content="2020-10-03T18:16:33.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Basics 01">
-<meta name="twitter:description" content="Java Basics 01Overview(概略图) · materials:   · CS61B Spring 2019 at UCB   · Java Tutorial   · The Java Language Environment by James Gosling and Henry McGilton   · Wikipedia   · Google Java Style Guide">
-<meta name="twitter:image" content="https://i.loli.net/2020/09/09/r8vytkAuwUETsJZ.jpg">
+<meta name="twitter:description" content="Java Basics 01· materials:  · CS61B Spring 2019 at UCB  · Java Tutorial · The Java Language Environment by James Gosling and Henry McGilton  · Wikipedia  · Google Java Style Guide Part.1 General ViewJ">
+<meta name="twitter:image" content="https://oreodu.github.io/post/20200917-Java-Basics-01/images/logo.jpg">
 <link rel="stylesheet" href="/fonts.b9b22ef890c930ac7a13.css">
 <link rel="stylesheet" href="/styles.f3ea1e219d757e5d89f5.css">
-<link rel="stylesheet" href="/theme.6ea2aa551bc57d81c978.css">
-<script src="/config.a8045d2ed726b987812a.js"></script>
-<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"url":"https://oreodu.github.io","image":"https://oreodu.github.io/images/logo.jpg","description":null,"author":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"inLanguage":{"@type":"Language","alternateName":"en"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Programming","url":"https://oreodu.github.io/2020/09/17/20200917-Java-Basics-01/","headline":"Java Basics 01","image":"https://i.loli.net/2020/09/09/r8vytkAuwUETsJZ.jpg","datePublished":"2020-09-17T09:30:00.000Z","dateModified":"2020-09-29T08:13:15.156Z","keywords":"Java","description":null,"publisher":{"@type":"Organization","name":null,"logo":{"@type":"ImageObject","url":"https://oreodu.github.io/images/logo.jpg"}},"author":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"inLanguage":{"@type":"Language","alternateName":"en"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://oreodu.github.io/2020/09/17/20200917-Java-Basics-01/"},"thumbnailUrl":"https://i.loli.net/2020/09/09/r8vytkAuwUETsJZ.jpg"}]</script><link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/theme.1f916258f2aede7ec567.css">
+<script src="/config.4b5b18e360c2798f2acd.js"></script>
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"url":"https://oreodu.github.io","image":"https://oreodu.github.io/images/logo.jpg","description":null,"author":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"inLanguage":{"@type":"Language","alternateName":"en"}},{"@context":"http://schema.org","@type":"Article","articleSection":"Programming","url":"https://oreodu.github.io/2020/09/18/20200917-Java-Basics-01/","headline":"Java Basics 01","image":"https://oreodu.github.io/images/logo.jpg","datePublished":"2020-09-17T17:30:00.000Z","dateModified":"2020-10-03T18:16:33.487Z","keywords":"Java","description":null,"publisher":{"@type":"Organization","name":null,"logo":{"@type":"ImageObject","url":"https://oreodu.github.io/images/logo.jpg"}},"author":{"@type":"Person","name":"Oreo Du","description":"Wubba lubba dub dub ~","image":"https://oreodu.github.io/images/logo.jpg"},"inLanguage":{"@type":"Language","alternateName":"en"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://oreodu.github.io/2020/09/18/20200917-Java-Basics-01/"}}]</script><link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/prism-base16-ateliersulphurpool.light.css" type="text/css"></head>
 <body>
 <is-d2a57d></is-d2a57d>
