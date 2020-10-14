@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://oreodu.github.io/2020/04/25/20200425-Linear-List/</loc>
-    <lastmod>2020-10-07</lastmod>
+    <lastmod>2020-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/10/13/20201013-Collection-in-Java/</loc>
+    <lastmod>2020-10-13</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/10/07/20201007-Java-Basics-03/</loc>
