@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://oreodu.github.io/2020/01/02/20200102-Sorting/</loc>
+    <lastmod>2020-10-17</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/04/25/20200425-Linear-List/</loc>
+    <lastmod>2020-10-17</lastmod>
+  </url>
+  <url>
     <loc>https://oreodu.github.io/2020/10/14/20201014-Mathematical-Proof-and-Discussion-of-Fast-and-Slow-Pointer/</loc>
     <lastmod>2020-10-14</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/10/14/20201014-Exercises-in-Lad/</loc>
-    <lastmod>2020-10-14</lastmod>
-  </url>
-  <url>
-    <loc>https://oreodu.github.io/2020/04/25/20200425-Linear-List/</loc>
     <lastmod>2020-10-14</lastmod>
   </url>
   <url>
@@ -102,10 +106,6 @@
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/05/01/20200501-Machine-Learning-Basis/</loc>
-    <lastmod>2020-10-03</lastmod>
-  </url>
-  <url>
-    <loc>https://oreodu.github.io/2020/01/02/20200102-Searching-and-Sorting/</loc>
     <lastmod>2020-10-03</lastmod>
   </url>
   <url>
