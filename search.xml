@@ -6613,4 +6613,76 @@ The <code>nonlocal</code> statement is used to rebind variables found outside of
         <tag>Java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux Basics</title>
+    <url>/2020/20201023-Linux-Basics/</url>
+    <content><![CDATA[<h1 id="linux-basics">Linux Basics<a title="#linux-basics" href="#linux-basics"></a></h1>
+<h2 id="history:">History:<a title="#history:" href="#history:"></a></h2>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjyai1ptkcj30q60j0tc5.jpg" alt="截屏2020-10-22 下午5.10.17" style="zoom: 67%;">
+<p>​            (From Advanced Operating Systems in The University of Tokyo)</p>
+<p>Unix:</p>
+<p>Unix is very popular and ported to multiple architectures due to its simple design and ease of use.</p>
+<p>Simplicity:</p>
+<p>➢ Small number of system calls with clearly defined design</p>
+<p>➢ Everything is a file</p>
+<p>➢ Written in C for portability</p>
+<p>➢ Easy and fast process creation (fork())</p>
+<p>➢ Simple and efficient Inter-Process Communication mechanisms (IPC)</p>
+<h2 id="linux-open-source-model:">Linux open source model:<a title="#linux-open-source-model:" href="#linux-open-source-model:"></a></h2>
+<p>Benefits of open source vs closed development:</p>
+<p>➢ Security, stability: Given enough eyeballs, all bugs are shallow</p>
+<p>➢ Code quality</p>
+<p>➢ Freely modifiable by anyone having an interest to do so</p>
+<p>➢ Education, research:  We can PEEK at the code to understand how it works and we can POKE it to experiment and build new systems</p>
+<h2 id="linux-kernel:">Linux Kernel:<a title="#linux-kernel:" href="#linux-kernel:"></a></h2>
+<p>Sources are freely <a href="https://www.kernel.org/" target="_blank">available</a>.</p>
+<p>Manages the hardware and provides <strong>interfaces</strong> or user space processes to access the hardware and perform privileged operations.</p>
+<p>Monolithic Model: Opposed to the <em>microkernel</em> model, Linux is monolithic. All the OS services run in kernel, privileged mode. System calls are the one and only way an application can enter the kernel to request OS services and privileged operations such as accessing the hardware.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjybtotr4sj30vu0mqaib.jpg" alt="截屏2020-10-22 下午7.17.10" style="zoom: 50%;">
+<p>​      								      (From Advanced Operating Systems in The University of Tokyo)</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjyfieodezj30ys0hsk0q.jpg" alt="Screen Shot 2020-10-22 at 21.24.39" style="zoom: 55%;">
+<p>​        							       (From Advanced Operating Systems in The University of Tokyo)</p>
+<p>Syscalls can be classified into groups:</p>
+<p>➢ <strong>Process management/scheduling:</strong> fork, exit, execve, nice,{<em>get|set</em>}priority,{get|set}pid, etc.</p>
+<p>➢ <strong>Memory management:</strong> brk, mmap, swap{on|of}, etc.</p>
+<p>➢ <strong>File system</strong>: open, read, write, lseek, stat, etc.</p>
+<p>➢ <strong>Inter-Process Communication</strong>: pipe, shmget, semget, etc.</p>
+<p>➢ <strong>Time management</strong>: {get|set}timeofday, time, timer create, etc.</p>
+<p>➢ Others: *{<em>get|set</em>}*uid, syslog, connect, etc.</p>
+<p>System calls table syscall identifier.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 common read sys_read</span><br><span class="line">1 common write sys_write</span><br><span class="line">2 common open sys_open</span><br><span class="line">3 common close sys_close</span><br><span class="line"># ...</span><br></pre></td></tr></table></figure>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjz28nljggj30xi06uabg.jpg" alt="Screen Shot 2020-10-23 at 10.30.07" style="zoom:50%;">
+<p>​										   (From Advanced Operating Systems in The University of Tokyo)</p>
+<p>Syscalls are rarely invoked directly. Most of them are wrapped by the C library. The programmer uses the C library Application Programming Interface (API)</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjz2kopy4lj30zo04oabx.jpg" alt="Screen Shot 2020-10-23 at 10.42.38" class="φcx"></p>
+<p>​								 		 (From Advanced Operating Systems in The University of Tokyo)</p>
+<p>Kernel vs user level programming:</p>
+<p>➢ No C library mostly because of speed and size. However, the kernel implements lots of usefull functions from the C library.</p>
+<p>➢ 2% assembly, the rest in GNU C (GCC extensions)</p>
+<p>➢ No memory protection</p>
+<p>➢ Highly concurrent: Preemption, interrupts, running on SMP (Symmetric Multiprocessor System). Race conditions without proper synchronization.</p>
+<p>Virtual machine:</p>
+<blockquote>
+<p>I would classify virtual machine technologies into three categories (not all products fit clearly into one category):</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Full_virtualization" target="_blank">Full virtualization</a>, i.e., complete hardware emulation. Examples: <a href="http://en.wikipedia.org/wiki/QEMU" target="_blank">Qemu</a>, <a href="http://en.wikipedia.org/wiki/DOSBox" target="_blank">Dosbox</a>. Pro: you can potentially emulate any architecture on any hardware. Con: it’s the slowest way to do it.</li>
+<li>Hardware-assisted virtualization, where you can emulate machine X on machine X. This can be a lot faster than full virtualization, because most instructions are executed natively, but you lose the ability to run a foreign architecture. There are two sub-categories:</li>
+<li>Hypervisor-based VMs: you run several OSes alongside each other. The bottom layer, called the hypervisor, is a special-purpose OS that runs the VMs and nothing else. Examples: <a href="http://en.wikipedia.org/wiki/Xen" target="_blank">Xen</a>, <a href="http://en.wikipedia.org/wiki/VMware_ESX" target="_blank">VMware ESX</a>.</li>
+<li>Hosted VMs: there is a main OS, the VM is an application on this main OS. Examples: <a href="http://en.wikipedia.org/wiki/VirtualBox" target="_blank">VirtualBox</a>, <a href="http://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine" target="_blank">KVM</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Operating_system-level_virtualization" target="_blank">OS-level virtualization</a>: you run several instances of the same OS. This can be in turn a lot more lightweight than hardware virutalization, but you lose some isolation and of course the ability to run different OSes. Examples: <a href="http://en.wikipedia.org/wiki/OpenVZ" target="_blank">OpenVZ</a>, <a href="http://en.wikipedia.org/wiki/FreeBSD_jail" target="_blank">FreeBSD jails</a>.</li>
+</ul>
+<p>(From <a href="https://unix.stackexchange.com/questions/5741/what-are-the-differences-between-various-vm-software" target="_blank">here</a>.)</p>
+</blockquote>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjyzldca2dj30b40bsgmh.jpg" alt="image1" style="zoom:80%;">
+<p>​                                      				           (KVM + Qemu. From <a href="https://www.packetflow.co.uk/what-is-the-difference-between-qemu-and-kvm/" target="_blank">here</a>)</p>
+<p>GDB server: more details from <a href="https://www.gnu.org/software/gdb/" target="_blank">here</a>.</p>
+]]></content>
+      <categories>
+        <category>Operating System</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Operating System</tag>
+      </tags>
+  </entry>
 </search>
