@@ -6617,51 +6617,96 @@ The <code>nonlocal</code> statement is used to rebind variables found outside of
     <title>Linux Basics</title>
     <url>/2020/20201023-Linux-Basics/</url>
     <content><![CDATA[<h1 id="linux-basics">Linux Basics<a title="#linux-basics" href="#linux-basics"></a></h1>
-<h2 id="history:">History:<a title="#history:" href="#history:"></a></h2>
+<h2 id="part.1-history">Part.1 History<a title="#part.1-history" href="#part.1-history"></a></h2>
 <img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjyai1ptkcj30q60j0tc5.jpg" alt="截屏2020-10-22 下午5.10.17" style="zoom: 67%;">
 <p>​            (From Advanced Operating Systems in The University of Tokyo)</p>
 <p>Unix:</p>
 <p>Unix is very popular and ported to multiple architectures due to its simple design and ease of use.</p>
-<p>Simplicity:</p>
-<p>➢ Small number of system calls with clearly defined design</p>
-<p>➢ Everything is a file</p>
-<p>➢ Written in C for portability</p>
-<p>➢ Easy and fast process creation (fork())</p>
-<p>➢ Simple and efficient Inter-Process Communication mechanisms (IPC)</p>
-<h2 id="linux-open-source-model:">Linux open source model:<a title="#linux-open-source-model:" href="#linux-open-source-model:"></a></h2>
+<p>Simplicity:<br>
+➢ Small number of system calls with clearly defined design.<br>
+➢ Everything is a file.<br>
+➢ Written in C for portability.<br>
+➢ Easy and fast process creation (fork()).<br>
+➢ Simple and efficient Inter-Process Communication mechanisms (IPC).</p>
+<h2 id="part.2-linux-open-source-model">Part.2 Linux open source model<a title="#part.2-linux-open-source-model" href="#part.2-linux-open-source-model"></a></h2>
 <p>Benefits of open source vs closed development:</p>
-<p>➢ Security, stability: Given enough eyeballs, all bugs are shallow</p>
-<p>➢ Code quality</p>
-<p>➢ Freely modifiable by anyone having an interest to do so</p>
-<p>➢ Education, research:  We can PEEK at the code to understand how it works and we can POKE it to experiment and build new systems</p>
-<h2 id="linux-kernel:">Linux Kernel:<a title="#linux-kernel:" href="#linux-kernel:"></a></h2>
+<p>➢ Security, stability: Given enough eyeballs, all bugs are shallow.<br>
+➢ Code quality.<br>
+➢ Freely modifiable by anyone having an interest to do so.<br>
+➢ Education, research:  We can PEEK at the code to understand how it works and we can POKE it to experiment and build new systems.</p>
+<h2 id="part.3-linux-kernel">Part.3 Linux Kernel<a title="#part.3-linux-kernel" href="#part.3-linux-kernel"></a></h2>
 <p>Sources are freely <a href="https://www.kernel.org/" target="_blank">available</a>.</p>
 <p>Manages the hardware and provides <strong>interfaces</strong> or user space processes to access the hardware and perform privileged operations.</p>
 <p>Monolithic Model: Opposed to the <em>microkernel</em> model, Linux is monolithic. All the OS services run in kernel, privileged mode. System calls are the one and only way an application can enter the kernel to request OS services and privileged operations such as accessing the hardware.</p>
+<p>Kernel vs user level programming:<br>
+➢ No C library mostly because of speed and size. However, the kernel implements lots of usefull functions from the C library.<br>
+➢ 2% assembly, the rest in GNU C (GCC extensions).<br>
+➢ No memory protection.<br>
+➢ Highly concurrent: Preemption, interrupts, running on SMP (Symmetric Multiprocessor System). Race conditions without proper synchronization.</p>
 <img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjybtotr4sj30vu0mqaib.jpg" alt="截屏2020-10-22 下午7.17.10" style="zoom: 50%;">
 <p>​      								      (From Advanced Operating Systems in The University of Tokyo)</p>
 <img src="https://tva1.sinaimg.cn/large/0081Kckwly1gjyfieodezj30ys0hsk0q.jpg" alt="Screen Shot 2020-10-22 at 21.24.39" style="zoom: 55%;">
 <p>​        							       (From Advanced Operating Systems in The University of Tokyo)</p>
-<p>Syscalls can be classified into groups:</p>
-<p>➢ <strong>Process management/scheduling:</strong> fork, exit, execve, nice,{<em>get|set</em>}priority,{get|set}pid, etc.</p>
-<p>➢ <strong>Memory management:</strong> brk, mmap, swap{on|of}, etc.</p>
-<p>➢ <strong>File system</strong>: open, read, write, lseek, stat, etc.</p>
-<p>➢ <strong>Inter-Process Communication</strong>: pipe, shmget, semget, etc.</p>
-<p>➢ <strong>Time management</strong>: {get|set}timeofday, time, timer create, etc.</p>
-<p>➢ Others: *{<em>get|set</em>}*uid, syslog, connect, etc.</p>
-<p>System calls table syscall identifier.</p>
+<h3 id="system-calls">System calls<a title="#system-calls" href="#system-calls"></a></h3>
+<p>Syscalls can be classified into groups:<br>
+➢ <strong>Process management/scheduling:</strong> fork, exit, execve, nice,{<em>get|set</em>}priority,{get|set}pid, etc.<br>
+➢ <strong>Memory management:</strong> brk, mmap, swap{on|of}, etc.<br>
+➢ <strong>File system</strong>: open, read, write, lseek, stat, etc.<br>
+➢ <strong>Inter-Process Communication</strong>: pipe, shmget, semget, etc.<br>
+➢ <strong>Time management</strong>: {get|set}timeofday, time, timer create, etc.<br>
+➢ Others: *{<em>get|set</em>}*uid, syslog, connect, etc.</p>
+<p>System calls table syscall identifier(unique integer).</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 common read sys_read</span><br><span class="line">1 common write sys_write</span><br><span class="line">2 common open sys_open</span><br><span class="line">3 common close sys_close</span><br><span class="line"># ...</span><br></pre></td></tr></table></figure>
+<h3 id="syscall-invocation(user-space-side)">Syscall invocation(user space side)<a title="#syscall-invocation(user-space-side)" href="#syscall-invocation(user-space-side)"></a></h3>
 <img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjz28nljggj30xi06uabg.jpg" alt="Screen Shot 2020-10-23 at 10.30.07" style="zoom:50%;">
 <p>​										   (From Advanced Operating Systems in The University of Tokyo)</p>
-<p>Syscalls are rarely invoked directly. Most of them are wrapped by the C library. The programmer uses the C library Application Programming Interface (API)</p>
+<p>Syscalls are rarely invoked directly. Most of them are wrapped by the C library. The programmer uses the C library Application Programming Interface (API).</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjz2kopy4lj30zo04oabx.jpg" alt="Screen Shot 2020-10-23 at 10.42.38" class="φcx"></p>
 <p>​								 		 (From Advanced Operating Systems in The University of Tokyo)</p>
-<p>Kernel vs user level programming:</p>
-<p>➢ No C library mostly because of speed and size. However, the kernel implements lots of usefull functions from the C library.</p>
-<p>➢ 2% assembly, the rest in GNU C (GCC extensions)</p>
-<p>➢ No memory protection</p>
-<p>➢ Highly concurrent: Preemption, interrupts, running on SMP (Symmetric Multiprocessor System). Race conditions without proper synchronization.</p>
-<p>Virtual machine:</p>
+<p>System calls behavior is documented in man pages.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">man &lt;syscall name&gt;</span><br></pre></td></tr></table></figure>
+<p>Some syscalls does not have a wrapper in the C library. A syscall can be called directly through syscall man syscall.(invocation without the wrapper)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">bytes_written = syscall(SYS_write, <span class="number">1</span>, message, <span class="number">14</span>);</span><br></pre></td></tr></table></figure>
+<p>On x86 64, syscalls can be used directly through thesyscall assembly instruction.(invocation without the C library)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"># syscall_asm.s</span><br><span class="line">			.global _start</span><br><span class="line">      .text </span><br><span class="line">_start:</span><br><span class="line">				<span class="meta"># write(1, message, 14) </span></span><br><span class="line">				mov $<span class="number">1</span>, %rax</span><br><span class="line">				mov $<span class="number">1</span>, %rdi</span><br><span class="line">				mov $message, %rsi </span><br><span class="line">        mov $<span class="number">14</span>, %rdx </span><br><span class="line">        syscall</span><br><span class="line">				</span><br><span class="line">        <span class="meta"># exit(0)</span></span><br><span class="line">				mov $<span class="number">60</span>, %rax x</span><br><span class="line">        <span class="keyword">or</span> %rdi, %rdi </span><br><span class="line">        syscall</span><br><span class="line">message:</span><br><span class="line">				.ascii <span class="string">&quot;Hello, world!¥n&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="syscall-execution(kernel-space-side)">Syscall execution(kernel space side)<a title="#syscall-execution(kernel-space-side)" href="#syscall-execution(kernel-space-side)"></a></h3>
+<p>When an interrupt is received by the CPU, it stops whatever it is doing and <strong>the kernel executes the interrupt handler</strong>.</p>
+<p>Interrupts:<br>
+Asynchronous: <strong>hardware interrupts</strong>, issued from devices.<br>
+Synchronous: <strong>exceptions</strong>, triggered involuntarily by the program Itself.<br>
+Synchronous, programmed exceptions: <strong>software interrupts</strong>, issued voluntarily by the code of the program itself.</p>
+<p>How is a syscall invoked from user space:<br>
+➢ User space put the <strong>syscall identifier and parameters values into registers</strong> (x86)<br>
+➢ Then issues a <strong>software interrupt</strong><br>
+➢ The kernel executes the interrupt handler, <strong>system call handler</strong>.<br>
+Puts the registers values into a data structure placed on the stack<br>
+Checks the validity of the syscall (number of arguments)<br>
+Then execute the system call implementation.</p>
+<p>How to exchange data between user and memory areas with pointers:<br>
+➢When a kernel function gets a pointer to some memory in user space it needs to use: The kernel copies it into its memory area (<code>copy from user</code>) .<br>
+➢ When the kernel wants to write in a user space buffer: It uses <code>copy to user</code>.</p>
+<h3 id="implementing-a-new-system-call">Implementing a new system call<a title="#implementing-a-new-system-call" href="#implementing-a-new-system-call"></a></h3>
+<ol>
+<li>Write your syscall function<br>
+In an existing file if it makes sense. Is it related to time management ? <em>→</em> kernel/time/time.c<br>
+Or, if the implementation is large and self-contained: in a new file. You will have to edit the kernel <code>Makefiles</code> to integrate it in the compilation process.</li>
+<li>Add it to the syscall table and give it an identifier<br>
+<code>arch/x86/syscalls/syscall 64.tbl</code>for Linux 4.0</li>
+<li>Add the prototype in <code>include/linux/syscalls.h</code>.</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">asmlinkage <span class="keyword">long</span> <span class="title">sys_gettimeofday</span><span class="params">(struct timeval_user *tv, </span></span></span><br><span class="line"><span class="function"><span class="params">                                 struct timezone_user *tz)</span></span>;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>Recompile, reboot and run. Touching the syscall table will trigger the entire kernel compilation</li>
+</ol>
+<p>➢ <strong>Pros:</strong> Easy to implement and use, fast<br>
+➢ <strong>Cons</strong>:<br>
+Needs an official syscall number<br>
+Interface cannot change after implementation<br>
+Must be registered for each architecture<br>
+Probably too much work for small exchanges of information<br>
+➢ <strong>Alternative</strong>:<br>
+Device or virtual file:User/kernel space communication through <code>read,write,ioctl</code>.</p>
+<h2 id="part.4-virtual-machine">Part.4 Virtual machine<a title="#part.4-virtual-machine" href="#part.4-virtual-machine"></a></h2>
 <blockquote>
 <p>I would classify virtual machine technologies into three categories (not all products fit clearly into one category):</p>
 <ul>
@@ -6676,6 +6721,244 @@ The <code>nonlocal</code> statement is used to rebind variables found outside of
 <img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gjyzldca2dj30b40bsgmh.jpg" alt="image1" style="zoom:80%;">
 <p>​                                      				           (KVM + Qemu. From <a href="https://www.packetflow.co.uk/what-is-the-difference-between-qemu-and-kvm/" target="_blank">here</a>)</p>
 <p>GDB server: more details from <a href="https://www.gnu.org/software/gdb/" target="_blank">here</a>.</p>
+]]></content>
+      <categories>
+        <category>Operating System</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Operating System</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Process Management</title>
+    <url>/2020/20201024-Process-Management/</url>
+    <content><![CDATA[<h1 id="process-management">Process Management<a title="#process-management" href="#process-management"></a></h1>
+<h2 id="part.1-process">Part.1 Process<a title="#part.1-process" href="#part.1-process"></a></h2>
+<p>Every application(program) comes into execution through means of process, <strong>process</strong> is a running instance of a program. Processes are created through different system calls, most popular are <strong>fork()</strong> and <strong>exec()</strong>.</p>
+<p>The fork() creates a new process by duplicating the calling process, The new process, referred to as child, is an exact duplicate of the calling process, referred to as parent.</p>
+<p>In computing, exec is a functionality of an operating system that runs an executable file in the context of an already existing process, replacing the previous executable.  As a new process is not created, the process identifier (PID) does not change, but the machine code, data, heap, and stack of the process are replaced by those of the new program.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk082r4imbj30bq0kg40e.jpg" alt="Screen Shot 2020-10-24 at 10.38.27" style="zoom:33%;">
+<p>Tutorial on [<code>fork()</code>](<a href="http://www.csl.mtu.edu/cs4411.ck/www/NOTES/">http://www.csl.mtu.edu/cs4411.ck/www/NOTES/</a> process/fork/create.html) usage.<br>
+Combining <a href="https://ece.uwaterloo.ca/dwharder/icsrts/Tutorials/fork_exec/" target="_blank"> <code>fork()</code> and <code>exec()</code></a>. (execl(), execlp(), execle(), execv(), execvp(), execve())</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (fork() == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="comment">//child process</span></span><br><span class="line">		<span class="keyword">char</span> * execve_str[] = &#123;<span class="string">&quot;env&quot;</span>,<span class="literal">NULL</span>&#125;;</span><br><span class="line">		<span class="keyword">char</span> * env[] = &#123;<span class="string">&quot;PATH=/tmp&quot;</span>, <span class="string">&quot;USER=lei&quot;</span>, <span class="string">&quot;STATUS=testing&quot;</span>, <span class="literal">NULL</span>&#125;;</span><br><span class="line">		<span class="keyword">if</span> (execve(<span class="string">&quot;/usr/bin/env&quot;</span>,execve_str,env) &lt;<span class="number">0</span> )&#123;</span><br><span class="line">			perror(<span class="string">&quot;error on exec&quot;</span>);</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//parent process</span></span><br><span class="line">		wait(&amp;childpid);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;execve done\n\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="part.2-the-process-descriptor">Part.2 The process descriptor<a title="#part.2-the-process-descriptor" href="#part.2-the-process-descriptor"></a></h2>
+<p>See more details from <a href="https://elixir.bootlin.com/linux/latest/C/ident/task_struct" target="_blank">here</a> or <a href="http://www.science.smith.edu/~nhowe/262/oldlabs/sched.html" target="_blank">here</a>.</p>
+<p>In the Linux kernel, processes are defined as <code>task_struct</code> structures in <code>include/linux/sched.h</code>, line 281. This structure contains every relevant information about a process.</p>
+<p>List of processes implemented as a linked list of <code>task struct</code>. It is dynamically allocated (heap) through the slab allocator.</p>
+<p>Quick access to <code>task struct</code> of the task currently running on a core: arch/x86/include/asm/current.h.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk0iv2pigvj30b60degmo.jpg" alt="Screen Shot 2020-10-24 at 16.51.34" style="zoom: 50%;">
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Full structure definition in linux/sched.h */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tastk_struct</span> &#123;</span> </span><br><span class="line">	<span class="keyword">volatile</span> <span class="keyword">long</span> state; </span><br><span class="line">  <span class="keyword">void</span> *<span class="built_in">stack</span>;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">	<span class="keyword">int</span> prio; </span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">	<span class="keyword">cpumask_t</span> cpus_allowed;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">tasks</span>;</span> </span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">mm_struct</span> *<span class="title">mm</span>;</span> </span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">	<span class="keyword">pid_t</span> pid;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">task_struct</span> *<span class="title">parent</span>;</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">children</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">sibling</span>;</span> </span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="process-states">Process states<a title="#process-states" href="#process-states"></a></h3>
+<p>State field of the task struct:</p>
+<p>· <code>TASK_RUNNING</code>:<br>
+Process is runnable (running or in a CPU run queue) In user or kernel space.</p>
+<p>· <code>TASK_INTERRUPTIBLE</code>:<br>
+Process is sleeping waiting for some condition.<br>
+Switched to TASK RUNNING on condition true or signal received.</p>
+<p>· <code>TASK_UNINTERRUPTIBLE</code>:<br>
+Same as TASK INTERRUPTIBLE but does not wake up on signal.</p>
+<p>· <code>TASK_TRACED</code>:<br>
+Traced by another process(ex:debugger)</p>
+<p>· <code>TASK_STOPPED</code>:<br>
+Not running nor waiting,result of the reception of some signals to pause the process.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk0jhtmibbj319m0o0gv2.jpg" alt="Screen Shot 2020-10-24 at 17.12.52" style="zoom: 33%;">
+<h3 id="process-hierarchy">Process hierarchy<a title="#process-hierarchy" href="#process-hierarchy"></a></h3>
+<p>· Root: init, PID 1<br>
+Launched by the kernel as the last step of the boot process.<br>
+· fork-based process creation:<br>
+Each process has aparent: parent pointer in the <code>task_struct</code>.<br>
+· Processes may have children: children field(list head).<br>
+· Processes may have siblings: siblings field.<br>
+· List of all tasks: tasks field.<br>
+Easy manipulation through <code>next task(t)</code> and <code>for eachprocess(t)</code>.</p>
+<h2 id="part.3-process-creation">Part.3 Process creation<a title="#part.3-process-creation" href="#part.3-process-creation"></a></h2>
+<p>Linux does not implements creating a tasks from nothing.</p>
+<p><code>fork()</code> &amp; <code>exec()</code></p>
+<p>· <code>fork()</code> creates a child, copy of the parent process. Only PID, PPID and some resources/stats differ. Linux duplicates the parent page tables and creates a new process descriptor.</p>
+<p>Page table access bits: read-only.<br>
+Copy-On-Write (COW): memory pages are copied only when they are referenced for write operations.</p>
+<p>· <code>exec()</code> loads into a process address space a new executable.</p>
+<h3 id="forking-:-fork()-and-vfork()">Forking : <code>fork()</code> and <code>vfork()</code><a title="#forking-:-fork()-and-vfork()" href="#forking-:-fork()-and-vfork()"></a></h3>
+<p><code>fork()</code> is implemented by the <code>clone()</code> system call. <code>sys_clone()</code> calls <code>do_fork()</code>, which calls <code>copy_process()</code> and starts the new task.</p>
+<p><code>copy_process()</code>:</p>
+<ol>
+<li>Calls <code>dup_tasks_truct()</code>. Duplicates kernel stack, <code>task_struct</code> and <code>thread_info</code>.</li>
+<li>Checks that we do not overflow the processes number limit.</li>
+<li>Small amount of values are modified in the <code>task_struct</code>.</li>
+<li>Calls <code>sched_fork()</code> to set the child <code>state</code> set to <code>TASK_NEW</code> .</li>
+<li>Copies parent info: files, signal handlers, etc.</li>
+<li>Gets a new PID through <code>alloc_pid()</code>.</li>
+<li>Returns a pointer to the created child <code>task_struct</code>.</li>
+</ol>
+<p>Finally, <code>do_fork()</code> calls wake up <code>new_task()</code>. State becomes <code>TASK_RUNNING</code></p>
+<p><code>vfork()</code>: alternative without copy of the address space.</p>
+<h2 id="part.4-threads">Part.4 Threads<a title="#part.4-threads" href="#part.4-threads"></a></h2>
+<p>Threads are concurrent flows of execution belonging to the same program sharing the same address space.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk0qkit41ej30f20eggnv.jpg" alt="Screen Shot 2020-10-24 at 21.18.20" style="zoom:50%;">
+<p>In Linux there is no concept of a thread.<br>
+<a href="http://1.No">1.No</a> scheduling particularity.<br>
+2.A thread is just another process sharing some information with other processes<br>
+3.Each thread has its own <code>task_struct</code>.<br>
+4.Created through <code>clone()</code> with specific flags indicating sharing.</p>
+<h3 id="kernel-threads">Kernel threads<a title="#kernel-threads" href="#kernel-threads"></a></h3>
+<p>Kernel threads are schedulable entities (like regular processes) and do not have their own address space( <code>mm</code>  in <code>task_struct</code> is NULL).</p>
+<p>Kernel threads are all forked from the <code>kthread </code> kernel thread (PID 2), using <code>clone()</code>. To create a kernel thread, use <code>kthread_create() </code>.</p>
+<p>When created through <code>kthread_create()</code>, the thread is not in a runnable state and need to call <code>wake_up_process()</code> or use <code>kthread run()</code>.</p>
+<p>Thread runs until it calls do <code>exit()</code> or until another part of the kernel calls <code>kthread_stop()</code>.</p>
+<h2 id="part.5-process-termination">Part.5 Process termination<a title="#part.5-process-termination" href="#part.5-process-termination"></a></h2>
+<p>Termination on invoking the <code>exit()</code> system call which can be implicitly inserted by the compiler on <code>return</code> from <code>main</code>. <code>sys_exit()</code> calls <code>do_exit()</code>.</p>
+<h3 id="do-exit()-(kernel/exit.c):"><code>do exit()</code> (kernel/exit.c):<a title="#do-exit()-(kernel/exit.c):" href="#do-exit()-(kernel/exit.c):"></a></h3>
+<ol>
+<li>Call <code>exit_signals()</code> which set the <code>PF EXITING</code> flag in the <code>task_struct</code></li>
+<li>Set the exit code in the <code>exit_code</code> field of the <code>task_struct</code>. (To be retrieved by the parent.)</li>
+<li>Call <code>exit_mm()</code> to release the <code>mm_struct</code> for the task. If it is not shared with any other process, it is destroyed.</li>
+<li>Call <code>exit_sem()</code>:process dequeued from potential semaphores queues.</li>
+<li>Call <code>exit_fs()</code> and <code>exit_files()</code> to update accounting information. Potential data structures that are not used anymore are freed.</li>
+<li>Call <code>exit_notify()</code>. Send signals to parent and reparent potential children. Set the <code>exit_state</code> of the <code>task_struct</code> to <code>EXIT ZOMBIE</code> .</li>
+<li>Call <code>do_taskdead()</code>. Set the <code>state</code> to <code>TASK DEAD</code> ,  call <code>schedule()</code> and never returns.</li>
+</ol>
+<p>At that point, what is left is the <code>task_struct</code>, <code>thread info</code> and kernel stack. To provide information to the parent. Parent notifies the kernel when everything can be freed.</p>
+<h3 id="task_struct-cleanup:"><code>task_struct</code> cleanup:<a title="#task_struct-cleanup:" href="#task_struct-cleanup:"></a></h3>
+<ol>
+<li>
+<p>Separated from the process of exiting because of the need to pass exit information to the parent. Until the parent grab the exit information through <code>wait4()</code>.</p>
+</li>
+<li>
+<p>Cleanup implemented in <code>release_task()</code> called from the <code>wait4()</code> implementation.</p>
+<p>Remove the task from the task list. Release and free remaining resources.</p>
+</li>
+</ol>
+<p>A parent exits before its child. Child must be reparented(To another process in the current thread group or <code>init</code> if that fails).</p>
+<p><code>exit notify()</code> calls <code>forget_original_parent()</code>, that calls <code>find_newreaper()</code>. Returns the <code>task_struct</code> of another task in the thread group if it exists, otherwise the one from init. Then, all the children of the currently dying task are reparented to the reaper.</p>
+]]></content>
+      <categories>
+        <category>Operating System</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Operating System</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Memory Management</title>
+    <url>/2020/20201025-Memory-Management/</url>
+    <content><![CDATA[<h1 id="memory-management">Memory Management<a title="#memory-management" href="#memory-management"></a></h1>
+<h2 id="part.1-address-space-and-memory-descripter">Part.1 Address space and memory descripter<a title="#part.1-address-space-and-memory-descripter" href="#part.1-address-space-and-memory-descripter"></a></h2>
+<h3 id="address-space">Address space<a title="#address-space" href="#address-space"></a></h3>
+<p>The memory that a process can access is called its address space.  It is defined by the process page table and set up by the kernel.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gk19i68q35j30zu0akwi3.jpg" alt="Screen Shot 2020-10-25 at 08.13.37" style="zoom:45%;">
+<p>Each process is given a flat(as opposed to segmented) 32/64-bits address space and a memory address is an index within the address space.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwly1gk19oatz2gj30ly07q40h.jpg" alt="Screen Shot 2020-10-25 at 08.19.30" style="zoom: 67%;">
+<p>Interval of addresses that the process has the right to access: virtual memory areas (VMAs).</p>
+<p>VMAs can be dynamically added or removed to the process address space and have associated permissions: read, write, execute. When a process try to access an address outside of valid VMAs, or access a VMA with wrong permissions: segmentation fault.</p>
+<p>VMAs cancontain:<br>
+Mapping of the executable file code (text section)<br>
+Mapping of the executable file initialized variables (data section)<br>
+Mapping of the zero page for uninitialized variables (bss section)<br>
+Mapping of the zero page for the user-space stack<br>
+Text, data, bss for each shared library used<br>
+Memory-mapped files, shared memory segment, anonymous mappings (used by malloc)</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk1ah62rodj310g0bygny.jpg" alt="Screen Shot 2020-10-25 at 08.47.11" style="zoom: 40%;">
+<h3 id="memory-descriptor">Memory descriptor<a title="#memory-descriptor" href="#memory-descriptor"></a></h3>
+<ol>
+<li>
+<p>The kernel represent a process address space through a struct <code>mm_struct</code> object, the memory descriptor which is defined in <code>include/linux/mm_types.h</code>.</p>
+<p>All <code>mm_struct</code> are linked together in a doubly linked list. Through the <code>mmlist </code> field if the <code>mm_struct</code>.</p>
+<p>See more from <a href="https://elixir.bootlin.com/linux/latest/ident/mm_struct" target="_blank">here</a>.</p>
+</li>
+<li>
+<p>Memory descriptor allocation</p>
+<p>A task memory descriptor is located in the <code>mm_field</code> of the corresponding <code>task_struct</code>. Current task memory descriptor: <code>current-&gt;m</code>. During <code>fork()</code>,<code>copy_mm()</code> is making a copy of the parent memory descriptor for the child. <code>copy_mm()</code>calls <code>dup_mm()</code> which calls <code>allocate_mm()</code> which allocates a <code>mm_struct</code> object from a slab cache.</p>
+<p>Two threads sharing the same address space have the <code>mm_field</code> of their <code>task_struct</code> pointing to the same <code>mm_struc</code> object. Threads are created using the <code>CLONE_VM</code> flag passed to <code>clone()</code> → <code>allocate_mm()</code> is not called.</p>
+</li>
+<li>
+<p>Memory descriptor destruction</p>
+<p>When a process exits, <code>do_exit()</code> is called. It calls <code>exit_mm()</code>. Performs some housekeeping/statistics updates.</p>
+<p>Call <code>mm_put()</code>. <code>mm_put()</code> decrements the <code>users</code> field and calls <code>_mmput()</code> if it reaches 0. <code>_mmput()</code> calls <code>mmdrop()</code>, that decrements the <code>count</code> field and calls <code>mm_drop()</code> if it reaches 0. <code>_mmdrop()</code> calls <code>free_mm()</code> which return the memory for the <code>mm_struct()</code> to the slab cache (i.e. free).</p>
+</li>
+<li>
+<p>Memory descriptor and kernel threads</p>
+<p>Kernel threads do not have a user-space address space. <code>mm</code> field of a kernel thread <code>task_struct</code> is <code>NULL</code>. When a kernel thread is scheduled, the kernel notice its <code>mm</code> is <code>NULL</code> so it keeps the previous address space loaded (page tables) and makes  the <code>active_mm</code> field of the kernel thread to point on the borrowed <code>mm_struct</code>.</p>
+</li>
+</ol>
+<h2 id="part.2-virtual-memory-area">Part.2 Virtual Memory Area<a title="#part.2-virtual-memory-area" href="#part.2-virtual-memory-area"></a></h2>
+<h3 id="vm_area_struct"><code>vm_area_struct</code><a title="#vm_area_struct" href="#vm_area_struct"></a></h3>
+<p>Each VMA is represented by an object of type <code>vm_area_struct</code> and defined in <code>include/linux/mm_types.h</code>. See more details from <a href="https://elixir.bootlin.com/linux/latest/C/ident/vm_area_struct" target="_blank">here</a>. Each VMA is unique to the associated <code>mm_struct</code>. Two processes mapping the same file will have two different <code>mm_struct</code> objects, and two different vm area struct objects. Two threads sharing a <code>mm_struct</code> object also share the <code>vm_area_struct</code> objects.</p>
+<h3 id="flags">Flags<a title="#flags" href="#flags"></a></h3>
+<p>Flags specify properties and information for all the pages contained in the VMA.</p>
+<p><code>VM READ</code>: pages can be read from<br>
+<code>VM WRITE</code>: pages can be written to<br>
+<code>VM EXEC</code>: code inside pages can be executed<br>
+<code>VM SHARED</code>: pages are shared between multiple processes (if unset the mapping is private)</p>
+<p><code>VM MAYREAD</code>: the <code>VM READ</code> flag can be set<br>
+<code>VM MAYWRITE</code>: the <code>VM WRITE</code> flag can be set<br>
+<code>VM MAYEXEC</code>: the <code>VM EXEC</code> flag can be set<br>
+<code>VM MAYSHARE</code>: the <code>VM SHARED</code> flag can be set</p>
+<p><code>VM GROWSDOWN</code>: area can grow downwards<br>
+<code>VM GROWSUP</code>: area can grow upwards<br>
+<code>VM SHM</code>: area can be used for shared memory<br>
+<code>VM DENYWRITE</code>: area maps an unwritable file<br>
+<code>VM EXECUTABLE</code>: area maps an executable file<br>
+… …</p>
+<h3 id="vma-operations">VMA operations<a title="#vma-operations" href="#vma-operations"></a></h3>
+<p><code>vm ops</code>  in <code>vm_area_struct</code> points to a <code>vm_operations_struct</code> object which contains function pointers to operate on a specific VMAs and is defined in include/linux/mm.h. See more details from <a href="https://elixir.bootlin.com/linux/latest/C/ident/vm_operations_struct" target="_blank">here</a>.</p>
+<p>Function pointers in vm operations struct:<br>
+<code>open()</code>: called when the area is added to an address space.<br>
+<code>close()</code>: called when the area is removed from an address space.<br>
+<code>fault()</code>: invoked by the page fault handler when a page that is not present in physical memory is accessed.<br>
+<code>page_mkwrite()</code>:invoked by the page fault handler when a previously read-only page is made writable.</p>
+<h3 id="vmas-in-real-life">VMAs in real life<a title="#vmas-in-real-life" href="#vmas-in-real-life"></a></h3>
+<p>From userspace, one can observe the VMAs map for a given process: <code>cat /proc/&lt;pid&gt;/maps</code>.</p>
+<p>· <code>/proc/&lt;pid&gt;/maps</code>  columnsdescription:<br>
+Address range Permissions<br>
+Start offset of file mapping<br>
+Device containing the mapped file<br>
+Mapped file inode number<br>
+Mapped file pathname</p>
+<p>Can also use the command <code>pmap &lt;pid&gt;</code>.</p>
+<h2 id="part.3-vma-manipulation">Part.3 VMA manipulation<a title="#part.3-vma-manipulation" href="#part.3-vma-manipulation"></a></h2>
+<h3 id="finding-a-vma">Finding a VMA<a title="#finding-a-vma" href="#finding-a-vma"></a></h3>
+<p><code>find_vma()</code>: used to find a VMA in which a specific memory address resides, its prototype in include/linux/mm.h and  it is defined in mm/mmap.c. See more details from <a href="https://elixir.bootlin.com/linux/latest/C/ident/find_vma" target="_blank">here</a>.</p>
+<p><code>find_vma_prev()</code>: returns in addition the last VMA before a given address.</p>
+<p><code>find_vma_intersection()</code>: returns the first VMA overlapping a given address range.</p>
+<h3 id="creating-an-address-interval">Creating an address interval<a title="#creating-an-address-interval" href="#creating-an-address-interval"></a></h3>
+<p><code>do_mmap()</code> is used to create a new linear address interval which can result in the creation of a new VMAs<br>
+or a merge of the create area with an adjacent one when they have the same permissions.</p>
+<p>On error <code>do_mmap()</code> returns a negative value.</p>
+<p>On success:<br>
+The kernel tries to merge the new interval with an adjacent one having same permissions.<br>
+Otherwise, create a new VMA.<br>
+Returns a pointer to the start of the mapped memory area.</p>
+<p><code>do_mmap()</code> is exported to user-space through <code>mmap2()</code>.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">externunsignedlong <span class="title">do_mmap</span><span class="params">(struct file *file, unsignedlong addr, unsignedlong len, unsignedlong prot, unsignedlong flags,<span class="keyword">vm_flags_t</span> vm_flags, unsignedlong pgoff, unsignedlong *populate)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>Caller must hold <code>mm-&gt;mmap_sem</code> (RW semaphore). Maps the file <code>file</code> in the address space at address <code>addr</code> for length <code>len</code>. Mapping starts at offset <code>pgoff</code> in the file. <code>prot</code> specifies access permissions for the memory pages: <code>PROT READ</code>, <code>PROT WRITE</code>, <code>PROT EXEC</code>, <code>PROT NONE</code>.</p>
+<p><code>flags</code> specifies the rest of the <code>VMAoptions</code>:<br>
+<code>MAP SHARED</code>: mapping can be shared<br>
+<code>MAP PRIVATE</code>: mapping cannot be shared<br>
+<code>MAP FIXED</code>: created interval must start at addr<br>
+<code>MAP ANONYMOUS</code>: mapping is not file-backed<br>
+<code>MAP GROWSDOWN</code>: corresponds to VM GROWSDOWN<br>
+… …</p>
+<h3 id="removing-an-address-interval">Removing an address interval<a title="#removing-an-address-interval" href="#removing-an-address-interval"></a></h3>
+<p>Removing an address interval is done through <code>do_munmap()</code> and <code>0</code> returned on success.</p>
+<p>Exported to user-space through <code>munmap()</code>.</p>
+<h2 id="part.4-page-tables">Part.4 Page Tables<a title="#part.4-page-tables" href="#part.4-page-tables"></a></h2>
+<p>All memory accesses made by the CPU are virtual and translated to physical addresses through the page tables. Linux kernel set the page tables and the translation is made automatically by the hardware (MMU) according to the page tables content. Page size is machine dependent. Typical values for x86 are <strong>4K</strong>, 2M, and 1G. Most of the pages are used for (1) kernel/userspace memory (<em>anonymous mapping</em>) or (2) file mapping.</p>
+<p>The address space is defined by VMAs and is sparsely populated(One address space per process → one page table per process). A hierarchical tree structure is used to define the page table.</p>
+<img src="/Users/Mori/Library/Application Support/typora-user-images/Screen Shot 2020-10-25 at 11.07.47.png" alt="Screen Shot 2020-10-25 at 11.07.47" style="zoom:50%;">
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk1el0seruj30ta0c6gmv.jpg" alt="Screen Shot 2020-10-25 at 11.09.15" style="zoom:50%;">
+<p>Each <strong>physical page</strong> is represented by a struct page. Assuming 8GB of RAM and 4K-sized pages: 128MB reserved for struct page objects(<em>∼</em>1.5%).</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* The kernel uses struct page to keep track of the owner of the page */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">page</span> &#123;</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">long</span> flags;            <span class="comment">/* page status (permission,etc.) */</span></span><br><span class="line">  <span class="keyword">unsigned</span> counters;              <span class="comment">/* usage count */</span></span><br><span class="line">  <span class="keyword">atomic_t</span> _mapcount;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">private</span>;          <span class="comment">/* private mapping */</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">address_space</span> *<span class="title">mapping</span>;</span>  <span class="comment">/* file mapping */</span></span><br><span class="line">  <span class="keyword">pgoff_t</span> index;                  <span class="comment">/* offset within mapping */</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">lru</span>;</span></span><br><span class="line">  <span class="keyword">void</span> *<span class="keyword">virtual</span>;                  <span class="comment">/* virtualaddres */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="zones">Zones<a title="#zones" href="#zones"></a></h3>
+<p>Because of hardware limitations, only certain physical pages can be used in certain contexts. Physical memory is divided into <strong>zones</strong>. Zones layout is completely architecture dependent.</p>
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk2g0o5aojj30u80ecwgj.jpg" alt="Screen Shot 2020-10-26 at 08.44.18" style="zoom:33%;">
+<p><code>ZONE DMA</code>: pages with which DMA(Direct Memory Access) can be used.<br>
+<code>ZONE DMA32</code>: memory for other DMA limited devices.<br>
+<code>ZONE NORMAL</code>: page always mapped in the address space.<br>
+<code>ZONE HIGHMEM:</code> pages only mapped temporary.</p>
+<p>Each zone is represented by a struct zone object and is defined in <code>include/linux/mmzone.h</code>.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">zone</span> &#123;</span></span><br><span class="line">  <span class="comment">/* minimum,lowandhighwatermarksusedforper-area memory allocation. */</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">long</span>      watermark[NR_WMARK];</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span>         *name;</span><br><span class="line">  spinlook           lock;     <span class="comment">/* protects against concurrent access */</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">free_area</span>   <span class="title">free_area</span>[<span class="title">MAX_ORDER</span>];</span></span><br><span class="line">  <span class="comment">/*...*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Operating System</category>
