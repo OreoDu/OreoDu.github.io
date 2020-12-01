@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://oreodu.github.io/2020/20201202-Associative-arrays/</loc>
+    <lastmod>2020-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/20201202-Priority-Queues/</loc>
+    <lastmod>2020-12-01</lastmod>
+  </url>
+  <url>
     <loc>https://oreodu.github.io/2020/20200102-Sorting/</loc>
     <lastmod>2020-11-25</lastmod>
   </url>
