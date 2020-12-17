@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://oreodu.github.io/2020/20201202-Priority-Queues/</loc>
-    <lastmod>2020-12-04</lastmod>
+    <loc>https://oreodu.github.io/2020/20201202-Associative-arrays/</loc>
+    <lastmod>2020-12-12</lastmod>
   </url>
   <url>
-    <loc>https://oreodu.github.io/2020/20201202-Associative-arrays/</loc>
-    <lastmod>2020-12-01</lastmod>
+    <loc>https://oreodu.github.io/2020/20201005-Tree/</loc>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/20201202-Priority-Queues/</loc>
+    <lastmod>2020-12-11</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/20200102-Sorting/</loc>
-    <lastmod>2020-11-25</lastmod>
+    <lastmod>2020-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/2020-12-09-Heap/</loc>
+    <lastmod>2020-12-09</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/20201005-Union-Find/</loc>
-    <lastmod>2020-11-24</lastmod>
+    <lastmod>2020-12-08</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/20200425-Linear-List/</loc>
@@ -78,10 +86,6 @@
   </url>
   <url>
     <loc>https://oreodu.github.io/2019/20191010-Python-Basics-01/</loc>
-    <lastmod>2020-10-05</lastmod>
-  </url>
-  <url>
-    <loc>https://oreodu.github.io/2020/20201005-Tree/</loc>
     <lastmod>2020-10-05</lastmod>
   </url>
   <url>
