@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://oreodu.github.io/2020/20201231-Bit-operation/</loc>
+    <lastmod>2020-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://oreodu.github.io/2020/20201219-Trie/</loc>
+    <lastmod>2020-12-29</lastmod>
+  </url>
+  <url>
     <loc>https://oreodu.github.io/2020/20201217-Synchronization/</loc>
     <lastmod>2020-12-27</lastmod>
   </url>
@@ -15,10 +23,6 @@
   <url>
     <loc>https://oreodu.github.io/2020/20201005-Tree/</loc>
     <lastmod>2020-12-24</lastmod>
-  </url>
-  <url>
-    <loc>https://oreodu.github.io/2020/20201219-Trie/</loc>
-    <lastmod>2020-12-20</lastmod>
   </url>
   <url>
     <loc>https://oreodu.github.io/2020/20201202-Priority-Queues/</loc>
